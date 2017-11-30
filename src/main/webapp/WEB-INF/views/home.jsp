@@ -17,5 +17,6 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
+<!-- Git에 올리는거 연습 -->
 </body>
 </html>
