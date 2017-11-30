@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- http://www.mybatis.org/mybatis-3/getting-started.html 사이트
+ Exploring Mapped SQL Statements의 소스코딩 복사  -->
+ 
+ <!--  SQL문장을 저장하는 용도로 사용한당  -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">

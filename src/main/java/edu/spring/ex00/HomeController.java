@@ -1,4 +1,4 @@
-package edu.spring.podo;
+package edu.spring.ex00;
 
 import java.text.DateFormat;
 import java.util.Date;
