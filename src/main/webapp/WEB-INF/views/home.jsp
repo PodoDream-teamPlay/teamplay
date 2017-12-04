@@ -12,11 +12,21 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>
-	PODO
-</h1>
-<h1 style="color:lightblue">PODO 로그인</h1>
-<form action="login-post" method="post">
+
+<h1 style="color:lightblue" class="text-center">PODO</h1>
+
+<form action="search" method="get"class="text-center">
+    <select name="searchType">
+        <option value="1">노래 제목</option>
+        <option value="2">가수</option>
+        <option value="3">앨범명</option>
+    </select>
+    <input type="text" name="searchKeyword" placeholder="검색어"/>
+    <input type="submit" value="검색"class= "btn btn-primary" />
+
+	
+</form>
+<form action="login-post" method="post" class="text-right">
     <input type="text" name="userid" placeholder="아이디"
         required autofocus />
     <br/>
@@ -29,7 +39,7 @@
         <br/>
 </form>
 <c:if test="${empty loginUserid}">
-<button id="btn-login">로그인</button>
+<button id="btn-login" class="text-right">로그인</button>
 </c:if>
 <c:if test="${not empty loginUserid}">
 ${loginUserid}님, 환영합니당♥
