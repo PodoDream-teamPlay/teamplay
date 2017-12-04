@@ -22,14 +22,14 @@
 	</beans:bean>
 	
 		<!--  컨트롤러에 해당되는 대상만 콤포넌트 하도록 ! -->
-	<context:component-scan base-package="edu.spring.ex00" >
+	<context:component-scan base-package="edu.spring.ex00.controller" >
 	 <context:exclude-filter type="annotation" 
 	 expression="org.springframework.stereotype.Service"/>	
 	 <context:exclude-filter type="annotation" 
 	 expression="org.springframework.stereotype.Repository"/>	
 	</context:component-scan>
 	
-	<context:component-scan base-package="edu.spring.ex00" />
+	<context:component-scan base-package="edu.spring.ex00.controller" />
 	
 	
 	

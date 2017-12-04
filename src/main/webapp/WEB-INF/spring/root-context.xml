@@ -51,7 +51,7 @@
 	<!-- ★ Dao, Service 객체를 자바 빈으로 관리
 	 namespace에서 context를 v체크 표시한 뒤 상단의 <bean에 설정이 되어 있으면 콤포넌트 할 수 있당  -->
 	 
-	<context:component-scan base-package="edu.spring.ex00">
+	<context:component-scan base-package="edu.spring.ex00.controller">
 	   <context:exclude-filter type="annotation" 
 	   expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
@@ -61,7 +61,7 @@
 	
 	<!-- ★  MyBatis가 사용하는 Mapper 객체를 자바 빈으로 설정하기
 	   ReplyMapper 클래스의 package import문과 동일 -->
-	<mybatis-spring:scan base-package="edu.spring.ex00.mappers"/>
+	<mybatis-spring:scan base-package="edu.spring.ex00.controller.mappers"/>
 	
 	<!-- AOP 기능을 어노테이션 기반으로 설정하기: 입력은 필요없이 설정만 딱 ! -->
 	<aop:aspectj-autoproxy />
