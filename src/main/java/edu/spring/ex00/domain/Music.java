@@ -13,6 +13,17 @@ public class Music {
 	private String mlyrics;
 
 	public Music() {}
+	public Music(int mid, String mtitle, String martist, Date mdate, String mgenre, String malbum, int mcount,
+			String mlyrics) {
+		this.mid = mid;
+		this.mtitle = mtitle;
+		this.martist = martist;
+		this.mdate = mdate;
+		this.mgenre = mgenre;
+		this.malbum = malbum;
+		this.mcount = mcount;
+		this.mlyrics = mlyrics;
+	}
 
 	public int getMid() {
 		return mid;
@@ -77,9 +88,6 @@ public class Music {
 	public void setMlyrics(String mlyrics) {
 		this.mlyrics = mlyrics;
 	}
-	
-	
-	//올린다~~~
 	
 	
 }
