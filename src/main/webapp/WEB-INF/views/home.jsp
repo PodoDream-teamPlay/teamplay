@@ -10,12 +10,40 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  <!-- Bootstrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+.topnav {
+    background-color: #4D408A;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #CBC1FA;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #CBC1FA;
+    color: white;
+}
+</style>
 </head>
 <body>
-<!-- 헝 -->
 <!--  로그인폼 오른쪽으로 가야행 !!!~  -->
 <!-- 타이틀 -->
-<h1 style="color:lightblue" class="text-center">PODO</h1>
+<h1 class="text-center" style="color:purple">PODO DREAM</h1>
+
 
 <form action="search" method="get"class="text-center">
     <select name="searchType">
@@ -25,19 +53,22 @@
     </select>
     <input type="text" name="searchKeyword" placeholder="검색어"/>
     <input type="submit" value="검색"class= "btn btn-primary" />
-
-	
 	
 </form>
-
-
-<button>차트</button>
+<div class="topnav" id="myTopnav">
+	<a class="active" href="">홈</a>
+	<a href="">차트</a>
+	<a href=""></a>
+	<a href=""></a>
+</div>
 
 
 <!-- 본문 -->
 <div>
 <div class="container">
-
+	<form>
+		
+	</form>
 </div>
 <div class="container" style="float:right">
 	<form action="login-post" method="post" >
