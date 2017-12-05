@@ -12,14 +12,19 @@
   <configuration>
       <properties>
          <!-- name: 내가 원하는 대로, value: DB테이블 이름이랑 동일하게 해야 함 -->
-       <!--   <property name="tblBoard" value="test_board" /> 
-         <property name="colBno" value="bno" />
-         <property name="colTitle" value="title" />
-         <property name="colContent" value="content" />
-         <property name="colUserid" value="userid"/>    
-         <property name="colRegdate" value="regdate" />
-         <property name="colReplycnt" value="replycnt"/>
-          -->
+         
+         <!-- ★ podo-music의 property -->
+         <property name="tblMusic" value="podo_music" /> 
+         <property name="colMid" value="mid" />
+         <property name="colMtitle" value="mtitle" />
+         <property name="colMartist" value="martist" />
+         <property name="colMdate" value="mdate"/>    
+         <property name="colMgenre" value="mgenre" />
+         <property name="colMalbum" value="malbum"/>
+         <property name="colMcount" value="mcount"/>
+         <property name="colMlyrics" value="mlyrics"/>
+     
+     
          <!--  Member테이블의 이름을 상수로 정의함 ! -->
       <!--    <property name="tblMember" value="tbl_member" />
          <property name="colUserid" value="userid" />
