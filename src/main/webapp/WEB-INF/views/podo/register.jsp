@@ -15,13 +15,22 @@
 </head>
 <body>
 <h1 class="text-center">회원가입</h1>
-<div class="container">
-<form>
-
+<hr>
+<div class="container text-center">
+<form action="member-join" method="post">
+<label for="userid" >아이디</label>
+<input type="text" name="userid" id="userid">
+<br>
+<label for="password" >비밀번호</label>
+<input type="password" name="password" id="password">
+<br>
+<label for="email" >이메일</label>
+<input type="email" name="email" id="email">
+<br>
+<input type="submit" value="회원가입" class="btn">
 </form>
 
 </div>
-
 
 
 <script>

@@ -51,8 +51,8 @@
 	<!-- ★ Dao, Service 객체를 자바 빈으로 관리
 	 namespace에서 context를 v체크 표시한 뒤 상단의 <bean에 설정이 되어 있으면 콤포넌트 할 수 있당  -->
 	 
-	<context:component-scan base-package="edu.spring.ex00.controller">
-	   <context:exclude-filter type="annotation" 
+	<context:component-scan base-package="edu.spring.ex00">
+	   <context:exclude-filter type="annotation"
 	   expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 	   <!--  Aspect도 Component 대상이 되는 거임  -->
