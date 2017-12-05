@@ -14,6 +14,20 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<h1 class="text-center">회원가입</h1>
+<div class="container">
+<form>
 
+</form>
+
+</div>
+
+
+
+<script>
+$(document).ready(function(){
+	
+});
+</script>
 </body>
 </html>

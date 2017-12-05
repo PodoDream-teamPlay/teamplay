@@ -24,16 +24,7 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
-		
+		//메인페이지로 이동
 		return "home";
 	}
 	
@@ -41,5 +32,11 @@ public class HomeController {
 	public void login_post() {
 		//TODO : 로그인 버튼 눌렀을때 처리하는 메소드
 		
+	}
+	
+	@RequestMapping(value="/register", method=RequestMethod.GET)
+	public String go_register() {
+		//회원가입 페이지로 이동
+		return "podo/register";
 	}
 }

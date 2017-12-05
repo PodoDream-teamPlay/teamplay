@@ -58,7 +58,7 @@
 				</tr>
 				<tr>
 					<td>
-						<a href="register" >회원가입 </a>
+						<a href="register">회원가입 </a>
 					</td>
 				</tr>
 				
