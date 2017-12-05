@@ -12,7 +12,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<!--  로그인폼 오른쪽으로 가야행 !!!  -->
+<!--  로그인폼 오른쪽으로 가야행 !!!~  -->
 <!-- 타이틀 -->
 <h1 style="color:lightblue" class="text-center">PODO</h1>
 
