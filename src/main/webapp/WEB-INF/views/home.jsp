@@ -14,6 +14,8 @@
 <body>
 
 <h1 style="color:lightblue" class="text-center">PODO</h1>
+<!-- 타이틀 -->
+<h1 style="color:lightblue" class="text-center">PODO</h1>
 
 <form action="search" method="get"class="text-center">
     <select name="searchType">
@@ -26,25 +28,47 @@
 
 	
 </form>
-<form action="login-post" method="post" class="text-right">
-    <input type="text" name="userid" placeholder="아이디"
-        required autofocus />
-    <br/>
-    <input type="password" name="password" placeholder="비밀번호"
-        required />
-    <br/>
-    <!-- 로그인 후에 이동할 페이지 -->
-    <input type="hidden" name="queryString" 
-        value="${loginTarget}" />
-        <br/>
-</form>
-<c:if test="${empty loginUserid}">
-<button id="btn-login" class="text-right">로그인</button>
-</c:if>
-<c:if test="${not empty loginUserid}">
-${loginUserid}님, 환영합니당♥
-<button id="btn-logout">로그아웃</button>
-</c:if>
+
+<!-- 본문 -->
+<div class="container">
+	<form action="login-post" method="post" class="text-right">
+		<table>
+			<thead></thead>
+			<tbody>
+				<tr>
+					<td>
+						<input type="text" name="userid" placeholder="아이디"
+		        		required autofocus />
+					</td>
+					<td rowspan = "2">
+						<c:if test="${empty loginUserid}">
+							<button id="btn-login" class="text-right btn"
+							style="height: 52px">로그인</button>
+						</c:if>
+						<c:if test="${not empty loginUserid}">
+							${loginUserid}님, 환영합니다
+							<button id="btn-logout">로그아웃</button>
+						</c:if>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="password" name="password" placeholder="비밀번호"
+		        		required />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- 로그인 후에 이동할 페이지 -->
+		<input type="hidden" name="queryString" 
+		value="${loginTarget}" />
+	</form>
+	
+	
+	
+</div>
+
+
 
 <script>
 $(document).ready(function(){
@@ -59,11 +83,6 @@ $(document).ready(function(){
 	
 });
 
-
-
-
-
 </script>
-
 </body>
 </html>

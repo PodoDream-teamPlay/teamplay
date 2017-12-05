@@ -38,4 +38,8 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping(value="/login-post", method=RequestMethod.POST)
+	public void login_post() {
+		//TODO : 로그인 버튼 눌렀을때 처리하는 메소드
+	}
 }
