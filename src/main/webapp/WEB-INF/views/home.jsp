@@ -12,6 +12,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<!-- 헝 -->
 <!--  로그인폼 오른쪽으로 가야행 !!!~  -->
 <!-- 타이틀 -->
 <h1 style="color:lightblue" class="text-center">PODO</h1>
@@ -25,9 +26,13 @@
     <input type="text" name="searchKeyword" placeholder="검색어"/>
     <input type="submit" value="검색"class= "btn btn-primary" />
 
-	<button>차트</button>
+	
 	
 </form>
+
+
+<button>차트</button>
+
 
 <!-- 본문 -->
 <div>
