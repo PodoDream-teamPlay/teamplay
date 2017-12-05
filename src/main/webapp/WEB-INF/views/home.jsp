@@ -13,7 +13,6 @@
 </head>
 <body>
 
-<h1 style="color:lightblue" class="text-center">PODO</h1>
 <!-- 타이틀 -->
 <h1 style="color:lightblue" class="text-center">PODO</h1>
 
@@ -57,6 +56,12 @@
 		        		required />
 					</td>
 				</tr>
+				<tr>
+					<td>
+						<a href="register" >회원가입 </a>
+					</td>
+				</tr>
+				
 			</tbody>
 		</table>
 		<!-- 로그인 후에 이동할 페이지 -->
