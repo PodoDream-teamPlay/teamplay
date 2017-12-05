@@ -25,12 +25,17 @@
     <input type="text" name="searchKeyword" placeholder="검색어"/>
     <input type="submit" value="검색"class= "btn btn-primary" />
 
+	<button>차트</button>
 	
 </form>
 
 <!-- 본문 -->
+<div>
 <div class="container">
-	<form action="login-post" method="post" class="text-right">
+
+</div>
+<div class="container" style="float:right">
+	<form action="login-post" method="post" >
 		<table>
 			<thead></thead>
 			<tbody>
@@ -68,11 +73,8 @@
 		<input type="hidden" name="queryString" 
 		value="${loginTarget}" />
 	</form>
-	
-	
-	
 </div>
-
+</div>
 
 
 <script>
