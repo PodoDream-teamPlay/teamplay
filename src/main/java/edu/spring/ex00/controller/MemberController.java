@@ -31,7 +31,7 @@ public class MemberController {
 		memberservice.insert(m);
 		if(result != 0) {
 			logger.info("memberJoin 에 if");
-			return "home";
+			return "redirect:/";
 		}else {
 			logger.info("memberJoin 에 else");
 			return "podo/register";

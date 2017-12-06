@@ -39,4 +39,11 @@ public class HomeController {
 		//회원가입 페이지로 이동
 		return "podo/register";
 	}
+	
+	@RequestMapping(value="/member_detail", method=RequestMethod.GET)
+	public String go_mypage(Model model/*,String userid*/) {
+		//TODO: 로그인된 사용자의 아이디 정보를 가지고 가야해서 userid 파라미터로 넘김
+		
+		return "podo/member_detail"/* + "/userid="+userid*/;
+	}
 }
