@@ -37,8 +37,9 @@
   </select>
  
   
-  
-  
-  
+  <!-- mid로 search -->
+  <select id="selectByMid" resultType="Music">
+  select * from ${tblMusic} where ${colMid} = #{mid}
+  </select>
   
   </mapper>
