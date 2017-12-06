@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.spring.ex00.domain.Get;
 import edu.spring.ex00.domain.Music;
+import edu.spring.ex00.domain.Playlist;
 import edu.spring.ex00.service.GetService;
 import edu.spring.ex00.service.MusicService;
 
@@ -57,9 +58,15 @@ public class HomeController {
 	public String go_mypage(Model model/*,String userid*/) {
 		//TODO: 로그인된 사용자의 아이디 정보를 가지고 가야해서 userid 파라미터로 넘김
 		String userid = "test"; //임시 아이디
+		List<Music> mp3List = getMp3List(userid);
+		
+		model.addAttribute("userid", userid);
+		model.addAttribute("mp3List", mp3List);
+		return "podo/member_detail"/* + "/userid="+userid*/;
+	}
+	public List<Music> getMp3List(String userid){
 		List<Get> list = getService.selectByUserid(userid);
 		logger.info("list:" + list.size());
-		
 		List<Music> mp3List = new ArrayList<>();
 		for(int i = 0; i < list.size(); i++) {
 			Get g = list.get(i);
@@ -71,9 +78,12 @@ public class HomeController {
 				mp3List.add(music);
 			}
 		}
+		return mp3List;
+	}
+	public List<Playlist> getPlaylist(String userid){
+		List<Playlist> playList = new ArrayList<>();
 		
-		model.addAttribute("userid", userid);
-		model.addAttribute("mp3List", mp3List);
-		return "podo/member_detail"/* + "/userid="+userid*/;
+		
+		return playList;
 	}
 }

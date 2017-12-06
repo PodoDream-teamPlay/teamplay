@@ -17,7 +17,7 @@ td{
 	padding: 20px;
 }
 .rigth_box{
-	border: 1px solid black;
+	border: 1px solid purple;
 	width: 700px;
 	height: 400px;
 }
@@ -49,9 +49,17 @@ td{
 			</div>
 		</td>
 		<td rowspan="2">
-			mp3 구매 목록
+			<h5>mp3 구매 목록</h5>
 			<div class="rigth_box">
 				<table class="table">
+				<thead>
+					<tr style="background-color: purple; color: white;">
+						<th class="text-center">제목</th>
+						<th class="text-center">앨범</th>
+						<th class="text-center">가수</th>
+					</tr>
+				</thead>
+				<tbody>
 					<c:forEach var="mp3" items="${mp3List }">
 						<tr>
 						<td>${mp3.mtitle}</td>
@@ -59,6 +67,7 @@ td{
 						<td>${mp3.martist}</td>
 						</tr>
 					</c:forEach>
+				</tbody>
 				</table>
 			</div>
 		</td>
@@ -67,9 +76,20 @@ td{
 	<tr>
 		<td>--</td>
 		<td rowspan="2">
-			플레이리스트 목록
+			<h5>플레이리스트 목록</h5>
 			<div class="rigth_box">
-				
+				<table class="table">
+				<thead>
+					<tr style="background-color: purple; color: white;">
+						<th class="text-center">제목</th>
+						<th class="text-center">앨범</th>
+						<th class="text-center">가수</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+				</table>
 			</div>
 		</td>
 	</tr>
