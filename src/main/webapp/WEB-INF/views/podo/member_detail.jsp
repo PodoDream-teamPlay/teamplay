@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +17,7 @@ td{
 	padding: 20px;
 }
 .rigth_box{
-	border: 1px solid black;
+	border: 1px solid purple;
 	width: 700px;
 	height: 400px;
 }
@@ -38,7 +39,8 @@ td{
 		<td>
 			<div class="left_box">
 				user프로필 출력<br><br>
-				테스트 아이디 : test<br>
+				<h4>테스트 아이디 : ${userid }</h4>
+				<br>
 				테스트 아이디에 해당하는<br>
 				- mp3 다운로드리스트
 				(PODO_GET)<br>
@@ -47,10 +49,25 @@ td{
 			</div>
 		</td>
 		<td rowspan="2">
-			mp3 구매 목록
+			<h5>mp3 구매 목록</h5>
 			<div class="rigth_box">
-				<table>
-				
+				<table class="table">
+				<thead>
+					<tr style="background-color: purple; color: white;">
+						<th class="text-center">제목</th>
+						<th class="text-center">앨범</th>
+						<th class="text-center">가수</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="mp3" items="${mp3List }">
+						<tr>
+						<td>${mp3.mtitle}</td>
+						<td>${mp3.malbum }</td>
+						<td>${mp3.martist}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
 				</table>
 			</div>
 		</td>
@@ -59,9 +76,31 @@ td{
 	<tr>
 		<td>--</td>
 		<td rowspan="2">
-			플레이리스트 목록
+			<h5>플레이리스트 목록</h5>
 			<div class="rigth_box">
-				
+				<table class="table">
+				<thead>
+					<tr style="background-color: purple; color: white;">
+						<th class="text-center">리스트 제목</th>
+						<th class="text-center">저장 날짜</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="music" items="${playList }">
+						<tr>
+						<td><a>${music.ptitle }</a></td>
+						<td>${music.pdate }</td>
+						<td>
+						<!-- 버튼 누르면 해당 플레이리스트 삭제 -->
+						<button id = "btn_playlist_delete"
+						class="btn" 
+						style="padding: 5px; padding-top: 0px; padding-bottom: 0px;">X</button>
+						</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+				</table>
 			</div>
 		</td>
 	</tr>
@@ -74,7 +113,15 @@ td{
 <script>
 $(document).ready(function(){
 	
+	
+	
+	//플레이 리스트의 x 버튼 눌리면
+	$('#btn_playlist_delete').click(function(){
+		
+	});
+	
 });
 </script>
 </body>
 </html>
+

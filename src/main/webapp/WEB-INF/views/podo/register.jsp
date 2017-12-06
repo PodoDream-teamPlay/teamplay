@@ -22,16 +22,16 @@
 
 		<form action="member-join" method="post">
 			<label for="userid">아이디</label>
-			 <input type="text" name="userid" id="userid"> <br>
+			 <input type="text" name="userid" id="userid" required="required"> <br>
 			<label for="password">비밀번호</label>
-			 <input	type="password" name="password" id="password"> <br>
+			 <input	type="password" name="password" id="password" required="required"> <br>
 			 <label for="password2">비밀번호 확인</label>
-			 <input	type="password" onblur="double_check()" name="password2" id="password2" > <br>
+			 <input	type="password" onblur="double_check()" name="password2" id="password2"  required="required"> <br>
 			<label	for="email">이메일</label> 
-			<input type="email" name="email" id="email">	<br> 
-			<input type="submit" value="회원가입" class="btn">
+			<input type="email" name="email" id="email" required="required">	<br> 
+			<input type="submit"  id ="btn3" value="회원가입" class="btn" disabled="disabled">
 		</form>
-
+	
 	</div>
 
 	<!--아이디 체크 후 경고창 -->
@@ -51,7 +51,10 @@
 		var password = password_input.value
 		var password2_input = document.getElementById("password2");
 		var password2 = password2_input.value
-		if (password != password2){
+		if (password==password2) {
+			document.getElementById("btn3").disabled = false;
+			
+		} else {
 			alert("비밀번호를 일치시켜 주세요")
 		}
 		

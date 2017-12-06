@@ -6,13 +6,13 @@ public class Get {
 	
 	private int gid;
 	private String userid;
-	private String mid;
+	private int mid;
 	private int gprice;
 	private Date gdate;
 	
 	public Get() {}
 
-	public Get(int gid, String userid, String mid, int gprice, Date gdate) {
+	public Get(int gid, String userid, int mid, int gprice, Date gdate) {
 		super();
 		this.gid = gid;
 		this.userid = userid;
@@ -37,11 +37,11 @@ public class Get {
 		this.userid = userid;
 	}
 
-	public String getMid() {
+	public int getMid() {
 		return mid;
 	}
 
-	public void setMid(String mid) {
+	public void setMid(int mid) {
 		this.mid = mid;
 	}
 

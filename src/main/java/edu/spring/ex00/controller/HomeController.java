@@ -1,6 +1,7 @@
 package edu.spring.ex00.controller;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -14,8 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.spring.ex00.domain.Get;
+import edu.spring.ex00.domain.Music;
+import edu.spring.ex00.domain.Playlist;
 import edu.spring.ex00.service.GetService;
 import edu.spring.ex00.service.MusicService;
+import edu.spring.ex00.service.PlaylistService;
 
 /**
  * Handles requests for the application home page.
@@ -29,6 +33,8 @@ public class HomeController {
 	private GetService getService;
 	@Autowired
 	private MusicService musicService;
+	@Autowired
+	private PlaylistService playlistService;
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -55,19 +61,36 @@ public class HomeController {
 	public String go_mypage(Model model/*,String userid*/) {
 		//TODO: 로그인된 사용자의 아이디 정보를 가지고 가야해서 userid 파라미터로 넘김
 		String userid = "test"; //임시 아이디
-		List<Get> list = getService.selectByUserid(userid);
-		logger.info("list:" + list.size());
+		List<Music> mp3List = getMp3List(userid);
+		List<Playlist> playList = getPlaylist(userid);
 		
+		model.addAttribute("userid", userid);
+		model.addAttribute("mp3List", mp3List);
+		model.addAttribute("playList", playList);
+		
+		return "podo/member_detail"/* + "/userid="+userid*/;
+	}
+	public List<Music> getMp3List(String userid){
+		List<Get> list = getService.selectByUserid(userid);
+		List<Music> mp3List = new ArrayList<>();
 		for(int i = 0; i < list.size(); i++) {
+			Music mp3 = musicService.select(list.get(i).getMid());
+			mp3List.add(mp3);
+		}
+		return mp3List;
+	}
+	public List<Playlist> getPlaylist(String userid){
+		List<Playlist> playList = playlistService.selectByUserid(userid);
+		/*for(int i = 0; i < list.size(); i++) {
 			Get g = list.get(i);
 			String str = g.getMid();
 			String[] mids = str.split(",");
 			for(String s : mids) {
 				int mid = Integer.parseInt(s);
-				String title;
+				Music music = musicService.select(mid);
+				mp3List.add(music);
 			}
-		}
-		
-		return "podo/member_detail"/* + "/userid="+userid*/;
+		}*/
+		return playList;
 	}
 }

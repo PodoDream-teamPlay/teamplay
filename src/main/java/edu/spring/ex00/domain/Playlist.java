@@ -6,17 +6,19 @@ public class Playlist {
 	
 	private int pid;
 	private String userid;
-	private String mid;
+	private String mids;
 	private Date pdate;
+	private String ptitle;
 
 	public Playlist() {}
 
-	public Playlist(int pid, String userid, String mid, Date pdate) {
+	public Playlist(int pid, String userid, String mids, Date pdate, String ptitle) {
 		super();
 		this.pid = pid;
 		this.userid = userid;
-		this.mid = mid;
+		this.mids = mids;
 		this.pdate = pdate;
+		this.ptitle = ptitle;
 	}
 
 	public int getPid() {
@@ -35,12 +37,12 @@ public class Playlist {
 		this.userid = userid;
 	}
 
-	public String getMid() {
-		return mid;
+	public String getMids() {
+		return mids;
 	}
 
-	public void setMid(String mid) {
-		this.mid = mid;
+	public void setMids(String mids) {
+		this.mids = mids;
 	}
 
 	public Date getPdate() {
@@ -50,5 +52,14 @@ public class Playlist {
 	public void setPdate(Date pdate) {
 		this.pdate = pdate;
 	}
+
+	public String getPtitle() {
+		return ptitle;
+	}
+
+	public void setPtitle(String ptitle) {
+		this.ptitle = ptitle;
+	}
+
 	
 }

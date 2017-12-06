@@ -34,6 +34,13 @@
 		<property name="colGdate" value="gdate"></property>
 		
 
+		<!-- podo_playlist 의 property -->
+     	<property name="tblPlaylist" value="podo_playlist"/>
+     	<property name="colPid" value="pid"/>
+     	<!-- <property name="colUserid" value="userid"/> -->
+     	<property name="colMids" value="mids"/>
+     	<property name="colPdate" value="pdate"/>
+     	<property name="colPtitle" value="ptitle"/>
      
          <!--  Member테이블의 이름을 상수로 정의함 ! -->
       <!--    <property name="tblMember" value="tbl_member" />
