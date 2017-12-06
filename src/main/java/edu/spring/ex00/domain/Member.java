@@ -7,17 +7,18 @@ public class Member {
 	private String userid;
 	private String password;
 	private String email;
-	private String dance;
-	private String ballad;
-	private String hiphop;
-	private String trot;
-	private String indi;
+	private int dance;
+	private int ballad;
+	private int hiphop;
+	private int trot;
+	private int indi;
 	private Date memdate;
-
 	public Member() {}
 
-	public Member(String userid, String password, String email, String dance, String ballad, String hiphop, String trot,
-			String indi, Date memdate) {
+	
+	
+	public Member(String userid, String password, String email, int dance, int ballad, int hiphop, int trot, int indi,
+			Date memdate) {
 		super();
 		this.userid = userid;
 		this.password = password;
@@ -29,6 +30,8 @@ public class Member {
 		this.indi = indi;
 		this.memdate = memdate;
 	}
+
+
 
 	public String getUserid() {
 		return userid;
@@ -54,43 +57,43 @@ public class Member {
 		this.email = email;
 	}
 
-	public String getDance() {
+	public int getDance() {
 		return dance;
 	}
 
-	public void setDance(String dance) {
+	public void setDance(int dance) {
 		this.dance = dance;
 	}
 
-	public String getBallad() {
+	public int getBallad() {
 		return ballad;
 	}
 
-	public void setBallad(String ballad) {
+	public void setBallad(int ballad) {
 		this.ballad = ballad;
 	}
 
-	public String getHiphop() {
+	public int getHiphop() {
 		return hiphop;
 	}
 
-	public void setHiphop(String hiphop) {
+	public void setHiphop(int hiphop) {
 		this.hiphop = hiphop;
 	}
 
-	public String getTrot() {
+	public int getTrot() {
 		return trot;
 	}
 
-	public void setTrot(String trot) {
+	public void setTrot(int trot) {
 		this.trot = trot;
 	}
 
-	public String getIndi() {
+	public int getIndi() {
 		return indi;
 	}
 
-	public void setIndi(String indi) {
+	public void setIndi(int indi) {
 		this.indi = indi;
 	}
 
@@ -101,6 +104,14 @@ public class Member {
 	public void setMemdate(Date memdate) {
 		this.memdate = memdate;
 	}
+
+	@Override
+	public String toString() {
+		return "Member [userid=" + userid + ", password=" + password + ", email=" + email + ", dance=" + dance
+				+ ", ballad=" + ballad + ", hiphop=" + hiphop + ", trot=" + trot + ", indi=" + indi + ", memdate="
+				+ memdate + "]";
+	}
+	
 	
 	
 }
