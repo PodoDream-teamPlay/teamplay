@@ -83,13 +83,20 @@ td{
 					<tr style="background-color: purple; color: white;">
 						<th class="text-center">리스트 제목</th>
 						<th class="text-center">저장 날짜</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach var="music" items="${playList }">
 						<tr>
-						<td>${music.ptitle }</td>
+						<td><a>${music.ptitle }</a></td>
 						<td>${music.pdate }</td>
+						<td>
+						<!-- 버튼 누르면 해당 플레이리스트 삭제 -->
+						<button id = "btn_playlist_delete"
+						class="btn" 
+						style="padding: 5px; padding-top: 0px; padding-bottom: 0px;">X</button>
+						</td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -105,6 +112,13 @@ td{
 </div>
 <script>
 $(document).ready(function(){
+	
+	
+	
+	//플레이 리스트의 x 버튼 눌리면
+	$('#btn_playlist_delete').click(function(){
+		
+	});
 	
 });
 </script>
