@@ -81,13 +81,19 @@ td{
 				<table class="table">
 				<thead>
 					<tr style="background-color: purple; color: white;">
-						<th class="text-center">제목</th>
-						<th class="text-center">앨범</th>
-						<th class="text-center">가수</th>
+						<th class="text-center">pid</th>
+						<th class="text-center">mids</th>
+						<th class="text-center">pdate</th>
 					</tr>
 				</thead>
 				<tbody>
-					
+					<c:forEach var="music" items="${playList }">
+						<tr>
+						<td>${music.pid }</td>
+						<td>${music.mids }</td>
+						<td>${music.pdate }</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 				</table>
 			</div>
@@ -106,3 +112,4 @@ $(document).ready(function(){
 </script>
 </body>
 </html>
+

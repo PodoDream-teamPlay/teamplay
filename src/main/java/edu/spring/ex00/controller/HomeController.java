@@ -19,6 +19,7 @@ import edu.spring.ex00.domain.Music;
 import edu.spring.ex00.domain.Playlist;
 import edu.spring.ex00.service.GetService;
 import edu.spring.ex00.service.MusicService;
+import edu.spring.ex00.service.PlaylistService;
 
 /**
  * Handles requests for the application home page.
@@ -32,6 +33,8 @@ public class HomeController {
 	private GetService getService;
 	@Autowired
 	private MusicService musicService;
+	@Autowired
+	private PlaylistService playlistService;
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -59,9 +62,12 @@ public class HomeController {
 		//TODO: 로그인된 사용자의 아이디 정보를 가지고 가야해서 userid 파라미터로 넘김
 		String userid = "test"; //임시 아이디
 		List<Music> mp3List = getMp3List(userid);
+		List<Playlist> playList = getPlaylist(userid);
 		
 		model.addAttribute("userid", userid);
 		model.addAttribute("mp3List", mp3List);
+		model.addAttribute("playList", playList);
+		
 		return "podo/member_detail"/* + "/userid="+userid*/;
 	}
 	public List<Music> getMp3List(String userid){
@@ -81,8 +87,7 @@ public class HomeController {
 		return mp3List;
 	}
 	public List<Playlist> getPlaylist(String userid){
-		List<Playlist> playList = new ArrayList<>();
-		
+		List<Playlist> playList = playlistService.selectByUserid(userid);
 		
 		return playList;
 	}
