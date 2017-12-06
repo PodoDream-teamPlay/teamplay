@@ -72,9 +72,16 @@ public class HomeController {
 	}
 	public List<Music> getMp3List(String userid){
 		List<Get> list = getService.selectByUserid(userid);
-		logger.info("list:" + list.size());
 		List<Music> mp3List = new ArrayList<>();
 		for(int i = 0; i < list.size(); i++) {
+			Music mp3 = musicService.select(list.get(i).getMid());
+			mp3List.add(mp3);
+		}
+		return mp3List;
+	}
+	public List<Playlist> getPlaylist(String userid){
+		List<Playlist> playList = playlistService.selectByUserid(userid);
+		/*for(int i = 0; i < list.size(); i++) {
 			Get g = list.get(i);
 			String str = g.getMid();
 			String[] mids = str.split(",");
@@ -83,12 +90,7 @@ public class HomeController {
 				Music music = musicService.select(mid);
 				mp3List.add(music);
 			}
-		}
-		return mp3List;
-	}
-	public List<Playlist> getPlaylist(String userid){
-		List<Playlist> playList = playlistService.selectByUserid(userid);
-		
+		}*/
 		return playList;
 	}
 }

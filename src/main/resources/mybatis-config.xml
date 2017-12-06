@@ -40,6 +40,7 @@
      	<!-- <property name="colUserid" value="userid"/> -->
      	<property name="colMids" value="mids"/>
      	<property name="colPdate" value="pdate"/>
+     	<property name="colPtitle" value="ptitle"/>
      
          <!--  Member테이블의 이름을 상수로 정의함 ! -->
       <!--    <property name="tblMember" value="tbl_member" />

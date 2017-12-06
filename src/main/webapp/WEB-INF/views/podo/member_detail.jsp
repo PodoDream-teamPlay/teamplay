@@ -81,16 +81,14 @@ td{
 				<table class="table">
 				<thead>
 					<tr style="background-color: purple; color: white;">
-						<th class="text-center">pid</th>
-						<th class="text-center">mids</th>
-						<th class="text-center">pdate</th>
+						<th class="text-center">리스트 제목</th>
+						<th class="text-center">저장 날짜</th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach var="music" items="${playList }">
 						<tr>
-						<td>${music.pid }</td>
-						<td>${music.mids }</td>
+						<td>${music.ptitle }</td>
 						<td>${music.pdate }</td>
 						</tr>
 					</c:forEach>

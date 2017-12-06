@@ -8,15 +8,17 @@ public class Playlist {
 	private String userid;
 	private String mids;
 	private Date pdate;
+	private String ptitle;
 
 	public Playlist() {}
 
-	public Playlist(int pid, String userid, String mids, Date pdate) {
+	public Playlist(int pid, String userid, String mids, Date pdate, String ptitle) {
 		super();
 		this.pid = pid;
 		this.userid = userid;
 		this.mids = mids;
 		this.pdate = pdate;
+		this.ptitle = ptitle;
 	}
 
 	public int getPid() {
@@ -50,5 +52,14 @@ public class Playlist {
 	public void setPdate(Date pdate) {
 		this.pdate = pdate;
 	}
+
+	public String getPtitle() {
+		return ptitle;
+	}
+
+	public void setPtitle(String ptitle) {
+		this.ptitle = ptitle;
+	}
+
 	
 }
