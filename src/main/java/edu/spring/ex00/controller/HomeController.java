@@ -1,6 +1,7 @@
 package edu.spring.ex00.controller;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.spring.ex00.domain.Get;
+import edu.spring.ex00.domain.Music;
 import edu.spring.ex00.service.GetService;
 import edu.spring.ex00.service.MusicService;
 
@@ -58,16 +60,20 @@ public class HomeController {
 		List<Get> list = getService.selectByUserid(userid);
 		logger.info("list:" + list.size());
 		
+		List<Music> mp3List = new ArrayList<>();
 		for(int i = 0; i < list.size(); i++) {
 			Get g = list.get(i);
 			String str = g.getMid();
 			String[] mids = str.split(",");
 			for(String s : mids) {
 				int mid = Integer.parseInt(s);
-				String title;
+				Music music = musicService.select(mid);
+				mp3List.add(music);
 			}
 		}
 		
+		model.addAttribute("userid", userid);
+		model.addAttribute("mp3List", mp3List);
 		return "podo/member_detail"/* + "/userid="+userid*/;
 	}
 }

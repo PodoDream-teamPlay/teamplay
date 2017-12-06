@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +39,8 @@ td{
 		<td>
 			<div class="left_box">
 				user프로필 출력<br><br>
-				테스트 아이디 : test<br>
+				<h4>테스트 아이디 : ${userid }</h4>
+				<br>
 				테스트 아이디에 해당하는<br>
 				- mp3 다운로드리스트
 				(PODO_GET)<br>
@@ -49,8 +51,14 @@ td{
 		<td rowspan="2">
 			mp3 구매 목록
 			<div class="rigth_box">
-				<table>
-				
+				<table class="table">
+					<c:forEach var="mp3" items="${mp3List }">
+						<tr>
+						<td>${mp3.mtitle}</td>
+						<td>${mp3.malbum }</td>
+						<td>${mp3.martist}</td>
+						</tr>
+					</c:forEach>
 				</table>
 			</div>
 		</td>
