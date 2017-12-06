@@ -101,6 +101,10 @@
 					<td>
 						<a href="register">회원가입 </a>
 					</td>
+					<td>
+						<!-- 로그인 했을때 "마이페이지" 라는 <a>태그가 보일 수 있게 바꿔야함-->
+						<a href="member_detail">마이페이지(test)</a>
+					</td>
 				</tr>
 				
 			</tbody>
