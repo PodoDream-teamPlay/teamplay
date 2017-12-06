@@ -100,8 +100,8 @@ p{
 		 	   <td>${music.martist}</td>
 		 	   <td>${music.malbum}</td>
 		 	   <td><a href="${music.mlyrics}"><img alt="가사" src="../resources/images/lyrics.png"></a></td>
-		 	   <td><a href="${music.mlyrics}"><img alt="내앨범" src="../resources/images/myalbum.png"></a></td>
-		 	   <td><a href="${music.mlyrics}"><img alt="MP3다운" src="../resources/images/mp3.png"></a></td>		 	   
+		 	   <td><a href=""><img alt="내앨범" src="../resources/images/myalbum.png"></a></td>
+		 	   <td><a href=""><img alt="MP3다운" src="../resources/images/mp3.png"></a></td>		 	   
 		    </tr>
 		 </c:forEach>
 	  </tbody>	
