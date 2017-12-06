@@ -2,14 +2,20 @@ package edu.spring.ex00.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import edu.spring.ex00.domain.Get;
+import edu.spring.ex00.service.GetService;
+import edu.spring.ex00.service.MusicService;
 
 /**
  * Handles requests for the application home page.
@@ -18,6 +24,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	
+	@Autowired
+	private GetService getService;
+	@Autowired
+	private MusicService musicService;
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -43,6 +54,19 @@ public class HomeController {
 	@RequestMapping(value="/member_detail", method=RequestMethod.GET)
 	public String go_mypage(Model model/*,String userid*/) {
 		//TODO: 로그인된 사용자의 아이디 정보를 가지고 가야해서 userid 파라미터로 넘김
+		String userid = "test"; //임시 아이디
+		List<Get> list = getService.selectByUserid(userid);
+		logger.info("list:" + list.size());
+		
+		for(int i = 0; i < list.size(); i++) {
+			Get g = list.get(i);
+			String str = g.getMid();
+			String[] mids = str.split(",");
+			for(String s : mids) {
+				int mid = Integer.parseInt(s);
+				String title;
+			}
+		}
 		
 		return "podo/member_detail"/* + "/userid="+userid*/;
 	}

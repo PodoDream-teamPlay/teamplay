@@ -12,5 +12,7 @@ public interface MusicService {
 	// 검색 기능 
 	List<Music> search(int type, String keyword);
 	
+	// mid로 노래찾기
+	Music select(int mid);
 	
 } // end interface MusicService 

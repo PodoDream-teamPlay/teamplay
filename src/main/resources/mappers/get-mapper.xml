@@ -5,8 +5,8 @@
   
 <mapper namespace="edu.spring.ex00.Getmapper">
 
-	<select id="selectByUserid" resultSets="Get">
-	select * from ${tblGet} where ${colUserid} = #{userid} oder by ${colGdate} desc
+	<select id="selectByUserid" resultType="Get">
+	select * from ${tblGet} where ${colUserid} = #{userid}
 	</select>
 
 </mapper>

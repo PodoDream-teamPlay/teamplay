@@ -37,4 +37,9 @@ public class MusicDaoImple implements MusicDao {
 		return session.selectList(NAMESPACE , args);
 	}
 
+	@Override
+	public Music read(int mid) {
+		return session.selectOne(NAMESPACE + ".selectByMid", mid);
+	}
+
 } // end class MusicDaoImple 

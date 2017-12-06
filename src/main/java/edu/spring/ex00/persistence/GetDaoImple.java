@@ -17,7 +17,7 @@ public class GetDaoImple implements GetDao {
 	
 	@Override
 	public List<Get> read(String userid) {
-		return session.selectList(NAMESPACE + ".selectByUserid", userid);
+		return session.selectList(NAMESPACE+".selectByUserid", userid);
 	}
 
 }

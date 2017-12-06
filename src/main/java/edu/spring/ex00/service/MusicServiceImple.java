@@ -28,4 +28,9 @@ public class MusicServiceImple implements MusicService {
 		
 	}
 
+	@Override
+	public Music select(int mid) {
+		return musicDao.read(mid);
+	}
+
 } // end class MusicServiceImple 

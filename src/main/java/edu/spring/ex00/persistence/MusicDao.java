@@ -12,6 +12,7 @@ public interface MusicDao {
 	// 검색 기능 
 	List<Music> search(int type, String keyword);
 
-	
+	// mid로 음악찾기
+	Music read(int mid);
 	
 } // end interface MusicDao
