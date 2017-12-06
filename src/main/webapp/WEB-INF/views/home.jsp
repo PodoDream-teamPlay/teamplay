@@ -50,6 +50,7 @@
         <option value="1">노래 제목</option>
         <option value="2">가수</option>
         <option value="3">앨범명</option>
+        <option value="4">장르별</option>  <!-- 수진아 장르별 검색도 추가했덩 ^^- 우정 -->
     </select>
     <input type="text" name="searchKeyword" placeholder="검색어"/>
     <input type="submit" value="검색"class= "btn btn-primary" />
@@ -57,7 +58,7 @@
 </form>
 <div class="topnav" id="myTopnav">
 	<a class="active" href="">홈</a>
-	<a href="">차트</a>
+	<a href="podo/chart">차트</a>
 	<a href=""></a>
 	<a href=""></a>
 </div>

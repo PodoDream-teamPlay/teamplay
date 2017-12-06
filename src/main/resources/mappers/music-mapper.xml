@@ -10,10 +10,35 @@
   
   <mapper namespace="edu.spring.ex00.MusicMapper">
   
-   <select id="selectAll" resultType="Music">
+  <!-- 차트 정렬 -->
+  <select id="selectAll" resultType="Music">
     select * from ${tblMusic} order by #{colMid} 
       <!--추후 #{colMid} -> #{colMcount}로 차트 정렬예정 -->
   </select> 
+  
+  <!-- 검색 기능 -->
+  <select id="search" resultType="Music">
+   select * from ${tblMusic} where
+   <choose>
+       <when test="searchType == 1">
+          ${colMtitle} like #{searchKeyword}
+       </when>
+       <when test="searchType == 2">
+          ${colMartist} like #{searchKeyword}
+       </when>
+       <when test="searchType == 3">
+          ${colMalbum} like #{searchKeyword}
+       </when>
+       <when test="searchType == 4">
+          ${colMgenre} like #{searchKeyword}
+       </when>
+   </choose>
+   order by ${colMid} 
+  </select>
+ 
+  
+  
+  
   
   
   </mapper>
