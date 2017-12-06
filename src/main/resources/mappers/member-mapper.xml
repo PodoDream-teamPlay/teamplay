@@ -10,10 +10,12 @@
   <!--회원 가입  -->
 <insert id="insert">
 insert into podo_member (userid, password, email) values (#{userid}, #{password}, #{email})
-
 </insert>
   
-  
+  <!--회원 정보 조회-->
+<select id="select" resultType="Member">
+select* from podo_member where userid = #{userid} 
+</select>  
   
   
   

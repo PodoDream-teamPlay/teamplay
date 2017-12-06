@@ -7,4 +7,8 @@ public interface MemberDao {
 	//회원 가입
 	int create (Member m);
 	
+	//회원 정보 조회
+	Member read(String userid);
+	
+	
 }

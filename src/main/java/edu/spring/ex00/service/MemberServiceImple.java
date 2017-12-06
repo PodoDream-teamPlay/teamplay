@@ -25,6 +25,12 @@ public class MemberServiceImple implements MemberService {
 		System.out.println("memberserviceImple : insert");
 		return dao.create(m);
 	}
+
+	@Override
+	public Member select(String userid) {
+		System.out.println("memberSErviceImple : select");
+		return dao.read(userid);
+	}
 	
 
 }
