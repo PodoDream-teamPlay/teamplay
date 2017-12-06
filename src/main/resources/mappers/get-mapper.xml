@@ -4,4 +4,9 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="edu.spring.ex00.Getmapper">
+
+	<select id="selectByUserid" resultSets="Get">
+	select * from ${tblGet} where ${colUserid} = #{userid} oder by ${colGdate} desc
+	</select>
+
 </mapper>
