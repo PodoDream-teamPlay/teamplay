@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Music {
 	private int mid;
+	private String malbumart; // ★ 앨범자켓이미지 넣을 변수 추가 
 	private String mtitle;
 	private String martist;
 	private Date mdate;
@@ -13,9 +14,10 @@ public class Music {
 	private String mlyrics;
 
 	public Music() {}
-	public Music(int mid, String mtitle, String martist, Date mdate, String mgenre, String malbum, int mcount,
+	public Music(int mid,String malbumart, String mtitle, String martist, Date mdate, String mgenre, String malbum, int mcount,
 			String mlyrics) {
 		this.mid = mid;
+		this.malbumart = malbumart; 
 		this.mtitle = mtitle;
 		this.martist = martist;
 		this.mdate = mdate;
@@ -33,6 +35,14 @@ public class Music {
 		this.mid = mid;
 	}
 
+	public String getMalbumart() {
+		return malbumart;
+	}
+	
+	public void setMalbumart(String malbumart) {
+		this.malbumart = malbumart;
+	}
+	
 	public String getMtitle() {
 		return mtitle;
 	}

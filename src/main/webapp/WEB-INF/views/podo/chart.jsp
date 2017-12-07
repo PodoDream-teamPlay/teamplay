@@ -37,8 +37,13 @@ table, th, td{
 table {
 	width: 100%;
 }
-p{
+p {
 	display: inline;
+}
+
+#albumart {
+  width: 65px;
+  height: 65px;
 }
 
 </style>
@@ -82,10 +87,11 @@ p{
     	<thead>
 	    	<tr>
 		    	<th></th>
-		    	<th>순위</th>
-			    <th>곡명</th>
-			    <th>아티스트</th>
-			    <th>앨범</th>
+		    	<th><span id="t_head">순위</span></th>
+		    	<th><span class="hidden">앨범이미지</span></th>
+			    <th><span id="t_head">곡명</span></th>
+			    <th><span id="t_head">아티스트</span></th>
+			    <th><span id="t_head">앨범</span></th>
 		    	<th>가사</th>
 		    	<th>내앨범</th>
 		    	<th>MP3다운</th>
@@ -96,12 +102,13 @@ p{
 	   	    <tr>
 		   	   <td width="30" bordercolor="grey"><input type="checkbox" name="choose" value="2"></td>
 		 	   <td>${music.mid}</td>
+		 	   <td><img id="albumart" alt="자켓이미지" src="../resources/images/${music.malbumart}"></td>
 		 	   <td>${music.mtitle}</td>
 		 	   <td>${music.martist}</td>
 		 	   <td>${music.malbum}</td>
-		 	   <td><a href="${music.mlyrics}"><img alt="가사" src="../resources/images/lyrics.png"></a></td>
-		 	   <td><a href=""><img alt="내앨범" src="../resources/images/myalbum.png"></a></td>
-		 	   <td><a href=""><img alt="MP3다운" src="../resources/images/mp3.png"></a></td>		 	   
+		 	   <td><a href="${music.mlyrics}"><img alt="가사" src="../resources/images/t_lyrics.png"></a></td>
+		 	   <td><a href=""><img alt="내앨범" src="../resources/images/t_myalbum.png"></a></td>
+		 	   <td><a href=""><img alt="MP3다운" src="../resources/images/t_mp3.png"></a></td>		 	   
 		    </tr>
 		 </c:forEach>
 	  </tbody>	
