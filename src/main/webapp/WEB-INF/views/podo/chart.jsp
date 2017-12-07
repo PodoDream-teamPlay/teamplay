@@ -46,6 +46,7 @@ p {
   height: 65px;
 }
 
+
 </style>
 
 </head>
@@ -59,6 +60,7 @@ p {
         <option value="1">노래 제목</option>
         <option value="2">가수</option>
         <option value="3">앨범명</option>
+        <option value="4">장르별</option>
     </select>
     <input type="text" name="searchKeyword" placeholder="검색어"/>
     <input type="submit" value="검색"class= "btn btn-primary" />
@@ -82,8 +84,8 @@ p {
    </form>
 </div>
 
-<div class="container">
-   <table class="table table-striped">
+<div class="container" >
+   <table class="table table-striped" >
     	<thead>
 	    	<tr>
 		    	<th></th>
@@ -99,7 +101,7 @@ p {
 	  </thead>
       <tbody>
         <c:forEach var="music" items="${music}">
-	   	    <tr>
+	   	    <tr>           
 		   	   <td width="30" bordercolor="grey"><input type="checkbox" name="choose" value="2"></td>
 		 	   <td>${music.mid}</td>
 		 	   <td><img id="albumart" alt="자켓이미지" src="../resources/images/${music.malbumart}"></td>
@@ -108,10 +110,10 @@ p {
 		 	   <td>${music.malbum}</td>
 		 	   <td><a href="${music.mlyrics}"><img alt="가사" src="../resources/images/t_lyrics.png"></a></td>
 		 	   <td><a href=""><img alt="내앨범" src="../resources/images/t_myalbum.png"></a></td>
-		 	   <td><a href=""><img alt="MP3다운" src="../resources/images/t_mp3.png"></a></td>		 	   
+		 	   <td><a href=""><img alt="MP3다운" src="../resources/images/t_mp3.png"></a></td>		 	   	   	    
 		    </tr>
 		 </c:forEach>
-	  </tbody>	
+	  </tbody>
    </table>
 </div>
 

@@ -121,4 +121,19 @@ public class HomeController {
 		}*/
 		return playList;
 	}
+	
+	// ★ 검색어 입력 후 '검색'버튼 클릭했을 때 
+		@RequestMapping(value="/search", method= RequestMethod.GET)
+		public String musicSearch(int searchType, String searchKeyword, Model model) {
+			logger.info("search() GET 호출");
+		
+			logger.info("type: {}, keyword: {}", searchType, searchKeyword);
+			
+			List<Music> list = musicService.search(searchType, searchKeyword);	
+			model.addAttribute("musicList", list);
+			
+			return "podo/search_result";
+		}
+	
+	
 }

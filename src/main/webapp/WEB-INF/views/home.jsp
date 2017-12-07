@@ -55,8 +55,9 @@
 			<option value="2">가수</option>
 			<option value="3">앨범명</option>
 			<option value="4">장르별</option>
-		</select> <input type="text" name="searchKeyword" placeholder="검색어" /> <input
-			type="submit" value="검색" class="btn btn-primary" />
+		</select> 
+		<input type="text" name="searchKeyword" placeholder="검색어" /> 
+		<input type="submit" value="검색" class="btn btn-primary" />
 
 	</form>
 	<div class="topnav" id="myTopnav" align="center">
@@ -242,9 +243,9 @@
 		 	   <td>${music.mtitle}</td>
 		 	   <td>${music.martist}</td>
 		 	   <td>${music.malbum}</td>
-		 	   <td><a href="${music.mlyrics}"><img alt="가사" src="../resources/images/lyrics.png"></a></td>
-		 	   <td><a href=""><img alt="내앨범" src="../resources/images/myalbum.png"></a></td>
-		 	   <td><a href=""><img alt="MP3다운" src="../resources/images/mp3.png"></a></td>		 	   
+		 	   <td><a href="${music.mlyrics}"><img alt="가사" src="../resources/images/t_lyrics.png"></a></td>
+		 	   <td><a href=""><img alt="내앨범" src="../resources/images/t_myalbum.png"></a></td>
+		 	   <td><a href=""><img alt="MP3다운" src="../resources/images/t_mp3.png"></a></td>		 	   
 		    </tr>
 		 </c:forEach>
 	  </tbody>	
