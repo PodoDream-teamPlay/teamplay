@@ -78,19 +78,25 @@ public class HomeController {
 		return "podo/register";
 	}
 	
+	
 	@RequestMapping(value="/member_detail", method=RequestMethod.GET)
-	public String go_mypage(Model model/*,String userid*/) {
+	public String go_mypage(Model model/*,String userid*/,HttpSession session) {
 		//TODO: 로그인된 사용자의 아이디 정보를 가지고 가야해서 userid 파라미터로 넘김
-		String userid = "test"; //임시 아이디
+		System.out.println("로그인 하고 받는 아이디" + session.getAttribute("loginUserid"));
+		String userid = (String) session.getAttribute("loginUserid");
 		List<Music> mp3List = getMp3List(userid);
 		List<Playlist> playList = getPlaylist(userid);
 		
 		model.addAttribute("userid", userid);
 		model.addAttribute("mp3List", mp3List);
 		model.addAttribute("playList", playList);
+		// ==============================================
 		
+
 		return "podo/member_detail"/* + "/userid="+userid*/;
 	}
+	
+	
 	public List<Music> getMp3List(String userid){
 		List<Get> list = getService.selectByUserid(userid);
 		List<Music> mp3List = new ArrayList<>();
@@ -100,6 +106,7 @@ public class HomeController {
 		}
 		return mp3List;
 	}
+	
 	public List<Playlist> getPlaylist(String userid){
 		List<Playlist> playList = playlistService.selectByUserid(userid);
 		/*for(int i = 0; i < list.size(); i++) {
