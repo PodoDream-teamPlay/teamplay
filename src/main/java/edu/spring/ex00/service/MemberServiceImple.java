@@ -31,6 +31,12 @@ public class MemberServiceImple implements MemberService {
 		System.out.println("memberSErviceImple : select");
 		return dao.read(userid);
 	}
+
+	@Override
+	public int update(Member m) {
+		// TODO Auto-generated method stub
+		return dao.update(m);
+	}
 	
 
 }
