@@ -13,5 +13,7 @@
 </head>
 <body>
 
+<h1>이용권 구매</h1>
+
 </body>
 </html>

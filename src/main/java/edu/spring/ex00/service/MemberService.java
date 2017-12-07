@@ -8,6 +8,7 @@ public interface MemberService {
 		int insert(Member m);
 	// 회원 정보 조회
 		Member select(String userid);
-	
+	// 회원 정보 수정
+		int update(Member m);
 	
 }

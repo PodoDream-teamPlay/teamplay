@@ -14,8 +14,13 @@ insert into podo_member (userid, password, email) values (#{userid}, #{password}
   
   <!--회원 정보 조회-->
 <select id="select" resultType="Member">
-select* from podo_member where userid = #{userid} 
+select * from podo_member where userid = #{userid} 
 </select>  
+
+<!--회원 정보 수정 -->
+<update id="update">
+update podo_member set password = #{password}, email = #{email} where userid = #{userid}
+</update>
   
   
   

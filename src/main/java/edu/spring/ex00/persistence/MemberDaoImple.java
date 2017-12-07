@@ -28,11 +28,16 @@ public class MemberDaoImple implements MemberDao {
 		return session.insert(NAMESPACE + ".insert", m);
 	}
 
-
 	@Override //회원 정보 조회
 	public Member read(String userid) {
 		System.out.println("daoImple read ");
 		return session.selectOne(NAMESPACE + ".select", userid);
+	}
+
+	@Override //회원 정보 수정
+	public int update(Member m) {
+		System.out.println("daoImple update ");
+		return session.update(NAMESPACE + ".update", m);
 	}
 
 }

@@ -39,7 +39,11 @@ td{
 		<td>
 			<div class="left_box">
 				user프로필 출력<br><br>
-				<h4>테스트 아이디 : ${userid }</h4>
+				<h4>테스트 아이디 : ${loginUserid}</h4>
+				<form action="member-update">
+					<input type="submit" value="회원 정보 수정">
+				</form>
+				
 				<br>
 				테스트 아이디에 해당하는<br>
 				- mp3 다운로드리스트

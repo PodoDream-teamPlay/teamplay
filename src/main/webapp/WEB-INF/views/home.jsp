@@ -43,6 +43,9 @@
 </style>
 </head>
 <body>
+<form action="monthly_pay">
+<input type="submit" value="이용권 구매" >
+</form>
 	<!--  로그인폼 오른쪽으로 가야행 !!!~  -->
 	<!-- 타이틀 -->
 	<h1 class="text-center" style="color: purple">PODO DREAM</h1>
