@@ -6,6 +6,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.spring.ex00.domain.Get;
+import edu.spring.ex00.domain.Member;
 import edu.spring.ex00.domain.Music;
 import edu.spring.ex00.domain.Playlist;
 import edu.spring.ex00.service.GetService;
+import edu.spring.ex00.service.MemberService;
 import edu.spring.ex00.service.MusicService;
 import edu.spring.ex00.service.PlaylistService;
 
@@ -35,6 +40,8 @@ public class HomeController {
 	private MusicService musicService;
 	@Autowired
 	private PlaylistService playlistService;
+	@Autowired
+	private MemberService memberservice;
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -46,9 +53,23 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/login-post", method=RequestMethod.POST)
-	public void login_post() {
+	public String login_post(String userid, String password, HttpSession session) {
 		//TODO : 로그인 버튼 눌렀을때 처리하는 메소드
+	System.out.println("userid : " + userid + "password : " + password);
+	Member checkuser = null;
+	checkuser =	memberservice.select(userid);
+	if (checkuser!=null && password.equals(checkuser.getPassword())) {
+		session.setAttribute("loginUserid", userid);
 		
+	}
+	return "redirect:/"; 
+	
+	} //end login_post()
+	
+	@RequestMapping(value="logout" , method=RequestMethod.GET)
+	public String log_out(HttpServletRequest request) {
+		request.getSession().invalidate();
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value="/register", method=RequestMethod.GET)
