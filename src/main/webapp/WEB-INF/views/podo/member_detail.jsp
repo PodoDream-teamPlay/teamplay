@@ -17,14 +17,13 @@ td{
 	padding: 20px;
 }
  .rigth_box{
-	border: 1px solid purple;
 	width: 700px;
 	height: 400px;
 }
 .left_box{
-	border: 1px solid gray;
+	background-color: #B3AAC1;
 	width: 200px;
-	height: 200px;
+	height: 400px;
 } 
 
 .topnav {
@@ -130,7 +129,10 @@ td{
 		<td>
 			<div class="left_box">
 				user프로필 출력<br><br>
-				<h4>테스트 아이디 : ${loginUserid}</h4>
+				<div style="background-color: white; width: 170px; height: 60px; margin-left: 15px; padding: 20px;">
+					<b>${loginUserid}</b>
+				</div>
+				<br>
 				<form action="member-update">
 					<input type="submit" value="회원 정보 수정">
 				</form>
@@ -148,7 +150,7 @@ td{
 			<div class="rigth_box">
 				<table class="table">
 				<thead>
-					<tr style="background-color: purple; color: white;">
+					<tr style="background-color: #4D408A; color: white;">
 						<th class="text-center">제목</th>
 						<th class="text-center">앨범</th>
 						<th class="text-center">가수</th>
@@ -173,28 +175,17 @@ td{
 		<td rowspan="2">
 			<h5>플레이리스트 목록</h5>
 			<div class="rigth_box">
+				<button class="button" style="float: right;">+</button>
 				<table class="table">
 				<thead>
-					<tr style="background-color: purple; color: white;">
+					<tr style="background-color: #4D408A; color: white;">
 						<th class="text-center">리스트 제목</th>
 						<th class="text-center">저장 날짜</th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody id="playlists">
-					<%-- <c:forEach var="music" items="${playList }">
-						<tr>
-						<td><input type="hidden" value="${music.pid }" id="pid">
-							<a>${music.ptitle }</a></td>
-						<td>${music.pdate }</td>
-						<td>
-						<!-- 버튼 누르면 해당 플레이리스트 삭제 -->
-						<button id = "btn_playlist_delete"
-						class="btn" 
-						style="padding: 5px; padding-top: 0px; padding-bottom: 0px;">X</button>
-						</td>
-						</tr>
-					</c:forEach> --%>
+					<!-- Ajax로 playlist DB에서 가져와서 출력 -->
 				</tbody>
 				</table>
 			</div>
@@ -244,7 +235,6 @@ $(document).ready(function(){
 		alert(pid);
 		
 		if(confirm(pid + " 플레이리스트를 삭제 하시겠습니까?")){
-		alert('삭제합니다');
 		
 			//플레이리스트 삭제 기능 : Ajax
 			$.ajax({
@@ -275,3 +265,4 @@ $(document).ready(function(){
 </body>
 </html>
 
+				
