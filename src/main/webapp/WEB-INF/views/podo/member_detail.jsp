@@ -16,7 +16,7 @@
 td{
 	padding: 20px;
 }
-.rigth_box{
+ .rigth_box{
 	border: 1px solid purple;
 	width: 700px;
 	height: 400px;
@@ -25,12 +25,100 @@ td{
 	border: 1px solid gray;
 	width: 200px;
 	height: 200px;
+} 
+
+.topnav {
+	background-color: #4D408A;
+	overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+ .topnav a {
+	float: left;
+	color: #CBC1FA;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+ 
+/* Change the color of links on hover */
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+	background-color: #CBC1FA;
+	color: white;
+}
+
+#noline {
+	display: inline;
 }
 </style>
+
+
+
 </head>
 <body>
 <div class="container">
-<h1>마이페이지</h1>
+		<h1 class="text-center" style="color: purple"><a href="http://localhost:8181/ex00/">PODO DREAM</a></h1>
+
+	<!-- 로그인  -->
+ 	<div id="noline" style="float: right">
+		<form action="login-post" method="post" id="noline" >
+			<c:if test="${empty loginUserid}">
+				<input type="text" name="userid" id="userid" placeholder="아이디" style="margin-right: 100px" required autofocus /><br>    
+				<input type="password" name="password" id="password" style="margin-right: 100px" placeholder="비밀번호" required /><br> 
+				<input type="submit" id="btn-login"  value="로그인">
+				<a href="register"><input type ="button" value="회원가입"> </a><br> 
+				</tbody>
+
+			</c:if>
+
+		</form>
+
+			<c:if test="${not empty loginUserid}">
+				<form action="logout" method="get">
+					${loginUserid}님, 환영합니다 <input type="submit" id="btn-logout"
+						name="btn-logout" value="로그아웃" style="margin-right: 100px"><br> <a
+						href="member_detail" class="text-align:right" style="margin-right: 100px">마이페이지(test)</a>
+				</form>
+			</c:if>
+	
+		
+		<!-- 로그인 후에 이동할 페이지 -->
+		<input type="hidden" name="queryString" value="${loginTarget}" />
+	 </div> 
+	<!--  로그인폼 오른쪽으로 가야행 !!!~  -->
+
+<br>
+	<form action="search" method="get" class="text-center">
+		<select name="searchType">
+			<option value="1">노래 제목</option>
+			<option value="2">가수</option>
+			<option value="3">앨범명</option>
+			<option value="4">장르별</option>
+		</select> <input type="text" name="searchKeyword" placeholder="검색어" /> <input
+			type="submit" value="검색" class="btn btn-primary" />
+
+
+	</form>
+	<br>
+	<div class="topnav" id="myTopnav" align="center">
+		<a class="active" href="">홈</a> <a href="podo/chart">차트</a> <a href=""></a>
+		<a href=""></a> <a href=""></a><a href=""></a><a href=""></a>
+
+
+
+	</div>
+
+
+
+
+
 <hr>
 <table class="text-center">
 <thead></thead>
