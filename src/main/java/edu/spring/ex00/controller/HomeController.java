@@ -1,3 +1,5 @@
+
+
 package edu.spring.ex00.controller;
 
 import java.text.DateFormat;
@@ -72,11 +74,13 @@ public class HomeController {
 		return "redirect:/";
 	}
 	
+	
 	@RequestMapping(value="/register", method=RequestMethod.GET)
 	public String go_register() {
 		//회원가입 페이지로 이동
 		return "podo/register";
 	}
+
 	
 	
 	@RequestMapping(value="/member_detail", method=RequestMethod.GET)

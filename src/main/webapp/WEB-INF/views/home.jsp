@@ -89,6 +89,7 @@
 	 </div> 
 	<!--  로그인폼 오른쪽으로 가야행 !!!~  -->
 
+
 <br>
 	<form action="search" method="get" class="text-align:center" style="width: 1;  margin: 0 auto;">
 		<select name="searchType">
@@ -107,8 +108,8 @@
 
 	<div class="topnav">
   		<a class="active" href="home">홈</a>
-  		<a href="chart">차트</a>
-  		<a href="">이용권</a>
+  		<a href="podo/chart">차트</a>
+  		<a href="podo/monthpay">이용권</a>
   		<a href="">이벤트</a>
   		<a href="">Q&A</a>
   		
@@ -278,3 +279,4 @@
 </div>
 </body>
 </html>
+
