@@ -181,8 +181,8 @@ td{
 						<th></th>
 					</tr>
 				</thead>
-				<tbody>
-					<c:forEach var="music" items="${playList }">
+				<tbody id="playlists">
+					<%-- <c:forEach var="music" items="${playList }">
 						<tr>
 						<td><input type="hidden" value="${music.pid }" id="pid">
 							<a>${music.ptitle }</a></td>
@@ -194,7 +194,7 @@ td{
 						style="padding: 5px; padding-top: 0px; padding-bottom: 0px;">X</button>
 						</td>
 						</tr>
-					</c:forEach>
+					</c:forEach> --%>
 				</tbody>
 				</table>
 			</div>
@@ -208,18 +208,45 @@ td{
 </div>
 <script>
 $(document).ready(function(){
+	//시작하면 플레이리스트 select 해서 출력
+	var userid = '${loginUserid}';
 	
+	function getAllPlaylists(){
+		$.getJSON('/ex00/playlist/all/'+ userid, function(data){
+			var playlist = '';
+			
+			$(data).each(function(){
+				playlist += '<tr class="playlist-item" data-pid="' + this.pid + '">'
+							+ '<td>'
+							+ '<input type="hidden" value="'
+								+this.pid
+								+'" id="pid">'
+							+ this.ptitle
+							+ '</td>'
+							+ '<td>'
+							+ this.pdate
+							+ '</td>'
+							+ '<td>'
+							+ '<button class="btn-delete">X</button>'
+							+ '</td>'
+							+'</tr>';
+			});
+			
+			$('#playlists').html(playlist);
+		});
+	}
+	getAllPlaylists();
 	
-	//플레이 리스트의 x 버튼 눌리면
-	$('#btn_playlist_delete').click(function(){
-		
+	//플레이 리스트의 x 버튼 눌리면 - 해당 playlist 삭제
+	$('#playlists').on('click', '.playlist-item .btn-delete', function(){
 		//x버튼 눌린 playlist의 pid
 		var pid = $(this).prevAll('#pid').val();
+		alert(pid);
 		
 		if(confirm(pid + " 플레이리스트를 삭제 하시겠습니까?")){
 		alert('삭제합니다');
 		
-			/* //플레이리스트 삭제 기능 : Ajax
+			//플레이리스트 삭제 기능 : Ajax
 			$.ajax({
 				type: 'delete',
 				url: '/ex00/playlist/' + pid,
@@ -235,9 +262,13 @@ $(document).ready(function(){
 						alert('삭제 실패');
 					}
 				}
-			}); */
+			}); 
 		}
 	});
+	
+	
+	//플레이 리스트 위의 + 버튼 눌리면 - 빈 playlist 추가
+	
 	
 });
 </script>
