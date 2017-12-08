@@ -102,8 +102,8 @@ p {
       <tbody>
         <c:forEach var="music" items="${music}">
 	   	    <tr>           
-		   	   <td width="30" bordercolor="grey"><input type="checkbox" name="choose" value="2"></td>
-		 	   <td>${music.mid}</td>
+		   	   <td width="30" bordercolor="grey"><input type="checkbox" id="cb_choose" name="choose" value="2" data-mid="${music.mid}"></td>
+		 	   <td id="mid">${music.mid}</td>
 		 	   <td><img id="albumart" alt="자켓이미지" src="../resources/images/${music.malbumart}"></td>
 		 	   <td>${music.mtitle}</td>
 		 	   <td>${music.martist}</td>
@@ -112,10 +112,31 @@ p {
 		 	   <td><a href=""><img alt="내앨범" src="../resources/images/t_myalbum.png"></a></td>
 		 	   <td><a href=""><img alt="MP3다운" src="../resources/images/t_mp3.png"></a></td>		 	   	   	    
 		    </tr>
+		    
 		 </c:forEach>
 	  </tbody>
    </table>
 </div>
 </div>
+
+<script>
+$(function(){
+	$('#choose_all').click(function(){
+		if($('#choose_all').prop('checked')){
+			$('input[type=checkbox]').prop('checked',true);
+		}else{
+			$('input[type=checkbox]').prop('checked',false);
+		}
+	});
+	
+	$('input:checkbox[name="choose"]').click(function(){
+		if(this.checked){
+			alert($(this).attr('data-mid'));
+		}
+	});
+	
+})
+</script>
+
 </body>
 </html>
