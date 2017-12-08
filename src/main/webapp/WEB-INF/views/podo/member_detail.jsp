@@ -82,9 +82,12 @@ td{
 
 			<c:if test="${not empty loginUserid}">
 				<form action="logout" method="get">
-					${loginUserid}님, 환영합니다 <input type="submit" id="btn-logout"
-						name="btn-logout" value="로그아웃" style="margin-right: 100px"><br> <a
-						href="member_detail" class="text-align:right" style="margin-right: 100px">마이페이지(test)</a>
+					${loginUserid}님, 환영합니다 
+					<input type="submit" id="btn-logout" name="btn-logout" value="로그아웃" style="margin-right: 100px">
+					<br>
+					<a href="member_detail" class="text-align:right" style="margin-right: 100px">
+						마이페이지
+					</a>
 				</form>
 			</c:if>
 	
@@ -181,7 +184,8 @@ td{
 				<tbody>
 					<c:forEach var="music" items="${playList }">
 						<tr>
-						<td><a>${music.ptitle }</a></td>
+						<td><input type="hidden" value="${music.pid }" id="pid">
+							<a>${music.ptitle }</a></td>
 						<td>${music.pdate }</td>
 						<td>
 						<!-- 버튼 누르면 해당 플레이리스트 삭제 -->
@@ -206,10 +210,33 @@ td{
 $(document).ready(function(){
 	
 	
-	
 	//플레이 리스트의 x 버튼 눌리면
 	$('#btn_playlist_delete').click(function(){
 		
+		//x버튼 눌린 playlist의 pid
+		var pid = $(this).prevAll('#pid').val();
+		
+		if(confirm(pid + " 플레이리스트를 삭제 하시겠습니까?")){
+		alert('삭제합니다');
+		
+			/* //플레이리스트 삭제 기능 : Ajax
+			$.ajax({
+				type: 'delete',
+				url: '/ex00/playlist/' + pid,
+				headers: {
+					'Content-Type': 'application/json',
+					'X-HTTP-Method-Override': 'DELETE'
+				},
+				success: function(result){
+					if(result === 'success'){ //성공
+						alert('삭제 성공');
+						getAllReplies(); //댓글 전체 출력 함수 호출
+					}else{
+						alert('삭제 실패');
+					}
+				}
+			}); */
+		}
 	});
 	
 });
