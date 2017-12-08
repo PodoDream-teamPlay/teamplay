@@ -41,6 +41,8 @@
 	color: white;
 }
 
+
+
 #noline {
 	display: inline;
 }
@@ -87,25 +89,34 @@
 	<!--  로그인폼 오른쪽으로 가야행 !!!~  -->
 
 <br>
-	<form action="search" method="get" class="text-center">
+	<form action="search" method="get" class="text-align:center" style="width: 10px;  margin: 0 auto;">
 		<select name="searchType">
 			<option value="1">노래 제목</option>
 			<option value="2">가수</option>
 			<option value="3">앨범명</option>
 			<option value="4">장르별</option>
 		</select> <input type="text" name="searchKeyword" placeholder="검색어" /> <input
-			type="submit" value="검색" class="btn btn-primary" />
+			type="submit" value="검색" class="btn " />
 
 
 	</form>
 	<br>
-	<div class="topnav" id="myTopnav" align="center">
-		<a class="active" href="">홈</a> <a href="podo/chart">차트</a> <a href=""></a>
-		<a href=""></a> <a href=""></a><a href=""></a><a href=""></a>
+	
+
+
+	<div class="topnav">
+  		<a class="active" href="home">홈</a>
+  		<a href="chart">차트</a>
+  		<a href="">이용권</a>
+  		<a href="">이벤트</a>
+  		<a href="">Q&A</a>
+  		
+ 		 </div>
+	
 
 
 
-	</div>
+	
 
 
 
