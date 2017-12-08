@@ -50,7 +50,7 @@ p {
 
 </head>
 <body>
-
+<div class="container">
 <h1 class="text-center" style="color:purple">PODO DREAM</h1>
 
 
@@ -116,5 +116,7 @@ p {
    </table>
 </div>
 
+
+</div>
 </body>
 </html>

@@ -16,6 +16,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="container">
 	<h1 class="text-center">회원가입</h1>
 	<hr>
 	<div class="container text-center">
@@ -64,7 +65,7 @@
 	
 	
 	
-	
+	</div>
 	
 </body>
 </html>

@@ -50,6 +50,9 @@
 
 </head>
 <body>
+
+
+<div class="container">
 	<!-- 타이틀 -->
 		<h1 class="text-center" style="color: purple"><a href="http://localhost:8181/ex00/">PODO DREAM</a></h1>
 
@@ -260,6 +263,6 @@
 
 
 
-
+</div>
 </body>
 </html>

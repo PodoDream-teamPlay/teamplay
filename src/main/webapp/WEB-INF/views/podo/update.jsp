@@ -14,6 +14,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="container">
 <h1> 회원 정보 수정 </h1>
 
 <form action="member-update" method="post">
@@ -47,6 +48,6 @@
 	
 
 
-
+</div>
 </body>
 </html>

@@ -12,8 +12,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<div class="container">
 <h1>이용권 구매</h1>
 
+
+
+</div>
 </body>
 </html>
