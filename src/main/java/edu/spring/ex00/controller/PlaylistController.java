@@ -56,8 +56,12 @@ public class PlaylistController {
 	public ResponseEntity<String> deletePlaylist(@PathVariable(name = "pid")int pid){
 		logger.info("delete 하려는 pid ::: " + pid);
 		ResponseEntity<String> entity = null;
-		
-		
+		int result = playlistService.delete(pid);
+		if(result == 1) {
+			entity = new ResponseEntity<String>("success", HttpStatus.OK);
+		}else {
+			entity = new ResponseEntity<String>("fail", HttpStatus.BAD_REQUEST);
+		}
 		
 		return entity;
 	}

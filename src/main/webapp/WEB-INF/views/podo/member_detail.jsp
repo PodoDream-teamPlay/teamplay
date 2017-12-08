@@ -209,16 +209,13 @@ $(document).ready(function(){
 			$(data).each(function(){
 				playlist += '<tr class="playlist-item" data-pid="' + this.pid + '">'
 							+ '<td>'
-							+ '<input type="hidden" value="'
-								+this.pid
-								+'" id="pid">'
 							+ this.ptitle
 							+ '</td>'
 							+ '<td>'
 							+ this.pdate
 							+ '</td>'
 							+ '<td>'
-							+ '<button class="btn-delete">X</button>'
+							+ '<button class="btn-delete" data-pid="' + this.pid + '">X</button>'
 							+ '</td>'
 							+'</tr>';
 			});
@@ -231,10 +228,9 @@ $(document).ready(function(){
 	//플레이 리스트의 x 버튼 눌리면 - 해당 playlist 삭제
 	$('#playlists').on('click', '.playlist-item .btn-delete', function(){
 		//x버튼 눌린 playlist의 pid
-		var pid = $(this).prevAll('#pid').val();
-		alert(pid);
+		var pid = $(this).attr('data-pid');
 		
-		if(confirm(pid + " 플레이리스트를 삭제 하시겠습니까?")){
+		if(confirm(" 플레이리스트를 삭제 하시겠습니까?")){
 		
 			//플레이리스트 삭제 기능 : Ajax
 			$.ajax({
@@ -247,7 +243,7 @@ $(document).ready(function(){
 				success: function(result){
 					if(result === 'success'){ //성공
 						alert('삭제 성공');
-						getAllReplies(); //댓글 전체 출력 함수 호출
+						getAllPlaylists(); //댓글 전체 출력 함수 호출
 					}else{
 						alert('삭제 실패');
 					}
