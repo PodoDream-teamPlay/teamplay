@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Insert title here</title>
+<title>Podo</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
  <!-- jQuery : Bootstrap JS 파일은 jQuery 라이브러리를 반드시 넣어줘야 함! -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -146,36 +146,9 @@ td{
 			</div>
 		</td>
 		<td rowspan="2">
-			<h5>mp3 구매 목록</h5>
-			<div class="rigth_box">
-				<table class="table">
-				<thead>
-					<tr style="background-color: #4D408A; color: white;">
-						<th class="text-center">제목</th>
-						<th class="text-center">앨범</th>
-						<th class="text-center">가수</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="mp3" items="${mp3List }">
-						<tr>
-						<td>${mp3.mtitle}</td>
-						<td>${mp3.malbum }</td>
-						<td>${mp3.martist}</td>
-						</tr>
-					</c:forEach>
-				</tbody>
-				</table>
-			</div>
-		</td>
-	</tr>
-	<tr><td>--</td></tr>
-	<tr>
-		<td>--</td>
-		<td rowspan="2">
 			<h5>플레이리스트 목록</h5>
 			<div class="rigth_box">
-				<button class="button" style="float: right;">+</button>
+				<button class="button" style="float: right;" id="btn-insert">+</button>
 				<table class="table">
 				<thead>
 					<tr style="background-color: #4D408A; color: white;">
@@ -186,6 +159,35 @@ td{
 				</thead>
 				<tbody id="playlists">
 					<!-- Ajax로 playlist DB에서 가져와서 출력 -->
+				</tbody>
+				</table>
+			</div>
+		</td>
+	</tr>
+	<tr><td>--</td></tr>
+	<tr>
+		<td>--</td>
+		<td rowspan="2">
+			<h5>mp3 구매 목록</h5>
+			<div class="rigth_box">
+				<table class="table">
+				<thead>
+					<tr style="background-color: #4D408A; color: white;">
+						<th></th>
+						<th class="text-center">제목</th>
+						<th class="text-center">앨범</th>
+						<th class="text-center">가수</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="mp3" items="${mp3List }">
+						<tr>
+						<td><img id="albumart" alt="자켓이미지" src="../resources/images/${mp3.malbumart}.jsp"></td>
+						<td>${mp3.mtitle}</td>
+						<td>${mp3.malbum }</td>
+						<td>${mp3.martist}</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 				</table>
 			</div>
@@ -254,7 +256,12 @@ $(document).ready(function(){
 	
 	
 	//플레이 리스트 위의 + 버튼 눌리면 - 빈 playlist 추가
+	$('#btn-insert').click(function(){
+		window.open("insert_playlist_popup", "플레이리스트 제목 입력", "width=400, height=300, left=100, top=50");
 	
+		//TODO : 팝업창에서 타이틀 입력한거 여기로 받아와서 DB에 빈 PlayList(제목만 들어가있는) insert
+	
+	});
 	
 });
 </script>

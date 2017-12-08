@@ -60,7 +60,11 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-	
+	@RequestMapping(value="/insert_playlist_popup")
+	public String insertpTitle() {
+		
+		return "podo/insert_playlist_popup";
+	}
 	
 	
 	
