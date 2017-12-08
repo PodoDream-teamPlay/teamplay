@@ -8,5 +8,14 @@
 	<select id="selectByUserid" resultType="Playlist">
 	select * from ${tblPlaylist} where ${colUserid} = #{userid} order by ${colPdate} desc
 	</select>
+	
+	<delete id="delete">
+	delete from ${tblPlaylist} where ${colPid} = #{pid}
+	</delete>
+	
+	<insert id="insert">
+	insert into ${tblPlaylist} (${colUserid}, ${colMids}, ${colPdate}, ${colPtitle}) 
+		values (#{userid}, #{mids}, sysdate, #{ptitle})
+	</insert>
 
 </mapper>

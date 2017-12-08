@@ -19,4 +19,14 @@ public class PlaylistServiceImple implements PlaylistService {
 		return dao.read(userid);
 	}
 
+	@Override
+	public int insert(Playlist list) {
+		return dao.create(list);
+	}
+
+	@Override
+	public int delete(int pid) {
+		return dao.delete(pid);
+	}
+
 }

@@ -8,5 +8,8 @@ public interface PlaylistDao {
 
 	//userid로 select
 	List<Playlist> read(String userid);
-	
+	//insert
+	int create (Playlist list);
+	//delete
+	int delete (int pid);
 }
