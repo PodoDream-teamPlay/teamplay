@@ -70,6 +70,7 @@
 				<a href="register"><input type ="button" value="회원가입"> </a><br> 
 				</tbody>
 
+
 			</c:if>
 
 		</form>
@@ -89,7 +90,7 @@
 	<!--  로그인폼 오른쪽으로 가야행 !!!~  -->
 
 <br>
-	<form action="search" method="get" class="text-align:center" style="width: 10px;  margin: 0 auto;">
+	<form action="search" method="get" class="text-align:center" style="width: 1;  margin: 0 auto;">
 		<select name="searchType">
 			<option value="1">노래 제목</option>
 			<option value="2">가수</option>
