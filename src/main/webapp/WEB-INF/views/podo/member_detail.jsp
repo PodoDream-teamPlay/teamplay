@@ -257,9 +257,8 @@ $(document).ready(function(){
 	
 	//플레이 리스트 위의 + 버튼 눌리면 - 빈 playlist 추가
 	$('#btn-insert').click(function(){
+		//새 창 띄우기 - ptitle 입력 목적
 		window.open("insert_playlist_popup", "플레이리스트 제목 입력", "width=400, height=300, left=100, top=50");
-	
-		//TODO : 팝업창에서 타이틀 입력한거 여기로 받아와서 DB에 빈 PlayList(제목만 들어가있는) insert
 	
 	});
 	

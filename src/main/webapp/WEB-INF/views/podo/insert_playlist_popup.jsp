@@ -8,9 +8,9 @@
 </head>
 <body onload="window.resizeTo(400,200)">
 <h2>새 플레이리스트 제목</h2>
-<form action="" method="post">
 	<input type="text" name="ptitle" id="new-ptitle">
-	<input type="submit" value="확인">
-</form>
+	<button type="button" id="btn-check">중복 확인</button>
+	<br>
+	<button type="button" id="btn-insert">만들기</button>
 </body>
 </html>
