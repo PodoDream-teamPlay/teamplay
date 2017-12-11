@@ -21,8 +21,13 @@ select * from podo_member where userid = #{userid}
 <update id="update">
 update podo_member set password = #{password}, email = #{email} where userid = #{userid}
 </update>
-  
-  
+
+<!-- 월 결제 합니다  -->
+<update id="month_paid">
+update podo_member set memdate = #{memdate} where userid = #{userid}
+</update>
+
+
   
   
   

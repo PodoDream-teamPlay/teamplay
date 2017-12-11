@@ -1,17 +1,76 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@page import="java.lang.ProcessBuilder.Redirect"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
-<meta charset="UTF-8" />
-<title>Insert title here</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
- <!-- jQuery : Bootstrap JS 파일은 jQuery 라이브러리를 반드시 넣어줘야 함! -->
+<title>PODO Home</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<!-- jQuery : Bootstrap JS 파일은 jQuery 라이브러리를 반드시 넣어줘야 함! -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
- <!-- Bootstrap JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Bootstrap JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+
+
+ul {
+	overflow: auto;
+	list-style-type: none;
+}
+
+li {
+	float: left;
+	display: inline;
+  
+}
+
+/* .navbar-inverse {
+
+	background-color: #4D408A;
+	color: white;
+} */
+
+#innercontainer li {
+
+  position: relative;
+  z-index: 10; 
+  list-style: none; 
+  margin: 0;
+  padding: 2px; 
+  max-height: 50px; 
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+#innercontainer ul{
+   margin: 0;
+   padding: 0 4px;
+   border-radius: 2px;
+   max-width: 10em;
+
+   white-space: nowrap;
+   color: black;
+   cursor: pointer; 
+
+
+}
+
+
+
+
+</style>
+
+
+
 </head>
+
+
+
 <body>
+
 
 	<div class="container" style="width:1000px;">
 		<!-- 타이틀 -->
@@ -97,9 +156,80 @@
 		</nav>
 
 
+<div align="center">
+<h1>이용권 구매</h1>
+
+<h2>1개월권 3900원</h2>
+<a onclick="month1()">결제하기</a>
+<br/>
+<h2>2개월권 7900원</h2>
+<a onclick="month2()">결제하기</a>
+<br/>
+<h2>3개월권 9900원</h2>
+<a onclick="month3()">결제하기</a>
+<br/>
+<h1>매월 자동 결제 신청 시 월 3300원!</h1>
+<h2><a>월 자동 결제 신청하기</a></h2>
+<br/>
+</div>
+
+<div align="right">
+
+	<input id="money" name="money" readonly required>원<br/>
+	<input id="pay" type="submit" value="결제하기" disabled onclick="popupOpen()">
+
+</div>
+
+<script type="text/javascript">
+function month1() {
+	if (${not empty loginUserid}) {
+		var money = document.getElementById('money');
+		money.value = 3900;
+		document.getElementById("pay").disabled = false;
+	} else {
+		alert('로그인이 필요합니다');	
+	}
+}
+
+function month2() {
+	if (${not empty loginUserid}) {
+		var money = document.getElementById('money');
+		money.value = 7900;
+		document.getElementById("pay").disabled = false;
+	} else {
+		alert('로그인이 필요합니다');	
+	}
+}
+function month3() {
+	if (${not empty loginUserid}) {
+		var money = document.getElementById('money');
+		money.value = 9900;
+		document.getElementById("pay").disabled = false;
+	} else {
+		alert('로그인이 필요합니다');	
+	}
+}
+
+
+</script>
+
+
+<script> 
+function popupOpen(){
+	var money = document.getElementById('money');
+	var popUrl = "http://localhost:8181/ex00/podo/paid?money=" + money.value;	
+	var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";    
+		window.open(popUrl,"",popOption);
+	}
+
+</script> 
+
+
 
 
 </div>
+
+
 </body>
 </html>
 

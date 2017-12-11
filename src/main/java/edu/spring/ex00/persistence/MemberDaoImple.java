@@ -40,4 +40,10 @@ public class MemberDaoImple implements MemberDao {
 		return session.update(NAMESPACE + ".update", m);
 	}
 
+	@Override
+	public int update_pay(Member m) {
+		System.out.println("update_pay");
+		return session.update(NAMESPACE + ".month_paid", m);
+	}
+
 }

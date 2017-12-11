@@ -37,6 +37,12 @@ public class MemberServiceImple implements MemberService {
 		// TODO Auto-generated method stub
 		return dao.update(m);
 	}
+
+	@Override
+	public int update_pay(Member m) {
+		// TODO Auto-generated method stub
+		return dao.update_pay(m);
+	}
 	
 
 }

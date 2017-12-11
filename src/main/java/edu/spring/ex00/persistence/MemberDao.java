@@ -13,4 +13,10 @@ public interface MemberDao {
 	//회원 정보 수정
 	int update(Member m);
 	
+	//회원 정보 수정
+	int update_pay(Member m);
+	
+	
+	
+	
 }

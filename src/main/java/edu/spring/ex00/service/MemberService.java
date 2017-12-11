@@ -10,5 +10,8 @@ public interface MemberService {
 		Member select(String userid);
 	// 회원 정보 수정
 		int update(Member m);
+	// 월별 결제 했을 때
+		int update_pay(Member m);
+		
 	
 }
