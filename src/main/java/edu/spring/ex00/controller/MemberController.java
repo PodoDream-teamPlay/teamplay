@@ -87,11 +87,12 @@ public class MemberController {
 		List<Music> musicList = new ArrayList<>();
 		
 		String mids = playlist.getMids();
-		String[] arrayMids = mids.split(",");
-		
-		for(int i = 0; i < arrayMids.length; i++) {
-			int mid = Integer.parseInt(arrayMids[i]);
-			musicList.add(musicService.select(mid));
+		if(mids != null) {
+			String[] arrayMids = mids.split(",");
+			for(int i = 0; i < arrayMids.length; i++) {
+				int mid = Integer.parseInt(arrayMids[i]);
+				musicList.add(musicService.select(mid));
+			}
 		}
 		
 		model.addAttribute("musicList", musicList);

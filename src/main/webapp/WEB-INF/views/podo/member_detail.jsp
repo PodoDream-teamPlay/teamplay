@@ -21,20 +21,21 @@ td{
 	height: 400px;
 }
 .left_box{
-	background-color: #B3AAC1;
+	background-color: #2E2E2E;
+	color: white;
 	width: 200px;
 	height: 400px;
 } 
 
 .topnav {
-	background-color: #4D408A;
+	background-color: #2E2E2E;
 	overflow: hidden;
 }
 
 /* Style the links inside the navigation bar */
  .topnav a {
 	float: left;
-	color: #CBC1FA;
+	color: #9A2EFE;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
@@ -43,18 +44,22 @@ td{
  
 /* Change the color of links on hover */
 .topnav a:hover {
-	background-color: #ddd;
-	color: black;
+	background-color: #9A2EFE;
+	color: white;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-	background-color: #CBC1FA;
+	background-color: #9A2EFE;
 	color: white;
 }
 
 #noline {
 	display: inline;
+}
+
+.albumart{
+	width: 67px;
 }
 </style>
 
@@ -62,8 +67,7 @@ td{
 
 </head>
 <body>
-
-	<div class="container" style="width:1000px;">
+<div class="container" style="width:1000px;">
 		<!-- 타이틀 -->
 		<h1 class="text-center">
 			<a href="http://localhost:8181/ex00/">PODO DREAM</a>
@@ -149,6 +153,8 @@ td{
 
 
 
+
+
 <hr>
 <table class="text-center">
 <thead></thead>
@@ -157,12 +163,12 @@ td{
 		<td>
 			<div class="left_box">
 				user프로필 출력<br><br>
-				<div style="background-color: white; width: 170px; height: 60px; margin-left: 15px; padding: 20px;">
+				<div style="background-color: white; color:#2E2E2E; width: 170px; height: 60px; margin-left: 15px; padding: 20px;">
 					<b>${loginUserid}</b>
 				</div>
 				<br>
 				<form action="member-update">
-					<input type="submit" value="회원 정보 수정">
+					<input type="submit" value="회원 정보 수정" class="btn" style="color:#2E2E2E;">
 				</form>
 				
 				<br>
@@ -179,7 +185,7 @@ td{
 				<button class="button" style="float: right;" id="btn-insert">+</button>
 				<table class="table">
 				<thead>
-					<tr style="background-color: #4D408A; color: white;">
+					<tr style="background-color: #2E2E2E; color: white;">
 						<th class="text-center">리스트 제목</th>
 						<th class="text-center">저장 날짜</th>
 						<th></th>
@@ -192,15 +198,15 @@ td{
 			</div>
 		</td>
 	</tr>
-	<tr><td>--</td></tr>
+	<tr><td><br></td></tr>
 	<tr>
-		<td>--</td>
+		<td><br></td>
 		<td rowspan="2">
 			<h5>mp3 구매 목록</h5>
 			<div class="rigth_box">
 				<table class="table">
 				<thead>
-					<tr style="background-color: #4D408A; color: white;">
+					<tr style="background-color: #2E2E2E; color: white;">
 						<th></th>
 						<th class="text-center">제목</th>
 						<th class="text-center">앨범</th>
@@ -210,10 +216,10 @@ td{
 				<tbody>
 					<c:forEach var="mp3" items="${mp3List }">
 						<tr>
-						<td><!-- <img id="albumart" alt="자켓이미지" src="../resources/images/${mp3.malbumart}">--></td>
-						<td>${mp3.mtitle}</td>
-						<td>${mp3.malbum }</td>
-						<td>${mp3.martist}</td>
+						<td><img class="albumart" alt="자켓이미지" src="././resources/images/${mp3.malbumart}"></td>
+						<td><br>${mp3.mtitle}</td>
+						<td><br>${mp3.malbum }</td>
+						<td><br>${mp3.martist}</td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -221,7 +227,7 @@ td{
 			</div>
 		</td>
 	</tr>
-	<tr><td>--</td></tr>
+	<tr><td><br></td></tr>
 </tbody>
 </table>
 
