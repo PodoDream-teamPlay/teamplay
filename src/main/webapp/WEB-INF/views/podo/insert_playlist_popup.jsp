@@ -23,11 +23,41 @@
 
 <script>
 $(document).ready(function(){
+	
+	//주소에서 파라미터 받아오는 함수 - userid 가져오려고
+	function getParameterByName(name) {
+	    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	        results = regex.exec(location.search);
+	    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+	
 	//insert 하는 함수
 	function insertPlaylist(){
 		var ptitle = $('#ptitle').val();
+		var userid = getParameterByName('userid');
 		
-		self.close();
+		$.ajax({
+			type: 'post',
+			url: '/ex00/playlist/',
+			headers: {
+				'Content-Type': 'application/json',
+				'X-HTTP-Method-Override': 'POST'
+			},
+			data: JSON.stringify({
+				'ptitle': ptitle,
+				'userid': userid
+			}),
+			success: function(result){ 
+				if(result === 'success'){ //성공
+					opener.parent.location.reload();
+					window.close();
+				}else{
+					alert('실패');
+				}
+			}
+		});
+		
 	}
 	
 	//중복 체크하는 함수

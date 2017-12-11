@@ -211,7 +211,7 @@ $(document).ready(function(){
 			$(data).each(function(){
 				playlist += '<tr class="playlist-item" data-pid="' + this.pid + '">'
 							+ '<td>'
-							+ this.ptitle
+							+ '<a>' + this.ptitle + '</a>'
 							+ '</td>'
 							+ '<td>'
 							+ this.pdate
@@ -258,8 +258,8 @@ $(document).ready(function(){
 	//플레이 리스트 위의 + 버튼 눌리면 - 빈 playlist 추가
 	$('#btn-insert').click(function(){
 		//새 창 띄우기 - ptitle 입력 목적
-		window.open("insert_playlist_popup", "플레이리스트 제목 입력", "width=400, height=300, left=300, top=100");
-	
+		window.open("insert_playlist_popup?userid="+userid, "플레이리스트 제목 입력", "width=400, height=300, left=300, top=100");
+		
 	});
 	
 });

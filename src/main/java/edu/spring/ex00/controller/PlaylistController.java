@@ -52,16 +52,17 @@ public class PlaylistController {
 		return entity;
 	}
 	
-	@RequestMapping(value="/{ptitle}", method=RequestMethod.PUT)
-	public ResponseEntity<Integer> createPlaylist(@RequestBody Playlist p){
-		logger.info("insert 하려는 ptitle ::: " + p.getMids());
-		ResponseEntity<Integer> entity = null;
+	@RequestMapping(method=RequestMethod.POST)
+	public ResponseEntity<String> createPlaylist(@RequestBody Playlist p){
+		logger.info("insert 하려는 ptitle ::: " + p.getPtitle());
+		ResponseEntity<String> entity = null;
 		//TODO : insert 문장 service에 만든다음에 여기서 실행
-		int result = 0;
+		//Playlist p = new Playlist(0, userid, null, null, ptitle);
+		int result = playlistService.insert(p);
 		if(result == 1) {
-			
+			entity = new ResponseEntity<String>("success", HttpStatus.OK);
 		}else {
-			
+			entity = new ResponseEntity<String>("fail", HttpStatus.BAD_REQUEST);
 		}
 		
 		return entity;

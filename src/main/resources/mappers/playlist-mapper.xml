@@ -18,8 +18,8 @@
 	</delete>
 	
 	<insert id="insert">
-	insert into ${tblPlaylist} (${colUserid}, ${colMids}, ${colPdate}, ${colPtitle}) 
-		values (#{userid}, #{mids}, sysdate, #{ptitle})
+	insert into ${tblPlaylist} (${colUserid}, ${colPdate}, ${colPtitle}) 
+		values (#{userid}, sysdate, #{ptitle})
 	</insert>
 
 </mapper>
