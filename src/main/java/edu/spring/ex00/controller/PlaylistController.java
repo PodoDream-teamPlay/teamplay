@@ -37,6 +37,17 @@ public class PlaylistController {
 		return entity;
 	}
 	
+	@RequestMapping(value="/check/{ptitle}", method=RequestMethod.GET)
+	public ResponseEntity<List<Playlist>> readByPtitle(@PathVariable(name="ptitle")String ptitle){
+		logger.info("select 하려는 ptitle ::: " + ptitle);
+		List<Playlist> list;
+		ResponseEntity<List<Playlist>> entity = null;
+		
+		
+		
+		return entity;
+	}
+	
 	@RequestMapping(value="/{ptitle}", method=RequestMethod.PUT)
 	public ResponseEntity<Integer> createPlaylist(@RequestBody Playlist p){
 		logger.info("insert 하려는 ptitle ::: " + p.getMids());

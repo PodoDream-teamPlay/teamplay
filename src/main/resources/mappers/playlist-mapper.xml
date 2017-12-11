@@ -9,6 +9,10 @@
 	select * from ${tblPlaylist} where ${colUserid} = #{userid} order by ${colPdate} desc
 	</select>
 	
+	<select id="selectByPtitle" resultType="Playlist">
+	select * from ${tblPlaylist} where ${colPtitle} = #{ptitle}
+	</select>
+	
 	<delete id="delete">
 	delete from ${tblPlaylist} where ${colPid} = #{pid}
 	</delete>

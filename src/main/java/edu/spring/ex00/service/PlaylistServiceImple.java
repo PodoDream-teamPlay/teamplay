@@ -29,4 +29,9 @@ public class PlaylistServiceImple implements PlaylistService {
 		return dao.delete(pid);
 	}
 
+	@Override
+	public List<Playlist> selectByPtitle(String ptitle) {
+		return dao.readByPtitle(ptitle);
+	}
+
 }

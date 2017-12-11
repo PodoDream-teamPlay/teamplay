@@ -36,4 +36,9 @@ public class PlaylistDaoImple implements PlaylistDao {
 		return session.delete(NAMESPACE + ".delete", pid);
 	}
 
+	@Override
+	public List<Playlist> readByPtitle(String ptitle) {
+		return session.selectList(NAMESPACE + ".selectByPtitle", ptitle);
+	}
+
 }
