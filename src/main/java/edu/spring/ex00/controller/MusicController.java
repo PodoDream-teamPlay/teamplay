@@ -1,6 +1,11 @@
 package edu.spring.ex00.controller;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+
 import java.util.List;
+
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +15,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+
 
 import edu.spring.ex00.domain.Music;
 import edu.spring.ex00.service.MusicService;
@@ -47,7 +54,16 @@ public class MusicController {
 		
 	}
 	
-	
+	@RequestMapping(value="/mp3_down", method = RequestMethod.POST)
+	public String checkbox(HttpServletRequest reqest, int[] cb_choose) {
+		logger.info("버튼이 눌러 졌을까요");
+		
+		for(int i = 0; i < cb_choose.length; i++) {
+			logger.info("cb_choose : " + cb_choose[i]);
+		}
+		
+		return "redirect:/podo/chart";
+	}
 	
 	
 } // end class MusicController

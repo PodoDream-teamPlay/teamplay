@@ -45,10 +45,6 @@ p {
   width: 65px;
   height: 65px;
 }
-#form{
-	display: inline;
-}
-
 </style>
 
 </head>
@@ -76,25 +72,19 @@ p {
 <br>
 <br>
 <br>
+
 <div class="container">
-   <form id="form">
-  	  	<input type="checkbox" id="choose_all" name="choose_all" value="1">
+   <form id="chk_box">
+  	  	<input type="checkbox" id="choose_all" name="choose_all">
    </form>
-   <form id="form">
-   		<input type="button" id="cart" name="cart" value="마이리스트에 담기">
-   </form>
-   <form id="form">
-   		<input type="button" id="mp3_down" name="mp3_down" value="MP3 다운">
-   </form>
-   <form id="form">
-   		<input type="button" id="listening_all" name="listening_all" value="전체 듣기(재생목록에 추가)">
-   </form>
-   <form id="form">
-   		<input type="button" id="change_listening" name="change_listening" value="전체 듣기(재생목록 교체)">
-   </form>
+   <button id="cart">마이리스트에 담기</button>
+   <button id="mp3_down">MP3 다운</button>
+   <button id="listening_all">전체 듣기</button>
+   <button id="change_listening">선택 듣기</button>
 </div>
 
 <div class="container" >
+<form id="tbl_form" method="post">
    <table class="table table-striped" >
     	<thead>
 	    	<tr>
@@ -112,7 +102,7 @@ p {
       <tbody>
         <c:forEach var="music" items="${music}">
 	   	    <tr>           
-		   	   <td width="30" bordercolor="grey"><input type="checkbox" id="cb_choose" name="choose" value="2" data-mid="${music.mid}"></td>
+		   	   <td width="30" bordercolor="grey"><input type="checkbox" id="cb_choose" name="cb_choose" value="${music.mid}" data-mid="${music.mid}" required="required"></td>
 		 	   <td id="mid">${music.mid}</td>
 		 	   <td><img id="albumart" alt="자켓이미지" src="../resources/images/${music.malbumart}"></td>
 		 	   <td>${music.mtitle}</td>
@@ -126,11 +116,19 @@ p {
 		 </c:forEach>
 	  </tbody>
    </table>
+</form>
 </div>
 </div>
 
 <script>
 $(function(){
+	// 체크 된 값의 mid 컨트롤러에 넘기기
+	$('#mp3_down').click(function() {
+		$('#tbl_form').attr('action', 'mp3_down');
+		$('#tbl_form').submit();
+	});
+	
+	// 체크박스 전체 선택
 	$('#choose_all').click(function(){
 		if($('#choose_all').prop('checked')){
 			$('input[type=checkbox]').prop('checked',true);
@@ -139,7 +137,8 @@ $(function(){
 		}
 	});
 	
-	$('input:checkbox[name="choose"]').click(function(){
+	// 체크 박스 개별 선택
+	$('input:checkbox[name="cb_choose"]').click(function(){
 		if(this.checked){
 			alert($(this).attr('data-mid'));
 		}
