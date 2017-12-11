@@ -10,6 +10,9 @@ public interface PlaylistDao {
 	List<Playlist> read(String userid);
 	//ptitle로 select
 	List<Playlist> readByPtitle(String ptitle);
+	//pid로 select
+	Playlist read(int pid);
+	
 	//insert
 	int create (Playlist list);
 	//delete

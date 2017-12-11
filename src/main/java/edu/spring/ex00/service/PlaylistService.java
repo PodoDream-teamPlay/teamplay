@@ -10,6 +10,8 @@ public interface PlaylistService {
 	
 	List<Playlist> selectByPtitle(String ptitle);
 	
+	Playlist selectByPid(int pid);
+	
 	int insert(Playlist list);
 	
 	int delete(int pid);

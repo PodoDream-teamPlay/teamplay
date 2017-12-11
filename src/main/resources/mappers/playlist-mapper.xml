@@ -13,6 +13,10 @@
 	select * from ${tblPlaylist} where ${colPtitle} = #{ptitle}
 	</select>
 	
+	<select id="selectByPid" resultType="Playlist">
+	select * from ${tblPlaylist} where ${colPid} = #{pid}
+	</select>
+	
 	<delete id="delete">
 	delete from ${tblPlaylist} where ${colPid} = #{pid}
 	</delete>

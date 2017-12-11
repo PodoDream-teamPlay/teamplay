@@ -1,6 +1,9 @@
 
 package edu.spring.ex00.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.spring.ex00.domain.Member;
+import edu.spring.ex00.domain.Music;
+import edu.spring.ex00.domain.Playlist;
 import edu.spring.ex00.service.MemberService;
+import edu.spring.ex00.service.MusicService;
+import edu.spring.ex00.service.PlaylistService;
 
 
 @Controller
@@ -19,6 +26,10 @@ public class MemberController {
 
 	@Autowired
 	private MemberService memberservice;
+	@Autowired
+	private PlaylistService playlistService;
+	@Autowired
+	private MusicService musicService;
 	
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
@@ -68,7 +79,23 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="/playlist_detail_popup")
-	public String detailPlaylist() {
+	public String detailPlaylist(Model model, String userid, int pid) {
+		//Playlist : select By pid
+		Playlist playlist = playlistService.selectByPid(pid);
+		
+		//Music : pid 의 mids 분리해서 노래 찾기
+		List<Music> musicList = new ArrayList<>();
+		
+		String mids = playlist.getMids();
+		String[] arrayMids = mids.split(",");
+		
+		for(int i = 0; i < arrayMids.length; i++) {
+			int mid = Integer.parseInt(arrayMids[i]);
+			musicList.add(musicService.select(mid));
+		}
+		
+		model.addAttribute("musicList", musicList);
+		model.addAttribute("ptitle", playlist.getPtitle());
 		return "podo/playlist_detail_popup";
 	}
 	

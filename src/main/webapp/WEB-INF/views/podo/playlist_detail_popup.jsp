@@ -12,8 +12,35 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
-<body onload="window.resizeTo(300,300)">
+<body>
 <h1>플레이리스트 상세 페이지</h1>
+<h5></h5>
+<table>
+<thead>
+	<tr></tr>
+	<tr></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
 
+<script>
+$(document).ready(function(){
+	/* //주소에서 파라미터 받아오는 함수 - userid 가져오려고
+	function getParameterByName(name) {
+	    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	        results = regex.exec(location.search);
+	    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+	
+	var userid = getParameterByName('userid');
+	var pid = getParameterByName('pid');
+	
+	 */
+
+});
+</script>
 </body>
 </html>
+

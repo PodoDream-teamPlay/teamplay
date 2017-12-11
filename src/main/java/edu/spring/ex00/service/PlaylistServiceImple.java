@@ -34,4 +34,9 @@ public class PlaylistServiceImple implements PlaylistService {
 		return dao.readByPtitle(ptitle);
 	}
 
+	@Override
+	public Playlist selectByPid(int pid) {
+		return dao.read(pid);
+	}
+
 }

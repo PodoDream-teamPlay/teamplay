@@ -41,4 +41,9 @@ public class PlaylistDaoImple implements PlaylistDao {
 		return session.selectList(NAMESPACE + ".selectByPtitle", ptitle);
 	}
 
+	@Override
+	public Playlist read(int pid) {
+		return session.selectOne(NAMESPACE + ".selectByPid", pid);
+	}
+
 }
