@@ -40,10 +40,13 @@ public class PlaylistController {
 	@RequestMapping(value="/check/{ptitle}", method=RequestMethod.GET)
 	public ResponseEntity<List<Playlist>> readByPtitle(@PathVariable(name="ptitle")String ptitle){
 		logger.info("select 하려는 ptitle ::: " + ptitle);
-		List<Playlist> list;
+		List<Playlist> list = playlistService.selectByPtitle(ptitle);
 		ResponseEntity<List<Playlist>> entity = null;
-		
-		
+		if(list != null) {
+			entity = new ResponseEntity<List<Playlist>>(list, HttpStatus.OK);
+		}else {
+			entity = new ResponseEntity<List<Playlist>>(HttpStatus.BAD_REQUEST);
+		}
 		
 		return entity;
 	}

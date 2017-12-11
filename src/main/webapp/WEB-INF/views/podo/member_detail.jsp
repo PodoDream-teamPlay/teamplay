@@ -182,7 +182,7 @@ td{
 				<tbody>
 					<c:forEach var="mp3" items="${mp3List }">
 						<tr>
-						<td><img id="albumart" alt="자켓이미지" src="../resources/images/${mp3.malbumart}.jsp"></td>
+						<td><!-- <img id="albumart" alt="자켓이미지" src="../resources/images/${mp3.malbumart}">--></td>
 						<td>${mp3.mtitle}</td>
 						<td>${mp3.malbum }</td>
 						<td>${mp3.martist}</td>
@@ -258,7 +258,7 @@ $(document).ready(function(){
 	//플레이 리스트 위의 + 버튼 눌리면 - 빈 playlist 추가
 	$('#btn-insert').click(function(){
 		//새 창 띄우기 - ptitle 입력 목적
-		window.open("insert_playlist_popup", "플레이리스트 제목 입력", "width=400, height=300, left=100, top=50");
+		window.open("insert_playlist_popup", "플레이리스트 제목 입력", "width=400, height=300, left=300, top=100");
 	
 	});
 	
