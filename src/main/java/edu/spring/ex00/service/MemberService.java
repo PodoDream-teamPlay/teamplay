@@ -13,5 +13,6 @@ public interface MemberService {
 	// 월별 결제 했을 때
 		int update_pay(Member m);
 		
+		
 	
 }

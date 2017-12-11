@@ -46,4 +46,5 @@ public class MemberDaoImple implements MemberDao {
 		return session.update(NAMESPACE + ".month_paid", m);
 	}
 
+	
 }

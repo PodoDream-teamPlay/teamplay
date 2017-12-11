@@ -26,6 +26,7 @@ public class PayController {
 	private MemberService memberservice;
 	
 	
+	
 	// 홈버튼에서 nav - 이용권 클릭시, 
 	@RequestMapping(value="/monthpay", method=RequestMethod.GET)
 	public void go_month_pay() {

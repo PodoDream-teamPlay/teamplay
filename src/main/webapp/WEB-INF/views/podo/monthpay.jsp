@@ -173,6 +173,7 @@ li {
 <br/>
 </div>
 
+
 <div align="right">
 
 	<input id="money" name="money" readonly required>원<br/>

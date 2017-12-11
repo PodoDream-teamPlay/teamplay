@@ -36,6 +36,7 @@ update podo_member set memdate = #{memdate} where userid = #{userid}
   
   
   
+  
   </mapper>
 
   
