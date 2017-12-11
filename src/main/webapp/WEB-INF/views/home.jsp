@@ -31,6 +31,7 @@ ul {
 li {
 	float: left;
 	display: inline;
+  
 }
 
 /* .navbar-inverse {
@@ -38,6 +39,33 @@ li {
 	background-color: #4D408A;
 	color: white;
 } */
+
+#innercontainer li {
+
+  position: relative;
+  z-index: 10; 
+  list-style: none; 
+  margin: 0;
+  padding: 2px; 
+  max-height: 50px; 
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+#innercontainer ul{
+   margin: 0;
+   padding: 0 4px;
+   border-radius: 2px;
+   max-width: 10em;
+
+   white-space: nowrap;
+   color: black;
+   cursor: pointer; 
+
+
+}
+
+
 
 
 </style>
@@ -51,7 +79,7 @@ li {
 <body>
 
 
-	<div class="container">
+	<div class="container" style="width:1000px;">
 		<!-- 타이틀 -->
 		<h1 class="text-center">
 			<a href="http://localhost:8181/ex00/">PODO DREAM</a>
@@ -112,14 +140,14 @@ li {
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="">PODO</a>
-				</div>
+				</div> 
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="">홈</a></li>
 
 					<li><a href="podo/chart">차트</a></li>
 
 					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="">장르 <span class="caret"></span></a>
+						data-toggle="dropdown" href="#">장르 <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="">발라드</a></li>
 							<li><a href="">댄스</a></li>
@@ -133,9 +161,6 @@ li {
 				</ul>
 			</div>
 		</nav>
-
-
-
 
 		<!-- 본문 -->
 		<!-- 배너 Slideshow  -->
@@ -187,29 +212,28 @@ li {
 
 
 		<!--  최신 앨범 리스트 ( 한줄로 넘어가게 하기)  -->
-		<h2 style="color: lightgrey">최신 앨범</h2>
+		<h2 style="color: lightgrey">최신 앨범</h2><!-- 
 		<section class="sectionPadding contents newAlbum"
-			style="border: 1px solid lightgrey; background: #E8E5F7;">
-			<div class="innerContainer">
+			style="border: 1px solid lightgrey; background: #E8E5F7;"> -->
+			<div class="innerContainer" style="overflow:scroll; white-space:nowrap;border: 1px solid lightgrey; background: #E8E5F7;">
 				<ul class="albumList" id="newalbum_place">
 					<li class="albumListLi">
 						<figure class="albumInfo">
 							<div class="thumbnaiil">
 								<p class="badge"></p>
 								<a href=""> <span class="mainMask"></span> <img
-									src="././resources/images/wj_279351.jpg" alt="앨범 대표 이미지"
+									src="././resources/images/wj_20122134.jpg" alt="앨범 대표 이미지"
 									style="wigth: 150; height: 150">
 								</a>
 							</div>
 						</figure>
 					</li>
-
 					<li class="albumListLi" id="albumListLi">
 						<figure class="albumInfo">
 							<div class="thumbnaiil">
 								<p class="badge"></p>
 								<a href=""> <span class="mainMask"></span> <img
-									src="././resources/images/m.9.jpg" alt="앨범 대표 이미지"
+									src="././resources/images/wj_20118739.jpg" alt="앨범 대표 이미지"
 									style="wigth: 150; height: 150">
 								</a>
 							</div>
@@ -232,7 +256,7 @@ li {
 							<div class="thumbnaiil">
 								<p class="badge"></p>
 								<a href=""> <span class="mainMask"></span> <img
-									src="././resources/images/m83.jpg" alt="앨범 대표 이미지"
+									src="././resources/images/m46.jpg" alt="앨범 대표 이미지"
 									style="wigth: 150; height: 150">
 								</a>
 							</div>
@@ -250,12 +274,43 @@ li {
 							</div>
 						</figure>
 					</li>
+					<li class="albumListLi" id="albumListLi">
+						<figure class="albumInfo">
+							<div class="thumbnaiil">
+								<p class="badge"></p>
+								<a href=""> <span class="mainMask"></span> <img
+									src="././resources/images/m75.jpg" alt="앨범 대표 이미지"
+									style="wigth: 150; height: 150">
+								</a>
+							</div>
+						</figure>
+					</li>
+					<li class="albumListLi" id="albumListLi">
+						<figure class="albumInfo">
+							<div class="thumbnaiil">
+								<p class="badge"></p>
+								<a href=""> <span class="mainMask"></span> <img
+									src="././resources/images/m42.jpg" alt="앨범 대표 이미지"
+									style="wigth: 150; height: 150">
+								</a>
+							</div>
+						</figure>
+					</li><li class="albumListLi" id="albumListLi">
+						<figure class="albumInfo">
+							<div class="thumbnaiil">
+								<p class="badge"></p>
+								<a href=""> <span class="mainMask"></span> <img
+									src="././resources/images/wj_20133356.jpg" alt="앨범 대표 이미지"
+									style="wigth: 150; height: 150">
+								</a>
+							</div>
+						</figure>
+					</li>
 					
 
 				</ul>
 
 			</div>
-		</section>
 
 
 
