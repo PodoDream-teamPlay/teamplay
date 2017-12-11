@@ -115,7 +115,7 @@ p {
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="">홈</a></li>
 
-					<li><a href="podo/chart">차트</a></li>
+					<li><a href="chart">차트</a></li>
 
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">장르 <span class="caret"></span></a>
@@ -126,9 +126,9 @@ p {
 							<li><a href="">힙합</a></li>
 							<li><a href="">트로트</a></li>
 						</ul></li>
-					<li><a href="podo/monthpay">이용권</a></li>
-					<li><a href="podo/event">이벤트</a></li>
-					<li><a href="podo/boardQnA">Q&A</a></li>
+					<li><a href="monthpay">이용권</a></li>
+					<li><a href="event">이벤트</a></li>
+					<li><a href="boardQnA">Q&A</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -172,13 +172,13 @@ p {
 	   	    <tr>           
 		   	   <td width="30" bordercolor="grey"><input type="checkbox" id="cb_choose" name="cb_choose" value="${music.mid}" data-mid="${music.mid}" required="required"></td>
 		 	   <td id="mid">${music.mid}</td>
-		 	   <td><img id="albumart" alt="자켓이미지" src="../resources/images/${music.malbumart}"></td>
+		 	   <td><img id="albumart" alt="자켓이미지" src="././resources/images/${music.malbumart}"></td>
 		 	   <td>${music.mtitle}</td>
 		 	   <td>${music.martist}</td>
 		 	   <td>${music.malbum}</td>
-		 	   <td><a href="${music.mlyrics}"><img alt="가사" src="../resources/images/t_lyrics.png"></a></td>
-		 	   <td><a href=""><img alt="내앨범" src="../resources/images/t_myalbum.png"></a></td>
-		 	   <td><a href=""><img alt="MP3다운" src="../resources/images/t_mp3.png"></a></td>		 	   	   	    
+		 	   <td><a href="${music.mlyrics}"><img alt="가사" src="././resources/images/t_lyrics.png"></a></td>
+		 	   <td><a href=""><img alt="내앨범" src="././resources/images/t_myalbum.png"></a></td>
+		 	   <td><a href=""><img alt="MP3다운" src="././resources/images/t_mp3.png"></a></td>		 	   	   	    
 		    </tr>
 		    
 		 </c:forEach>

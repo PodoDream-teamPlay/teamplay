@@ -132,7 +132,7 @@ td{
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="">홈</a></li>
 
-					<li><a href="podo/chart">차트</a></li>
+					<li><a href="chart">차트</a></li>
 
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">장르 <span class="caret"></span></a>
@@ -143,9 +143,9 @@ td{
 							<li><a href="">힙합</a></li>
 							<li><a href="">트로트</a></li>
 						</ul></li>
-					<li><a href="podo/monthpay">이용권</a></li>
-					<li><a href="podo/event">이벤트</a></li>
-					<li><a href="podo/boardQnA">Q&A</a></li>
+					<li><a href="monthpay">이용권</a></li>
+					<li><a href="event">이벤트</a></li>
+					<li><a href="boardQnA">Q&A</a></li>
 				</ul>
 			</div>
 		</nav>

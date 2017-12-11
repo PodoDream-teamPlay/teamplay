@@ -22,7 +22,6 @@ import edu.spring.ex00.domain.Music;
 import edu.spring.ex00.service.MusicService;
 
 @Controller
-@RequestMapping(value="/podo")
 public class MusicController {
 
 	// 로그 출력 기능
@@ -35,22 +34,27 @@ public class MusicController {
 	
 	// 홈(main)에서 '차트'를 클릭했을 때 
 	@RequestMapping(value = "/chart", method = RequestMethod.GET)
-	public void musicChart(Model model) {
+	public String musicChart(Model model) {
 		logger.info("chart() GET 호출");
 		// 차트 정렬 - 클라이언트에 전체 보여주기 
 		List<Music> list = musicService.select();
-		model.addAttribute("music", list);						
+		model.addAttribute("music", list);
+		
+		return "podo/chart";
+		
 	}
 	
 	
 	// 검색어 입력 후 '검색'버튼 -> 검색결과 
 	@RequestMapping(value="/search_result", method= RequestMethod.GET)
-	public void musicSearch(int searchType, String searchKeyword, Model model) {
+	public String musicSearch(int searchType, String searchKeyword, Model model) {
 		logger.info("search_result() GET 호출");
 		logger.info("type: {}, keyword: {}", searchType, searchKeyword);
 		
 		List<Music> list = musicService.search(searchType, searchKeyword);	
 		model.addAttribute("musicList", list);
+		
+		return "podo/search_result";
 		
 	}
 	
@@ -62,7 +66,7 @@ public class MusicController {
 			logger.info("cb_choose : " + cb_choose[i]);
 		}
 		
-		return "redirect:/podo/chart";
+		return "podo/chart";
 	}
 	
 	

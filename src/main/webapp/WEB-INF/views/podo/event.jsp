@@ -9,8 +9,6 @@
 <body>
 
 
-<h1> Event page </h1>
-
 	<div class="container" style="width:1000px;">
 		<!-- 타이틀 -->
 		<h1 class="text-center">

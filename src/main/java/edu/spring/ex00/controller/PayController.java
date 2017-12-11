@@ -16,7 +16,6 @@ import edu.spring.ex00.service.MemberService;
 
 
 @Controller
-@RequestMapping(value="/podo")
 public class PayController {
 
 	
@@ -29,16 +28,21 @@ public class PayController {
 	
 	// 홈버튼에서 nav - 이용권 클릭시, 
 	@RequestMapping(value="/monthpay", method=RequestMethod.GET)
-	public void go_month_pay() {
+	public String go_month_pay() {
 		//월정액 페이지로 이동
 		logger.info("month_pay() GET 호출");
+		return "podo/monthpay";
+		
 	}
 		
 	//결제 창으로 넘기기.
 	@RequestMapping(value="/paid", method=RequestMethod.GET)
-	public void month_paid(int money, Model model) {
+	public String month_paid(int money, Model model) {
 		System.out.println("money = " + money);
 		model.addAttribute("money", money);
+		
+		return "podo/paid";
+		
 	}
 	
 	
@@ -66,7 +70,7 @@ public class PayController {
 			member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, date);
 			memberservice.update_pay(member);
 		} 
-		return "redirect:/podo/paid";
+		return "podo/paid";
 	}
 	
 	
