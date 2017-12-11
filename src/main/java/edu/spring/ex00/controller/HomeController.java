@@ -113,16 +113,6 @@ public class HomeController {
 	
 	public List<Playlist> getPlaylist(String userid){
 		List<Playlist> playList = playlistService.selectByUserid(userid);
-		/*for(int i = 0; i < list.size(); i++) {
-			Get g = list.get(i);
-			String str = g.getMid();
-			String[] mids = str.split(",");
-			for(String s : mids) {
-				int mid = Integer.parseInt(s);
-				Music music = musicService.select(mid);
-				mp3List.add(music);
-			}
-		}*/
 		return playList;
 	}
 	
