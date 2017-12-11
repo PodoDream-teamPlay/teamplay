@@ -25,7 +25,9 @@
 $(document).ready(function(){
 	//insert 하는 함수
 	function insertPlaylist(){
+		var ptitle = $('#ptitle').val();
 		
+		self.close();
 	}
 	
 	//중복 체크하는 함수
@@ -39,8 +41,7 @@ $(document).ready(function(){
 				replyList = this.ptitle;
 			});
 			
-			if(replyList != null){
-				alert('중복된 타이틀이 없음');
+			if(replyList == null){
 				//중복되는거 없으면 insert
 				insertPlaylist();
 			}else{

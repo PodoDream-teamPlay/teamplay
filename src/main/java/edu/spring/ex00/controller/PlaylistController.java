@@ -41,6 +41,7 @@ public class PlaylistController {
 	public ResponseEntity<List<Playlist>> readByPtitle(@PathVariable(name="ptitle")String ptitle){
 		logger.info("select 하려는 ptitle ::: " + ptitle);
 		List<Playlist> list = playlistService.selectByPtitle(ptitle);
+		
 		ResponseEntity<List<Playlist>> entity = null;
 		if(list != null) {
 			entity = new ResponseEntity<List<Playlist>>(list, HttpStatus.OK);
