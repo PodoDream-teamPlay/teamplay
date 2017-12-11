@@ -45,7 +45,9 @@ p {
   width: 65px;
   height: 65px;
 }
-
+#form{
+	display: inline;
+}
 
 </style>
 
@@ -75,12 +77,20 @@ p {
 <br>
 <br>
 <div class="container">
-   <form>
-  	  <input type="checkbox" id="choose_all" name="choose_all" value="1">
-  	  <input type="button" id="cart" name="cart" value="마이리스트에 담기">
-	  <input type="button" id="mp3_down" name="mp3_down" value="MP3 다운">
-	  <input type="button" id="listening_all" name="listening_all" value="전체 듣기(재생목록에 추가)">
-	  <input type="button" id="change_listening" name="change_listening" value="전체 듣기(재생목록 교체)">
+   <form id="form">
+  	  	<input type="checkbox" id="choose_all" name="choose_all" value="1">
+   </form>
+   <form id="form">
+   		<input type="button" id="cart" name="cart" value="마이리스트에 담기">
+   </form>
+   <form id="form">
+   		<input type="button" id="mp3_down" name="mp3_down" value="MP3 다운">
+   </form>
+   <form id="form">
+   		<input type="button" id="listening_all" name="listening_all" value="전체 듣기(재생목록에 추가)">
+   </form>
+   <form id="form">
+   		<input type="button" id="change_listening" name="change_listening" value="전체 듣기(재생목록 교체)">
    </form>
 </div>
 
