@@ -17,18 +17,18 @@
 	<input id="money" value="${money}" name="money" readonly required>원<br/>
 	<input type="number" placeholder="카드번호를 입력하세요" required><br/>
 	<input type="password" placeholder="카드 비밀번호" required><br/>
-	<input id="payok" type="submit" value="결제하기" />
+	<button id="payok">결제</button>
 </form>
 
 
 <script>
 $(document).ready(function() {
 	$('#payok').click(function() {
-		//event.preventDefault();
+	//	event.preventDefault();
+		alert('teset');
 		$('#paid-form').submit();
-		alert("결제 되었습니다.")
-		close();
-		
+	
+		window.close();
 	});
 });
 </script>

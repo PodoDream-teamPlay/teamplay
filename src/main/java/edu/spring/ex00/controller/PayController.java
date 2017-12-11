@@ -49,7 +49,7 @@ public class PayController {
 	@RequestMapping(value="/paid", method=RequestMethod.POST)
 	public String month_paid(int money, HttpSession session) {
 		System.out.println("paid post: money=" + money);
-		
+			
 		String userid = (String) session.getAttribute("loginUserid");
 		Member m = memberservice.select(userid);
 		java.util.Date date = new java.util.Date();
