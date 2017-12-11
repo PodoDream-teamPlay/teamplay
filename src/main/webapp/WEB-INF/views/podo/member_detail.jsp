@@ -200,15 +200,15 @@ td{
 
 </div>
 <script>
+function getDetailPlaylist(pid){
+	var userid = '${loginUserid}';
+	window.open("playlist_detail_popup?userid="+userid+"&pid="+pid,
+			"플레이리스트 상세", "width=400, height=300, left=300, top=100");
+}
+
 $(document).ready(function(){
 	//시작하면 플레이리스트 select 해서 출력
 	var userid = '${loginUserid}';
-	
-	function getDetailPlaylist(pid){
-		window.open("playlist_detail_popup?userid="+userid+"&pid="+pid,
-				"플레이리스트 상세", "width=400, height=300, left=300, top=100");
-	}
-	
 	
 	//전체 플레이리스트 출력
 	function getAllPlaylists(){
@@ -219,7 +219,7 @@ $(document).ready(function(){
 			$(data).each(function(){
 				playlist += '<tr class="playlist-item" data-pid="' + this.pid + '">'
 							+ '<td>'
-							+ '<a href="javascript:void(0);" onclick="getDetailPlaylist('+this.pid+');">' + this.ptitle + '</a>'
+							+ '<a href="javascript:void(0);" onclick="getDetailPlaylist('+this.pid+');" return false;>' + this.ptitle + '</a>'
 							+ '</td>'
 							+ '<td>'
 							+ this.pdate

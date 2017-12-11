@@ -60,14 +60,17 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
+	
+	//playlist 페이지에서 팝업 띄우기
 	@RequestMapping(value="/insert_playlist_popup")
 	public String insertpTitle() {
-		
 		return "podo/insert_playlist_popup";
 	}
 	
-	
-	
+	@RequestMapping(value="/playlist_detail_popup")
+	public String detailPlaylist() {
+		return "podo/playlist_detail_popup";
+	}
 	
 	
 	
