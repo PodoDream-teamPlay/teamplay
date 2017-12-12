@@ -40,6 +40,8 @@ public class MusicController {
 		List<Music> list = musicService.select();
 		model.addAttribute("music", list);
 		
+		
+		
 		return "podo/chart";
 		
 	}
@@ -66,7 +68,10 @@ public class MusicController {
 			logger.info("cb_choose : " + cb_choose[i]);
 		}
 		
-		return "podo/chart";
+		
+		return "redirect:/chart";
+		/*
+		return "podo/chart";*/
 	}
 	
 	

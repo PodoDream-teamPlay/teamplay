@@ -12,7 +12,7 @@
 	<div class="container" style="width:1000px;">
 		<!-- 타이틀 -->
 		<h1 class="text-center">
-			<a href="http://localhost:8181/ex00/">PODO DREAM</a>
+			<a href="http://localhost:8181/ex00/"style="text-decoration:none;">PODO DREAM</a>
 		</h1>
 
 
