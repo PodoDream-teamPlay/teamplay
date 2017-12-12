@@ -12,12 +12,15 @@ public class Music {
 	private String malbum;
 	private int mcount;
 	private String mlyrics;
+	private String mvideo;
 
 	public Music() {}
-	public Music(int mid,String malbumart, String mtitle, String martist, Date mdate, String mgenre, String malbum, int mcount,
-			String mlyrics) {
+
+	public Music(int mid, String malbumart, String mtitle, String martist, Date mdate, String mgenre, String malbum,
+			int mcount, String mlyrics, String mvideo) {
+		super();
 		this.mid = mid;
-		this.malbumart = malbumart; 
+		this.malbumart = malbumart;
 		this.mtitle = mtitle;
 		this.martist = martist;
 		this.mdate = mdate;
@@ -25,6 +28,7 @@ public class Music {
 		this.malbum = malbum;
 		this.mcount = mcount;
 		this.mlyrics = mlyrics;
+		this.mvideo = mvideo;
 	}
 
 	public int getMid() {
@@ -38,11 +42,11 @@ public class Music {
 	public String getMalbumart() {
 		return malbumart;
 	}
-	
+
 	public void setMalbumart(String malbumart) {
 		this.malbumart = malbumart;
 	}
-	
+
 	public String getMtitle() {
 		return mtitle;
 	}
@@ -97,6 +101,14 @@ public class Music {
 
 	public void setMlyrics(String mlyrics) {
 		this.mlyrics = mlyrics;
+	}
+
+	public String getMvideo() {
+		return mvideo;
+	}
+
+	public void setMvideo(String mvideo) {
+		this.mvideo = mvideo;
 	}
 	
 	
