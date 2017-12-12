@@ -12,14 +12,33 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
-<body onload="window.resizeTo(300,300)">
-<h2>새 플레이리스트 제목</h2>
-<input type="text" name="ptitle" id="ptitle">
-<p id="check-result"></p>
+
+<body onload="window.resizeTo(380,300)">
+<p style="background-color: #2E2E2E; color: white; text-align: center; font-size: 25px; padding: 20px;">
+	새 플레이리스트 제목
+</p>
 <br>
-<button type="button" id="btn-insert">만들기</button>
-
-
+<div class="container text-center">
+	<table style="">
+		<tr>
+			<td>
+				<input type="text" name="ptitle" id="ptitle" style="height: 32px; width: 250px;">
+			</td>
+			<td style="padding-left: 10px;">
+				<button type="button" id="btn-insert" class="btn">만들기</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p style="width: 250px; text-align: left; display: inline-block;" id="check-result"></p>
+			</td>
+			<td>
+				<br>
+			</td>
+		</tr>
+	</table>
+	
+</div>
 
 <script>
 $(document).ready(function(){
