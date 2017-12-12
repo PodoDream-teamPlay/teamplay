@@ -70,7 +70,7 @@ public class PayController {
 			member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, date);
 			memberservice.update_pay(member);
 		} 
-		return "podo/paid";
+		return "podo/paid-result";
 	}
 	
 	

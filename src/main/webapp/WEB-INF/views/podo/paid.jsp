@@ -21,18 +21,6 @@
 </form>
 
 
-<script>
-$(document).ready(function() {
-	$('#payok').click(function() {
-	//	event.preventDefault();
-		alert('teset');
-		$('#paid-form').submit();
-		$('#paid-form').attr('action', 'paid');
-		window.close();
-	});
-});
-</script>
- 
  
   
  
