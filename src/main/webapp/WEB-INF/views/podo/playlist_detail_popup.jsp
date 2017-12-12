@@ -17,29 +17,34 @@
 }
 </style>
 </head>
-<body>
+<body onload="window.resizeTo(500,700)" style="background-color: #2E2E2E;">
 <div class="container">
-	<h1>${ptitle}</h1>
+	<p style="background-color: #2E2E2E; color: white; text-align: center; font-size: 25px; padding: 20px;">
+		${ptitle}
+	</p>
+	
 	<table class="table">
-	<thead>
-	<tr>
-		<th> </th>
-		<th>제목</th>
-		<th>가수</th>
-	</tr>
-	</thead>
-	<tbody>
-		<c:if test="${not empty musicList }">
-		<c:forEach var="music" items="${musicList }">
+		<thead>
 		<tr>
-				<td><img class="albumart" alt="자켓이미지" src="././resources/images/${music.malbumart}"></td>
-				<td><br>${music.mtitle }</td>
-				<td><br>${music.martist}</td>
+			<th style="color: white; background-color: #2E2E2E; text-align: center;"> </th>
+			<th style="color: white; background-color: #2E2E2E; text-align: center;">제목</th>
+			<th style="color: white; background-color: #2E2E2E; text-align: center;">가수</th>
 		</tr>
-		</c:forEach>
-		</c:if>
-	</tbody>
+		</thead>
+		<tbody>
+			<c:if test="${not empty musicList }">
+			<c:forEach var="music" items="${musicList }">
+			<tr style="background-color: white;">
+					<td><img class="albumart" alt="자켓이미지" src="././resources/images/${music.malbumart}"></td>
+					<td>${music.mtitle }</td>
+					<td>${music.martist}</td>
+			</tr>
+			</c:forEach>
+			</c:if>
+		</tbody>
 	</table>
+	
+	
 
 </div>
 <script>
