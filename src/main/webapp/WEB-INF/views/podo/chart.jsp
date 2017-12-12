@@ -141,6 +141,31 @@ p {
 <br>
 <br>
 
+
+<br>
+<br>
+<br>
+<nav class="navbar">
+<div class="container">
+ <ul class="nav navbar-nav">
+   
+  	  <li><input type="checkbox" name="choose_all" value="1"></li>
+  	  <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">담기</a> 
+  	    <ul class="dropdown-menu">
+  	      <li><a href="#">재생목록 1</a></li>
+  	    </ul>
+  	   </li>
+	  <li><input type="button" id="mp3_down" name="mp3_down" value="MP3 다운"></li>
+	  <li><input type="button" id="listening_all" name="listening_all" value="전체 듣기(재생목록에 추가)"></li>
+	  <li><input type="button" id="change_listening" name="change_listening" value="전체 듣기(재생목록 교체)"></li>
+   
+ </ul> 
+</div>
+</nav>
+
+
+
+
 <div class="container">
    <form id="chk_box">
   	  	<input type="checkbox" id="choose_all" name="choose_all">
