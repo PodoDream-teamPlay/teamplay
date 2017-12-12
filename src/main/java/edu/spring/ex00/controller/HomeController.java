@@ -133,5 +133,23 @@ public class HomeController {
 			return "podo/search_result";
 		}
 	
+		//이벤트 페이지로 이동
+		@RequestMapping(value="/event", method=RequestMethod.GET)
+		public String go_event() {
+			logger.info("event() GET 호출");
+			return "podo/event";
+			
+		}
+		
+		//Q&A 페이지로 이동
+		@RequestMapping(value="/boardQnA", method=RequestMethod.GET)
+		public String go_QnA() {
+		logger.info("QnA() GET 호출");
+		return "podo/boardQnA";
+					
+	}
+		
+		
+	
 	
 }
