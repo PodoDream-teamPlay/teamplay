@@ -55,16 +55,20 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/login-post", method=RequestMethod.POST)
-	public String login_post(String userid, String password, HttpSession session) {
+	public String login_post(String userid, String password, HttpSession session, Model model) {
 		//TODO : 로그인 버튼 눌렀을때 처리하는 메소드
 	System.out.println("userid : " + userid + "password : " + password);
 	Member checkuser = null;
 	checkuser =	memberservice.select(userid);
 	if (checkuser!=null && password.equals(checkuser.getPassword())) {
 		session.setAttribute("loginUserid", userid);
+		return "redirect:/"; 
 		
+	} else {
+		model.addAttribute("loginfail", 5);
+		return "home";
 	}
-	return "redirect:/"; 
+	
 	
 	} //end login_post()
 	

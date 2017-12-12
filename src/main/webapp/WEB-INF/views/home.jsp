@@ -121,7 +121,15 @@ li {
 			<!-- 로그인 후에 이동할 페이지 -->
 			<input type="hidden" name="queryString" value="${loginTarget}" />
 		</div>
-
+<!--로그인 실패시 띄울 알람. -->
+	<script>
+		$(document).ready(function() {
+			if (${loginfail}==5) {
+				alert("아이디와 비밀번호 확인해 주세요.");
+				
+			} 
+			});
+	</script>
 
 		<br>
 		<form action="search" method="get" class="text-center" style="margin-left: 50px; ">
