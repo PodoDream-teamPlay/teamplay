@@ -57,10 +57,12 @@ li {
    padding: 0 4px;
    border-radius: 2px;
    max-width: 10em;
+   
 
    white-space: nowrap;
    color: black;
    cursor: pointer; 
+   
 
 
 }
@@ -122,9 +124,8 @@ li {
 
 
 		<br>
-		<form action="search" method="get" class="text-center"
-			style="margin-left: 50px">
-			<select name="searchType">
+		<form action="search" method="get" class="text-center" style="margin-left: 50px; ">
+			<select name="searchType" style="height:27px">
 				<option value="1">노래 제목</option>
 				<option value="2">가수</option>
 				<option value="3">앨범명</option>
@@ -165,30 +166,32 @@ li {
 		<!-- 본문 -->
 		<!-- 배너 Slideshow  -->
 		<div class="container-center" style="background:#E8E5F7;"> 
-		<div class="float:center" style="width: auto; height: auto;">
+		<div class="float:center" style="width: 970; height: auto;">
 
 			<img class="Slides" src="././resources/images/title1.jpg"
-				style="width: auto; height: auto; object-fit: cover;">
+				style="width: 970px; height: auto; object-fit: cover;">
 			<img class="Slides" src="././resources/images/title2.jpg"
-				style="width: auto; height: auto; object-fit: cover;">
+				style="width: 970; height: auto; object-fit: cover;">
 			<img class="Slides" src="././resources/images/title3.jpg"
-				style="width: auto; height: auto; object-fit: cover;"> 
+				style="width: 970; height: auto; object-fit: cover;"> 
 			<img class="Slides" src="././resources/images/title4.jpg"
-				style="width: auto; height: auto; object-fit: cover;">
+				style="width: 970; height: auto; object-fit: cover;">
 			<img class="Slides" src="././resources/images/title5.jpg"
-				style="width: auto; height: auto; object-fit: cover;">
+				style="width: 970; height: auto; object-fit: cover;">
 			<img class="Slides" src="././resources/images/title6.jpg"
-				style="width: auto; height: auto; object-fit: cover;">
+				style="width: 970; height: auto; object-fit: cover;">
 			<button onclick="plusDivs(-1)" class="button display left">◀</button>
 			<button onclick="plusDivs(1)" class="button display right">▶</button>
 		</div>
 		</div>
 		<script>
 			// 배너 슬라이드 스크립트 부분 시작 
-			var slideIndex = 1;
+			var slideIndex = 0;
+			carousel();
 			showDivs(slideIndex);
 
-			function plusDivs(n) {
+			// 배너 수동 슬라이드 (주석처리함)
+		/* 	function plusDivs(n) {
 				showDivs(slideIndex += n);
 			}
 
@@ -206,6 +209,20 @@ li {
 					x[i].style.display = "none";
 				}
 				x[slideIndex - 1].style.display = "block";
+			} */
+			
+			
+			//배너 자동슬라이드 
+			function carousel() {
+				var i; 
+				var x = document.getElementsByClassName("Slides");
+				for( i = 0; i < x.length; i++) {
+					x[i].style.display = "none";
+					
+				}slideIndex++;
+				if(slideIndex > x.length) {slideIndex =1}
+				x[slideIndex-1].style.display ="block";
+				setTimeout(carousel, 2000); 
 			}
 		</script>
 
