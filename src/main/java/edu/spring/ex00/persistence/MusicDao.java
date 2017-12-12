@@ -15,4 +15,13 @@ public interface MusicDao {
 	// mid로 음악찾기
 	Music read(int mid);
 	
+	// mid로 mcount 찾기
+	int readMcount(int mid);
+	
+	// mid로 mcount 업데이트
+	int update(int mcount, int mid);
+	
+	// mid로 mgenre 찾기
+	String readMgenre(int mid);
+	
 } // end interface MusicDao

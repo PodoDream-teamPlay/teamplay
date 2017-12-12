@@ -20,4 +20,9 @@ public class GetDaoImple implements GetDao {
 		return session.selectList(NAMESPACE+".selectByUserid", userid);
 	}
 
+	@Override
+	public int create(Get g) {
+		return session.insert(NAMESPACE + ".insert", g);
+	}
+
 }

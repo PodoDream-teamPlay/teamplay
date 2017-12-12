@@ -13,6 +13,7 @@ public interface MemberService {
 	// 월별 결제 했을 때
 		int update_pay(Member m);
 		
-		
+	// 다운로드 했을 때 카운트 증가
+		int update_genre_count(String colGenre, String userid);
 	
 }

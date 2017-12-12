@@ -16,8 +16,11 @@ public interface MemberDao {
 	//회원 정보 수정
 	int update_pay(Member m);
 	
+	//장르 count 알아오기
+	int readGenreCount(String colGenre, String userid); 
 	
-	
+	//장르 count 업데이트
+	int update(String colGenre, int count, String userid);
 	
 	
 }

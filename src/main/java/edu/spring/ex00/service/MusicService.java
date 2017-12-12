@@ -15,4 +15,12 @@ public interface MusicService {
 	// mid로 노래찾기
 	Music select(int mid);
 	
+	
+	// mp3 다운로드 했을 때 mcount 증가
+	int update_mcount(int mid);
+	
+	// 다운로드 한 mp3의 mgenre 찾기
+	String selectMgenre(int mid);
+	
+	
 } // end interface MusicService 

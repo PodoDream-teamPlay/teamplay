@@ -1,5 +1,8 @@
 package edu.spring.ex00.persistence;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,6 +47,23 @@ public class MemberDaoImple implements MemberDao {
 	public int update_pay(Member m) {
 		System.out.println("update_pay");
 		return session.update(NAMESPACE + ".month_paid", m);
+	}
+
+	@Override
+	public int readGenreCount(String colGenre, String userid) {
+		Map<String, String> args = new HashMap<>();
+		args.put("colGenre", colGenre);
+		args.put("userid", userid);
+		return session.selectOne(NAMESPACE + ".select_genre_count", args);
+	}
+
+	@Override
+	public int update(String colGenre, int count, String userid) {
+		Map<String, Object> args = new HashMap<>();
+		args.put("colGenre", colGenre);
+		args.put("count", count);
+		args.put("userid", userid);
+		return session.update(NAMESPACE + ".update_genre", args);
 	}
 
 	

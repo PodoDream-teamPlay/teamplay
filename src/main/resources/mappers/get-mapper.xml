@@ -9,4 +9,8 @@
 	select * from ${tblGet} where ${colUserid} = #{userid}
 	</select>
 
+	<insert id="insert">
+	insert into ${tblGet} (${colUserid}, ${colMid}, ${colGprice}, ${colGdate}) values (#{userid}, #{mid}, #{gprice}, sysdate)
+	</insert>
+	
 </mapper>

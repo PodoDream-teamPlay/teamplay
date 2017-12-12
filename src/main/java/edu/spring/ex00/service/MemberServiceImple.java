@@ -43,6 +43,14 @@ public class MemberServiceImple implements MemberService {
 		// TODO Auto-generated method stub
 		return dao.update_pay(m);
 	}
+
+	@Override
+	public int update_genre_count(String colGenre, String userid) {
+		int result = 0;
+		int count = dao.readGenreCount(colGenre, userid) + 1;
+		result = dao.update(colGenre, count, userid);
+		return result;
+	}
 	
 
 	

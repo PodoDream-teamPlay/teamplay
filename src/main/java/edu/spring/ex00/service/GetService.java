@@ -8,4 +8,5 @@ public interface GetService {
 
 	List<Get> selectByUserid(String userid);
 	
+	int insert(Get g);
 }

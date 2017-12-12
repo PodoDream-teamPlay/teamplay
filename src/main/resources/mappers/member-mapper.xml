@@ -28,16 +28,59 @@ update podo_member set memdate = #{memdate} where userid = #{userid}
 </update>
 
 
+
+
+<!-- mp3 다운로드 및 플레이리스트 추가 시 씀 -->
+<!-- 장르 count 수 올리기 -->  
+<update id="update_genre">
+update podo_member set 
+<choose>
+       <when test="colGenre == 'dance'">
+          dance = #{count}
+       </when>
+       <when test="colGenre == 'ballad'">
+          ballad = #{count}
+       </when>
+       <when test="colGenre == 'hiphop'">
+          hiphop = #{count}
+       </when>
+       <when test="colGenre == 'trot'">
+          trot = #{count}
+       </when>
+       <when test="colGenre == 'indi'">
+          indi = #{count}
+       </when>
+ </choose>
+  where userid = #{userid}
+</update>
+
+<!-- 원래 count 수 알아오기 -->
+<select id="select_genre_count" resultType="Integer">
+select 
+<choose>
+       <when test="colGenre == 'dance'">
+          dance 
+       </when>
+       <when test="colGenre == 'ballad'">
+          ballad 
+       </when>
+       <when test="colGenre == 'hiphop'">
+          hiphop 
+       </when>
+       <when test="colGenre == 'trot'">
+          trot 
+       </when>
+       <when test="colGenre == 'indi'">
+          indi 
+       </when>
+ </choose>
+from podo_member where userid = #{userid}
+</select>
   
   
-  
-  
-  
-  
-  
-  
-  
-  </mapper>
+
+
+</mapper>
 
   
 

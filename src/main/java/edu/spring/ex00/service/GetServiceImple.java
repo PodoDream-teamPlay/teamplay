@@ -19,4 +19,9 @@ public class GetServiceImple implements GetService {
 		return dao.read(userid);
 	}
 
+	@Override
+	public int insert(Get g) {
+		return dao.create(g);
+	}
+
 }

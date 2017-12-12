@@ -48,4 +48,22 @@ public class MusicDaoImple implements MusicDao {
 		return session.selectOne(NAMESPACE + ".selectByMid", mid);
 	}
 
+	@Override
+	public int readMcount(int mid) {
+		return session.selectOne(NAMESPACE + ".selectMcountByMid", mid);
+	}
+
+	@Override
+	public int update(int mcount, int mid) {
+		Map<String, Integer> args = new HashMap<>();
+		args.put("mcount", mcount);
+		args.put("mid", mid);
+		return session.update(NAMESPACE + ".updateByMid", args);
+	}
+
+	@Override
+	public String readMgenre(int mid) {
+		return session.selectOne(NAMESPACE + ".selectMgenreByMid", mid);
+	}
+
 } // end class MusicDaoImple 

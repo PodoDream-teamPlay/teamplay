@@ -42,4 +42,19 @@
   select * from ${tblMusic} where ${colMid} = #{mid}
   </select>
   
+  <!-- mid로 mcount search -->
+  <select id="selectMcountByMid" resultType="Integer">
+  select ${colMcount} from ${tblMusic} where ${colMid} = #{mid}
+  </select>
+  
+  <!-- mid로 update -->
+  <update id="updateByMid">
+	update ${tblMusic} set ${colMcount} = #{mcount} where ${colMid} = #{mid}
+  </update>
+  
+  <!-- mid로 mgenre select -->
+  <select id="selectMgenreByMid" resultType="String">
+  select ${colMgenre} from ${tblMusic} where ${colMid} = #{mid}
+  </select>
+  
   </mapper>
