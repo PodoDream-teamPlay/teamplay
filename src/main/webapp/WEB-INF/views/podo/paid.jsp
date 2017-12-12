@@ -12,7 +12,7 @@
 <h2>결제창</h2>
 
 
-<form id="paid-form" action="paid" method="post">
+<form id="paid-form" method="post">
 	<h2>결제</h2>
 	<input id="money" value="${money}" name="money" readonly required>원<br/>
 	<input type="number" placeholder="카드번호를 입력하세요" required><br/>
@@ -27,7 +27,7 @@ $(document).ready(function() {
 	//	event.preventDefault();
 		alert('teset');
 		$('#paid-form').submit();
-	
+		$('#paid-form').attr('action', 'paid');
 		window.close();
 	});
 });

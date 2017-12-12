@@ -168,16 +168,16 @@ li {
 		<div class="float:center" style="width: auto; height: auto;">
 
 			<img class="Slides" src="././resources/images/title1.jpg"
-				style="width: auto; height: auto; object-fit: cover;"> <img
-				class="Slides" src="././resources/images/title2.jpg"
-				style="width: auto; height: auto; object-fit: cover;"> <img
-				class="Slides" src="././resources/images/title3.jpg"
-				style="width: auto; height: auto; object-fit: cover;"> <img
-				class="Slides" src="././resources/images/title4.jpg"
-				style="width: auto; height: auto; object-fit: cover;"> <img
-				class="Slides" src="././resources/images/title5.jpg"
-				style="width: auto; height: auto; object-fit: cover;"> <img
-				class="Slides" src="././resources/images/title6.jpg"
+				style="width: auto; height: auto; object-fit: cover;">
+			<img class="Slides" src="././resources/images/title2.jpg"
+				style="width: auto; height: auto; object-fit: cover;">
+			<img class="Slides" src="././resources/images/title3.jpg"
+				style="width: auto; height: auto; object-fit: cover;"> 
+			<img class="Slides" src="././resources/images/title4.jpg"
+				style="width: auto; height: auto; object-fit: cover;">
+			<img class="Slides" src="././resources/images/title5.jpg"
+				style="width: auto; height: auto; object-fit: cover;">
+			<img class="Slides" src="././resources/images/title6.jpg"
 				style="width: auto; height: auto; object-fit: cover;">
 			<button onclick="plusDivs(-1)" class="button display left">◀</button>
 			<button onclick="plusDivs(1)" class="button display right">▶</button>
