@@ -217,7 +217,7 @@ td{
 					<c:forEach var="mp3" items="${mp3List }">
 						<tr>
 						<td><img class="albumart" alt="자켓이미지" src="././resources/images/${mp3.malbumart}"></td>
-						<td><br>${mp3.mtitle}</td>
+						<td><br><a href="music_detail?mid=${mp3.mid }">${mp3.mtitle}</a></td>
 						<td><br>${mp3.malbum }</td>
 						<td><br>${mp3.martist}</td>
 						</tr>

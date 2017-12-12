@@ -75,4 +75,13 @@ public class MusicController {
 	}
 	
 	
+	//music detail 페이지 넘기는 메소드
+	@RequestMapping(value="/music_detail", method = RequestMethod.GET)
+	public String musicDetail(int mid, Model model) {
+		Music music = musicService.select(mid);
+		model.addAttribute("music", music);
+		return "podo/music_detail";
+	}
+	
+	
 } // end class MusicController

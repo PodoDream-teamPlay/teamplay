@@ -12,6 +12,16 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  <!-- Bootstrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+.m_detail_th{
+	width: 200px;
+	padding: 10px;
+}
+.m_detail_td{
+	padding: 10px;
+}
+</style>
 </head>
 <body>
 
@@ -96,6 +106,71 @@
 					<li><a href="boardQnA">Q&A</a></li>
 				</ul>
 			</div>
-		</nav>
+		</nav>		
+		
+		
+		<!-- 본문 -->
+		<div style="float: center;">
+			<div style="font-size: 40px; font-weight: bold; margin: 20px;">
+				${music.mtitle }
+			</div>
+			<table>
+				<tr>
+					<td>
+						<img class="albumart" alt="자켓이미지" src="././resources/images/${music.malbumart}"
+						 style="width: 300px; height: 300px; margin-right: 20px;">
+					</td>
+					<td style="padding: 20px;">
+						<table style="font-size: 18px;">
+							<tr>
+								<th class="m_detail_th">제목</th>
+								<td class="m_detail_td">${music.mtitle }</td>
+							</tr>
+							<tr>
+								<th class="m_detail_th">앨범</th>
+								<td class="m_detail_td">${music.malbum }</td>
+							</tr>
+							<tr>
+								<th class="m_detail_th">아티스트</th>
+								<td class="m_detail_td">${music.martist }</td>
+							</tr>
+							<tr>
+								<th class="m_detail_th">발매일</th>
+								<td class="m_detail_td">${music.mdate }</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<textarea rows="100" cols="100" readonly
+						style="border: 2px solid #2E2E2E; margin-top: 30px; text-align: center; width: 970px;">${music.mlyrics}
+						</textarea>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!-- 본문 끝 -->
+		
+		</div>
 </body>
 </html>
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
