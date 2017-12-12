@@ -8,52 +8,93 @@
 <head>
 <meta charset="UTF-8" />
 <title>Insert title here</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
- <!-- jQuery : Bootstrap JS 파일은 jQuery 라이브러리를 반드시 넣어줘야 함! -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- jQuery : Bootstrap JS 파일은 jQuery 라이브러리를 반드시 넣어줘야 함! -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
- <!-- Bootstrap JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Bootstrap JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js.prefixfree.jquery.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+
 <style>
 
-.topnav {
-    background-color: #4D408A;
-    overflow: hidden;
-    float: left;
-    color: #CBC1FA;
-    text-align: center;
-    width: 100%;
-    height: 52px;
-    font-size: 35px;
+/* 
+ul {
+	overflow: auto;
+	list-style-type: none;
 }
 
-hr{
-	border: 3px double #ff1aff;
-}
-
-table, th, td{
-	border: 1px solid white;
-}
-
-table {
-	width: 100%;
-}
-p {
+li {
+	float: left;
 	display: inline;
+  
+}
+ */
+/* .navbar-inverse {
+
+	background-color: #4D408A;
+	color: white;
+} */
+
+
+
+#innercontainer li {
+float: left;
+	display: inline;
+  
+  position: relative;
+  z-index: 10; 
+  list-style: none; 
+  margin: 0;
+  padding: 2px; 
+  max-height: 50px; 
+  overflow-y: scroll;
+  overflow-x: scroll;
 }
 
-#albumart {
-  width: 65px;
-  height: 65px;
+#innercontainer ul{
+	overflow: auto;
+	list-style-type: none;
+   margin: 0;
+   padding: 0 4px;
+   border-radius: 2px;
+   max-width: 10em;
+
+   white-space: nowrap;
+   color: black;
+   cursor: pointer; 
+
+
 }
+
+
+
+
 </style>
 
+
+
 </head>
+
+
+
 <body>
+
 
 	<div class="container" style="width:1000px;">
 		<!-- 타이틀 -->
 		<h1 class="text-center">
-			<a href="http://localhost:8181/ex00/"style="text-decoration:none;">PODO DREAM</a>
+			<a href="http://localhost:8181/ex00/" style="text-decoration:none;">PODO DREAM</a>
 		</h1>
 
 
@@ -80,9 +121,9 @@ p {
 
 			<c:if test="${not empty loginUserid}">
 				<form action="logout" method="get">
-					${loginUserid}님, 환영합니다 <input type="submit" id="btn-logout" class="btn"
-					style="background-color:#DFE0E7; color:white;"
-						name="btn-logout" value="로그아웃" style="margin-right: 10px"><br>
+					${loginUserid}님, 환영합니다
+					<input type="submit" id="btn-logout" class="btn" style="background-color:#DFE0E7; color:white;"
+						name="btn-logout" value="로그아웃" style="margin-right: 10px" required autofocus><br>
 					<a href="member_detail" class="text-align:right">마이페이지(test)</a>
 				</form>
 			</c:if>
@@ -91,11 +132,20 @@ p {
 			<input type="hidden" name="queryString" value="${loginTarget}" />
 		</div>
 
+<!--로그인 실패시 띄울 알람. -->
+	<script>
+		$(document).ready(function() {
+			if (${loginfail}==5) {
+				alert("아이디와 비밀번호 확인해 주세요.");
+				
+			} 
+			});
+	</script>
+
 
 		<br>
-		<form action="search" method="get" class="text-center"
-			style="margin-left: 50px">
-			<select name="searchType">
+		<form action="search" method="get" class="text-center" style="margin-left: 50px; ">
+			<select name="searchType" style="height:27px">
 				<option value="1">노래 제목</option>
 				<option value="2">가수</option>
 				<option value="3">앨범명</option>
@@ -134,7 +184,7 @@ p {
 		</nav>
 
 <div class="topnav" id="myTopnav">
-	<img src="../resources/images/grape.png" height="80%"> <p>포도차트</p>
+	<img src="././resources/images/grape.png" height="80%"> <p>포도차트</p>
 </div>
 
 <br>

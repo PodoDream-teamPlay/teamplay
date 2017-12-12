@@ -28,7 +28,7 @@
 
 
 
-
+/* 
 ul {
 	overflow: auto;
 	list-style-type: none;
@@ -38,7 +38,7 @@ li {
 	float: left;
 	display: inline;
   
-} 
+}  */
 
 a{
 outline: none; text-decoration:none; color: #555;
@@ -91,15 +91,17 @@ color: lightgrey;}
 	background-color: #4D408A;
 	color: white;
 } */
-/* 
+
 .innerContainer {
 
 
 }
 
 
-.innerContainer li {
-
+#innercontainer li {
+float: left;
+	display: inline;
+  
   position: relative;
   z-index: 10; 
   list-style: none; 
@@ -110,39 +112,22 @@ color: lightgrey;}
   overflow-x: scroll;
 }
 
-.innerContainer ul{
-
+#innercontainer ul{
+	overflow: auto;
+	list-style-type: none;
    margin: 0;
    padding: 0 4px;
    border-radius: 2px;
    max-width: 10em;
-   
 
    white-space: nowrap;
    color: black;
    cursor: pointer; 
-   
-}
- */
 
-
-section{top:50%; left: 0px; margin-top:200; width: 200px; height:200px;}
-article{
-	position : relative; 
-	top: 50%;
-	width: 180px; 
-	height: 100px;
-	margin: 10px; 
-	margin-top: 200px;
-	box-sizing: border-box;
-	folat: left; 
-	background: #fff;
-	border-radius: 5px; 
-	box-shadow: 3px 3px 3px #bbb; 
-	overflow: hidden; 
-	transition: all 0.7s;
 
 }
+
+
 
 
 
@@ -188,9 +173,9 @@ article{
 
 			<c:if test="${not empty loginUserid}">
 				<form action="logout" method="get">
-					${loginUserid}님, 환영합니다 <input type="submit" id="btn-logout" class="btn"
-					style="background-color:#DFE0E7; color:white;"
-						name="btn-logout" value="로그아웃" style="margin-right: 10px"><br>
+					${loginUserid}님, 환영합니다
+					<input type="submit" id="btn-logout" class="btn" style="background-color:#DFE0E7; color:white;"
+						name="btn-logout" value="로그아웃" style="margin-right: 10px" required autofocus><br>
 					<a href="member_detail" class="text-align:right">마이페이지(test)</a>
 				</form>
 			</c:if>
@@ -320,10 +305,8 @@ article{
 
 
 		<!--  최신 앨범 리스트 ( 한줄로 넘어가게 하기)  -->
-		<h2 style="color: lightgrey">최신 앨범</h2><!-- 
-		<section class="sectionPadding contents newAlbum"
-			style="border: 1px solid lightgrey; background: #E8E5F7;"> -->
-			<div class="innerContainer" style=" white-space:nowrap;border: 1px solid lightgrey; background: lightgrey;">
+		<h2 style="color: lightgrey">최신 앨범</h2>
+			<div class="innerContainer" style="border: 1px solid lightgrey; background: lightgrey;">
 				<ul class="albumList" id="newalbum_place">
 					<li class="albumListLi">album1
 						<figure class="albumInfo">

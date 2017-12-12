@@ -9,17 +9,25 @@
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <!-- jQuery : Bootstrap JS 파일은 jQuery 라이브러리를 반드시 넣어줘야 함! -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap JavaScript -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js.prefixfree.jquery.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+
 <style>
 
-
-
-
+/* 
 ul {
 	overflow: auto;
 	list-style-type: none;
@@ -29,68 +37,20 @@ li {
 	float: left;
 	display: inline;
   
-} 
-
-a{
-outline: none; text-decoration:none; color: #555;
 }
-img{barder:0;}
-
-
-
-#newalbum_place{
-
-	top: 50%; left: 60px; margin-top:=280px;
-
-}
-
-
-#newalbum_place ul{
-top:50%; left: 0px; margin-top:200; width: 200px; height:200px;
-
-
-}
-
-
-#newalbum_place li{
-	float:left; 
-	font-size: 15px;
-	font-weight: bold;
-	color: black; 
-	width: 200px; 
-	height: 200px;
-	margin: 10px; 
-	margin-top: 20px;
-	box-sizing: border-box;
-	folat: left; 
-	background: #fff;
-	border-radius: 5px; 
-	box-shadow: 3px 3px 3px #bbb; 
-	overflow: hidden; 
-	transition: all 0.7s;
-	
-	
-	
-}
-#newalbum_place li:hover{
-color: lightgrey;}
-
-#newalbum_place li.on{ color : lightgrey;}
-
+ */
 /* .navbar-inverse {
 
 	background-color: #4D408A;
 	color: white;
 } */
-/* 
-.innerContainer {
 
 
-}
 
-
-.innerContainer li {
-
+#innercontainer li {
+float: left;
+	display: inline;
+  
   position: relative;
   z-index: 10; 
   list-style: none; 
@@ -101,37 +61,18 @@ color: lightgrey;}
   overflow-x: scroll;
 }
 
-.innerContainer ul{
-
+#innercontainer ul{
+	overflow: auto;
+	list-style-type: none;
    margin: 0;
    padding: 0 4px;
    border-radius: 2px;
    max-width: 10em;
-   
 
    white-space: nowrap;
    color: black;
    cursor: pointer; 
-   
-}
- */
 
-
-section{top:50%; left: 0px; margin-top:200; width: 200px; height:200px;}
-article{
-	position : relative; 
-	top: 50%;
-	width: 180px; 
-	height: 100px;
-	margin: 10px; 
-	margin-top: 200px;
-	box-sizing: border-box;
-	folat: left; 
-	background: #fff;
-	border-radius: 5px; 
-	box-shadow: 3px 3px 3px #bbb; 
-	overflow: hidden; 
-	transition: all 0.7s;
 
 }
 
@@ -141,9 +82,11 @@ article{
 </style>
 
 
-	
-	
+
 </head>
+
+
+
 <body>
 
 
@@ -177,9 +120,9 @@ article{
 
 			<c:if test="${not empty loginUserid}">
 				<form action="logout" method="get">
-					${loginUserid}님, 환영합니다 <input type="submit" id="btn-logout" class="btn"
-					style="background-color:#DFE0E7; color:white;"
-						name="btn-logout" value="로그아웃" style="margin-right: 10px"><br>
+					${loginUserid}님, 환영합니다
+					<input type="submit" id="btn-logout" class="btn" style="background-color:#DFE0E7; color:white;"
+						name="btn-logout" value="로그아웃" style="margin-right: 10px" required autofocus><br>
 					<a href="member_detail" class="text-align:right">마이페이지(test)</a>
 				</form>
 			</c:if>
@@ -238,7 +181,6 @@ article{
 				</ul>
 			</div>
 		</nav>
-
 
 <div class="container">
 	<h1 class="text-center">회원가입</h1>
