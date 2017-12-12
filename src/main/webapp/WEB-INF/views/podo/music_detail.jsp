@@ -171,12 +171,20 @@
 				<tr>
 					<td colspan="2" align="center">
 					<br>
-					<iframe
+					<c:if test="${not empty music.mvideo }">
+						<iframe
 							width="853" height="480"
-							src="https://www.youtube.com/embed/42A-rFdralM?rel=0"
+							src="${music.mvideo}"
 							frameborder="0" gesture="media" allow="encrypted-media"
 							allowfullscreen>
-					</iframe>
+						</iframe>
+					</c:if>
+					<c:if test="${empty music.mvideo }">
+						<div style="width: 853; height: 480; 
+						background-color: #E6E6E6; color: white; text-align: center;">
+						뮤직비디오가 없습니다.
+						</div>
+					</c:if>
 					</td>
 				</tr>
 				<tr>
