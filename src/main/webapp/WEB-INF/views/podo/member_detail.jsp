@@ -23,61 +23,55 @@
 <script type="text/javascript" src="js.prefixfree.jquery.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
 
-
 <style>
-
-/* 
-ul {
-	overflow: auto;
-	list-style-type: none;
+td{
+	padding: 20px;
 }
-
-li {
-	float: left;
-	display: inline;
-  
+ .rigth_box{
+	width: 700px;
+	height: 400px;
 }
- */
-/* .navbar-inverse {
-
-	background-color: #4D408A;
+.left_box{
+	background-color: #2E2E2E;
 	color: white;
-} */
+	width: 200px;
+	height: 400px;
+} 
 
+.topnav {
+	background-color: #2E2E2E;
+	overflow: hidden;
+}
 
+/* Style the links inside the navigation bar */
+ .topnav a {
+	float: left;
+	color: #9A2EFE;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+ 
+/* Change the color of links on hover */
+.topnav a:hover {
+	background-color: #9A2EFE;
+	color: white;
+}
 
-#innercontainer li {
-float: left;
+/* Add a color to the active/current link */
+.topnav a.active {
+	background-color: #9A2EFE;
+	color: white;
+}
+
+#noline {
 	display: inline;
-  
-  position: relative;
-  z-index: 10; 
-  list-style: none; 
-  margin: 0;
-  padding: 2px; 
-  max-height: 50px; 
-  overflow-y: scroll;
-  overflow-x: scroll;
 }
 
-#innercontainer ul{
-	overflow: auto;
-	list-style-type: none;
-   margin: 0;
-   padding: 0 4px;
-   border-radius: 2px;
-   max-width: 10em;
-
-   white-space: nowrap;
-   color: black;
-   cursor: pointer; 
-
-
+.albumart{
+	width: 67px;
 }
-
-
-
-
 </style>
 
 

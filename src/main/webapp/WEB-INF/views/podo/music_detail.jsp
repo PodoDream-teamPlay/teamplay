@@ -26,59 +26,14 @@
 
 
 <style>
-
-/* 
-ul {
-	overflow: auto;
-	list-style-type: none;
+.m_detail_th {
+	width: 200px;
+	padding: 10px;
 }
 
-li {
-	float: left;
-	display: inline;
-  
+.m_detail_td {
+	padding: 10px;
 }
- */
-/* .navbar-inverse {
-
-	background-color: #4D408A;
-	color: white;
-} */
-
-
-
-#innercontainer li {
-float: left;
-	display: inline;
-  
-  position: relative;
-  z-index: 10; 
-  list-style: none; 
-  margin: 0;
-  padding: 2px; 
-  max-height: 50px; 
-  overflow-y: scroll;
-  overflow-x: scroll;
-}
-
-#innercontainer ul{
-	overflow: auto;
-	list-style-type: none;
-   margin: 0;
-   padding: 0 4px;
-   border-radius: 2px;
-   max-width: 10em;
-
-   white-space: nowrap;
-   color: black;
-   cursor: pointer; 
-
-
-}
-
-
-
-
 </style>
 
 

@@ -25,64 +25,40 @@
 <script type="text/javascript" src="js.prefixfree.jquery.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
 
-
 <style>
 
-/* 
-ul {
-	overflow: auto;
-	list-style-type: none;
+.topnav {
+    background-color: #4D408A;
+    overflow: hidden;
+    float: left;
+    color: #CBC1FA;
+    text-align: center;
+    width: 100%;
+    height: 52px;
+    font-size: 35px;
 }
 
-li {
-	float: left;
+hr{
+	border: 3px double #ff1aff;
+}
+
+table, th, td{
+	border: 1px solid white;
+}
+
+table {
+	width: 100%;
+}
+p {
 	display: inline;
-  
-}
- */
-/* .navbar-inverse {
-
-	background-color: #4D408A;
-	color: white;
-} */
-
-
-
-#innercontainer li {
-float: left;
-	display: inline;
-  
-  position: relative;
-  z-index: 10; 
-  list-style: none; 
-  margin: 0;
-  padding: 2px; 
-  max-height: 50px; 
-  overflow-y: scroll;
-  overflow-x: scroll;
 }
 
-#innercontainer ul{
-	overflow: auto;
-	list-style-type: none;
-   margin: 0;
-   padding: 0 4px;
-   border-radius: 2px;
-   max-width: 10em;
-
-   white-space: nowrap;
-   color: black;
-   cursor: pointer; 
-
-
+#albumart {
+  width: 65px;
+  height: 65px;
 }
-
-
-
 
 </style>
-
-
 
 </head>
 
