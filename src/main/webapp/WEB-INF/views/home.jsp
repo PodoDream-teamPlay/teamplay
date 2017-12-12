@@ -8,6 +8,9 @@
 <title>PODO Home</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <!-- jQuery : Bootstrap JS 파일은 jQuery 라이브러리를 반드시 넣어줘야 함! -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap JavaScript -->
@@ -16,8 +19,11 @@
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js.prefixfree.jquery.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+
 <style>
 
 
@@ -32,15 +38,67 @@ li {
 	float: left;
 	display: inline;
   
+} 
+
+a{
+outline: none; text-decoration:none; color: #555;
 }
+img{barder:0;}
+
+
+
+#newalbum_place{
+
+	top: 50%; left: 60px; margin-top:=280px;
+
+}
+
+
+#newalbum_place ul{
+top:50%; left: 0px; margin-top:200; width: 200px; height:200px;
+
+
+}
+
+
+#newalbum_place li{
+	float:left; 
+	font-size: 15px;
+	font-weight: bold;
+	color: black; 
+	width: 200px; 
+	height: 200px;
+	margin: 10px; 
+	margin-top: 20px;
+	box-sizing: border-box;
+	folat: left; 
+	background: #fff;
+	border-radius: 5px; 
+	box-shadow: 3px 3px 3px #bbb; 
+	overflow: hidden; 
+	transition: all 0.7s;
+	
+	
+	
+}
+#newalbum_place li:hover{
+color: lightgrey;}
+
+#newalbum_place li.on{ color : lightgrey;}
 
 /* .navbar-inverse {
 
 	background-color: #4D408A;
 	color: white;
 } */
+/* 
+.innerContainer {
 
-#innercontainer li {
+
+}
+
+
+.innerContainer li {
 
   position: relative;
   z-index: 10; 
@@ -52,7 +110,8 @@ li {
   overflow-x: scroll;
 }
 
-#innercontainer ul{
+.innerContainer ul{
+
    margin: 0;
    padding: 0 4px;
    border-radius: 2px;
@@ -63,7 +122,25 @@ li {
    color: black;
    cursor: pointer; 
    
+}
+ */
 
+
+section{top:50%; left: 0px; margin-top:200; width: 200px; height:200px;}
+article{
+	position : relative; 
+	top: 50%;
+	width: 180px; 
+	height: 100px;
+	margin: 10px; 
+	margin-top: 200px;
+	box-sizing: border-box;
+	folat: left; 
+	background: #fff;
+	border-radius: 5px; 
+	box-shadow: 3px 3px 3px #bbb; 
+	overflow: hidden; 
+	transition: all 0.7s;
 
 }
 
@@ -121,6 +198,7 @@ li {
 			<!-- 로그인 후에 이동할 페이지 -->
 			<input type="hidden" name="queryString" value="${loginTarget}" />
 		</div>
+
 <!--로그인 실패시 띄울 알람. -->
 	<script>
 		$(document).ready(function() {
@@ -130,6 +208,7 @@ li {
 			} 
 			});
 	</script>
+
 
 		<br>
 		<form action="search" method="get" class="text-center" style="margin-left: 50px; ">
@@ -173,7 +252,7 @@ li {
 
 		<!-- 본문 -->
 		<!-- 배너 Slideshow  -->
-		<div class="container-center" style="background:#E8E5F7;"> 
+		<div class="container-center" style="background:ligthgrey;"> 
 		<div class="float:center" style="width: 970; height: auto;">
 
 			<img class="Slides" src="././resources/images/title1.jpg"
@@ -232,6 +311,10 @@ li {
 				x[slideIndex-1].style.display ="block";
 				setTimeout(carousel, 2000); 
 			}
+			
+		
+			
+			
 		</script>
 
 
@@ -240,106 +323,103 @@ li {
 		<h2 style="color: lightgrey">최신 앨범</h2><!-- 
 		<section class="sectionPadding contents newAlbum"
 			style="border: 1px solid lightgrey; background: #E8E5F7;"> -->
-			<div class="innerContainer" style="overflow:scroll; white-space:nowrap;border: 1px solid lightgrey; background: #E8E5F7;">
+			<div class="innerContainer" style=" white-space:nowrap;border: 1px solid lightgrey; background: lightgrey;">
 				<ul class="albumList" id="newalbum_place">
-					<li class="albumListLi">
+					<li class="albumListLi">album1
 						<figure class="albumInfo">
 							<div class="thumbnaiil">
 								<p class="badge"></p>
 								<a href=""> <span class="mainMask"></span> <img
 									src="././resources/images/wj_20122134.jpg" alt="앨범 대표 이미지"
-									style="wigth: 150; height: 150">
+									style="wigth: 200px; height: 200px">
 								</a>
 							</div>
 						</figure>
 					</li>
-					<li class="albumListLi" id="albumListLi">
+					<li class="albumListLi" id="albumListLi">album2
 						<figure class="albumInfo">
 							<div class="thumbnaiil">
 								<p class="badge"></p>
 								<a href=""> <span class="mainMask"></span> <img
 									src="././resources/images/wj_20118739.jpg" alt="앨범 대표 이미지"
-									style="wigth: 150; height: 150">
+									style="wigth: 200px; height: 200px">
 								</a>
 							</div>
 						</figure>
 					</li>
-					<li class="albumListLi" id="albumListLi">
+					<li class="albumListLi" id="albumListLi">album3
 						<figure class="albumInfo">
 							<div class="thumbnaiil">
 								<p class="badge"></p>
 								<a href=""> <span class="mainMask"></span> <img
 									src="././resources/images/m81.jpg" alt="앨범 대표 이미지"
-									style="wigth: 150; height: 150">
+									style="wigth: 200px; height: 200px">
 								</a>
 							</div>
 						</figure>
 					</li>
 					
-					<li class="albumListLi" id="albumListLi">
+					<li class="albumListLi" id="albumListLi">album4
 						<figure class="albumInfo">
 							<div class="thumbnaiil">
 								<p class="badge"></p>
 								<a href=""> <span class="mainMask"></span> <img
 									src="././resources/images/m46.jpg" alt="앨범 대표 이미지"
-									style="wigth: 150; height: 150">
+									style="wigth: 200px; height: 200px">
 								</a>
 							</div>
 						</figure>
 					</li>
 					
-					<li class="albumListLi" id="albumListLi">
+					<li class="albumListLi" id="albumListLi">album5
 						<figure class="albumInfo">
 							<div class="thumbnaiil">
 								<p class="badge"></p>
 								<a href=""> <span class="mainMask"></span> <img
 									src="././resources/images/wj_20131761.jpg" alt="앨범 대표 이미지"
-									style="wigth: 150; height: 150">
+									style="wigth: 200px; height: 200px">
 								</a>
 							</div>
 						</figure>
 					</li>
-					<li class="albumListLi" id="albumListLi">
+					<li class="albumListLi" id="albumListLi">album6
 						<figure class="albumInfo">
 							<div class="thumbnaiil">
 								<p class="badge"></p>
 								<a href=""> <span class="mainMask"></span> <img
 									src="././resources/images/m75.jpg" alt="앨범 대표 이미지"
-									style="wigth: 150; height: 150">
+									style="wigth: auto; height: auto">
 								</a>
 							</div>
 						</figure>
 					</li>
-					<li class="albumListLi" id="albumListLi">
+					<li class="albumListLi" id="albumListLi">album7
 						<figure class="albumInfo">
 							<div class="thumbnaiil">
 								<p class="badge"></p>
 								<a href=""> <span class="mainMask"></span> <img
 									src="././resources/images/m42.jpg" alt="앨범 대표 이미지"
-									style="wigth: 150; height: 150">
+									style="wigth: 200px; height: 200px">
 								</a>
 							</div>
 						</figure>
-					</li><li class="albumListLi" id="albumListLi">
+					</li><li class="albumListLi" id="albumListLi">album8
 						<figure class="albumInfo">
 							<div class="thumbnaiil">
 								<p class="badge"></p>
 								<a href=""> <span class="mainMask"></span> <img
 									src="././resources/images/wj_20133356.jpg" alt="앨범 대표 이미지"
-									style="wigth: 150; height: 150">
+									style="wigth: 200px; height: 200px">
 								</a>
 							</div>
 						</figure>
 					</li>
 					
 
-				</ul>
-
-			</div>
+				</ul> 
 
 
-
-
+</div>
 
 
 		<hr />
