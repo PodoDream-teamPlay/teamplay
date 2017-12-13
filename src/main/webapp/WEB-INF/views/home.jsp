@@ -92,10 +92,7 @@ color: lightgrey;}
 	color: white;
 } */
 
-.innerContainer {
 
-
-}
 
 
 #innercontainer li {
@@ -212,10 +209,10 @@ float: left;
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="">PODO</a>
+					<a class="navbar-brand" href="http://localhost:8181/ex00/">PODO</a>
 				</div> 
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="">홈</a></li>
+					<li class="active"><a href="http://localhost:8181/ex00/">홈</a></li>
 
 					<li><a href="chart">차트</a></li>
 
@@ -406,57 +403,9 @@ float: left;
 
 
 		<hr />
-		<!--  best 차트 (10곡)  -->
-		<!--  chart 완성되고나면 하기  -->
-		<div class="container">
-			<form>
-				<input type="checkbox" name="choose_all" value="1"> <input
-					type="button" id="cart" name="cart" value="마이리스트에 담기"> <input
-					type="button" id="mp3_down" name="mp3_down" value="MP3 다운">
-				<input type="button" id="listening_all" name="listening_all"
-					value="전체 듣기(재생목록에 추가)"> <input type="button"
-					id="change_listening" name="change_listening"
-					value="전체 듣기(재생목록 교체)">
-			</form>
-		</div>
-
-		<div class="container">
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th></th>
-						<th>순위</th>
-						<th>곡명</th>
-						<th>아티스트</th>
-						<th>앨범</th>
-						<th>가사</th>
-						<th>내앨범</th>
-						<th>MP3다운</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="music" items="${music}">
-						<tr>
-							<td width="30" bordercolor="grey"><input type="checkbox"
-								name="choose" value="2"></td>
-							<td>${music.mid}</td>
-							<td>${music.mtitle}</td>
-							<td>${music.martist}</td>
-							<td>${music.malbum}</td>
-							<td><a href="${music.mlyrics}"><img alt="가사"
-									src="../resources/images/lyrics.png"></a></td>
-							<td><a href=""><img alt="내앨범"
-									src="../resources/images/myalbum.png"></a></td>
-							<td><a href=""><img alt="MP3다운"
-									src="../resources/images/mp3.png"></a></td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-		</div>
-
-
-
+		
+		
+		
 
 	</div>
 </body>
