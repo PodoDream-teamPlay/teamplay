@@ -42,7 +42,7 @@ public class MemberController {
 		Member checkuser = null;
 			checkuser =	memberservice.select(member.getUserid());
 		if (checkuser ==null) {
-			Member m = new Member(member.getUserid(), member.getPassword(), member.getEmail(),0,0,0,0,0, null );
+			Member m = new Member(member.getUserid(), member.getPassword(), member.getEmail(),0,0,0,0,0, null, 0 );
 			
 			logger.info("member" + member.getUserid() + member.getPassword() + member.getEmail());
 			memberservice.insert(m);
@@ -64,7 +64,7 @@ public class MemberController {
 		System.out.println("아이디가 이게 맞을란가" +userid);
 		System.out.println("비밀번호는 ?? " + updatePassword);
 		System.out.println("이멜" + updateEmail);
-		Member m = new Member(userid, updatePassword, updateEmail,0,0,0,0,0, null );
+		Member m = new Member(userid, updatePassword, updateEmail,0,0,0,0,0, null, 0 );
 		System.out.println(m);
 		memberservice.update(m);
 		System.out.println("아 왜 안되나.");

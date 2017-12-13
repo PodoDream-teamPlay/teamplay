@@ -13,12 +13,13 @@ public class Member {
 	private int trot;
 	private int indi;
 	private Date memdate;
+	private int point;
 	public Member() {}
 
 	
 	
 	public Member(String userid, String password, String email, int dance, int ballad, int hiphop, int trot, int indi,
-			Date memdate) {
+			Date memdate, int point) {
 		super();
 		this.userid = userid;
 		this.password = password;
@@ -29,8 +30,14 @@ public class Member {
 		this.trot = trot;
 		this.indi = indi;
 		this.memdate = memdate;
+		this.point = point;
 	}
-
+	public int getPoint() {
+		return point;
+	}
+	public void setPoint(int point) {
+		this.point = point;
+	}
 
 
 	public String getUserid() {
@@ -105,12 +112,16 @@ public class Member {
 		this.memdate = memdate;
 	}
 
+
+
 	@Override
 	public String toString() {
 		return "Member [userid=" + userid + ", password=" + password + ", email=" + email + ", dance=" + dance
 				+ ", ballad=" + ballad + ", hiphop=" + hiphop + ", trot=" + trot + ", indi=" + indi + ", memdate="
-				+ memdate + "]";
+				+ memdate + ", point=" + point + "]";
 	}
+
+
 	
 	
 	

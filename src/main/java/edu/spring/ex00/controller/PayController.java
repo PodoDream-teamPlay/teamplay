@@ -57,17 +57,17 @@ public class PayController {
 		
 		if (money==3900) {
 		date.setMonth(date.getMonth()+1);
-		member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, date);
+		member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, date,0);
 		memberservice.update_pay(member);
 		}
 		if (money==7900) {
 			date.setMonth(date.getMonth()+2);
-			member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, date);
+			member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, date, 0);
 			memberservice.update_pay(member);
 		}
 		if (money==9900) {
 			date.setMonth(date.getMonth()+3);
-			member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, date);
+			member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, date, 0);
 			memberservice.update_pay(member);
 		} 
 		return "podo/paid-result";
