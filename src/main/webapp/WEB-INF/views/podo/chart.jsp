@@ -227,7 +227,7 @@ p {
 		 	   <td><br>${music.malbum}</td>
 		 	   <td><a href="${music.mlyrics}"><br><img alt="가사" src="././resources/images/t_lyrics.png"></a></td>
 		 	   <td><a href=""><br><img alt="내앨범" src="././resources/images/t_myalbum.png"></a></td>
-		 	   <td><a href=""><br><img alt="MP3다운" src="././resources/images/t_mp3.png"></a></td>		 	   	   	    
+		 	   <td><a href="mp3_down_icon?mid=${music.mid}" id="down_icon"><br><img alt="MP3다운" src="././resources/images/t_mp3.png"></a></td>		 	   	   	    
 		    </tr>
 		    
 		 </c:forEach>
@@ -253,14 +253,7 @@ $(function(){
 			$('input[type=checkbox]').prop('checked',false);
 		}
 	});
-	
-	// 체크 박스 개별 선택
-	$('input:checkbox[name="cb_choose"]').click(function(){
-		if(this.checked){
-			alert($(this).attr('data-mid'));
-		}
-	});
-	
+		
 })
 </script>
 

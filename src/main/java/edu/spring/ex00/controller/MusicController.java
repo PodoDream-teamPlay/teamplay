@@ -115,12 +115,57 @@ public class MusicController {
 		
 		}else {
 			//로그인 안했으니까 해야됨을 알림
+			logger.info("로그인이 안됨");
 		}
 		
 		//다운로드 완료 alert 창 넘기기 - 노태기님께 문의
 		return "redirect:/chart";
 	}
 	
+	
+	// mp3 다운 아이콘 클릭 시 실행
+	@RequestMapping(value="/mp3_down_icon", method = RequestMethod.GET)
+	public String mp3_down_icon(int mid, HttpSession session) {
+		logger.info("mp3_down_icon");
+		String userid = (String) session.getAttribute("loginUserid");
+		if (userid != null) {
+			List<Get> glist = new ArrayList<>();
+			List<Get> list = getService.selectByUserid(userid);
+			logger.info("mp3_down_icon 의 mid ::: " + mid);
+			// 중복체크
+			if(list.size() > 0) {
+				if(mid != 0) {
+					Get gg = new Get(0, userid, mid, 700, null);
+					glist.add(gg);
+				}
+			} else {
+				// 같은 mid 값을 가지고 있지 않을 떄
+				Get gg = new Get(0, userid, mid, 700, null);
+				glist.add(gg);
+			}
+			
+			logger.info("glist.size() : " + glist.size());
+			
+			//새 리스트를 db에 저장
+			int result = 0;
+			for(Get gg : glist) {
+				result = getService.insert(gg);
+				if(result == 1) { //insert 성공했으면
+					//mcount update 로 증가
+					musicService.update_mcount(gg.getMid());
+					System.out.println("mcount 증가");
+					//member 장르별 count 증가
+					String mgenre = musicService.selectMgenre(gg.getMid());
+					memberService.update_genre_count(mgenre, userid);
+				}
+			}
+			
+		} else {
+			// 로그인을 하지 않은 상태
+			logger.info("로그인이 안됨");
+		}
+		return "redirect:/chart";
+	}
 	
 	//music detail 페이지 넘기는 메소드
 	@RequestMapping(value="/music_detail", method = RequestMethod.GET)
