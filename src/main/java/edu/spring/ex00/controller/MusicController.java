@@ -123,7 +123,7 @@ public class MusicController {
 	}
 	
 	
-	// mp3 다운 아이콘 클릭 시 실행
+	// @@@@@@@@ mp3 다운 아이콘 클릭 시 실행 @@@@@@@@@@@
 	@RequestMapping(value="/mp3_down_icon", method = RequestMethod.GET)
 	public String mp3_down_icon(int mid, HttpSession session) {
 		logger.info("mp3_down_icon");
@@ -134,6 +134,12 @@ public class MusicController {
 			logger.info("mp3_down_icon 의 mid ::: " + mid);
 			// 중복체크
 			if(list.size() > 0) {
+				for(int j = 0; j < list.size(); j ++) {
+					if(mid == list.get(j).getMid()) {
+						mid = 0;
+						break;
+					}
+				}
 				if(mid != 0) {
 					Get gg = new Get(0, userid, mid, 700, null);
 					glist.add(gg);
