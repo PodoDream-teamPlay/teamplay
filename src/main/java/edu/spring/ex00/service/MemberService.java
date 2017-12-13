@@ -16,4 +16,7 @@ public interface MemberService {
 	// 다운로드 했을 때 카운트 증가
 		int update_genre_count(String colGenre, String userid);
 	
+	// 포인트 업데이트 
+		int update_point(Member m);
+		
 }

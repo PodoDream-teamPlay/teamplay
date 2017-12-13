@@ -190,6 +190,15 @@ float: left;
 			} 
 			});
 	</script>
+	
+	<!-- 충전 완료 되었을 때. -->
+<script>
+$(document).ready(function() {
+	if (${su1}==2) {
+		alert("10000point 충전 완료.");				
+	} 
+	});
+	</script>
 
 
 		<br>

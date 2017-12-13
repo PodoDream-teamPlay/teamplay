@@ -134,11 +134,18 @@ float: left;
 	<script>
 		$(document).ready(function() {
 			if (${loginfail}==5) {
-				alert("아이디와 비밀번호 확인해 주세요.");
-				
+				alert("아이디와 비밀번호 확인해 주세요.");			
 			} 
 			});
 	</script>
+	<script>
+		$(document).ready(function() {
+		 if (${fail}==1){
+				alert("로그인을 먼저 해주세요")
+			}
+			});
+	</script>
+	
 
 
 		<br>
@@ -201,13 +208,28 @@ float: left;
 
 
 <div align="right">
-
 	<input id="money" name="money" readonly required>원<br/>
 	<input id="pay" type="submit" value="결제하기" disabled onclick="popupOpen()">
-
 </div>
 
+<h1 align="center">상품권 등록</h1>
+<div align="center">
+<form action="register_giftcard">
+<input type="text"  maxlength="4" required>
+<input type="text"  maxlength="4" required>
+<input type="text"  maxlength="4" required>
+<input type="text"  maxlength="4" required>
+<input type="submit" value="등록" id="giftcard">
+</form>
+</div>
+
+
+
+
 <script type="text/javascript">
+
+
+
 function month1() {
 	if (${not empty loginUserid}) {
 		var money = document.getElementById('money');

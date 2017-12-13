@@ -51,6 +51,12 @@ public class MemberServiceImple implements MemberService {
 		result = dao.update(colGenre, count, userid);
 		return result;
 	}
+
+	@Override
+	public int update_point(Member m) {
+		// TODO Auto-generated method stub
+		return dao.update_point(m);
+	}
 	
 
 	

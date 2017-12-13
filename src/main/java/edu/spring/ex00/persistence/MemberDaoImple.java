@@ -66,5 +66,12 @@ public class MemberDaoImple implements MemberDao {
 		return session.update(NAMESPACE + ".update_genre", args);
 	}
 
+	@Override
+	public int update_point(Member m) {
+		// TODO Auto-generated method stub
+		return session.update(NAMESPACE + ".update_point", m);
+	}
+
+
 	
 }

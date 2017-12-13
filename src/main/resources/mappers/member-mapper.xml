@@ -27,6 +27,10 @@ update podo_member set password = #{password}, email = #{email} where userid = #
 update podo_member set memdate = #{memdate} where userid = #{userid}
 </update>
 
+<update id="update_point">
+update podo_member set point = #{point} where userid = #{userid}
+</update>
+
 
 
 

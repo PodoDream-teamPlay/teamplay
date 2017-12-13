@@ -22,5 +22,9 @@ public interface MemberDao {
 	//장르 count 업데이트
 	int update(String colGenre, int count, String userid);
 	
+	//포인트 update 하기
+	int update_point(Member m);
+	
+	
 	
 }
