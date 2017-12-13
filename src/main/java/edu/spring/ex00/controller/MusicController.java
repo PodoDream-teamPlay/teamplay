@@ -182,6 +182,16 @@ public class MusicController {
 	}
 	
 	
+	// 플레이리스트담기 버튼 -> 새앨범명 입력 후 '확인' 했을 때 
+	@RequestMapping(value="/chart-playlist", method=RequestMethod.GET)
+	public String cartList() {
+		
+		
+		
+		return "redirect:/chart";
+	}
+	
+	
 	//playlist에 추가하기
 	/*
 	String ptitle = //jsp 에서 음악 넣고싶은 playlist 선택해서 넘어온 메소드니까 매개변수에서 playlist 이름 받음
