@@ -195,11 +195,11 @@ p {
 			<button id="cart" class="btn btn-default dropdown-toggle"
 				data-toggle="dropdown">마이리스트에 담기</button>
 			<ul class="dropdown-menu" id="cart-list">
-				<p>마이맬범에 담기</p><br>
+				<li>마이맬범에 담기</li>
 				<li class="divider"></li>
-				<input id="newmyalbum" type="text" placeholder="새 앨범" />
-				<input type="submit" value="확인" />
-				   <li><a href="">test1</a></li>
+				<li><input id="newmyalbum" type="text" placeholder="새 앨범" />
+				<input type="submit" value="확인" /></li>
+			    <li><a href="">test1</a></li>
 			</ul>
 			<button id="mp3_down" class="btn btn-default" >MP3 다운</button>
 			<button id="listening_all" class="btn btn-default">전체 듣기</button>
@@ -207,7 +207,7 @@ p {
 	</div>
 </div>
 
-</div>
+
 
 <div class="container" >
 <form id="tbl_form" method="post">
@@ -252,7 +252,7 @@ p {
    </table>
 </form>
 </div>
-</div>
+
 
 <script>
 $(function(){
