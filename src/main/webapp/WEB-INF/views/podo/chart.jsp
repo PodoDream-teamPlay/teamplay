@@ -45,6 +45,11 @@ p {
   width: 65px;
   height: 65px;
 }
+
+#newmyalbum {
+	width: 70%;
+}
+
 </style>
 
 
@@ -183,13 +188,25 @@ p {
 
 
 <div class="container">
-   <form id="chk_box">
+ <!--   <form id="chk_box">
   	  	<input type="checkbox" id="choose_all" name="choose_all">
-   </form>
-   <button id="cart">마이리스트에 담기</button>
-   <button id="mp3_down">MP3 다운</button>
-   <button id="listening_all">전체 듣기</button>
-   <button id="change_listening">선택 듣기</button>
+   </form> -->
+     <div class="dropdown">
+			<button id="cart" class="btn btn-default dropdown-toggle"
+				data-toggle="dropdown">마이리스트에 담기</button>
+			<ul class="dropdown-menu" id="cart-list">
+				<p>마이맬범에 담기</p><br>
+				<li class="divider"></li>
+				<input id="newmyalbum" type="text" placeholder="새 앨범" />
+				<input type="submit" value="확인" />
+				   <li><a href="">test1</a></li>
+			</ul>
+			<button id="mp3_down" class="btn btn-default" >MP3 다운</button>
+			<button id="listening_all" class="btn btn-default">전체 듣기</button>
+			<button id="change_listening" class="btn btn-default">선택 듣기</button>
+	</div>
+</div>
+
 </div>
 
 <div class="container" >
@@ -197,7 +214,7 @@ p {
    <table class="table table-striped" >
     	<thead>
 	    	<tr>
-		    	<th></th>
+		    	<th><input type="checkbox" id="choose_all" name="choose_all"></th>
 		    	<th><span id="t_head">순위</span></th>
 		    	<th><span class="hidden">앨범이미지</span></th>
 			    <th><span id="t_head">곡명</span></th>
