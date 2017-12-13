@@ -272,6 +272,19 @@ $(function(){
 	});
 		
 })
+
+// 플레이리스트 담기 리스트 목록 보여주기 런타임 
+$(function() {        
+        $("#cart-list").hide();
+            
+        $("#cart").click(function() {
+        	
+          $("#cart-list").slideToggle(1000);
+        });             
+ });
+
+
+
 </script>
 
 </body>
