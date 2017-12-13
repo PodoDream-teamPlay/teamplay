@@ -213,8 +213,16 @@ p {
 	   	    <tr>           
 		   	   <td width="30" bordercolor="grey"><input type="checkbox" id="cb_choose" name="cb_choose" value="${music.mid}" data-mid="${music.mid}" required="required"></td>
 		 	   <td id="mid">${music.mid}</td>
-		 	   <td><img id="albumart" alt="자켓이미지" src="././resources/images/${music.malbumart}"></td>
-		 	   <td>${music.mtitle}</td>
+		 	   <td>
+		 	   		<a href="music_detail?mid=${music.mid }">
+		 	   		<img id="albumart" alt="자켓이미지" src="././resources/images/${music.malbumart}">
+		 	   		</a>
+		 	   	</td>
+		 	   <td>
+		 	   		<a href="music_detail?mid=${music.mid }" style="text-decoration: none;">
+		 	   		${music.mtitle}
+		 	   		</a>
+		 	   </td>
 		 	   <td>${music.martist}</td>
 		 	   <td>${music.malbum}</td>
 		 	   <td><a href="${music.mlyrics}"><img alt="가사" src="././resources/images/t_lyrics.png"></a></td>

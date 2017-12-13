@@ -72,6 +72,10 @@ td{
 .albumart{
 	width: 67px;
 }
+#btn-member-update.hover{
+	border: 1px solid white;
+	color: white;
+}
 </style>
 
 
@@ -192,15 +196,13 @@ td{
 				</div>
 				<br>
 				<form action="member-update">
-					<input type="submit" value="회원 정보 수정" class="btn" style="color:#2E2E2E;">
+					<input type="submit" value="회원 정보 수정" id="btn-member-update"
+					style="color: #D8D8D8; text-decoration: none; border:1px solid #D8D8D8; padding: 10px;
+							background-color: #2E2E2E;">
 				</form>
 				
-				<br>
-				테스트 아이디에 해당하는<br>
-				- mp3 다운로드리스트
-				(PODO_GET)<br>
-				- 플레이리스트
-				(PODO_PLAYLIST)
+				
+				
 			</div>
 		</td>
 		<td rowspan="2">
@@ -240,8 +242,17 @@ td{
 				<tbody>
 					<c:forEach var="mp3" items="${mp3List }">
 						<tr>
-						<td><img class="albumart" alt="자켓이미지" src="././resources/images/${mp3.malbumart}"></td>
-						<td><br><a href="music_detail?mid=${mp3.mid }">${mp3.mtitle}</a></td>
+						<td>
+							<a href="music_detail?mid=${mp3.mid }">
+							<img class="albumart" alt="자켓이미지" src="././resources/images/${mp3.malbumart}">
+							</a>
+						</td>
+						
+						<td><br>
+							<a href="music_detail?mid=${mp3.mid }"  style="text-decoration: none;">
+							${mp3.mtitle}
+							</a>
+						</td>
 						<td><br>${mp3.malbum }</td>
 						<td><br>${mp3.martist}</td>
 						</tr>
@@ -277,7 +288,9 @@ $(document).ready(function(){
 			$(data).each(function(){
 				playlist += '<tr class="playlist-item" data-pid="' + this.pid + '">'
 							+ '<td>'
-							+ '<a href="javascript:void(0);" onclick="getDetailPlaylist('+this.pid+');" return false;>' + this.ptitle + '</a>'
+							+ '<a href="javascript:void(0);" onclick="getDetailPlaylist('+this.pid+');"  style="text-decoration: none;" return false;>'
+								+ this.ptitle 
+							+ '</a>'
 							+ '</td>'
 							+ '<td>'
 							+ this.pdate
