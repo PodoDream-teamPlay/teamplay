@@ -1,5 +1,6 @@
 package edu.spring.ex00.persistence;
 
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -64,6 +65,11 @@ public class MusicDaoImple implements MusicDao {
 	@Override
 	public String readMgenre(int mid) {
 		return session.selectOne(NAMESPACE + ".selectMgenreByMid", mid);
+	}
+
+	@Override
+	public List<Music>  newAlbum() {
+		return session.selectList(NAMESPACE + ".selectByMdate") ;
 	}
 
 } // end class MusicDaoImple 

@@ -1,5 +1,7 @@
 package edu.spring.ex00.persistence;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 import edu.spring.ex00.domain.Music;
@@ -23,5 +25,11 @@ public interface MusicDao {
 	
 	// mid로 mgenre 찾기
 	String readMgenre(int mid);
+	
+	// 최신앨범 가져오기 
+	List<Music> newAlbum();
+	
+	
+	
 	
 } // end interface MusicDao

@@ -22,5 +22,8 @@ public interface MusicService {
 	// 다운로드 한 mp3의 mgenre 찾기
 	String selectMgenre(int mid);
 	
+	// 최신곡 8개 가져오기
+	List<Music> getNewAlbums();
+	
 	
 } // end interface MusicService 

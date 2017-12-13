@@ -26,9 +26,8 @@
 
 <style>
 
+/*
 
-
-/* 
 ul {
 	overflow: auto;
 	list-style-type: none;
@@ -38,97 +37,90 @@ li {
 	float: left;
 	display: inline;
   
-}  */
+} 
 
-a{
-outline: none; text-decoration:none; color: #555;
-}
-img{barder:0;}
-
-
-
-#newalbum_place{
-
-	top: 50%; left: 60px; margin-top:=280px;
-
+*/
+a {
+	outline: none;
+	text-decoration: none;
+	color: #555;
 }
 
-
-#newalbum_place ul{
-top:50%; left: 0px; margin-top:200; width: 200px; height:200px;
-
-
+img {
+	barder: 0;
 }
 
+#newalbum_place {
+	top: 50%;
+	left: 60px;
+	margin-top: =280px;
+}
 
-#newalbum_place li{
-	float:left; 
+#newalbum_place ul {
+	overflow: auto;
+	list-style-type: none;
+	top: 50%;
+	left: 0px;
+	margin-top: 200;
+	width: 150px;
+	height: 150px;
+}
+
+#newalbum_place li {
+	float: left;
+	display: inline;
 	font-size: 15px;
 	font-weight: bold;
-	color: black; 
-	width: 200px; 
-	height: 200px;
-	margin: 10px; 
+	color: black;
+	width: 150px;
+	height: 170px;
+	margin: 10px;
 	margin-top: 20px;
 	box-sizing: border-box;
-	folat: left; 
+	folat: left;
 	background: #fff;
-	border-radius: 5px; 
-	box-shadow: 3px 3px 3px #bbb; 
-	overflow: hidden; 
+	border-radius: 5px;
+	box-shadow: 3px 3px 3px #bbb;
+	overflow: hidden;
 	transition: all 0.7s;
-	
-	
-	
 }
-#newalbum_place li:hover{
-color: lightgrey;}
 
-#newalbum_place li.on{ color : lightgrey;}
+#newalbum_place li:hover {
+	color: lightgrey;
+}
+
+#newalbum_place li.on {
+	color: lightgrey;
+}
 
 /* .navbar-inverse {
 
 	background-color: #4D408A;
 	color: white;
 } */
-
-
-
-
 #innercontainer li {
-float: left;
-	display: inline;
-  
-  position: relative;
-  z-index: 10; 
-  list-style: none; 
-  margin: 0;
-  padding: 2px; 
-  max-height: 50px; 
-  overflow-y: scroll;
-  overflow-x: scroll;
+	float: left;
+	position: relative;
+	z-index: 10;
+	list-style: none;
+	margin: 0;
+	padding: 2px;
+	max-height: 50px;
+	overflow-y: scroll;
+	overflow-x: scroll;
 }
 
-#innercontainer ul{
+#innercontainer ul {
 	overflow: auto;
 	list-style-type: none;
-   margin: 0;
-   padding: 0 4px;
-   border-radius: 2px;
-   max-width: 10em;
-
-   white-space: nowrap;
-   color: black;
-   cursor: pointer; 
-
-
+	margin: 0;
+	padding: 0 4px;
+	border-radius: 2px;
+	max-width: 10em;
+	white-space: nowrap;
+	color: black;
+	cursor: pointer;
 }
-
-
-
-
-
-
 </style>
 
 
@@ -140,10 +132,11 @@ float: left;
 <body>
 
 
-	<div class="container" style="width:1000px;">
+	<div class="container" style="width: 1000px;">
 		<!-- 타이틀 -->
 		<h1 class="text-center">
-			<a href="http://localhost:8181/ex00/" style="text-decoration:none;">PODO DREAM</a>
+			<a href="http://localhost:8181/ex00/" style="text-decoration: none;">PODO
+				DREAM</a>
 		</h1>
 
 
@@ -158,8 +151,11 @@ float: left;
 					<input type="password" name="password" id="password"
 						style="margin-right: 10px" placeholder="비밀번호" required />
 					<br>
-					<input type="submit" id="btn-login" value="로그인" class="btn" style="background-color:#DFE0E7; color:white;">
-					<a href="register"><input type="button" value="회원가입" class="btn"style="background-color:#DFE0E7; color:white;"> </a>
+					<input type="submit" id="btn-login" value="로그인" class="btn"
+						style="background-color: #DFE0E7; color: white;">
+					<a href="register"><input type="button" value="회원가입"
+						class="btn" style="background-color: #DFE0E7; color: white;">
+					</a>
 					<br>
 					</tbody>
 
@@ -170,10 +166,11 @@ float: left;
 
 			<c:if test="${not empty loginUserid}">
 				<form action="logout" method="get">
-					${loginUserid}님, 환영합니다
-					<input type="submit" id="btn-logout" class="btn" style="background-color:#DFE0E7; color:white;"
-						name="btn-logout" value="로그아웃" style="margin-right: 10px" required autofocus><br>
-					<a href="member_detail" class="text-align:right">마이페이지(test)</a>
+					${loginUserid}님, 환영합니다 <input type="submit" id="btn-logout"
+						class="btn" style="background-color: #DFE0E7; color: white;"
+						name="btn-logout" value="로그아웃" style="margin-right: 10px" required
+						autofocus><br> <a href="member_detail"
+						class="text-align:right">마이페이지(test)</a>
 				</form>
 			</c:if>
 
@@ -181,8 +178,8 @@ float: left;
 			<input type="hidden" name="queryString" value="${loginTarget}" />
 		</div>
 
-<!--로그인 실패시 띄울 알람. -->
-	<script>
+		<!--로그인 실패시 띄울 알람. -->
+		<script>
 		$(document).ready(function() {
 			if (${loginfail}==5) {
 				alert("아이디와 비밀번호 확인해 주세요.");
@@ -190,26 +187,19 @@ float: left;
 			} 
 			});
 	</script>
-	
-	<!-- 충전 완료 되었을 때. -->
-<script>
-$(document).ready(function() {
-	if (${su1}==2) {
-		alert("10000point 충전 완료.");				
-	} 
-	});
-	</script>
 
 
 		<br>
-		<form action="search" method="get" class="text-center" style="margin-left: 50px; ">
-			<select name="searchType" style="height:27px">
+		<form action="search" method="get" class="text-center"
+			style="margin-left: 50px;">
+			<select name="searchType" style="height: 27px">
 				<option value="1">노래 제목</option>
 				<option value="2">가수</option>
 				<option value="3">앨범명</option>
 				<option value="4">장르별</option>
 			</select> <input type="text" name="searchKeyword" placeholder="검색어"
-				style="width: 500" /> <input type="submit" value="검색" class="btn " style="background-color:#1C1637; color:white;" />
+				style="width: 500" /> <input type="submit" value="검색" class="btn "
+				style="background-color: #1C1637; color: white;" />
 		</form>
 		<br>
 
@@ -219,7 +209,7 @@ $(document).ready(function() {
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="http://localhost:8181/ex00/">PODO</a>
-				</div> 
+				</div>
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="http://localhost:8181/ex00/">홈</a></li>
 
@@ -243,24 +233,24 @@ $(document).ready(function() {
 
 		<!-- 본문 -->
 		<!-- 배너 Slideshow  -->
-		<div class="container-center" style="background:ligthgrey;"> 
-		<div class="float:center" style="width: 970; height: auto;">
+		<div class="container-center" style="background: ligthgrey;">
+			<div class="float:center" style="width: 970; height: auto;">
 
-			<img class="Slides" src="././resources/images/title1.jpg"
-				style="width: 970px; height: auto; object-fit: cover;">
-			<img class="Slides" src="././resources/images/title2.jpg"
-				style="width: 970; height: auto; object-fit: cover;">
-			<img class="Slides" src="././resources/images/title3.jpg"
-				style="width: 970; height: auto; object-fit: cover;"> 
-			<img class="Slides" src="././resources/images/title4.jpg"
-				style="width: 970; height: auto; object-fit: cover;">
-			<img class="Slides" src="././resources/images/title5.jpg"
-				style="width: 970; height: auto; object-fit: cover;">
-			<img class="Slides" src="././resources/images/title6.jpg"
-				style="width: 970; height: auto; object-fit: cover;">
-			<button onclick="plusDivs(-1)" class="button display left">◀</button>
-			<button onclick="plusDivs(1)" class="button display right">▶</button>
-		</div>
+				<img class="Slides" src="././resources/images/title1.jpg"
+					style="width: 970px; height: auto; object-fit: cover;"> <img
+					class="Slides" src="././resources/images/title2.jpg"
+					style="width: 970; height: auto; object-fit: cover;"> <img
+					class="Slides" src="././resources/images/title3.jpg"
+					style="width: 970; height: auto; object-fit: cover;"> <img
+					class="Slides" src="././resources/images/title4.jpg"
+					style="width: 970; height: auto; object-fit: cover;"> <img
+					class="Slides" src="././resources/images/title5.jpg"
+					style="width: 970; height: auto; object-fit: cover;"> <img
+					class="Slides" src="././resources/images/title6.jpg"
+					style="width: 970; height: auto; object-fit: cover;">
+				<button onclick="plusDivs(-1)" class="button display left">◀</button>
+				<button onclick="plusDivs(1)" class="button display right">▶</button>
+			</div>
 		</div>
 		<script>
 			// 배너 슬라이드 스크립트 부분 시작 
@@ -312,109 +302,38 @@ $(document).ready(function() {
 
 		<!--  최신 앨범 리스트 ( 한줄로 넘어가게 하기)  -->
 		<h2 style="color: lightgrey">최신 앨범</h2>
-			<div class="innerContainer" style="border: 1px solid lightgrey; background: lightgrey;">
-				<ul class="albumList" id="newalbum_place">
-					<li class="albumListLi">album1
-						<figure class="albumInfo">
-							<div class="thumbnaiil">
-								<p class="badge"></p>
-								<a href=""> <span class="mainMask"></span> <img
-									src="././resources/images/wj_20122134.jpg" alt="앨범 대표 이미지"
-									style="wigth: 200px; height: 200px">
-								</a>
-							</div>
-						</figure>
-					</li>
-					<li class="albumListLi" id="albumListLi">album2
-						<figure class="albumInfo">
-							<div class="thumbnaiil">
-								<p class="badge"></p>
-								<a href=""> <span class="mainMask"></span> <img
-									src="././resources/images/wj_20118739.jpg" alt="앨범 대표 이미지"
-									style="wigth: 200px; height: 200px">
-								</a>
-							</div>
-						</figure>
-					</li>
-					<li class="albumListLi" id="albumListLi">album3
-						<figure class="albumInfo">
-							<div class="thumbnaiil">
-								<p class="badge"></p>
-								<a href=""> <span class="mainMask"></span> <img
-									src="././resources/images/m81.jpg" alt="앨범 대표 이미지"
-									style="wigth: 200px; height: 200px">
-								</a>
-							</div>
-						</figure>
-					</li>
-					
-					<li class="albumListLi" id="albumListLi">album4
-						<figure class="albumInfo">
-							<div class="thumbnaiil">
-								<p class="badge"></p>
-								<a href=""> <span class="mainMask"></span> <img
-									src="././resources/images/m46.jpg" alt="앨범 대표 이미지"
-									style="wigth: 200px; height: 200px">
-								</a>
-							</div>
-						</figure>
-					</li>
-					
-					<li class="albumListLi" id="albumListLi">album5
-						<figure class="albumInfo">
-							<div class="thumbnaiil">
-								<p class="badge"></p>
-								<a href=""> <span class="mainMask"></span> <img
-									src="././resources/images/wj_20131761.jpg" alt="앨범 대표 이미지"
-									style="wigth: 200px; height: 200px">
-								</a>
-							</div>
-						</figure>
-					</li>
-					<li class="albumListLi" id="albumListLi">album6
-						<figure class="albumInfo">
-							<div class="thumbnaiil">
-								<p class="badge"></p>
-								<a href=""> <span class="mainMask"></span> <img
-									src="././resources/images/m75.jpg" alt="앨범 대표 이미지"
-									style="wigth: auto; height: auto">
-								</a>
-							</div>
-						</figure>
-					</li>
-					<li class="albumListLi" id="albumListLi">album7
-						<figure class="albumInfo">
-							<div class="thumbnaiil">
-								<p class="badge"></p>
-								<a href=""> <span class="mainMask"></span> <img
-									src="././resources/images/m42.jpg" alt="앨범 대표 이미지"
-									style="wigth: 200px; height: 200px">
-								</a>
-							</div>
-						</figure>
-					</li><li class="albumListLi" id="albumListLi">album8
-						<figure class="albumInfo">
-							<div class="thumbnaiil">
-								<p class="badge"></p>
-								<a href=""> <span class="mainMask"></span> <img
-									src="././resources/images/wj_20133356.jpg" alt="앨범 대표 이미지"
-									style="wigth: 200px; height: 200px">
-								</a>
-							</div>
-						</figure>
-					</li>
-					
+		<div class="innerContainer"
+			style="border: 1px solid lightgrey; background: lightgrey; ">
 
-				</ul> 
+			<ul class="albumList" id="newalbum_place"
+				style="overflow: auto; list-style-type: none;">
+
+				<!--  최신앨범 불러오기 8개  -->
+				<c:forEach var="music" items="${musicList}">
+					<li class="albumListLi" style="float: left; display: inline;">
+						${music.mtitle}
+						<figure class="albumInfo">
+							<div class="thumbnaiil">
+								<p class="badge"></p>
+								<a href="music_detail?mid=${music.mid }"><span class="mainMask"></span> <img
+									class="albumart" alt="최신앨범이미지"
+									src="././resources/images/${music.malbumart}"
+									style="width: 150px; height: 150px;">
+								</a>
+							</div>
+						</figure>
+					</li>
+				</c:forEach>
+			</ul>
+		</div>
 
 
-</div>
 
-
+		<br />
 		<hr />
-		
-		
-		
+
+
+
 
 	</div>
 </body>

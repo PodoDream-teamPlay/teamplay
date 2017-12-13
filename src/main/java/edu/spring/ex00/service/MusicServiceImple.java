@@ -53,4 +53,9 @@ public class MusicServiceImple implements MusicService {
 		return musicDao.readMgenre(mid);
 	}
 
+	@Override
+	public List<Music> getNewAlbums() {
+		return musicDao.newAlbum();
+	}
+
 } // end class MusicServiceImple 

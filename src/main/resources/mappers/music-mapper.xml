@@ -57,4 +57,15 @@
   select ${colMgenre} from ${tblMusic} where ${colMid} = #{mid}
   </select>
   
+  
+  <!--  mdate로 최신앨범 select  -->
+  <select id="selectByMdate" resultType="Music">
+  select * from (select * from podo_music order by mdate desc) where rownum <![CDATA[ <= ]]> 10 
+  </select> 
+  
+  
+  
+  
+  
+  
   </mapper>

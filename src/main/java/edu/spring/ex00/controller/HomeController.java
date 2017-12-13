@@ -2,6 +2,7 @@
 
 package edu.spring.ex00.controller;
 
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -51,6 +52,14 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		//메인페이지로 이동
+		
+		//최신곡 8개
+		List<Music> musicList = musicService.getNewAlbums();
+		
+		model.addAttribute("musicList", musicList);
+		
+		
+		
 		return "home";
 	}
 	
@@ -150,6 +159,20 @@ public class HomeController {
 	}
 		
 		
+		
+		//최신앨범 발매일순으로 8개 불러오기 
+		@RequestMapping(value="/")
+		public String NewAlbum(Model model, Timestamp date) {
+			
+				return "podo/music_detail";
+		}
+		
+		
+		
+		
+		
+		
+	
 	
 	
 }
