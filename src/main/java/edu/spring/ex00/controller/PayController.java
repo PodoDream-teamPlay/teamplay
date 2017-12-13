@@ -69,6 +69,12 @@ public class PayController {
 			date.setMonth(date.getMonth()+3);
 			member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, date, 0);
 			memberservice.update_pay(member);
+		} if (money==5000) {		
+			member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, m.getMemdate(), m.getPoint()+5000);
+			memberservice.update_point(member);
+		} if (money==10000) {		
+			member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, m.getMemdate(), m.getPoint()+10000);
+			memberservice.update_point(member);
 		} 
 		return "podo/paid-result";
 	}
@@ -85,9 +91,23 @@ public class PayController {
 	}
 	
 	//팝업창으로 월별 결제 결제
-	/*@RequestMapping(value="/paid", method=RequestMethod.GET)
-	public void paid() {
-	}*/
+	@RequestMapping(value="/register_giftcard", method=RequestMethod.GET)
+	public String paid(HttpSession session, Model model) {
+		String userid = (String) session.getAttribute("loginUserid");
+		if (userid!=null) {
+		Member m = memberservice.select(userid);
+		int point = m.getPoint() + 10000;	//상품권 했을 때 10000원 추가 해줌.			
+		Member member = null;
+		member= new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, m.getMemdate(), point);
+		memberservice.update_point(member);
+		model.addAttribute("su1", 2);
+		return "/home";
+		} else {
+			model.addAttribute("fail", 1);
+			System.out.println("로그인 안됨.");
+			return "podo/monthpay";
+		}
+	}
 	
 	
 	

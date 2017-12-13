@@ -201,6 +201,12 @@ float: left;
 <h2>3개월권 9900원</h2>
 <a onclick="month3()">결제하기</a>
 <br/>
+<h2>5000원 충전하기</h2>
+<a onclick="money1()">결제하기</a>
+<br/>
+<h2>10000원 충전하기</h2>
+<a onclick="money2()">결제하기</a>
+<br/>
 <h1>매월 자동 결제 신청 시 월 3300원!</h1>
 <h2><a>월 자동 결제 신청하기</a></h2>
 <br/>
@@ -228,7 +234,25 @@ float: left;
 
 <script type="text/javascript">
 
+function money1() {
+	if (${not empty loginUserid}) {
+		var money = document.getElementById('money');
+		money.value = 5000;
+		document.getElementById("pay").disabled = false;
+	} else {
+		alert('로그인이 필요합니다');	
+	}
+}
 
+function money2() {
+	if (${not empty loginUserid}) {
+		var money = document.getElementById('money');
+		money.value = 10000;
+		document.getElementById("pay").disabled = false;
+	} else {
+		alert('로그인이 필요합니다');	
+	}
+}
 
 function month1() {
 	if (${not empty loginUserid}) {
