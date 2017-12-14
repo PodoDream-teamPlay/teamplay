@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.spring.ex00.domain.Playlist;
+import edu.spring.ex00.pagination.PageNumberMaker;
+import edu.spring.ex00.pagination.PaginationCriteria;
 import edu.spring.ex00.service.PlaylistService;
 
 @RequestMapping(value="/playlist")
@@ -24,11 +26,15 @@ public class PlaylistController {
 	@Autowired private PlaylistService playlistService;
 	
 	@RequestMapping(value="/all/{userid}", method=RequestMethod.GET)
-	public ResponseEntity<List<Playlist>> readPlaylist(@PathVariable(name="userid")String userid){
-		logger.info("select 하려는 userid ::: " + userid);
-		List<Playlist> list = playlistService.selectByUserid(userid);
+	public ResponseEntity<List<Playlist>> readPlaylist(@PathVariable(name="userid")String userid, Integer page, Integer perPage){
+		PaginationCriteria c = new PaginationCriteria();
+		if(page != null) {c.setPage(page);}
+		if(perPage != null) {c.setNumsPerPage(perPage);}
+		
+		List<Playlist> list = playlistService.selectByUserid(c, userid);
 		ResponseEntity<List<Playlist>> entity = null;
 		if(list != null) {
+			System.out.println("playlist pagenation 길이 ::: " + list.size());
 			entity = new ResponseEntity<List<Playlist>>(list, HttpStatus.OK);
 		}else {
 			entity = new ResponseEntity<List<Playlist>>(HttpStatus.BAD_REQUEST);

@@ -119,7 +119,13 @@ public class HomeController {
 		System.out.println(mp3List.size());
 		
 		//playlist 이름 목록
-		List<Playlist> playList = getPlaylist(userid);
+		//pagination
+			PageNumberMaker pmaker = new PageNumberMaker();
+			pmaker.setCriteria(c);
+			pmaker.setTotalCount(playlistService.getTotal(userid));
+			pmaker.setPageMakerData();			
+			model.addAttribute("ppageMaker", pmaker);
+		//List<Playlist> playList = getPlaylist(userid);
 		
 		//사용자의 포인트 정보
 		int point = memberservice.select_point(userid);
@@ -127,7 +133,7 @@ public class HomeController {
 		model.addAttribute("point", point);
 		model.addAttribute("userid", userid);
 		model.addAttribute("mp3List", mp3List);
-		model.addAttribute("playList", playList);
+		//model.addAttribute("playList", playList);
 		// ==============================================
 		
 
@@ -145,8 +151,8 @@ public class HomeController {
 		return mp3List;
 	}
 	
-	public List<Playlist> getPlaylist(String userid){
-		List<Playlist> playList = playlistService.selectByUserid(userid);
+	public List<Playlist> getPlaylist(PaginationCriteria c, String userid){
+		List<Playlist> playList = playlistService.selectByUserid(c, userid);
 		return playList;
 	}
 	

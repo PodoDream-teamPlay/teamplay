@@ -32,7 +32,7 @@
 	select count(${colPid}) cnt from ${tblPlaylist} where ${colUserid} = #{userid}
 	</select>
 	
-	<select id="selectPage" resultType="Get">
+	<select id="selectPage" resultType="Playlist">
 		select g.${colPid}, g.${colUserid}, g.${colMids}, g.${colPtitle}, g.${colPdate}
 		from (
 		select rownum rn, a.*
