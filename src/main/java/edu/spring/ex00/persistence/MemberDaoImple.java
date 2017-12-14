@@ -72,6 +72,12 @@ public class MemberDaoImple implements MemberDao {
 		return session.update(NAMESPACE + ".update_point", m);
 	}
 
+	@Override
+	public int select_point(String userid) {
+		
+		return session.selectOne(NAMESPACE + ".select_point" , userid);
+	}
+
 
 	
 }

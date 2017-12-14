@@ -51,76 +51,21 @@ img {
 }
 
 #newalbum_place {
-	top: 50%;
-	left: 60px;
-	margin-top: =280px;
-}
-
-#newalbum_place ul {
-	overflow: auto;
-	list-style-type: none;
-	top: 50%;
-	left: 0px;
-	margin-top: 200;
-	width: 150px;
-	height: 150px;
+	padding: 10px;
+	background-color: white;
 }
 
 #newalbum_place li {
+	padding: 10px;
 	float: left;
 	display: inline;
-	font-size: 15px;
-	font-weight: bold;
-	color: black;
-	width: 150px;
-	height: 170px;
-	margin: 10px;
-	margin-top: 20px;
-	box-sizing: border-box;
-	folat: left;
-	background: #fff;
-	border-radius: 5px;
-	box-shadow: 3px 3px 3px #bbb;
-	overflow: hidden;
-	transition: all 0.7s;
 }
 
-#newalbum_place li:hover {
-	color: lightgrey;
+#albumart:hover {
+	/* filter : opacity(50%); */
 }
 
-#newalbum_place li.on {
-	color: lightgrey;
-}
 
-/* .navbar-inverse {
-
-	background-color: #4D408A;
-	color: white;
-} */
-#innercontainer li {
-	float: left;
-	position: relative;
-	z-index: 10;
-	list-style: none;
-	margin: 0;
-	padding: 2px;
-	max-height: 50px;
-	overflow-y: scroll;
-	overflow-x: scroll;
-}
-
-#innercontainer ul {
-	overflow: auto;
-	list-style-type: none;
-	margin: 0;
-	padding: 0 4px;
-	border-radius: 2px;
-	max-width: 10em;
-	white-space: nowrap;
-	color: black;
-	cursor: pointer;
-}
 </style>
 
 
@@ -223,7 +168,7 @@ img {
 							<li><a href="">인디</a></li>
 							<li><a href="">힙합</a></li>
 							<li><a href="">트로트</a></li>
-						</ul></li>
+					</ul></li>
 					<li><a href="monthpay">이용권</a></li>
 					<li><a href="event">이벤트</a></li>
 					<li><a href="boardQnA">Q&A</a></li>
@@ -257,28 +202,6 @@ img {
 			var slideIndex = 0;
 			carousel();
 			showDivs(slideIndex);
-
-			// 배너 수동 슬라이드 (주석처리함)
-		/* 	function plusDivs(n) {
-				showDivs(slideIndex += n);
-			}
-
-			function showDivs(n) {
-				var i;
-				var x = document.getElementsByClassName("Slides");
-				var cnt = 0;
-				if (n > x.length) {
-					slideIndex = 1
-				}
-				if (n < 1) {
-					slideIndex = x.length
-				}
-				for (i = 0; i < x.length; i++) {
-					x[i].style.display = "none";
-				}
-				x[slideIndex - 1].style.display = "block";
-			} */
-			
 			
 			//배너 자동슬라이드 
 			function carousel() {
@@ -301,27 +224,25 @@ img {
 
 
 		<!--  최신 앨범 리스트 ( 한줄로 넘어가게 하기)  -->
-		<h2 style="color: lightgrey">최신 앨범</h2>
+		<h3 style="color: #2E2E2E">최신 앨범</h3>
 		<div class="innerContainer"
-			style="border: 1px solid lightgrey; background: lightgrey; ">
+			style="">
 
 			<ul class="albumList" id="newalbum_place"
 				style="overflow: auto; list-style-type: none;">
 
 				<!--  최신앨범 불러오기 8개  -->
 				<c:forEach var="music" items="${musicList}">
-					<li class="albumListLi" style="float: left; display: inline;">
-						${music.mtitle}
-						<figure class="albumInfo">
-							<div class="thumbnaiil">
-								<p class="badge"></p>
-								<a href="music_detail?mid=${music.mid }"><span class="mainMask"></span> <img
-									class="albumart" alt="최신앨범이미지"
-									src="././resources/images/${music.malbumart}"
-									style="width: 150px; height: 150px;">
+					<li class="albumListLi" style="text-align: center;">
+						<div class="album_img" style=" width: 150px; height: 150px;">
+								<a class = "atag" href="music_detail?mid=${music.mid }"
+									style="position:relative;">
+									<img id="albumart" alt="최신앨범이미지"
+										src="././resources/images/${music.malbumart}"
+										style="width: 150px; height: 150px;">
+			
 								</a>
-							</div>
-						</figure>
+						</div>
 					</li>
 				</c:forEach>
 			</ul>
