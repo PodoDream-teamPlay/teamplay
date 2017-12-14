@@ -27,10 +27,10 @@ public class MusicDaoImple implements MusicDao {
 	@Autowired private SqlSession session;
 
 	@Override
-	public List<Music> read() {
+	public List<Music> readAll(int number) {
 		// 전체 검색(차트 정렬)
 		// TODO : 현재는 mid기준으로 차트 정렬, 추후 mcount 기준으로 차트 정렬 해야 함! 
-		return session.selectList(NAMESPACE + ".selectAll");
+		return session.selectList(NAMESPACE + ".selectAll", number);
 	}
 
 	@Override

@@ -12,7 +12,7 @@
   
   <!-- 차트 정렬 -->
   <select id="selectAll" resultType="Music">
-    select * from ${tblMusic} order by ${colMid} 
+    select * from (select * from ${tblMusic} order by ${colMcount} desc) where rownum <![CDATA[ <= ]]> #{number}
       <!--추후 #{colMid} -> #{colMcount}로 차트 정렬예정 -->
   </select> 
   
