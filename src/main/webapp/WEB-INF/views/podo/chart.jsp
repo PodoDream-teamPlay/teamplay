@@ -153,12 +153,12 @@ p {
 
 
 <!--  차트 상단 버튼 -->
-<form action="playlist" method="post">
 <div class="container">
+<form action="playlist" method="post"  style="display: inline;">
  <!--   <form id="chk_box">
   	  	<input type="checkbox" id="choose_all" name="choose_all">
    </form> -->
-     <div class="dropdown">
+     <div class="dropdown"  style="display: inline;">
 			<button id="cart" class="btn btn-default dropdown-toggle"
 				data-toggle="dropdown">마이리스트에 담기</button>
 			<ul class="dropdown-menu" id="cart-list">
@@ -171,12 +171,12 @@ p {
 			       <!-- Ajax로 플레이리스트 가져오기 -->
 			    </ul>
 			</ul>
+	</div>
+</form>
 			<button id="mp3_down" class="btn btn-default" >MP3 다운</button>
 			<button id="listening_all" class="btn btn-default">전체 듣기</button>
 			<button id="change_listening" class="btn btn-default">선택 듣기</button>
-	</div>
 </div>
-</form>
 
 
 <div class="container" >
@@ -230,10 +230,10 @@ $(function(){
 	$('#mp3_down').click(function() {
 		if(${empty loginUserid}){
 			alert('로그인을 했는지 확인하세요!!');
-		}else {
+		} else {
+			alert('선택한 MP3 목록 다운 완료');
 			$('#tbl_form').attr('action', 'mp3_down');
 			$('#tbl_form').submit();
-			alert('선택한 MP3 목록 다운 완료');
 		}
 	});
 	
