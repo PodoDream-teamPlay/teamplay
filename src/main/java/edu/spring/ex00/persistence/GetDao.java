@@ -9,4 +9,6 @@ public interface GetDao {
 	List<Get> read(String userid);
 	
 	int create(Get g);
+	
+	int getTotal();
 }

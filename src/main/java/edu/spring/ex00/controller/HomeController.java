@@ -24,6 +24,8 @@ import edu.spring.ex00.domain.Get;
 import edu.spring.ex00.domain.Member;
 import edu.spring.ex00.domain.Music;
 import edu.spring.ex00.domain.Playlist;
+import edu.spring.ex00.pagination.PageNumberMaker;
+import edu.spring.ex00.pagination.PaginationCriteria;
 import edu.spring.ex00.service.GetService;
 import edu.spring.ex00.service.MemberService;
 import edu.spring.ex00.service.MusicService;
@@ -97,10 +99,24 @@ public class HomeController {
 	
 	
 	@RequestMapping(value="/member_detail", method=RequestMethod.GET)
-	public String go_mypage(Model model/*,String userid*/,HttpSession session) {
+	public String go_mypage(Model model, HttpSession session, Integer page, Integer perPage) {
 		//로그인된 사용자의 아이디 정보를 가지고 가야해서 userid 파라미터로 넘김
 		String userid = (String) session.getAttribute("loginUserid");
+		
+		//mp3 download 목록
+		//pagination
+		PaginationCriteria c = new PaginationCriteria();
+		if(page != null) {c.setPage(page);}
+		if(perPage != null) {c.setNumsPerPage(perPage);}
+		PageNumberMaker maker = new PageNumberMaker();
+		maker.setCriteria(c);
+		maker.setTotalCount(getService.getTotal());
+		maker.setPageMakerData();
+		model.addAttribute("pageMaker", maker);
 		List<Music> mp3List = getMp3List(userid);
+		
+		
+		//playlist 이름 목록
 		List<Playlist> playList = getPlaylist(userid);
 		
 		//사용자의 포인트 정보

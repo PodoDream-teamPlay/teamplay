@@ -24,4 +24,9 @@ public class GetServiceImple implements GetService {
 		return dao.create(g);
 	}
 
+	@Override
+	public int getTotal() {
+		return dao.getTotal();
+	}
+
 }

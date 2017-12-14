@@ -25,4 +25,9 @@ public class GetDaoImple implements GetDao {
 		return session.insert(NAMESPACE + ".insert", g);
 	}
 
+	@Override
+	public int getTotal() {
+		return session.selectOne(NAMESPACE + "totalCount");
+	}
+
 }
