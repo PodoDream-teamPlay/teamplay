@@ -49,26 +49,17 @@ p {
 #ptitle {
 	width: 70%;
 }
-
 </style>
 
 
-
-
 </head>
-
-
-
 <body>
-
 
 	<div class="container" style="width:1000px;">
 		<!-- 타이틀 -->
 		<h1 class="text-center">
 			<a href="http://localhost:8181/ex00/" style="text-decoration:none;">PODO DREAM</a>
 		</h1>
-
-
 
 		<!-- 로그인  -->
 		<div id="noline" style="float: right">
@@ -106,11 +97,10 @@ p {
 <!--로그인 실패시 띄울 알람. -->
 	<script>
 		$(document).ready(function() {
-			if (${loginfail}==5) {
+			if ('${loginfail}' == 5) {
 				alert("아이디와 비밀번호 확인해 주세요.");
-				
 			} 
-			});
+		});
 	</script>
 
 
@@ -163,29 +153,7 @@ p {
 <br>
 
 
-<!-- <br>
-<br>
-<br>
-<nav class="navbar">
-<div class="container">
- <ul class="nav navbar-nav">
-   
-  	  <li><input type="checkbox" name="choose_all" value="1"></li>
-  	  <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">담기</a> 
-  	    <ul class="dropdown-menu">
-  	      <li><a href="#">재생목록 1</a></li>
-  	    </ul>
-  	   </li>
-	  <li><input type="button" id="mp3_down" name="mp3_down" value="MP3 다운"></li>
-	  <li><input type="button" id="listening_all" name="listening_all" value="전체 듣기(재생목록에 추가)"></li>
-	  <li><input type="button" id="change_listening" name="change_listening" value="전체 듣기(재생목록 교체)"></li>
-   
- </ul> 
-</div>
-</nav>
- -->
-
-
+<!--  차트 상단 버튼 -->
 <form action="playlist" method="post">
 <div class="container">
  <!--   <form id="chk_box">
@@ -199,7 +167,7 @@ p {
 				<li class="divider"></li>
 				<li><input id="ptitle" type="text" name="ptitle" placeholder="새 앨범" />
 				<input id="userid" name="userid" type="hidden" value="${loginUserid}" />
-				<input id="btn-insert" type="reset" value="확인"   /></li>
+				<input id="btn-insert" type="button" value="확인"   /></li>		
 			    <li><a href="">test1</a></li>
 			</ul>
 			<button id="mp3_down" class="btn btn-default" >MP3 다운</button>
@@ -299,7 +267,7 @@ $(document).ready(function(){
 	//insert 하는 함수
 	function insertPlaylist(){
 		var ptitle = $('#ptitle').val();
-		var userid = getParameterByName('userid');
+		var userid = '${loginUserid}';
 		
 		$.ajax({
 			type: 'post',
@@ -322,6 +290,8 @@ $(document).ready(function(){
 			}
 		});
 		
+		
+		
 	}
 	
 	//중복 체크하는 함수
@@ -338,9 +308,9 @@ $(document).ready(function(){
 			if(replyList == null){
 				//중복되는거 없으면 insert
 				insertPlaylist();
-			}else{
-				document.getElementById('check-result').innerHTML=
-					'<p style="color:red;">중복된 타이틀입니다.</p>';
+			} else {
+				alert('중복된 이름입니다.앨범명을 다시 입력해주세요!');
+					
 			}
 		});
 	}
