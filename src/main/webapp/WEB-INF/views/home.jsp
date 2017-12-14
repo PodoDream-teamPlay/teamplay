@@ -232,36 +232,58 @@ img {
 
 		<!--  최신 앨범 리스트 ( 한줄로 넘어가게 하기)  -->
 		<h3 style="color: #2E2E2E">최신 앨범</h3>
-		<div class="innerContainer" style="">
+		<div class="innerContainer" style="width: 1000px;">
 
 			<ul class="albumList" id="newalbum_place"
 				style="overflow: auto; list-style-type: none;">
 
 				<!--  최신앨범 불러오기 8개  -->
 				<c:forEach var="music" items="${musicList}">
-					<li class="albumListLi" style="text-align: center;">
+					<li class="albumListLi" style="text-align: center;  display: inline;">
 						<div class="album_img" style="width: 150px; height: 150px;">
-							<a href="music_detail?mid=${music.mid }"
-								style="position: relative;"> <img id="albumart"
+							<a href="music_detail?mid=${music.mid }"> 
+							<img id="albumart"
 								alt="최신앨범이미지" src="././resources/images/${music.malbumart}"
 								style="width: 150px; height: 150px;">
-
 							</a>
 						</div>
 					</li>
 				</c:forEach>
 			</ul>
 		</div>
-
-
-
-		<br />
-		<hr />
-
-
-
+		
+		<br>
+		<hr>
+		<br>
+		<h3 style="display: inline;">TOP 10</h3>
+		<a href="chart" style="float: right;">더보기</a>
+		<br>
+		<table class="table">
+			<thead>
+		    	<tr>
+			    	<th><input type="checkbox" id="choose_all" name="choose_all"></th>
+			    	<th><span>순위</span></th>
+			    	<th><span class="hidden">앨범이미지</span></th>
+				    <th><span>곡명</span></th>
+				    <th><span>아티스트</span></th>
+				    <th><span>앨범</span></th>
+			    	<th>가사</th>
+			    	<th>내앨범</th>
+			    	<th>MP3다운</th>
+			   </tr>
+		  	</thead>
+		  	<tbody>
+		  	
+		  	</tbody>
+		</table>
+		<br><br><br>
 
 	</div>
 </body>
+<footer>
+<div>
+회사 정보
+</div>
+</footer>
 </html>
 
