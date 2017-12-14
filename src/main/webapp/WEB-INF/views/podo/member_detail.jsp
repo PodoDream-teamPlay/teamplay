@@ -272,8 +272,8 @@ td {
 											<td><br>${mp3.martist}</td>
 											<td><br>
 
-												<button class="button" style="float: right;" id="btn-playlist">
-													<img src="././resources/images/play_button.png">
+												<button class="button" style="float: right; background-color:white;border:none;" id="btn-playlist">
+													<img src="././resources/images/play_button.png" >
 												</button></td>
 										</tr>
 									</c:forEach>
@@ -356,7 +356,6 @@ $(document).ready(function(){
 			}); 
 		}
 	});
-	
 	
 	//플레이 리스트 위의 + 버튼 눌리면 - 빈 playlist 추가
 	$('#btn-insert').click(function(){
