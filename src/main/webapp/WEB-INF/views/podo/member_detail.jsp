@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,19 +24,21 @@
 <script type="text/javascript" src="js/custom.js"></script>
 
 <style>
-td{
+td {
 	padding: 20px;
 }
- .rigth_box{
+
+.rigth_box {
 	width: 700px;
 	height: 400px;
 }
-.left_box{
+
+.left_box {
 	background-color: #2E2E2E;
 	color: white;
 	width: 200px;
 	height: 400px;
-} 
+}
 
 .topnav {
 	background-color: #2E2E2E;
@@ -44,7 +46,7 @@ td{
 }
 
 /* Style the links inside the navigation bar */
- .topnav a {
+.topnav a {
 	float: left;
 	color: #9A2EFE;
 	text-align: center;
@@ -52,7 +54,7 @@ td{
 	text-decoration: none;
 	font-size: 17px;
 }
- 
+
 /* Change the color of links on hover */
 .topnav a:hover {
 	background-color: #9A2EFE;
@@ -69,10 +71,11 @@ td{
 	display: inline;
 }
 
-.albumart{
+.albumart {
 	width: 67px;
 }
-#btn-member-update.hover{
+
+#btn-member-update.hover {
 	border: 1px solid white;
 	color: white;
 }
@@ -87,10 +90,11 @@ td{
 <body>
 
 
-	<div class="container" style="width:1000px;">
+	<div class="container" style="width: 1000px;">
 		<!-- 타이틀 -->
 		<h1 class="text-center">
-			<a href="http://localhost:8181/ex00/" style="text-decoration:none;">PODO DREAM</a>
+			<a href="http://localhost:8181/ex00/" style="text-decoration: none;">PODO
+				DREAM</a>
 		</h1>
 
 
@@ -105,8 +109,11 @@ td{
 					<input type="password" name="password" id="password"
 						style="margin-right: 10px" placeholder="비밀번호" required />
 					<br>
-					<input type="submit" id="btn-login" value="로그인" class="btn" style="background-color:#DFE0E7; color:white;">
-					<a href="register"><input type="button" value="회원가입" class="btn"style="background-color:#DFE0E7; color:white;"> </a>
+					<input type="submit" id="btn-login" value="로그인" class="btn"
+						style="background-color: #DFE0E7; color: white;">
+					<a href="register"><input type="button" value="회원가입"
+						class="btn" style="background-color: #DFE0E7; color: white;">
+					</a>
 					<br>
 					</tbody>
 
@@ -117,10 +124,11 @@ td{
 
 			<c:if test="${not empty loginUserid}">
 				<form action="logout" method="get">
-					${loginUserid}님, 환영합니다
-					<input type="submit" id="btn-logout" class="btn" style="background-color:#DFE0E7; color:white;"
-						name="btn-logout" value="로그아웃" style="margin-right: 10px" required autofocus><br>
-					<a href="member_detail" class="text-align:right">마이페이지(test)</a>
+					${loginUserid}님, 환영합니다 <input type="submit" id="btn-logout"
+						class="btn" style="background-color: #DFE0E7; color: white;"
+						name="btn-logout" value="로그아웃" style="margin-right: 10px" required
+						autofocus><br> <a href="member_detail"
+						class="text-align:right">마이페이지(test)</a>
 				</form>
 			</c:if>
 
@@ -128,8 +136,8 @@ td{
 			<input type="hidden" name="queryString" value="${loginTarget}" />
 		</div>
 
-<!--로그인 실패시 띄울 알람. -->
-	<script>
+		<!--로그인 실패시 띄울 알람. -->
+		<script>
 		$(document).ready(function() {
 			if (${loginfail} == 5) {
 				alert("아이디와 비밀번호 확인해 주세요.");
@@ -140,14 +148,16 @@ td{
 
 
 		<br>
-		<form action="search" method="get" class="text-center" style="margin-left: 50px; ">
-			<select name="searchType" style="height:27px">
+		<form action="search" method="get" class="text-center"
+			style="margin-left: 50px;">
+			<select name="searchType" style="height: 27px">
 				<option value="1">노래 제목</option>
 				<option value="2">가수</option>
 				<option value="3">앨범명</option>
 				<option value="4">장르별</option>
 			</select> <input type="text" name="searchKeyword" placeholder="검색어"
-				style="width: 500" /> <input type="submit" value="검색" class="btn " style="background-color:#1C1637; color:white;" />
+				style="width: 500" /> <input type="submit" value="검색" class="btn "
+				style="background-color: #1C1637; color: white;" />
 		</form>
 		<br>
 
@@ -157,7 +167,7 @@ td{
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="">PODO</a>
-				</div> 
+				</div>
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="">홈</a></li>
 
@@ -183,98 +193,104 @@ td{
 
 
 
-<hr>
-<table class="text-center">
-<thead></thead>
-<tbody>
-	<tr>
-		<td>
-			<div class="left_box">
-				user프로필 출력<br><br>
-				<div style="background-color: white; color:#2E2E2E; width: 170px; height: 60px; margin-left: 15px; padding: 20px;">
-					<b>${loginUserid}</b>
-				</div>
-				<br>
-				<form action="member-update">
-					<input type="submit" value="회원 정보 수정" id="btn-member-update"
-					style="color: #D8D8D8; text-decoration: none; border:1px solid #D8D8D8; padding: 10px;
-							background-color: #2E2E2E;">
-				</form>
-				<br>
-				<div>
-					보유 포인트 
-					<br>${point }
-				</div>
-				<br>
-				
-				
-				
-			</div>
-		</td>
-		<td rowspan="2">
-			<h5>플레이리스트 목록</h5>
-			<div class="rigth_box">
-				<button class="button" style="float: right;" id="btn-insert">+</button>
-				<table class="table">
-				<thead>
-					<tr style="background-color: #2E2E2E; color: white;">
-						<th class="text-center">리스트 제목</th>
-						<th class="text-center">저장 날짜</th>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody id="playlists">
-					<!-- Ajax로 playlist DB에서 가져와서 출력 -->
-				</tbody>
-				</table>
-			</div>
-		</td>
-	</tr>
-	<tr><td><br></td></tr>
-	<tr>
-		<td><br></td>
-		<td rowspan="2">
-			<h5>mp3 구매 목록</h5>
-			<div class="rigth_box">
-				<table class="table">
-				<thead>
-					<tr style="background-color: #2E2E2E; color: white;">
-						<th></th>
-						<th class="text-center">제목</th>
-						<th class="text-center">앨범</th>
-						<th class="text-center">가수</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="mp3" items="${mp3List }">
-						<tr>
-						<td>
-							<a href="music_detail?mid=${mp3.mid }">
-							<img class="albumart" alt="자켓이미지" src="././resources/images/${mp3.malbumart}">
-							</a>
-						</td>
-						
-						<td><br>
-							<a href="music_detail?mid=${mp3.mid }"  style="text-decoration: none;">
-							${mp3.mtitle}
-							</a>
-						</td>
-						<td><br>${mp3.malbum }</td>
-						<td><br>${mp3.martist}</td>
-						</tr>
-					</c:forEach>
-				</tbody>
-				</table>
-			</div>
-		</td>
-	</tr>
-	<tr><td><br></td></tr>
-</tbody>
-</table>
+		<hr>
+		<table class="text-center">
+			<thead></thead>
+			<tbody>
+				<tr>
+					<td>
+						<div class="left_box">
+							user프로필 출력<br>
+							<br>
+							<div
+								style="background-color: white; color: #2E2E2E; width: 170px; height: 60px; margin-left: 15px; padding: 20px;">
+								<b>${loginUserid}</b>
+							</div>
+							<br>
+							<form action="member-update">
+								<input type="submit" value="회원 정보 수정" id="btn-member-update"
+									style="color: #D8D8D8; text-decoration: none; border: 1px solid #D8D8D8; padding: 10px; background-color: #2E2E2E;">
+							</form>
+							<br>
+							<div>
+								보유 포인트 <br>${point }
+							</div>
+							<br>
 
 
-</div>
-<script>
+
+						</div>
+					</td>
+					<td rowspan="2">
+						<h5>플레이리스트 목록</h5>
+						<div class="rigth_box">
+							<button class="button" style="float: right;" id="btn-insert">+</button>
+							<table class="table">
+								<thead>
+									<tr style="background-color: #2E2E2E; color: white;">
+										<th class="text-center">리스트 제목</th>
+										<th class="text-center">저장 날짜</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody id="playlists">
+									<!-- Ajax로 playlist DB에서 가져와서 출력 -->
+								</tbody>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><br></td>
+				</tr>
+				<tr>
+					<td><br></td>
+					<td rowspan="2">
+						<h5>mp3 구매 목록</h5>
+						<div class="rigth_box">
+							<table class="table">
+								<thead>
+									<tr style="background-color: #2E2E2E; color: white;">
+										<th></th>
+										<th class="text-center">제목</th>
+										<th class="text-center">앨범</th>
+										<th class="text-center">가수</th>
+										<th class="text-center">Play</th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach var="mp3" items="${mp3List }">
+										<tr>
+											<td><a href="music_detail?mid=${mp3.mid }"> <img
+													class="albumart" alt="자켓이미지"
+													src="././resources/images/${mp3.malbumart}">
+											</a></td>
+
+											<td><br> <a href="music_detail?mid=${mp3.mid }"
+												style="text-decoration: none;"> ${mp3.mtitle} </a></td>
+											<td><br>${mp3.malbum }</td>
+											<td><br>${mp3.martist}</td>
+											<td><br>
+
+												<button class="button" style="float: right;" id="btn-playlist">
+													<img src="././resources/images/play_button.png">
+												</button></td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><br></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+	<script>
 function getDetailPlaylist(pid){
 	var userid = '${loginUserid}';
 	window.open("playlist_detail_popup?userid="+userid+"&pid="+pid,
@@ -349,9 +365,16 @@ $(document).ready(function(){
 		
 	});
 	
+	
+	//플레이 리스트 위의 + 버튼 눌리면 - 빈 playlist 추가
+	$('#btn-playlist').click(function(){
+		//새 창 띄우기 - ptitle 입력 목적
+		window.open("playlist_popup?userid="+userid, "플레이리스트 제목 입력", "width=400, height=1200");
+		
+	});
+	
 });
 </script>
 </body>
 </html>
 
-				
