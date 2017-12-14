@@ -9,7 +9,7 @@ import edu.spring.ex00.domain.Music;
 public interface MusicDao {
 	
 	// 전체 검색 (차트 정렬) 
-	List<Music> read();
+	List<Music> readAll(int number);
 	
 	// 검색 기능 
 	List<Music> search(int type, String keyword);

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.spring.ex00.domain.Playlist;
+import edu.spring.ex00.pagination.PaginationCriteria;
 import edu.spring.ex00.persistence.PlaylistDao;
 
 @Service
@@ -37,6 +38,16 @@ public class PlaylistServiceImple implements PlaylistService {
 	@Override
 	public Playlist selectByPid(int pid) {
 		return dao.read(pid);
+	}
+
+	@Override
+	public List<Playlist> selectByUserid(PaginationCriteria c, String userid) {
+		return dao.read(c, userid);
+	}
+
+	@Override
+	public int getTotal(String userid) {
+		return dao.getTotal(userid);
 	}
 
 }

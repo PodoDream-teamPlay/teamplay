@@ -22,9 +22,9 @@ public class MusicServiceImple implements MusicService {
 	
 
 	@Override
-	public List<Music> select() {
+	public List<Music> selectAll(int number) {
 	
-		return musicDao.read();
+		return musicDao.readAll(number);
 	}
 
 	@Override

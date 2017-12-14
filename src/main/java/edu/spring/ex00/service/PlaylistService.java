@@ -3,6 +3,7 @@ package edu.spring.ex00.service;
 import java.util.List;
 
 import edu.spring.ex00.domain.Playlist;
+import edu.spring.ex00.pagination.PaginationCriteria;
 
 public interface PlaylistService {
 
@@ -15,5 +16,10 @@ public interface PlaylistService {
 	int insert(Playlist list);
 	
 	int delete(int pid);
+	
+	//pagination
+	List<Playlist> selectByUserid(PaginationCriteria c, String userid);
+	
+	int getTotal(String userid);
 	
 }

@@ -65,6 +65,11 @@ img {
 	/* filter : opacity(50%); */
 	
 }
+
+#albumart {
+  width: 65px;
+  height: 65px;
+}
 </style>
 
 
@@ -273,8 +278,31 @@ img {
 			   </tr>
 		  	</thead>
 		  	<tbody>
-		  	
-		  	</tbody>
+				<c:forEach var="music" items="${music}">
+					<tr>
+						<td width="30" bordercolor="grey"><br>
+						<input type="checkbox" id="cb_choose" name="cb_choose"
+							value="${music.mid}" data-mid="${music.mid}"></td>
+						<td id="mid"><br>${music.mid}</td>
+						<td><a href="music_detail?mid=${music.mid }"> <img
+								id="albumart" alt="자켓이미지"
+								src="././resources/images/${music.malbumart}">
+						</a></td>
+						<td><br>
+						<a href="music_detail?mid=${music.mid }"
+							style="text-decoration: none;"> ${music.mtitle} </a></td>
+						<td><br>${music.martist}</td>
+						<td><br>${music.malbum}</td>
+						<td><a href="${music.mlyrics}"><br>
+							<img alt="가사" src="././resources/images/t_lyrics.png"></a></td>
+						<td><a href=""><br>
+							<img alt="내앨범" src="././resources/images/t_myalbum.png"></a></td>
+						<td><a href="mp3_down_icon?mid=${music.mid}" id="down_icon"><br>
+							<img alt="MP3다운" src="././resources/images/t_mp3.png"
+								name="down_icon"></a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
 		</table>
 		<br><br><br>
 

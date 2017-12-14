@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import edu.spring.ex00.domain.Playlist;
+import edu.spring.ex00.pagination.PaginationCriteria;
 
 @Repository
 public class PlaylistDaoImple implements PlaylistDao {
@@ -44,6 +45,20 @@ public class PlaylistDaoImple implements PlaylistDao {
 	@Override
 	public Playlist read(int pid) {
 		return session.selectOne(NAMESPACE + ".selectByPid", pid);
+	}
+
+	@Override
+	public List<Playlist> read(PaginationCriteria c, String userid) {
+		Map<String , Object> args = new HashMap<>();
+		args.put("start", c.getStart());
+		args.put("end", c.getEnd());
+		args.put("userid", userid);
+		return session.selectList(NAMESPACE+".selectPage", args);
+	}
+
+	@Override
+	public int getTotal(String userid) {
+		return session.selectOne(NAMESPACE + ".totalCount", userid);
 	}
 
 }

@@ -37,7 +37,7 @@ public class MusicController {
 	public String musicChart(Model model) {
 		logger.info("chart() GET 호출");
 		// 차트 정렬 - 클라이언트에 전체 보여주기 
-		List<Music> list = musicService.select();
+		List<Music> list = musicService.selectAll(100);
 		model.addAttribute("music", list);
 		
 		return "podo/chart";

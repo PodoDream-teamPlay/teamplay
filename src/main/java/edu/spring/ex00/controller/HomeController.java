@@ -60,7 +60,9 @@ public class HomeController {
 		
 		model.addAttribute("musicList", musicList);
 		
-		
+		// TOP 10 차트 보여주기
+		List<Music> list = musicService.selectAll(10);
+		model.addAttribute("music", list);
 		
 		return "home";
 	}
