@@ -26,4 +26,19 @@
 		values (#{userid}, sysdate, #{ptitle})
 	</insert>
 
+
+	<!-- pagination  -->
+	<select id="totalCount" resultType="Integer">
+	select count(${colPid}) cnt from ${tblPlaylist} where ${colUserid} = #{userid}
+	</select>
+	
+	<select id="selectPage" resultType="Get">
+		select g.${colPid}, g.${colUserid}, g.${colMids}, g.${colPtitle}, g.${colPdate}
+		from (
+		select rownum rn, a.*
+		from (
+		select * from ${tblPlaylist} where ${colUserid} = #{userid} order by ${colPdate} desc
+		) a
+		) g where rn between #{start} and #{end}
+	</select>
 </mapper>
