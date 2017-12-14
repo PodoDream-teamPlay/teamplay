@@ -237,6 +237,26 @@ td {
 									<!-- Ajax로 playlist DB에서 가져와서 출력 -->
 								</tbody>
 							</table>
+							
+							<!-- pagination -->
+							<div class="text-center">
+								<ul class="pagination" id="ppagination">
+									<c:if test="${ppageMaker.prev }">
+									<li><a href="${ppageMaker.startPage - 1 }">◀</a></li>
+									</c:if>
+									<c:forEach var = "pnum" begin="${ppageMaker.startPage }" end="${ppageMaker.endPage }">
+									<li><a href="${pnum }">${pnum }</a></li>
+									</c:forEach>
+									<c:if test="${ppageMaker.next }">
+									<li><a href="${ppageMaker.endPage + 1}">▶</a></li>
+									</c:if>
+								</ul>
+							</div>
+							<form id="ppageForm">
+							<input id="ppage" type="hidden" name="ppage" value="${ppageMaker.criteria.page }"> <!-- 현재 페이지 -->
+							<input id="pperPage" type="hidden" name="pperPage" value="${ppageMaker.criteria.numsPerPage }"> <!-- 한페이지에 보여줄 갯수 -->
+							</form>
+							
 						</div>
 					</td>
 				</tr>
@@ -282,7 +302,7 @@ td {
 							
 							<!-- pagination -->
 							<div class="text-center">
-								<ul class="pagination">
+								<ul class="pagination" id="mpagination">
 									<c:if test="${pageMaker.prev }">
 									<li><a href="${pageMaker.startPage - 1 }">◀</a></li>
 									</c:if>
@@ -321,9 +341,9 @@ $(document).ready(function(){
 	var userid = '${loginUserid}';
 	
 	//전체 플레이리스트 출력
-	function getAllPlaylists(){
-		
-		$.getJSON('/ex00/playlist/all/'+ userid, function(data){
+	function getAllPlaylists(page = 1){
+		//var page = $('#pnum').text();
+		$.getJSON('/ex00/playlist/all/'+ userid + '?page=' + page, function(data){
 			var playlist = '';
 			
 			$(data).each(function(){
@@ -392,8 +412,8 @@ $(document).ready(function(){
 	});
 	
 	
-	//pagination
-	$('.pagination li a').click(function(){
+	//mp3down-pagination
+	$('#mpagination li a').click(function(){
 		/*클래스가 pagenation인거 아래에 li 아래에 a태그 찾음*/
 		event.preventDefault(); //기본 이벤트 동작을 막겠다 - 클릭 안됨
 		
@@ -404,6 +424,21 @@ $(document).ready(function(){
 		$('#page').val(target);
 		//pageForm submit 여기서 함
 		$('#pageForm').submit();
+	});
+	
+	//playlist-pagination
+	$('#ppagination li a').click(function(){
+		event.preventDefault(); //기본 이벤트 동작을 막겠다 - 클릭 안됨
+		
+		//href 속성에 이동해야할 페이지 번호를 넣어놨음
+		var target = $(this).attr('href');
+		
+		//pageForm 만든거에 이동할 페이지 번호 넣겠음
+		$('#ppage').val(target);
+		//pageForm submit 여기서 함
+		//$('#ppageForm').submit();
+		getAllPlaylists($(this).text());
+
 	});
 	
 });
