@@ -59,14 +59,9 @@ public class MusicController {
 	
 	@RequestMapping(value="/mp3_down", method = RequestMethod.POST)
 	public String checkbox(HttpServletRequest reqest, int[] cb_choose, HttpSession session) {
-		logger.info("버튼이 눌러 졌을까요");
-		
-		for(int i = 0; i < cb_choose.length; i++) {
-			logger.info("cb_choose : " + cb_choose[i]);
-		}
 		
 		String userid = (String) session.getAttribute("loginUserid");
-		if(userid != null) {
+		if(userid != null && cb_choose != null) {
 			List<Get> glist = new ArrayList<>();
 			List<Get> list = getService.selectByUserid(userid);
 			//중복체크

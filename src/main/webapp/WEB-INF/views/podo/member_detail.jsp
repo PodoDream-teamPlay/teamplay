@@ -279,6 +279,25 @@ td {
 									</c:forEach>
 								</tbody>
 							</table>
+							
+							<!-- pagination -->
+							<div class="text-center">
+								<ul class="pagination">
+									<c:if test="${pageMaker.prev }">
+									<li><a href="${pageMaker.startPage - 1 }">◀</a></li>
+									</c:if>
+									<c:forEach var = "num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
+									<li><a href="${num }">${num }</a></li>
+									</c:forEach>
+									<c:if test="${pageMaker.next }">
+									<li><a href="${pageMaker.endPage + 1}">▶</a></li>
+									</c:if>
+								</ul>
+							</div>
+							<form id="pageForm" action="member_detail" method="get">
+							<input id="page" type="hidden" name="page" value="${pageMaker.criteria.page }"> <!-- 현재 페이지 -->
+							<input id="perPage" type="hidden" name="perPage" value="${pageMaker.criteria.numsPerPage }"> <!-- 한페이지에 보여줄 갯수 -->
+							</form>
 						</div>
 					</td>
 				</tr>
@@ -370,6 +389,21 @@ $(document).ready(function(){
 		//새 창 띄우기 - ptitle 입력 목적
 		window.open("playlist_popup?userid="+userid, "플레이리스트 제목 입력", "width=400, height=1200");
 		
+	});
+	
+	
+	//pagination
+	$('.pagination li a').click(function(){
+		/*클래스가 pagenation인거 아래에 li 아래에 a태그 찾음*/
+		event.preventDefault(); //기본 이벤트 동작을 막겠다 - 클릭 안됨
+		
+		//href 속성에 이동해야할 페이지 번호를 넣어놨음
+		var target = $(this).attr('href');
+		
+		//pageForm 만든거에 이동할 페이지 번호 넣겠음
+		$('#page').val(target);
+		//pageForm submit 여기서 함
+		$('#pageForm').submit();
 	});
 	
 });

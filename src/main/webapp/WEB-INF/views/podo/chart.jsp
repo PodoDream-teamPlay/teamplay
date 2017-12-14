@@ -198,7 +198,7 @@ p {
       <tbody>
         <c:forEach var="music" items="${music}">
 	   	    <tr>           
-		   	  <td width="30" bordercolor="grey"><br><input type="checkbox" id="cb_choose" name="cb_choose" value="${music.mid}" data-mid="${music.mid}" required="required"></td>
+		   	  <td width="30" bordercolor="grey"><br><input type="checkbox" id="cb_choose" name="cb_choose" value="${music.mid}" data-mid="${music.mid}"></td>
 		 	   <td id="mid"><br>${music.mid}</td>
 		 	   <td>
 		 	   		<a href="music_detail?mid=${music.mid }">

@@ -110,11 +110,11 @@ public class HomeController {
 		if(perPage != null) {c.setNumsPerPage(perPage);}
 		PageNumberMaker maker = new PageNumberMaker();
 		maker.setCriteria(c);
-		maker.setTotalCount(getService.getTotal());
+		maker.setTotalCount(getService.getTotal(userid));
 		maker.setPageMakerData();
 		model.addAttribute("pageMaker", maker);
-		List<Music> mp3List = getMp3List(userid);
-		
+		List<Music> mp3List = getMp3List(c, userid);
+		System.out.println(mp3List.size());
 		
 		//playlist 이름 목록
 		List<Playlist> playList = getPlaylist(userid);
@@ -129,12 +129,12 @@ public class HomeController {
 		// ==============================================
 		
 
-		return "podo/member_detail"/* + "/userid="+userid*/;
+		return "podo/member_detail";
 	}
 	
 	
-	public List<Music> getMp3List(String userid){
-		List<Get> list = getService.selectByUserid(userid);
+	public List<Music> getMp3List(PaginationCriteria c, String userid){
+		List<Get> list = getService.selectByUserid(c, userid);
 		List<Music> mp3List = new ArrayList<>();
 		for(int i = 0; i < list.size(); i++) {
 			Music mp3 = musicService.select(list.get(i).getMid());

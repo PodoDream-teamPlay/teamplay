@@ -16,14 +16,17 @@
 	
 	<!-- pagination  -->
 	<select id="totalCount" resultType="Integer">
-	select count(${colGid}) cnt from ${tblGet}
+	select count(${colGid}) cnt from ${tblGet} where ${colUserid} = #{userid}
 	</select>
 	
 	<select id="selectPage" resultType="Get">
-	select g.${colGid}, g.${colUserid}, g.${colMid}, g.${colGprice}, g.${colGdate}
-	from (select rownum rn, a.* 
-			from(select * from ${tblGet} order by ${colGid} desc)a
-		)g where rn between #{start} and #{end}
+		select g.${colGid}, g.${colUserid}, g.${colMid}, g.${colGprice}, g.${colGdate}
+		from (
+		select rownum rn, a.*
+		from (
+		select * from ${tblGet} where ${colUserid} = #{userid} order by ${colGdate} desc
+		) a
+		) g where rn between #{start} and #{end}
 	</select>
 	
 </mapper>
