@@ -49,6 +49,7 @@ p {
 #ptitle {
 	width: 70%;
 }
+
 </style>
 
 
@@ -213,7 +214,7 @@ p {
 		 	   <td><br>${music.malbum}</td>
 		 	   <td><a href="${music.mlyrics}"><br><img alt="가사" src="././resources/images/t_lyrics.png"></a></td>
 		 	   <td><a href=""><br><img alt="내앨범" src="././resources/images/t_myalbum.png"></a></td>
-		 	   <td><a href="mp3_down_icon?mid=${music.mid}" id="down_icon"><br><img alt="MP3다운" src="././resources/images/t_mp3.png"></a></td>		 	   	   	    
+		 	   <td><a href="mp3_down_icon?mid=${music.mid}" id="down_icon"><br><img alt="MP3다운" src="././resources/images/t_mp3.png" name="down_icon"></a></td>		 	   	   	    
 		    </tr>
 		    
 		 </c:forEach>
@@ -227,8 +228,13 @@ p {
 $(function(){
 	// 체크 된 값의 mid 컨트롤러에 넘기기
 	$('#mp3_down').click(function() {
-		$('#tbl_form').attr('action', 'mp3_down');
-		$('#tbl_form').submit();
+		if(${empty loginUserid}){
+			alert('로그인을 했는지 확인하세요!!');
+		}else{
+			$('#tbl_form').attr('action', 'mp3_down');
+			$('#tbl_form').submit();
+			alert('선택한 MP3 목록 다운 완료');
+		}
 	});
 	
 	// 체크박스 전체 선택
@@ -239,8 +245,15 @@ $(function(){
 			$('input[type=checkbox]').prop('checked',false);
 		}
 	});
-		
-})
+	
+	$('img[name=down_icon]').click(function(){
+		if(${empty loginUserid}){
+			alert('로그인을 했는지 확인하세요!!');
+		} else {
+			alert('선택한 MP3 목록 다운 완료');
+		}
+	});
+});
 
 // 플레이리스트 담기 리스트 목록 보여주기 런타임 
 $(function() {        
