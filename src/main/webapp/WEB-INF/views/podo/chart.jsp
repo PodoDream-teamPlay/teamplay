@@ -16,10 +16,8 @@
 <style>
 
 .topnav {
-    background-color: #4D408A;
     overflow: hidden;
     float: left;
-    color: #CBC1FA;
     text-align: center;
     width: 100%;
     height: 52px;
@@ -167,9 +165,11 @@ p {
 				<li>마이맬범에 담기</li>
 				<li class="divider"></li>
 				<li><input id="ptitle" type="text" name="ptitle" placeholder="새 앨범" />
-				<input id="userid" name="userid" type="hidden" value="${loginUserid}" />
-				<input id="btn-insert" type="button" value="확인"   /></li>		
-			    <li><a href="">test1</a></li>
+				<input id="btn-insert" type="button" value="확인"/></li>		
+				<li><input id="userid" name="userid" type="hidden" value="${loginUserid}" /></li>
+			    <ul id="playlists">
+			       <!-- Ajax로 플레이리스트 가져오기 -->
+			    </ul>
 			</ul>
 			<button id="mp3_down" class="btn btn-default" >MP3 다운</button>
 			<button id="listening_all" class="btn btn-default">전체 듣기</button>
@@ -230,7 +230,7 @@ $(function(){
 	$('#mp3_down').click(function() {
 		if(${empty loginUserid}){
 			alert('로그인을 했는지 확인하세요!!');
-		}else{
+		}else {
 			$('#tbl_form').attr('action', 'mp3_down');
 			$('#tbl_form').submit();
 			alert('선택한 MP3 목록 다운 완료');
@@ -261,22 +261,32 @@ $(function() {
             
         $("#cart").click(function() {
         	
-          $("#cart-list").slideToggle(1000);
+          $("#cart-list").slideToggle(500);
         });             
  });
-</script>
-
-<script>
+ 
+ 
 $(document).ready(function(){
+  var userid = '${loginUserid}';
+ function getAllPlaylists(){
 	
-	//주소에서 파라미터 받아오는 함수 - userid 가져오려고
-	function getParameterByName(name) {
-	    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-	    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-	        results = regex.exec(location.search);
-	    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-	}
+	$.getJSON('/ex00/playlist/all/'+ userid, function(data){
+		var playlist = '';
+		
+		$(data).each(function(){
+			playlist += '<li style="list-style-type: none;">'	
+						+'<a href="" >'
+						+ this.ptitle 
+						+'</a>'
+			           + '</li>'  											
+		});
+		
+		$('#playlists').html(playlist);
+	});
 	
+}
+getAllPlaylists();
+
 	//insert 하는 함수
 	function insertPlaylist(){
 		var ptitle = $('#ptitle').val();
@@ -295,8 +305,7 @@ $(document).ready(function(){
 			}),
 			success: function(result){ 
 				if(result === 'success'){ //성공
-					opener.parent.location.reload();
-					window.close();
+					getAllPlaylists();
 				}else{
 					alert('실패');
 				}
