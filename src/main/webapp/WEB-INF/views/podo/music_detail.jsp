@@ -193,9 +193,15 @@
 						가사</td>
 				</tr>
 				<tr>
-					<td colspan="2"><textarea rows="100" cols="100" readonly
+					<td colspan="2">
+					<!-- 
+						<textarea rows="150" cols="100" readonly
 							style="border: none; margin-top: 30px; text-align: center; width: 970px;">${music.mlyrics}
-						</textarea></td>
+						</textarea>
+					 -->
+					 <pre style="border: none;margin-top: 30px; text-align: center; background-color: white; width: 970px;">${music.mlyrics }
+					 </pre>
+					</td>
 				</tr>
 			</table>
 		</div>

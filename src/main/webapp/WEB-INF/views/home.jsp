@@ -63,9 +63,8 @@ img {
 
 #albumart:hover {
 	/* filter : opacity(50%); */
+	
 }
-
-
 </style>
 
 
@@ -168,7 +167,7 @@ img {
 							<li><a href="">인디</a></li>
 							<li><a href="">힙합</a></li>
 							<li><a href="">트로트</a></li>
-					</ul></li>
+						</ul></li>
 					<li><a href="monthpay">이용권</a></li>
 					<li><a href="event">이벤트</a></li>
 					<li><a href="boardQnA">Q&A</a></li>
@@ -180,19 +179,27 @@ img {
 		<!-- 배너 Slideshow  -->
 		<div class="container-center" style="background: ligthgrey;">
 			<div class="float:center" style="width: 970; height: auto;">
-
-				<img class="Slides" src="././resources/images/title1.jpg"
-					style="width: 970px; height: auto; object-fit: cover;"> <img
+				
+				<a href="music_detail?mid=115">
+				<img class="Slides" src="././resources/images/banner01.png"
+					style="width: 970px; height: auto; object-fit: cover;"> 
+				</a>
+				<img
 					class="Slides" src="././resources/images/title2.jpg"
-					style="width: 970; height: auto; object-fit: cover;"> <img
+					style="width: 970; height: auto; object-fit: cover;"> 
+				<img
 					class="Slides" src="././resources/images/title3.jpg"
-					style="width: 970; height: auto; object-fit: cover;"> <img
+					style="width: 970; height: auto; object-fit: cover;"> 
+				<img
 					class="Slides" src="././resources/images/title4.jpg"
-					style="width: 970; height: auto; object-fit: cover;"> <img
+					style="width: 970; height: auto; object-fit: cover;">
+				<img
 					class="Slides" src="././resources/images/title5.jpg"
-					style="width: 970; height: auto; object-fit: cover;"> <img
+					style="width: 970; height: auto; object-fit: cover;">
+				<img
 					class="Slides" src="././resources/images/title6.jpg"
 					style="width: 970; height: auto; object-fit: cover;">
+				
 				<button onclick="plusDivs(-1)" class="button display left">◀</button>
 				<button onclick="plusDivs(1)" class="button display right">▶</button>
 			</div>
@@ -225,8 +232,7 @@ img {
 
 		<!--  최신 앨범 리스트 ( 한줄로 넘어가게 하기)  -->
 		<h3 style="color: #2E2E2E">최신 앨범</h3>
-		<div class="innerContainer"
-			style="">
+		<div class="innerContainer" style="">
 
 			<ul class="albumList" id="newalbum_place"
 				style="overflow: auto; list-style-type: none;">
@@ -234,14 +240,13 @@ img {
 				<!--  최신앨범 불러오기 8개  -->
 				<c:forEach var="music" items="${musicList}">
 					<li class="albumListLi" style="text-align: center;">
-						<div class="album_img" style=" width: 150px; height: 150px;">
-								<a class = "atag" href="music_detail?mid=${music.mid }"
-									style="position:relative;">
-									<img id="albumart" alt="최신앨범이미지"
-										src="././resources/images/${music.malbumart}"
-										style="width: 150px; height: 150px;">
-			
-								</a>
+						<div class="album_img" style="width: 150px; height: 150px;">
+							<a href="music_detail?mid=${music.mid }"
+								style="position: relative;"> <img id="albumart"
+								alt="최신앨범이미지" src="././resources/images/${music.malbumart}"
+								style="width: 150px; height: 150px;">
+
+							</a>
 						</div>
 					</li>
 				</c:forEach>
