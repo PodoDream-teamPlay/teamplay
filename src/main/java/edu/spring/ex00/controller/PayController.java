@@ -1,6 +1,7 @@
 
 package edu.spring.ex00.controller;
 
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -25,7 +26,6 @@ public class PayController {
 	private MemberService memberservice;
 	
 	
-	
 	// 홈버튼에서 nav - 이용권 클릭시, 
 	@RequestMapping(value="/monthpay", method=RequestMethod.GET)
 	public String go_month_pay() {
@@ -40,7 +40,6 @@ public class PayController {
 	public String month_paid(int money, Model model) {
 		System.out.println("money = " + money);
 		model.addAttribute("money", money);
-		
 		return "podo/paid";
 		
 	}
@@ -82,7 +81,6 @@ public class PayController {
 	
 	private void Date() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	//팝업창으로 곡 결제
@@ -108,6 +106,8 @@ public class PayController {
 			return "podo/monthpay";
 		}
 	}
+	
+
 	
 	
 	
