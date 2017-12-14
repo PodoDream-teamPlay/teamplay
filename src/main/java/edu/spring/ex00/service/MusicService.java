@@ -25,5 +25,8 @@ public interface MusicService {
 	// 최신곡 8개 가져오기
 	List<Music> getNewAlbums();
 	
+	// ★ 플레이리스트 추가 
+	int update_playlist(int pid, String mids);
+	
 	
 } // end interface MusicService 
