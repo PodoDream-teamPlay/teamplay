@@ -131,11 +131,11 @@ td{
 <!--로그인 실패시 띄울 알람. -->
 	<script>
 		$(document).ready(function() {
-			if (${loginfail}==5) {
+			if (${loginfail} == 5) {
 				alert("아이디와 비밀번호 확인해 주세요.");
 				
 			} 
-			});
+		});
 	</script>
 
 
@@ -200,6 +200,12 @@ td{
 					style="color: #D8D8D8; text-decoration: none; border:1px solid #D8D8D8; padding: 10px;
 							background-color: #2E2E2E;">
 				</form>
+				<br>
+				<div>
+					보유 포인트 
+					<br>${point }
+				</div>
+				<br>
 				
 				
 				

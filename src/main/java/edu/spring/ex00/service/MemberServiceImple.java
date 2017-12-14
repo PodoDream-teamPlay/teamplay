@@ -54,8 +54,12 @@ public class MemberServiceImple implements MemberService {
 
 	@Override
 	public int update_point(Member m) {
-		// TODO Auto-generated method stub
 		return dao.update_point(m);
+	}
+
+	@Override
+	public int select_point(String userid) {
+		return dao.select_point(userid);
 	}
 	
 

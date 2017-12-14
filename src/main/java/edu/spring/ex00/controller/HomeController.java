@@ -98,12 +98,15 @@ public class HomeController {
 	
 	@RequestMapping(value="/member_detail", method=RequestMethod.GET)
 	public String go_mypage(Model model/*,String userid*/,HttpSession session) {
-		//TODO: 로그인된 사용자의 아이디 정보를 가지고 가야해서 userid 파라미터로 넘김
-		System.out.println("로그인 하고 받는 아이디" + session.getAttribute("loginUserid"));
+		//로그인된 사용자의 아이디 정보를 가지고 가야해서 userid 파라미터로 넘김
 		String userid = (String) session.getAttribute("loginUserid");
 		List<Music> mp3List = getMp3List(userid);
 		List<Playlist> playList = getPlaylist(userid);
 		
+		//사용자의 포인트 정보
+		int point = memberservice.select_point(userid);
+		
+		model.addAttribute("point", point);
 		model.addAttribute("userid", userid);
 		model.addAttribute("mp3List", mp3List);
 		model.addAttribute("playList", playList);

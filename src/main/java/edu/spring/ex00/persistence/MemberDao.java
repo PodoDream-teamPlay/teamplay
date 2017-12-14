@@ -25,6 +25,7 @@ public interface MemberDao {
 	//포인트 update 하기
 	int update_point(Member m);
 	
-	
+	//유저별 포인트 select
+	int select_point(String userid);
 	
 }

@@ -31,7 +31,9 @@ update podo_member set memdate = #{memdate} where userid = #{userid}
 update podo_member set point = #{point} where userid = #{userid}
 </update>
 
-
+<select id="select_point" resultType="Integer">
+select point from podo_member where userid = #{userid}
+</select>
 
 
 <!-- mp3 다운로드 및 플레이리스트 추가 시 씀 -->

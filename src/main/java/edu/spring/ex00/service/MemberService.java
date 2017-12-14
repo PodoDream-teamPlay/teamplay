@@ -19,4 +19,7 @@ public interface MemberService {
 	// 포인트 업데이트 
 		int update_point(Member m);
 		
+	// 포인트 확인
+		int select_point(String userid);
+		
 }
