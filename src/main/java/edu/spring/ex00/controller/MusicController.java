@@ -176,37 +176,40 @@ public class MusicController {
 	// 플레이리스트담기 버튼 -> 새앨범명 입력 후 '확인' 했을 때 
 	@RequestMapping(value="/chart-playlist", method=RequestMethod.GET)
 	public String cartList() {
-		
-		
-		
+			
 		return "redirect:/chart";
 	}
 	
 	
-	//playlist에 추가하기
-	/*
-	String ptitle = //jsp 에서 음악 넣고싶은 playlist 선택해서 넘어온 메소드니까 매개변수에서 playlist 이름 받음
-	String newmids ="";
-	for(int mid : cb_choose) {
-		newmids += mid + ",";
-	}
-	String mids = playlistService.select(mids, ptitle);
-	//원래 userid가 ptitle에 가지고있던 mids를 가져와서
-	mids += newmids; //(1,) + (2,3,4,) => 1,2,3,4,
-	
-	int result = playlistService.update(mids, userid, ptitle);
-	//userid도 일치하고, ptitle도 일치하는 playlist에  새로 만든mids로  mids컬럼을 업데이트
-	//다 올라간거 확인 됐으면 (result == 1)
-	if(result == 1) {
+	// ★ 마이 앨범에 담기 눌렀을 때 -> playlist DB에 추가하는 업데이트 기능
+	@RequestMapping(value="/my_playlist", method = RequestMethod.GET)
+	public String playList(int pid) {
+		
+		/*String ptitle = //jsp 에서 음악 넣고싶은 playlist 선택해서 넘어온 메소드니까 매개변수에서 playlist 이름 받음
+				String newmids ="";
 		for(int mid : cb_choose) {
-			//count수 올리기 
-			musicService.update_mcount(mid);
-			System.out.println("mcount 증가");
-			//member 장르별 count 증가
-			String mgenre = musicService.selectMgenre(mid);
-			memberService.update_genre_count(mgenre, userid);
+			newmids += mid + ",";
 		}
+		String mids = playlistService.select(mids, ptitle);
+		//원래 userid가 ptitle에 가지고있던 mids를 가져와서
+		mids += newmids; //(1,) + (2,3,4,) => 1,2,3,4,
+		
+		int result = playlistService.update(mids, userid, ptitle);
+		//userid도 일치하고, ptitle도 일치하는 playlist에  새로 만든mids로  mids컬럼을 업데이트
+		//다 올라간거 확인 됐으면 (result == 1)
+		if(result == 1) {
+			for(int mid : cb_choose) {
+				//count수 올리기 
+				musicService.update_mcount(mid);
+				System.out.println("mcount 증가");
+				//member 장르별 count 증가
+				String mgenre = musicService.selectMgenre(mid);
+				memberService.update_genre_count(mgenre, userid);
+			}
+		}*/
+		
+		return "";
 	}
-	*/
+	
 	
 } // end class MusicController

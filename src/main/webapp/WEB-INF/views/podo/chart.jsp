@@ -96,7 +96,7 @@ p {
 <!--로그인 실패시 띄울 알람. -->
 	<script>
 		$(document).ready(function() {
-			if ('${loginfail}' == 5) {
+			if (${loginfail} == 5) {
 				alert("아이디와 비밀번호 확인해 주세요.");
 			} 
 		});
@@ -165,7 +165,7 @@ p {
 				<li>마이맬범에 담기</li>
 				<li class="divider"></li>
 				<li><input id="ptitle" type="text" name="ptitle" placeholder="새 앨범" />
-				<input id="btn-insert" type="button" value="확인"/></li>		
+				<input id="btn-insert" type="button" value="확인" /></li>		
 				<li><input id="userid" name="userid" type="hidden" value="${loginUserid}" /></li>
 			    <ul id="playlists">
 			       <!-- Ajax로 플레이리스트 가져오기 -->
@@ -228,7 +228,7 @@ p {
 $(function(){
 	// 체크 된 값의 mid 컨트롤러에 넘기기
 	$('#mp3_down').click(function() {
-		if(${empty loginUserid}){
+		if (${empty loginUserid}) { 
 			alert('로그인을 했는지 확인하세요!!');
 		} else {
 			alert('선택한 MP3 목록 다운 완료');
@@ -236,6 +236,14 @@ $(function(){
 			$('#tbl_form').submit();
 		}
 	});
+	
+	
+	// ★ 체크박스 선택된 값의 mid를 마이앨범에 담기 위해 controller에게 전달 
+	$('#mylist').click(function () {
+		$('#tbl_form').attr('action', 'mylist');
+		$('#tbl_form').submit();
+	});
+	
 	
 	// 체크박스 전체 선택
 	$('#choose_all').click(function(){
@@ -275,7 +283,7 @@ $(document).ready(function(){
 		
 		$(data).each(function(){
 			playlist += '<li style="list-style-type: none;">'	
-						+'<a href="" >'
+						+'<a href="my_playlist?pid='+ this.pid'" id="mylist" >'
 						+ this.ptitle 
 						+'</a>'
 			           + '</li>'  											
