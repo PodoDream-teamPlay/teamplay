@@ -159,10 +159,10 @@ float: left;
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="">PODO</a>
+					<a class="navbar-brand" href="http://localhost:8181/ex00/">PODO</a>
 				</div> 
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="">홈</a></li>
+					<li class="active"><a href="http://localhost:8181/ex00/">홈</a></li>
 
 					<li><a href="chart">차트</a></li>
 
