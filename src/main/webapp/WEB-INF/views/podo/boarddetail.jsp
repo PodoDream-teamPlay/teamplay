@@ -1,11 +1,19 @@
-
 <%@page import="java.lang.ProcessBuilder.Redirect"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!DOCTYPE html >
 <html>
 <head>
+<meta charset="UTF-8"/>
+<title>Detail</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<!-- jQuery: Bootstrap JS 파일은 jQuery 라이브러리를 사용 -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>PODO Home</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -164,89 +172,62 @@ float: left;
 				</ul>
 			</div>
 		</nav>
-	
-<h1 style= "font-size: 200%; font-family: 배달의민족 주아" class="text-left" >Q & A</h1><hr/>
+<h1 style="color:lightblue; font-size: 300%"><a href="boardQnA">♥상세보기 페이지♥</a></h1>
+<hr/>
 
-
-			
-<div>
 <ul>
-	
-	<c:if test="${empty loginUserid }">
-	<a  href="" class="btn btn-primary" onclick="boardregister()"> 새 글 작성</a>
-	</c:if>
-	<c:if test="${not empty loginUserid}">
-	<a href="boardregister"  class="btn btn-primary" onclick="boardregister()">새 글 작성 </a></c:if>
-	
-	</ul>
-</div>
-	<script type="text/javascript">
-	function boardregister() {
-		if (${not empty loginUserid}) {
-		} else {
-			alert('로그인이 필요합니다');	
-		}
-	}
+	<li><a href="update?bno=${board.bno}"class="btn btn-primary">수정하기</a></li>
+	<li><a href="boardQnA"class="btn btn-primary">메인으로</a></li>
+</ul>
 
-</script>
+
+<form>
+	<label for="bno">번호</label>
+	<input type="number" name="bno" id="bno" value="${board.bno}"  readonly /><br/>
+	<label for="title">제목</label>
+	<input type="text" name="title" id="title" value="${board.title }" readonly/>
+	<br/>
+	<label for="content">내용</label>
+	<textarea rows="10" cols="50" name="content" id="content" readonly >${board.content}</textarea>
+	<br/>
+	<label for="userid">작성자</label>
+	<input type="text" name="userid" id="userid" value="${board.userid}"readonly/>
+	
+	<label for="regdate">작성시간</label>
+	<fmt:formatDate value="${board.regdate}" var="regdate" pattern="yyyy/MM/dd HH:mm:ss"/>
+	<input type="text" id="regdate" value="${regdate}"/><br/>
+	
+	
+	
+	
+	</form>
+
+<hr/>
+<h1 class="text-left">댓글</h1>
+
+<label>게시글 번호</label>
+<input type="number" name="bno" id="bno"  value="${board.bno}" readonly/>
+<input type="text" name="rtext" id="rtext" placeholder ="댓글을 입력하세요♥"/>
+<input type="text" name="replier" id="replier" placeholder="아이디 입력하세요♥"/>
+<button type="button" id="btn-insert">댓글 입력</button>
+
+
 
 
 <hr/>
+<h2 class="text-left">댓글 목록</h2>
+<div id="replies"></div>
 
 
-<!--  게시물 검색  -->
-<!-- <form action="search" method="get"class="text-center">
-    <select name="searchType">
-        <option value="1">작성자</option>
-        <option value="2">제목</option>
-        <option value="3">제목 + 내용</option>
-    </select>
-    <input type="text" name="searchKeyword" placeholder="검색어"/>
-    <input type="submit" value="검색"class= "btn btn-primary" />
-</form>
- -->
-
-<div class="container" style="width: 1000px;">
-<table class="table table-hover;">
+<script>
+$(document).ready(function(){
 	
-	<thead style="background: white; opacity:0.9;">
-	<tr>
-		<th>글 번호</th>
-		<th>제목 </th>
-		<th>작성자</th>
-		<th>수정시간</th>
-	</tr>
-	</thead>
+		
 	
-	
-	<tbody  style=" background: white; opacity:0.6;">
-		<c:forEach var="board" items="${boardList}"> 
-		<tr>
-			<td>${board.bno}</td>
-			  <td>
-                    <a href="detail?bno=${board.bno}">${board.title}</a>
-                           </td>
-			<td>${board.userid}</td>
-		
-			<td>
-				<fmt:formatDate var="regdate" value="${board.regdate}" pattern="yyyy/MM/dd HH:mm"/>${regdate }
-			</td>
-		</tr>
-		</c:forEach>
-	
-	</tbody>
-
-</table>
-</div>
+});
+</script>
 
 
-
-</div>
-		
-		
-		
-		
 
 </body>
-</html> 
-
+</html>

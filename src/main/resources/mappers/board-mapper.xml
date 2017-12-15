@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="edu.spring.ex00.BoardMapper">
+    <!-- namespace와 id를 가지고서 sql문장을 찾아가기때문에 필수 설정 -->
+  <select id="selectAll" resultType="Board">  
+  select * from ${tblBoard} order by ${colBno} desc</select>
+  
+  
+  <insert id="insert">
+  insert into ${tblBoard} (${colTitle}, ${colContent}, ${colUserid}, ${colRegdate}) values(#{title}, #{content}, #{userid}, sysdate)</insert>
+  
+ <update id="update"> update ${tblBoard} set ${colTitle} = #{title}, ${colContent} = #{content}, ${colRegdate} = sysdate where ${colBno} = #{bno} </update>
+
+
+<delete id="delete">delete from ${tblBoard} where ${colBno} = #{bno} </delete>
+
+<select resultType="Board" id="selectByUserid"> SELECT * FROM ${tblBoard} WHERE ${colUserid} LIKE #{userid} ORDER BY ${colBno} DESC </select>
+
+<select resultType="Board" id="selectByTitleOrContent"> SELECT * FROM ${tblBoard} WHERE ${colTitle} LIKE #{title} OR ${colContent} LIKE #{content} ORDER BY ${colBno} DESC </select>
+  
+  
+  <select id="selectByBno" resultType="Board">SELECT * FROM ${tblBoard} WHERE ${colBno} = #{bno}</select>
+  
+  
+  <select id="search" resultType="Board">
+  SELECT * FROM ${tblBoard}
+  WHERE 
+  <choose>
+  	<when test="searchType == 1">${colUserid} LIKE #{searchKeyword}</when>
+  	<when test="searchType == 2">${colTitle} LIKE #{searchKeyword}</when>
+  	<when test="searchType == 3">${colTitle} LIKE #{searchKeyword} OR ${colContent} LIKE #{searchKeyword}</when>
+  </choose>
+  ORDER BY ${colBno} DESC
+  </select>
+  
+  
+  <!-- 페이지 처리를 위한 SQL 문장들 -->
+  <!-- Board 테이블의 전체 데이터 갯수 -->
+  <select id="totalCount" resultType="Integer">
+  select count(bno) cnt from test_board
+  </select>
+  
+  
+  
+
+  <select id="selectPage" resultType="Board">
+  select b.bno, b.title, b.content, b.userid, b.regdate from (select rownum rn, a.* 
+  from(select * from test_board order by bno desc) a ) b where rn between #{start} and #{end}
+  </select>
+  
+  
+  
+  
+  <!-- 검색 페이징 처리를 위한 SQL 문장들  -->
+  <select id="searchTotalCount" resultType="Integer">
+   SELECT * FROM ${tblBoard}
+  WHERE 
+  <choose>
+  	<when test="searchType == 1">${colUserid} LIKE #{searchKeyword}</when>
+  	<when test="searchType == 2">${colTitle} LIKE #{searchKeyword}</when>
+  	<when test="searchType == 3">${colTitle} LIKE #{searchKeyword} OR ${colContent} LIKE #{searchKeyword}</when>
+  </choose>
+  ORDER BY ${colBno} DESC
+  </select>
+  
+  
+  
+  <select id="searchPage" resultType="Board">
+  select b.bno, b.title, b.content, b.userid, b.regdate from (select rownum rn, a.*
+  from(select * from test_board order by bno desc) a )b where rn between #{start} and #{end}
+  </select>
+   
+  
+  </mapper>

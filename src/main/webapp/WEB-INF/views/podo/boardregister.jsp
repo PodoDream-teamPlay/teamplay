@@ -1,11 +1,21 @@
-
 <%@page import="java.lang.ProcessBuilder.Redirect"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!DOCTYPE html >
 <html>
 <head>
+<meta charset="UTF-8" />
+<title>Register</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<!-- jQuery: Bootstrap JS 파일은 jQuery 라이브러리를 사용 -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- Bootstrap JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>PODO Home</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -26,42 +36,30 @@
 
 
 <style>
-
-
-
-
 #innercontainer li {
-float: left;
+	float: left;
 	display: inline;
-  
-  position: relative;
-  z-index: 10; 
-  list-style: none; 
-  margin: 0;
-  padding: 2px; 
-  max-height: 50px; 
-  overflow-y: scroll;
-  overflow-x: scroll;
+	position: relative;
+	z-index: 10;
+	list-style: none;
+	margin: 0;
+	padding: 2px;
+	max-height: 50px;
+	overflow-y: scroll;
+	overflow-x: scroll;
 }
 
-#innercontainer ul{
+#innercontainer ul {
 	overflow: auto;
 	list-style-type: none;
-   margin: 0;
-   padding: 0 4px;
-   border-radius: 2px;
-   max-width: 10em;
-
-   white-space: nowrap;
-   color: black;
-   cursor: pointer; 
-
-
+	margin: 0;
+	padding: 0 4px;
+	border-radius: 2px;
+	max-width: 10em;
+	white-space: nowrap;
+	color: black;
+	cursor: pointer;
 }
-
-
-
-
 </style>
 
 
@@ -73,10 +71,11 @@ float: left;
 <body>
 
 
-	<div class="container" style="width:1000px;">
+	<div class="container" style="width: 1000px;">
 		<!-- 타이틀 -->
 		<h1 class="text-center">
-			<a href="http://localhost:8181/ex00/" style="text-decoration:none;">PODO DREAM</a>
+			<a href="http://localhost:8181/ex00/" style="text-decoration: none;">PODO
+				DREAM</a>
 		</h1>
 
 
@@ -91,8 +90,11 @@ float: left;
 					<input type="password" name="password" id="password"
 						style="margin-right: 10px" placeholder="비밀번호" required />
 					<br>
-					<input type="submit" id="btn-login" value="로그인" class="btn" style="background-color:#DFE0E7; color:white;">
-					<a href="register"><input type="button" value="회원가입" class="btn"style="background-color:#DFE0E7; color:white;"> </a>
+					<input type="submit" id="btn-login" value="로그인" class="btn"
+						style="background-color: #DFE0E7; color: white;">
+					<a href="register"><input type="button" value="회원가입"
+						class="btn" style="background-color: #DFE0E7; color: white;">
+					</a>
 					<br>
 					</tbody>
 
@@ -103,10 +105,10 @@ float: left;
 
 			<c:if test="${not empty loginUserid}">
 				<form action="logout" method="get">
-					${loginUserid}님, 환영합니다
-					<input type="submit" id="btn-logout" class="btn" style="background-color:#DFE0E7; color:white;"
-						name="btn-logout" value="로그아웃" style="margin-right: 10px" required autofocus><br>
-					<a href="member_detail" class="text-align:right">마이페이지(test)</a>
+					${loginUserid}님, 환영합니다 <input type="submit" id="btn-logout"
+						class="btn" style="background-color: #DFE0E7; color: white;"
+						name="btn-logout" value="로그아웃" style="margin-right: 10px"><br> <a href="member_detail"
+						class="text-align:right">마이페이지</a>
 				</form>
 			</c:if>
 
@@ -114,8 +116,8 @@ float: left;
 			<input type="hidden" name="queryString" value="${loginTarget}" />
 		</div>
 
-<!--로그인 실패시 띄울 알람. -->
-	<script>
+		<!--로그인 실패시 띄울 알람. -->
+		<script>
 		$(document).ready(function() {
 			if (${loginfail}==5) {
 				alert("아이디와 비밀번호 확인해 주세요.");
@@ -126,14 +128,16 @@ float: left;
 
 
 		<br>
-		<form action="search" method="get" class="text-center" style="margin-left: 50px; ">
-		<select name="searchType" style="height:27px">
+		<form action="search" method="get" class="text-center"
+			style="margin-left: 50px;">
+			<select name="searchType" style="height: 27px">
 				<option value="1">노래 제목</option>
 				<option value="2">가수</option>
 				<option value="3">앨범명</option>
 				<option value="4">장르별</option>
 			</select> <input type="text" name="searchKeyword" placeholder="검색어"
-				style="width: 500" /> <input type="submit" value="검색" class="btn " style="background-color:#1C1637; color:white;" />
+				style="width: 500" /> <input type="submit" value="검색" class="btn "
+				style="background-color: #1C1637; color: white;" />
 		</form>
 		<br>
 
@@ -143,7 +147,7 @@ float: left;
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="">PODO</a>
-				</div> 
+				</div>
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="">홈</a></li>
 
@@ -164,89 +168,25 @@ float: left;
 				</ul>
 			</div>
 		</nav>
-	
-<h1 style= "font-size: 200%; font-family: 배달의민족 주아" class="text-left" >Q & A</h1><hr/>
 
+		<h1 style="text-decoration: none; font-family:배달의민족 주아;" class="text-left">
+			새 글 작성 페이지
+		</h1>
+		<hr />
 
-			
-<div>
-<ul>
-	
-	<c:if test="${empty loginUserid }">
-	<a  href="" class="btn btn-primary" onclick="boardregister()"> 새 글 작성</a>
-	</c:if>
-	<c:if test="${not empty loginUserid}">
-	<a href="boardregister"  class="btn btn-primary" onclick="boardregister()">새 글 작성 </a></c:if>
-	
-	</ul>
-</div>
-	<script type="text/javascript">
-	function boardregister() {
-		if (${not empty loginUserid}) {
-		} else {
-			alert('로그인이 필요합니다');	
-		}
-	}
-
-</script>
-
-
-<hr/>
-
-
-<!--  게시물 검색  -->
-<!-- <form action="search" method="get"class="text-center">
-    <select name="searchType">
-        <option value="1">작성자</option>
-        <option value="2">제목</option>
-        <option value="3">제목 + 내용</option>
-    </select>
-    <input type="text" name="searchKeyword" placeholder="검색어"/>
-    <input type="submit" value="검색"class= "btn btn-primary" />
-</form>
- -->
-
-<div class="container" style="width: 1000px;">
-<table class="table table-hover;">
-	
-	<thead style="background: white; opacity:0.9;">
-	<tr>
-		<th>글 번호</th>
-		<th>제목 </th>
-		<th>작성자</th>
-		<th>수정시간</th>
-	</tr>
-	</thead>
-	
-	
-	<tbody  style=" background: white; opacity:0.6;">
-		<c:forEach var="board" items="${boardList}"> 
-		<tr>
-			<td>${board.bno}</td>
-			  <td>
-                    <a href="detail?bno=${board.bno}">${board.title}</a>
-                           </td>
-			<td>${board.userid}</td>
-		
-			<td>
-				<fmt:formatDate var="regdate" value="${board.regdate}" pattern="yyyy/MM/dd HH:mm"/>${regdate }
-			</td>
-		</tr>
-		</c:forEach>
-	
-	</tbody>
-
-</table>
-</div>
-
-
-
-</div>
-		
-		
-		
-		
-
+		<form action="boardQnA" method="post">
+			<label for="title">제목</label> <input type="text" name="title"
+				id="title" required /> <br /> <label for="content">내용</label><br />
+			<textarea rows="10" cols="50" name="content" id="content"
+				placeholder="Q & A 게시판입니다. 글을 작성해주세요."></textarea>
+			<br />
+			<c:if test="${empty loginUserid}">
+			 <label for="userid">${loginUserid}</label> 
+			<input type="text"
+				name="userid" id="userid" readonly /> 
+				</c:if>
+				<br />
+			<br /> <input type="submit" value="작성완료" class="btn btn-primary" />
+		</form>
 </body>
-</html> 
-
+</html>
