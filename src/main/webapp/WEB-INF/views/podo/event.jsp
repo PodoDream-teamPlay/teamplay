@@ -190,12 +190,17 @@ float: left;
 	</script>
 	<!--출첵 누르면~  -->
 	<script>
-	$(document).ready(function() {
-		if (${su1}==null) {
-		alert("이미 출첵 했잖아.");
-	}  else {
-		alert("10포인트 적립!");
-	}
+	$(document).ready(function() { /*출석 이미 했을 때  */
+		if (${kiki}!=null) {
+			alert("출석 이미 함.");
+		}
+	});
+	</script>	
+	<script>
+	$(document).ready(function() {  /* 출첵될 때  */
+		if (${su}!=null) {
+			alert("10포인트 적립 완료.");
+		}
 	});
 	</script>	
 

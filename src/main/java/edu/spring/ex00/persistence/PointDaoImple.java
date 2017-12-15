@@ -28,6 +28,7 @@ public class PointDaoImple implements PointDao {
 	public Date read(String userid) {
 		System.out.println("pointdaoImple read:() userid : " + userid);
 		return session.selectOne(NAMESPACE + ".select", userid);
+		//
 	}
 
 }

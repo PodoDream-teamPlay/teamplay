@@ -22,9 +22,9 @@ public class PointServiceImple implements PointService {
 	}
 
 	@Override
-	public Date select(Point point) {
+	public Date select(String userid) {
 		System.out.println("pointserviceImple select()");
-		return dao.read(point);
+		return dao.read(userid);
 	}
 
 }
