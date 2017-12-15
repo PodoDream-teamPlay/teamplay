@@ -174,29 +174,12 @@ float: left;
 		</nav>
 		
 		<h1>이벤트 페이지</h1>
-		<c:if test="${empty timeout}">
+		
 		<div align="center" >
-		<a href="dailycheck" id="timecheck" ><img align="middle" height="130px" width="400px" alt="출석체크" 
+		<a href="dailycheck"  ><img align="middle" height="130px" width="400px" alt="출석체크" 
 		src="././resources/images/dailycheck.png"/></a>
 		</div>
-		</c:if>
-		
-		<c:if test="${not empty timeout}">
-		<div align="center" >
-		<a id="timecheck" onclick="alreadycheck()" ><img align="middle" height="130px" width="400px" alt="출석체크" 
-		src="././resources/images/dailycheck.png"/></a>
-		</div>
-		</c:if>
-		
-		
-		<script>
-		$(document).ready(function() {
-			if (${su1}==2) {
-				alert("10포인트 적립 완료!.");		
-				
-			} 
-			});
-		</script>
+			
 	<script>
 		$(document).ready(function() {
 			if (${fail}==1) {
@@ -205,11 +188,15 @@ float: left;
 			});
 		
 	</script>
-	<!--이미 출첵한 경우  -->
+	<!--출첵 누르면~  -->
 	<script>
-	function alreadycheck() {
+	$(document).ready(function() {
+		if (${su1}==null) {
 		alert("이미 출첵 했잖아.");
+	}  else {
+		alert("10포인트 적립!");
 	}
+	});
 	</script>	
 
 	

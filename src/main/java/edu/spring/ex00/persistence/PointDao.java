@@ -8,7 +8,7 @@ public interface PointDao {
 	
 	int create(Point point);
 	
-	Date read(Point point);
+	Date read(String userid);
 	
 	
 }

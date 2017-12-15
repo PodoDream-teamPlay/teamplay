@@ -11,14 +11,8 @@
  insert into podo_point (userid, ptime) values (#{userid}, sysdate) 
  </insert>
  
- <select id="select" resultType="Date">
- select ptime from podo_point where pnum = (
-    select max(pnum) from (
-        select pnum from podo_point where userid = #{userid}
-    )
-); 
+ <select id="select" resultType="java.util.Date">
+ select ptime from podo_point where rownum =1 and userid = #{userid} order by pnum desc
  </select>
-  
-  
   
   </mapper>

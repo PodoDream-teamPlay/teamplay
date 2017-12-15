@@ -25,9 +25,9 @@ public class PointDaoImple implements PointDao {
 
 	//날짜 비교하기 위해서
 	@Override
-	public Date read(Point point) {
-		System.out.println("pointdaoImple read:()");
-		return session.selectOne(NAMESPACE + ".select", point);
+	public Date read(String userid) {
+		System.out.println("pointdaoImple read:() userid : " + userid);
+		return session.selectOne(NAMESPACE + ".select", userid);
 	}
 
 }
