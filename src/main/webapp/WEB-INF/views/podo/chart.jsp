@@ -179,7 +179,7 @@ p {
 </div>
 
 
-<div class="container" >
+<div class="container" style="width:1000px;" >
 <form id="tbl_form" method="post">
    <table class="table table-striped" >
     	<thead>
@@ -196,10 +196,14 @@ p {
 		   </tr>
 	  </thead>
       <tbody>
+      <%int rank = 0; %>
         <c:forEach var="music" items="${music}">
 	   	    <tr>           
 		   	  <td width="30" bordercolor="grey"><br><input type="checkbox" id="cb_choose" name="cb_choose" value="${music.mid}" data-mid="${music.mid}"></td>
-		 	   <td id="mid"><br>${music.mid}</td>
+		 	   <td id="mid"><br>
+		 	   <%rank+=1; 
+		 	   out.print(rank+"");
+		 	   %></td>
 		 	   <td>
 		 	   		<a href="music_detail?mid=${music.mid }">
 		 	   		<img id="albumart" alt="자켓이미지" src="././resources/images/${music.malbumart}">
