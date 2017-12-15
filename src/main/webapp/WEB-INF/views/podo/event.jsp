@@ -17,11 +17,6 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="js.prefixfree.jquery.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
 
 
 <style>
@@ -95,8 +90,6 @@ float: left;
 			<a href="http://localhost:8181/ex00/" style="text-decoration:none;">PODO DREAM</a>
 		</h1>
 
-
-
 		<!-- 로그인  -->
 		<div id="noline" style="float: right">
 			<form action="login-post" method="post" id="noline">
@@ -116,7 +109,6 @@ float: left;
 				</c:if>
 
 			</form>
-
 			<c:if test="${not empty loginUserid}">
 				<form action="logout" method="get">
 					${loginUserid}님, 환영합니다
@@ -182,6 +174,40 @@ float: left;
 		</nav>
 		
 		<h1>이벤트 페이지</h1>
+		
+		<div align="center" >
+		<a href="dailycheck"  ><img align="middle" height="130px" width="400px" alt="출석체크" 
+		src="././resources/images/dailycheck.png"/></a>
+		</div>
+			
+	<script>
+		$(document).ready(function() {
+			if (${fail}==1) {
+				alert("로그인 먼저 ㄱㄱ");
+			}
+			});
+		
+	</script>
+	<!--출첵 누르면~  -->
+	<script>
+	$(document).ready(function() { /*출석 이미 했을 때  */
+		if (${kiki}!=null) {
+			alert("출석 이미 함.");
+		}
+	});
+	</script>	
+	<script>
+	$(document).ready(function() {  /* 출첵될 때  */
+		if (${su}!=null) {
+			alert("10포인트 적립 완료.");
+		}
+	});
+	</script>	
+
+	
+		
+		
+		
 
 </body>
 </html>
