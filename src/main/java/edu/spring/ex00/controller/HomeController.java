@@ -82,7 +82,6 @@ public class HomeController {
 		return "home";
 	}
 	
-	들어오는데 
 	
 	
 	} //end login_post()
