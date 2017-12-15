@@ -15,5 +15,5 @@
  select ptime from podo_point where rownum =1 and userid = #{userid} order by pnum desc
  </select>
  
-  
+ <!-- 수정 -->
   </mapper>
