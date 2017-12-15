@@ -242,6 +242,12 @@ $(function(){
 		}
 	});
 	
+	// 체크된 값  mid 컨트롤러 넘기기 
+	$('#mylist').click(function () {
+		$('#tbl_form').attr('action', 'mylist');
+		$('#tbl_form').submit();
+	})
+	
 	// 체크박스 전체 선택
 	$('#choose_all').click(function(){
 		if($('#choose_all').prop('checked')){
@@ -280,7 +286,7 @@ $(document).ready(function(){
 		
 		$(data).each(function(){
 			playlist += '<li style="list-style-type: none;">'	
-						+'<a href="" >'
+						+'<a href="my_playlist?pid=' + this.pid + '" id="mylist" >'
 						+ this.ptitle 
 						+'</a>'
 			           + '</li>'  											

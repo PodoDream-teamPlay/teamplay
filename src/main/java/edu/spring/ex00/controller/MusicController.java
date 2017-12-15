@@ -183,10 +183,14 @@ public class MusicController {
 	
 	// ★ 마이 앨범에 담기 눌렀을 때 -> playlist DB에 추가하는 업데이트 기능
 	@RequestMapping(value="/my_playlist", method = RequestMethod.GET)
-	public String playList(int pid) {
+	public String playList(int pid, int[] cb_choose) {
 		
-		/*String ptitle = //jsp 에서 음악 넣고싶은 playlist 선택해서 넘어온 메소드니까 매개변수에서 playlist 이름 받음
-				String newmids ="";
+		logger.info("playList:::: GET 호출");
+		System.out.println("pid::" + pid);
+		System.out.println("cb_choose ::" + cb_choose);
+		
+	/*	String ptitle = //jsp 에서 음악 넣고싶은 playlist 선택해서 넘어온 메소드니까 매개변수에서 playlist 이름 받음
+		String newmids ="";
 		for(int mid : cb_choose) {
 			newmids += mid + ",";
 		}
@@ -206,9 +210,9 @@ public class MusicController {
 				String mgenre = musicService.selectMgenre(mid);
 				memberService.update_genre_count(mgenre, userid);
 			}
-		}*/
-		
-		return "";
+		}
+		*/
+		return "redirect:/chart";
 	}
 	
 	
