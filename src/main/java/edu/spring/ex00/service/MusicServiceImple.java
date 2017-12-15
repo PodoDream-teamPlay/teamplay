@@ -57,5 +57,11 @@ public class MusicServiceImple implements MusicService {
 	public List<Music> getNewAlbums() {
 		return musicDao.newAlbum();
 	}
+	
+	// ★ 플레이리스트 곡 추가  
+	@Override
+	public int update_playlist(int pid, String mids) {
+		return musicDao.update(pid, mids);
+	}
 
 } // end class MusicServiceImple 

@@ -71,5 +71,14 @@ public class MusicDaoImple implements MusicDao {
 	public List<Music>  newAlbum() {
 		return session.selectList(NAMESPACE + ".selectByMdate") ;
 	}
+	
+	@Override
+	public int update(int pid, String mids) {
+		// ★ 플레이리스트 추가 
+		Map<String, Object> args = new HashMap<>();
+		args.put("pid", pid);
+		args.put("mids", mids);
+		return session.update(NAMESPACE + ".updatePlaylistByPid", args);
+	}
 
 } // end class MusicDaoImple 

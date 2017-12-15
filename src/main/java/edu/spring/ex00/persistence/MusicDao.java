@@ -29,6 +29,8 @@ public interface MusicDao {
 	// 최신앨범 가져오기 
 	List<Music> newAlbum();
 	
+	// 플레이리스트 추가(담기)
+	int update(int pid, String mids);
 	
 	
 	
