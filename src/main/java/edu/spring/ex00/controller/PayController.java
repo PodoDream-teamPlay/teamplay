@@ -37,38 +37,46 @@ public class PayController {
 		
 	//결제 창으로 넘기기.
 	@RequestMapping(value="/paid", method=RequestMethod.GET)
-	public String month_paid(int money, Model model) {
+	public String month_paid(int money, Model model, String userid) {
 		System.out.println("money = " + money);
 		model.addAttribute("money", money);
-		
+		System.out.println("userid = " + userid);
+		int remainpoint = memberservice.select_point(userid);
+		System.out.println("remainpoint" + remainpoint);
+		model.addAttribute("remainpoint", remainpoint);
 		return "podo/paid";
 		
 	}
 	
 	
 	@RequestMapping(value="/paid", method=RequestMethod.POST)
-	public String month_paid(int money, HttpSession session) {
+	public String month_paid(int money, HttpSession session, int usingpoint) {
 		System.out.println("paid post: money=" + money);
-			
+		System.out.println("paid post: usintpoint = " + usingpoint);
 		String userid = (String) session.getAttribute("loginUserid");
 		Member m = memberservice.select(userid);
 		java.util.Date date = new java.util.Date();
 		Member member = null;
+		int remainpoint = memberservice.select_point(userid) -usingpoint;
 		
 		if (money==3900) {
 		date.setMonth(date.getMonth()+1);
-		member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, date,0);
+		member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, date,remainpoint);
 		memberservice.update_pay(member);
+		memberservice.update_point(member);
+		
 		}
 		if (money==7900) {
 			date.setMonth(date.getMonth()+2);
-			member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, date, 0);
+			member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, date, remainpoint);
 			memberservice.update_pay(member);
+			memberservice.update_point(member);
 		}
 		if (money==9900) {
 			date.setMonth(date.getMonth()+3);
-			member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, date, 0);
+			member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, date, remainpoint);
 			memberservice.update_pay(member);
+			memberservice.update_point(member);
 		} if (money==5000) {		
 			member = new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, m.getMemdate(), m.getPoint()+5000);
 			memberservice.update_point(member);

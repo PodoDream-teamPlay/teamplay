@@ -165,10 +165,10 @@ float: left;
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="http://localhost:8181/ex00/">PODO</a>
+					<a class="navbar-brand" href="">PODO</a>
 				</div> 
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="http://localhost:8181/ex00/">홈</a></li>
+					<li class="active"><a href="">홈</a></li>
 
 					<li><a href="chart">차트</a></li>
 
@@ -214,7 +214,7 @@ float: left;
 
 
 <div align="right">
-	<input id="money" name="money" readonly required>원<br/>
+	<input id="money" readonly required>원<br/>
 	<input id="pay" type="submit" value="결제하기" disabled onclick="popupOpen()">
 </div>
 
@@ -290,7 +290,8 @@ function month3() {
 <script> 
 function popupOpen(){
 	var money = document.getElementById('money');
-	var popUrl = "http://localhost:8181/ex00/paid?money=" + money.value;	
+	var userid = '${loginUserid}'; 
+	var popUrl = "http://localhost:8181/ex00/paid?money=" + money.value + "&userid="+ userid;	
 	var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";    
 		window.open(popUrl,"",popOption);
 	}
