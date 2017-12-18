@@ -41,7 +41,7 @@ public class BoardController {
 	
 	
 	
-	@RequestMapping(value="/boardQnA", method=RequestMethod.POST)
+	@RequestMapping(value="/boardFnA", method=RequestMethod.POST)
 	public String boardRegister(Board b) {
 		logger.info("registerBoard() POST CALL");
 		logger.info("---- title: " + b.getTitle());
@@ -50,7 +50,7 @@ public class BoardController {
 		
 		boardService.insert(b);
 		
-		return "redirect:/boardQnA";
+		return "redirect:/boardFnA";
 	}
 	
 	//작성한 글 보기 
@@ -63,6 +63,7 @@ public class BoardController {
 		logger.info("----title : {}, uesrid: {}" , b.getTitle(), b.getUserid());
 		
 		model.addAttribute("board", b); 
+		
 		
 	}
 

@@ -179,6 +179,7 @@ img {
 					<li><a href="monthpay">이용권</a></li>
 					<li><a href="event">이벤트</a></li>
 					<li><a href="boardFnA">F&A</a></li>
+					
 				</ul>
 			</div>
 		</nav>

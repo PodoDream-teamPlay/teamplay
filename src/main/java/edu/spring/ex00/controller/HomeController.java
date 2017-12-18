@@ -176,6 +176,7 @@ public class HomeController {
 			logger.info("event() GET 호출");
 			return "podo/event";
 			
+			
 		}
 		
 		//Q&A 페이지로 이동
