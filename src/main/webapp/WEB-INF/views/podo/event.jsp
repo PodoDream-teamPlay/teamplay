@@ -173,13 +173,30 @@ float: left;
 				</ul>
 			</div>
 		</nav>
-		
-		<h1>이벤트 페이지</h1>
+		<h2>이벤트 페이지</h2>
 		
 		<div align="center" >
-		<a href="dailycheck"  ><img align="middle" height="130px" width="400px" alt="출석체크" 
-		src="././resources/images/dailycheck.png"/></a>
+		<a href="dailycheck"  ><img align="middle" height="450px" width="1000px" alt="출석체크" 
+		src="././resources/images/check.png"/></a>
 		</div>
+		
+		<h2>다가오는 이벤트</h2>
+		<div align="center" >
+		<img align="middle" height="450px" width="1000px" alt="다가오는 이벤트" 
+		src="././resources/images/future.png"/>
+		</div>
+		
+		<h2>종료된 이벤트</h2>
+		<div align="center" >
+		<img align="middle" height="200px" width="300px" alt="다가오는 이벤트" 
+		src="././resources/images/event1.png"/>
+		<img align="middle" height="200px" width="300px" alt="다가오는 이벤트" 
+		src="././resources/images/event2.jpg"/>
+		<img align="middle" height="200px" width="300px" alt="다가오는 이벤트" 
+		src="././resources/images/event3.png"/>
+		
+		</div>
+		
 			
 	<script>
 		$(document).ready(function() {
