@@ -168,11 +168,11 @@ float: left;
 						</ul></li>
 					<li><a href="monthpay">이용권</a></li>
 					<li><a href="event">이벤트</a></li>
-					<li><a href="boardQnA">Q&A</a></li>
+					<li><a href="boardFnA">F&A</a></li>
 				</ul>
 			</div>
 		</nav>
-<h1 style="color:lightblue; font-size: 300%"><a href="boardQnA">♥상세보기 페이지♥</a></h1>
+<h1 style="color:lightblue; font-size: 300%"><a href="boardFnA">♥상세보기 페이지♥</a></h1>
 <hr/>
 
 <ul>

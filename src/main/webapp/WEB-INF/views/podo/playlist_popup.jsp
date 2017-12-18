@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,102 +31,182 @@
 <style>
 /* Color Of The Year -- https://colorganize.com/?palette=75 */
 $
-rose_quartz__2016: #f7cac9 ;
- $serenity__2016: #8ea6d0 ;
- $marsala__2015: #965352 ;
- $radiant_orchid__2014: #b565a7 ;
- $emerald__2013: #169c78 ;
- $tangerine_tango__2012: #e1523d ;
- $honeysuckle__2011: #da4f70 ;
- $turquoise__2010: #41b6ab ;
- $mimosa__2009: #f0bf59 ;
- $blue_iris__2008: #595ca1 ;
- $chili_pepper__2007: #9c1b31 ;
- $sand_dollar__2006: #decdbf ;
- $blue_turquoise__2005: #4fb0ae ;
- $tigerlily__2004: #e4583e ;
- $aqua_sky__2003: #7ac5c5 ;
- $true_red__2002: #c02034 ;
- $fuchsia_rose__2001: #c94476 ;
- $cerulean__2000: #9bb7d6 ;
-
-
-.albumart {
+rose_quartz__2016: #f7cac9 ; $serenity__2016: #8ea6d0 ; $marsala__2015: #965352 
+	; $radiant_orchid__2014: #b565a7 ; $emerald__2013: #169c78 ; $tangerine_tango__2012: #e1523d 
+	; $honeysuckle__2011: #da4f70 ; $turquoise__2010: #41b6ab ; $mimosa__2009: #f0bf59 
+	; $blue_iris__2008: #595ca1 ; $chili_pepper__2007: #9c1b31 ; $sand_dollar__2006: #decdbf 
+	; $blue_turquoise__2005: #4fb0ae ; $tigerlily__2004: #e4583e ; $aqua_sky__2003: #7ac5c5 
+	; $true_red__2002: #c02034 ; $fuchsia_rose__2001: #c94476 ; $cerulean__2000: #9bb7d6 
+	; .albumart {
 	width: 50px;
 }
 
-
-$albumCover: url(http://gagadaily.com/uploads/stories/monthly_2016_09/joanne.jpg.a6d8d6fd6e671a82ae75e80925ff43d3.jpg);
+$
+albumCover: url (http: //gagadaily.com
+	/uploads/stories/monthly_2016_09/joanne.jpg.a6d8d6fd6e671a82ae75e80925ff43d3.jpg
+	);
 
 body {
-  background-color: #000;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: "Montserrat", sans-serif;
-  cursor: default;
+	background-color: #000;
+	color: rgba(255, 255, 255, 0.7);
+	font-family: "Montserrat", sans-serif;
+	cursor: default;
 }
 
 #bg-before {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  box-shadow: inset 0 0 200px #000;
-  background: $albumCover 0 / cover fixed;
-  filter: blur(20px);
-  animation: blurAni 24s infinite;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	box-shadow: inset 0 0 200px #000;
+	background: $albumCover 0/cover fixed;
+	filter: blur(20px);
+	animation: blurAni 24s infinite;
 }
 
 #bg {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  animation: bgAni 18s infinite;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	animation: bgAni 18s infinite;
 }
 
-@keyframes blurAni {
-  0% {
-    filter: blur(20px);
-  }
-  25% {
-    filter: blur(5px);
-  }
-  50% {
-    filter: blur(15px);
-  }
-  75% {
-    filter: blur(0);
-  }
-  100% {
-    filter: blur(20px);
-  }
+@
+keyframes blurAni { 0% {
+	filter: blur(20px);
 }
 
-@keyframes bgAni {
-  0% {
-    background-color: rgba(0, 0, 0, 0.6);
-  }
-  17% {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  33% {
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-  50% {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  67% {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  100% {
-    background-color: rgba(0, 0, 0, 0.6);
-  }
+25%
+{
+filter
+:
+ 
+blur
+(5px);
+
+  
+}
+50%
+{
+filter
+:
+ 
+blur
+(15px);
+
+  
+}
+75%
+{
+filter
+:
+ 
+blur
+(0);
+
+  
+}
+100%
+{
+filter
+:
+ 
+blur
+(20px);
+
+  
+}
+}
+@
+keyframes bgAni { 0% {
+	background-color: rgba(0, 0, 0, 0.6);
 }
 
+17%
+{
+background-color
+:
+ 
+rgba
+(0
+,
+0,
+0,
+0
+.7
+);
 
+  
+}
+33%
+{
+background-color
+:
+ 
+rgba
+(0
+,
+0,
+0,
+0
+.9
+);
+
+  
+}
+50%
+{
+background-color
+:
+ 
+rgba
+(0
+,
+0,
+0,
+0
+.5
+);
+
+  
+}
+67%
+{
+background-color
+:
+ 
+rgba
+(0
+,
+0,
+0,
+0
+.8
+);
+
+  
+}
+100%
+{
+background-color
+:
+ 
+rgba
+(0
+,
+0,
+0,
+0
+.6
+);
+
+  
+}
+}
 main {
 	position: absolute;
 	top: 2rem;
@@ -219,19 +301,21 @@ to {
 	text-shadow: none;
 }
 
-.control .icon {/* 
+.control .icon { /* 
 	font-size: 2.7rem; */
+	
 }
 
- #controls-play {
+#controls-play {
 	width: 5rem;
-	height: 5rem;/* 
+	height: 5rem; /* 
 	font-size: 2rem; */
-} 
+}
 
 #controls-play .icon-pause {
-  display: none;
+	display: none;
 }
+
 #controls-play.play .icon-pause {
 	display: block;
 }
@@ -257,17 +341,23 @@ to {
 
 	<table class="table">
 		<main>
-		<div id="albumCover">
-			<img class="playlistAlbum" src="././resources/images/m43.jpg"
-				style="width: 180px; text-align: center;">
-		</div>
-		<div id="progress">
-			<div id="progress-bar"></div>
-		</div>
-		<div id="title">
-			<div id="title-text">
-				${music.mtitle }<br /> ${music.martist}
-			</div>
+				<div id="albumCover">
+					<img class="playlistAlbum" alt="playlist image"
+						src="././resources/images/${music.malbumart}"
+						style="width: 180px; text-align: center;">
+					<div>${music.mtitle }<br/>${music.martist}</div>
+
+				</div>
+				<div id="progress">
+					<div id="progress-bar"></div>
+				</div>
+				<div id="title">
+					<div id="title-text">
+						${music.mtitle }<br /> ${music.martist}
+					</div>
+	
+
+
 		</div>
 		<div id="controls">
 			<div class="control">
@@ -290,7 +380,11 @@ to {
 			</div>
 		</div>
 		</main>
+	
+		
 	</table>
+
+
 
 
 

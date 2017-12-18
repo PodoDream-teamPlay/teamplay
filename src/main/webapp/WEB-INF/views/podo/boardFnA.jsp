@@ -160,10 +160,58 @@ float: left;
 						</ul></li>
 					<li><a href="monthpay">이용권</a></li>
 					<li><a href="event">이벤트</a></li>
-					<li><a href="boardQnA">Q&A</a></li>
+					<li><a href="boardFnA">F&A</a></li>
 				</ul>
 			</div>
 		</nav>
+		
+		
+		
+		
+<div class="container" style="width:1000px;">
+  <h2>F & A</h2>
+   <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">회원가입 후, 정보수정 1</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">회원가입 후, 정보 수정 </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">포인트 사용법 2</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">포인트 사용법 </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">문의사항 3</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">문의사항</div>
+      </div>
+    </div>
+  </div> 
+</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
 <h1 style= "font-size: 200%; font-family: 배달의민족 주아" class="text-left" >Q & A</h1><hr/>
 
