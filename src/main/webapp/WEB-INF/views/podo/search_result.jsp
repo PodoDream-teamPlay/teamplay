@@ -28,18 +28,13 @@
 <style>
 
 .topnav {
-    background-color: #4D408A;
     overflow: hidden;
     float: left;
-    color: #CBC1FA;
+    color: black;
     text-align: center;
     width: 100%;
-    height: 52px;
-    font-size: 35px;
-}
-
-hr{
-	border: 3px double #ff1aff;
+    height: auto;
+    font-size: 30px;
 }
 
 table, th, td{
@@ -167,12 +162,20 @@ p {
 <br>
 
 <div class="topnav" id="myTopnav">
-	<img src="././resources/images/grape.png" height="80%"> <p>검색결과</p>
+	<c:if test="${topnavTitle eq '2000sBallad'}">
+		<img src="././resources/images/banner02.png"
+		style="width: 970; height: auto; object-fit: cover;"> 
+	</c:if>
+	<c:if test="${topnavTitle ne '2000sBallad'}">
+		[ ${topnavTitle } ] 검색 결과
+	</c:if>
+	<hr>
 </div>
 
 <br>
 <br>
 <br>
+
 <div class="container">
    <form>
   	  <input type="checkbox" name="choose_all" value="1">

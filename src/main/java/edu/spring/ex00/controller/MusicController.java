@@ -69,7 +69,7 @@ public class MusicController {
 		
 		List<Music> list = musicService.search(searchType, searchKeyword);	
 		model.addAttribute("musicList", list);
-		
+		model.addAttribute("topnavTitle", searchKeyword);
 		return "podo/search_result";
 		
 	}
@@ -227,7 +227,7 @@ public class MusicController {
 	}
 	
 	
-	// 페이지 번호 부여해주기 
+	// MD 수수's pick 배너 클릭 처리
 	@RequestMapping(value="/generation", method=RequestMethod.GET)
 	public String selctByMdate(Model model, String startYear, String endYear, String genre) {
 		String startDate = startYear + "/01/01";
@@ -235,6 +235,7 @@ public class MusicController {
 		List<Music> list = musicService.selectByMdate(startDate, endDate, genre);
 		
 		model.addAttribute("musicList", list);
+		model.addAttribute("topnavTitle", "2000sBallad");
 		return "podo/search_result";
 	}
 	

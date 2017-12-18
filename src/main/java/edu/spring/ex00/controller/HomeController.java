@@ -166,7 +166,7 @@ public class HomeController {
 			
 			List<Music> list = musicService.search(searchType, searchKeyword);	
 			model.addAttribute("musicList", list);
-			
+			model.addAttribute("topnavTitle", searchKeyword);
 			return "podo/search_result";
 		}
 	
