@@ -218,8 +218,13 @@ p {
 		 	   </td>
 		 	   <td><br>${music.martist}</td>
 		 	   <td><br>${music.malbum}</td>
-		 	   <td><a href="${music.mlyrics}"><br><img alt="가사" src="././resources/images/t_lyrics.png"></a></td>
-		 	   <td><a href=""><br><img alt="내앨범" src="././resources/images/t_myalbum.png"></a></td>
+		 	   <td>
+		 	   <a href="lyrics_detail_popup?mid=${music.mid}" onclick="window.open(this.href, '_blank', 'width=400, height=600, left=300, top=100'); return false;" ><br>
+		 	   <img alt="가사" src="././resources/images/t_lyrics.png"></a>
+		 	   </td>
+		 	   <td>
+		 	   <a href=""><br><img alt="내앨범" src="././resources/images/t_myalbum.png"></a>
+		 	   </td>
 		 	   <td><a href="mp3_down_icon?mid=${music.mid}" id="down_icon"><br><img alt="MP3다운" src="././resources/images/t_mp3.png" name="down_icon"></a></td>		 	   	   	    
 		    </tr>
 		    
