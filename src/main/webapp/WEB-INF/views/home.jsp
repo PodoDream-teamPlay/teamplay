@@ -196,7 +196,7 @@ img {
 				<!-- banner02 : 2000년대 발라드 추천 -->
 				<a href="generation?startYear=2000&endYear=2009&genre=ballad">
 				<img
-					class="Slides" src="././resources/images/title2.jpg"
+					class="Slides" src="././resources/images/banner02.png"
 					style="width: 970; height: auto; object-fit: cover;"> 
 				</a>
 				
