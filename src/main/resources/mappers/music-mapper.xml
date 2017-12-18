@@ -32,6 +32,9 @@
        <when test="searchType == 4">
           ${colMgenre} like #{searchKeyword}
        </when>
+       <when test="searchType == 5">
+          ${colMdate} between #{searchKeyword}
+       </when>
    </choose>
    order by ${colMid} 
   </select>

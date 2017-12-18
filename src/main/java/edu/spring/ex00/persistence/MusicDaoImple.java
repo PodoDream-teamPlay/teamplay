@@ -39,7 +39,6 @@ public class MusicDaoImple implements MusicDao {
 		Map<String, Object> args = new HashMap<>();
 		args.put("searchType", type);
 		args.put("searchKeyword", "%" + keyword + "%");
-		
 		logger.info("타입: {}, 키워드: {}", type, keyword);
 		return session.selectList(NAMESPACE + ".search", args);
 	}
