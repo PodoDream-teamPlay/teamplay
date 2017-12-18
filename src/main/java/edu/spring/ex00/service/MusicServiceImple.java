@@ -64,4 +64,9 @@ public class MusicServiceImple implements MusicService {
 		return musicDao.update(pid, mids);
 	}
 
+	@Override
+	public List<Music> selectByMdate(String startDate, String endDate, String genre) {
+		return musicDao.read(startDate, endDate, genre);
+	}
+
 } // end class MusicServiceImple 

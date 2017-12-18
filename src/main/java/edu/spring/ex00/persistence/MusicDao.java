@@ -32,6 +32,9 @@ public interface MusicDao {
 	// 플레이리스트 추가(담기)
 	int update(int pid, String mids);
 	
+	// 년도별 검색
+	List<Music> read(String startDate, String endDate, String genre);
+	
 	
 	
 } // end interface MusicDao

@@ -32,13 +32,18 @@
        <when test="searchType == 4">
           ${colMgenre} like #{searchKeyword}
        </when>
-       <when test="searchType == 5">
+       <!-- <when test="searchType == 5">
           ${colMdate} between #{searchKeyword}
-       </when>
+       </when> -->
    </choose>
    order by ${colMid} 
   </select>
  
+  <!-- 년도별 검색 -->
+  <select id="searchByMdate" resultType="Music">
+  select * from ${tblMusic} where ${colMgenre} = #{genre} and ${colMdate} between #{startDate} and #{endDate} order by ${colMdate}
+  </select>
+
   
   <!-- mid로 search -->
   <select id="selectByMid" resultType="Music">

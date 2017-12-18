@@ -188,14 +188,18 @@ img {
 		<!-- 배너 Slideshow  -->
 		<div class="container-center" style="background: ligthgrey;">
 			<div class="float:center" style="width: 970; height: auto;">
-				
+				<!-- banner01 : 트와이스 신곡 홍보 -->
 				<a href="music_detail?mid=115">
 				<img class="Slides" src="././resources/images/banner01.png"
 					style="width: 970px; height: auto; object-fit: cover;"> 
 				</a>
+				<!-- banner02 : 2000년대 발라드 추천 -->
+				<a href="generation?startYear=2000&endYear=2009&genre=ballad">
 				<img
 					class="Slides" src="././resources/images/title2.jpg"
 					style="width: 970; height: auto; object-fit: cover;"> 
+				</a>
+				
 				<img
 					class="Slides" src="././resources/images/title3.jpg"
 					style="width: 970; height: auto; object-fit: cover;"> 
@@ -217,7 +221,7 @@ img {
 			// 배너 슬라이드 스크립트 부분 시작 
 			var slideIndex = 0;
 			carousel();
-			showDivs(slideIndex);
+			showDivs(slideIndex); 
 			
 			//배너 자동슬라이드 
 			function carousel() {

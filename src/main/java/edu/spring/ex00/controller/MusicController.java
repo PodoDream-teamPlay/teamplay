@@ -215,5 +215,15 @@ public class MusicController {
 		return "redirect:/chart";
 	}
 	
+	@RequestMapping(value="/generation", method=RequestMethod.GET)
+	public String selctByMdate(Model model, String startYear, String endYear, String genre) {
+		String startDate = startYear + "/01/01";
+		String endDate = endYear + "/12/31";
+		List<Music> list = musicService.selectByMdate(startDate, endDate, genre);
+		
+		model.addAttribute("musicList", list);
+		return "podo/search_result";
+	}
+	
 	
 } // end class MusicController

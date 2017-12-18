@@ -80,4 +80,13 @@ public class MusicDaoImple implements MusicDao {
 		return session.update(NAMESPACE + ".updatePlaylistByPid", args);
 	}
 
+	@Override
+	public List<Music> read(String startDate, String endDate, String genre) {
+		Map<String, String> args = new HashMap<>();
+		args.put("startDate", startDate);
+		args.put("endDate", endDate);
+		args.put("genre", genre);
+		return session.selectList(NAMESPACE + ".searchByMdate", args);
+	}
+
 } // end class MusicDaoImple 

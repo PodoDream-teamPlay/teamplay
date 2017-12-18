@@ -28,5 +28,8 @@ public interface MusicService {
 	// ★ 플레이리스트 추가 
 	int update_playlist(int pid, String mids);
 	
+	//년도별 검색
+	List<Music> selectByMdate(String startDate, String endDate, String genre);
+	
 	
 } // end interface MusicService 
