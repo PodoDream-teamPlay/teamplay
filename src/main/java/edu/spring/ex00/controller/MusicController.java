@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.xml.ws.Service.Mode;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -225,6 +226,8 @@ public class MusicController {
 		return "redirect:/chart";
 	}
 	
+	
+	// 페이지 번호 부여해주기 
 	@RequestMapping(value="/generation", method=RequestMethod.GET)
 	public String selctByMdate(Model model, String startYear, String endYear, String genre) {
 		String startDate = startYear + "/01/01";
@@ -236,12 +239,16 @@ public class MusicController {
 	}
 	
 	
+	// 가사 보기 아이콘 눌렀을 때 팝업창 띄우기 
 	@RequestMapping(value="/lyrics_detail_popup")
-	public String lyricsDetailPopup() {
+	public String lyricsDetailPopup(int mid, Model model) {
 		
 		logger.info("lyricsDetailPopup()::: 호출");
+		Music music = musicService.select(mid);
+		model.addAttribute("music", music);
 		return "podo/lyrics_detail_popup";
 	}
+	
 	
 	
 } // end class MusicController
