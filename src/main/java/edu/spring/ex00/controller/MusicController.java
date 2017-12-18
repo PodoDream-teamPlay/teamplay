@@ -16,9 +16,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.spring.ex00.domain.Get;
 import edu.spring.ex00.domain.Music;
+import edu.spring.ex00.pagination.PageNumberMaker;
+import edu.spring.ex00.pagination.PaginationCriteria;
 import edu.spring.ex00.service.GetService;
 import edu.spring.ex00.service.MemberService;
 import edu.spring.ex00.service.MusicService;
+import edu.spring.ex00.service.PlaylistService;
 
 @Controller
 public class MusicController {
@@ -31,14 +34,27 @@ public class MusicController {
 	@Autowired private MusicService musicService;
 	@Autowired private GetService getService;
 	@Autowired private MemberService memberService;
+	@Autowired private PlaylistService playlistService;
 	
 	// 홈(main)에서 '차트'를 클릭했을 때 
 	@RequestMapping(value = "/chart", method = RequestMethod.GET)
-	public String musicChart(Model model) {
+	public String musicChart(HttpSession session, Model model, Integer page, Integer perPage) {
+		
+		PaginationCriteria c = new PaginationCriteria();
+		if(page != null) {c.setPage(page);}
+		if(perPage != null) {c.setNumsPerPage(perPage);}
+		
 		logger.info("chart() GET 호출");
 		// 차트 정렬 - 클라이언트에 전체 보여주기 
 		List<Music> list = musicService.selectAll(100);
 		model.addAttribute("music", list);
+		String userid =(String) session.getAttribute("loginUserid");
+		//pagination
+		PageNumberMaker pmaker = new PageNumberMaker();
+		pmaker.setCriteria(c);
+		pmaker.setTotalCount(playlistService.getTotal(userid));
+		pmaker.setPageMakerData();			
+		model.addAttribute("ppageMaker", pmaker);
 		
 		return "podo/chart";
 	}
@@ -182,25 +198,17 @@ public class MusicController {
 	
 	
 	// ★ 마이 앨범에 담기 눌렀을 때 -> playlist DB에 추가하는 업데이트 기능
-	@RequestMapping(value="/my_playlist", method = RequestMethod.GET)
-	public String playList(int pid, int[] cb_choose) {
+	@RequestMapping(value="/my_playlist", method = RequestMethod.POST)
+	public String playList(String pid, int[] cb_choose, HttpSession session) {
 		
-		logger.info("playList:::: GET 호출");
-		System.out.println("pid::" + pid);
-		System.out.println("cb_choose ::" + cb_choose);
-		
-	/*	String ptitle = //jsp 에서 음악 넣고싶은 playlist 선택해서 넘어온 메소드니까 매개변수에서 playlist 이름 받음
-		String newmids ="";
-		for(int mid : cb_choose) {
-			newmids += mid + ",";
+		String userid = (String) session.getAttribute("loginUserid");
+		String mids = "";
+		int result = 0;
+		for(int cb : cb_choose) {
+			mids = cb + ",";
+			result = musicService.update_playlist(Integer.parseInt(pid), mids);
 		}
-		String mids = playlistService.select(mids, ptitle);
-		//원래 userid가 ptitle에 가지고있던 mids를 가져와서
-		mids += newmids; //(1,) + (2,3,4,) => 1,2,3,4,
 		
-		int result = playlistService.update(mids, userid, ptitle);
-		//userid도 일치하고, ptitle도 일치하는 playlist에  새로 만든mids로  mids컬럼을 업데이트
-		//다 올라간거 확인 됐으면 (result == 1)
 		if(result == 1) {
 			for(int mid : cb_choose) {
 				//count수 올리기 
@@ -210,8 +218,10 @@ public class MusicController {
 				String mgenre = musicService.selectMgenre(mid);
 				memberService.update_genre_count(mgenre, userid);
 			}
+		}else {
+			
 		}
-		*/
+		
 		return "redirect:/chart";
 	}
 	
@@ -223,6 +233,14 @@ public class MusicController {
 		
 		model.addAttribute("musicList", list);
 		return "podo/search_result";
+	}
+	
+	
+	@RequestMapping(value="/lyrics_detail_popup")
+	public String lyricsDetailPopup() {
+		
+		logger.info("lyricsDetailPopup()::: 호출");
+		return "podo/lyrics_detail_popup";
 	}
 	
 	

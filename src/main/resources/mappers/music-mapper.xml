@@ -75,7 +75,7 @@
   <!-- ★ pid로 플레이리스트 추가 (업데이트)-->
   <update id="updatePlaylistByPid">
     update ${tblPlaylist} set ${colMids} = 
-       concat((select ${colMids} from ${tblPlaylist} where ${colPid} = #{pid}), #{mid}) 
+       concat((select ${colMids} from ${tblPlaylist} where ${colPid} = #{pid}), #{mids}) 
          where ${colPid} = #{pid}
   </update>
   

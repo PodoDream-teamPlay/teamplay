@@ -170,8 +170,29 @@ p {
 				<input id="btn-insert" type="button" value="확인"/></li>		
 				<li><input id="userid" name="userid" type="hidden" value="${loginUserid}" /></li>
 			    <ul id="playlists">
-			       <!-- Ajax로 플레이리스트 가져오기 -->
+			       <!-- Ajax로 플레이리스트 가져오기 -->		 
 			    </ul>
+			       <!-- pagination -->		     
+						<div class="text-center">
+								<ul class="pagination" id="ppagination">
+									<c:if test="${ppageMaker.prev }">
+									<li><a href="${ppageMaker.startPage - 1 }">◀</a></li>
+									</c:if>
+									<c:forEach var = "pnum" begin="${ppageMaker.startPage }" end="${ppageMaker.endPage }">
+									<li><a href="${pnum }">${pnum }</a></li>
+									</c:forEach>
+									<c:if test="${ppageMaker.next }">
+									<li><a href="${ppageMaker.endPage + 1}">▶</a></li>
+									</c:if>
+								</ul>
+							</div>
+							<form id="ppageForm">
+							<input id="ppage" type="hidden" name="ppage" value="${ppageMaker.criteria.page }"> <!-- 현재 페이지 -->
+							<input id="pperPage" type="hidden" name="pperPage" value="${ppageMaker.criteria.numsPerPage }"> <!-- 한페이지에 보여줄 갯수 -->
+							</form>
+							
+						</div>
+						
 			</ul>
 	</div>
 </form>
@@ -183,6 +204,7 @@ p {
 
 <div class="container" style="width:1000px;" >
 <form id="tbl_form" method="post">
+	<input type="hidden" name="pid" id="tbl_form_pid" value=""/>
    <table class="table table-striped" >
     	<thead>
 	    	<tr>
@@ -219,8 +241,9 @@ p {
 		 	   <td><br>${music.martist}</td>
 		 	   <td><br>${music.malbum}</td>
 		 	   <td>
-		 	   <a href="lyrics_detail_popup?mid=${music.mid}" onclick="window.open(this.href, '_blank', 'width=400, height=600, left=300, top=100'); return false;" ><br>
-		 	   <img alt="가사" src="././resources/images/t_lyrics.png"></a>
+		 	   <a  href="lyrics_detail_popup?mid=${music.mid}" 
+		 	   onclick="window.open(this.href, '_blank', 'width=400, height=600, left=300 ,top=100'); return false;" ><br>
+		 	   <img  alt="가사" src="././resources/images/t_lyrics.png"></a>
 		 	   </td>
 		 	   <td>
 		 	   <a href=""><br><img alt="내앨범" src="././resources/images/t_myalbum.png"></a>
@@ -248,11 +271,7 @@ $(function(){
 		}
 	});
 	
-	// 체크된 값  mid 컨트롤러 넘기기 
-	$('#mylist').click(function () {
-		$('#tbl_form').attr('action', 'mylist');
-		$('#tbl_form').submit();
-	})
+ 	
 	
 	// 체크박스 전체 선택
 	$('#choose_all').click(function(){
@@ -270,41 +289,65 @@ $(function(){
 			alert('선택한 MP3 목록 다운 완료');
 		}
 	});
-});
 
-// 플레이리스트 담기 리스트 목록 보여주기 런타임 
-$(function() {        
-        $("#cart-list").hide();
-            
-        $("#cart").click(function() {
-        	
-          $("#cart-list").slideToggle(500);
-        });             
- });
- 
- 
-$(document).ready(function(){
-  var userid = '${loginUserid}';
- function getAllPlaylists(){
-	
-	$.getJSON('/ex00/playlist/all/'+ userid, function(data){
-		var playlist = '';
-		
-		$(data).each(function(){
-			playlist += '<li style="list-style-type: none;">'	
-						+'<a href="my_playlist?pid=' + this.pid + '" id="mylist" >'
-						+ this.ptitle 
-						+'</a>'
-			           + '</li>'  											
-		});
-		
-		$('#playlists').html(playlist);
-	});
-	
-}
-getAllPlaylists();
 
-	//insert 하는 함수
+	// 플레이리스트 담기 리스트 목록 보여주기 런타임
+	$("#cart-list").hide();
+    
+    $("#cart").click(function() {
+      $("#cart-list").slideToggle(500);
+    });
+    
+    var userid = '${loginUserid}';
+
+    function getAllPlaylists(page = 1) {
+   	 
+	   	$.getJSON('/ex00/playlist/all/'+ userid + '?page=' + page, function(data){
+			var playlist = '';
+	
+	   		$(data).each(function(){
+	   			playlist += '<li style="list-style-type: none;">'						
+	   						+'<a href="" class="mylist" data-pid="'+ this.pid +'">'
+	    						+ this.ptitle 
+	   						+'</a>'
+	   			           + '</li>';  											
+	   		});
+	   		
+	   		$('#playlists').html(playlist);
+	   		
+	   	    //체크된 값  mid 컨트롤러 넘기기 
+	   	    $('.mylist').click(function (e) {
+	  			e.preventDefault();
+	   	    	var piddd = $(this).attr('data-pid');
+	   	    	$('#tbl_form_pid').val(piddd);
+	   	    	$('#tbl_form').attr('action', 'my_playlist');
+	   	    	$('#tbl_form').submit();
+	   	    });
+	   	
+	   	});
+   	
+    } // end function getAllPlaylists()
+    
+    getAllPlaylists();
+    
+    
+    
+    //playlist-pagination
+    $('#ppagination li a').click(function(){
+    	event.preventDefault(); //기본 이벤트 동작을 막겠다 - 클릭 안됨
+    	
+    	//href 속성에 이동해야할 페이지 번호를 넣어놨음
+    	var target = $(this).attr('href');
+    	
+    	//pageForm 만든거에 이동할 페이지 번호 넣겠음
+    	$('#ppage').val(target);
+    	//pageForm submit 여기서 함
+    	//$('#ppageForm').submit();
+    	getAllPlaylists($(this).text());
+
+    });
+    
+    //insert 하는 함수
 	function insertPlaylist(){
 		var ptitle = $('#ptitle').val();
 		var userid = '${loginUserid}';
@@ -329,10 +372,8 @@ getAllPlaylists();
 			}
 		});
 		
-		
-		
 	}
-	
+  
 	//중복 체크하는 함수
 	function checkTitle(){
 		var ptitle = $('#ptitle').val();
@@ -357,8 +398,10 @@ getAllPlaylists();
 	$('#btn-insert').click(function(){
 		checkTitle();
 	});
+	
+}); // end $(function())
 
-});
+
 </script>
 
 
