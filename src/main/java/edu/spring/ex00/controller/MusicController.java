@@ -50,13 +50,14 @@ public class MusicController {
 		List<Music> list = musicService.selectAll(100);
 		model.addAttribute("music", list);
 		String userid =(String) session.getAttribute("loginUserid");
-		//pagination
-		PageNumberMaker pmaker = new PageNumberMaker();
-		pmaker.setCriteria(c);
-		pmaker.setTotalCount(playlistService.getTotal(userid));
-		pmaker.setPageMakerData();			
-		model.addAttribute("ppageMaker", pmaker);
-		
+		if(userid != null) {
+			//pagination
+			PageNumberMaker pmaker = new PageNumberMaker();
+			pmaker.setCriteria(c);
+			pmaker.setTotalCount(playlistService.getTotal(userid));
+			pmaker.setPageMakerData();			
+			model.addAttribute("ppageMaker", pmaker);
+		}
 		return "podo/chart";
 	}
 	
