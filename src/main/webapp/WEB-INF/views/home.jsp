@@ -149,7 +149,6 @@ img {
 				<option value="1">노래 제목</option>
 				<option value="2">가수</option>
 				<option value="3">앨범명</option>
-				<option value="4">장르별</option>
 			</select> <input type="text" name="searchKeyword" placeholder="검색어"
 				style="width: 500" /> <input type="submit" value="검색" class="btn "
 				style="background-color: #1C1637; color: white;" />
@@ -171,11 +170,11 @@ img {
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">장르 <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="">발라드</a></li>
-							<li><a href="">댄스</a></li>
-							<li><a href="">인디</a></li>
-							<li><a href="">힙합</a></li>
-							<li><a href="">트로트</a></li>
+							<li><a href="search?searchType=4&searchKeyword=ballad">발라드</a></li>
+							<li><a href="search?searchType=4&searchKeyword=dance">댄스</a></li>
+							<li><a href="search?searchType=4&searchKeyword=indi">인디</a></li>
+							<li><a href="search?searchType=4&searchKeyword=hiphop">힙합</a></li>
+							<li><a href="search?searchType=4&searchKeyword=trot">트로트</a></li>
 						</ul></li>
 					<li><a href="monthpay">이용권</a></li>
 					<li><a href="event">이벤트</a></li>
