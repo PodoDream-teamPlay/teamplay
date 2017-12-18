@@ -1,6 +1,6 @@
 <%@page import="java.lang.ProcessBuilder.Redirect"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html >
@@ -114,7 +114,7 @@ float: left;
 					${loginUserid}님, 환영합니다
 					<input type="submit" id="btn-logout" class="btn" style="background-color:#DFE0E7; color:white;"
 						name="btn-logout" value="로그아웃" style="margin-right: 10px" required autofocus><br>
-					<a href="member_detail" class="text-align:right">마이페이지(test)</a>
+					<a href="member_detail" class="text-align:right">마이페이지</a>
 				</form>
 			</c:if>
 
@@ -177,8 +177,9 @@ float: left;
 <hr/>
 
 <ul>
-	<li><a href="update?bno=${board.bno}"class="btn btn-primary">수정하기</a></li>
-	<li><a href="boardQnA"class="btn btn-primary">메인으로</a></li>
+	<li><a href="boardupdate?bno=${board.bno}"class="btn btn-primary">수정하기</a></li>
+	<li><a href="boardFnA" class="btn btn-primary">삭제하기</a>
+	<li><a href="boardFnA"class="btn btn-primary">메인으로</a></li>
 </ul>
 
 
@@ -204,7 +205,7 @@ float: left;
 	</form>
 
 <hr/>
-<h1 class="text-left">댓글</h1>
+<%-- <h1 class="text-left">댓글</h1>
 
 <label>게시글 번호</label>
 <input type="number" name="bno" id="bno"  value="${board.bno}" readonly/>
@@ -219,7 +220,7 @@ float: left;
 <h2 class="text-left">댓글 목록</h2>
 <div id="replies"></div>
 
-
+--%>
 <script>
 $(document).ready(function(){
 	

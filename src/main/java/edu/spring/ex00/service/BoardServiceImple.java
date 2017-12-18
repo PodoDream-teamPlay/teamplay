@@ -30,7 +30,7 @@ public class BoardServiceImple implements BoardService {
 
 	@Override
 	public int insert(Board b) {
-		
+		System.out.println("service insert Board b");
 		return boardDao.create(b);
 	}
 
@@ -50,6 +50,18 @@ public class BoardServiceImple implements BoardService {
 	@Override
 	public List<Board> search(int type, String keyword) {
 		return boardDao.search(type, keyword);
+	}
+
+	@Override
+	public List<Board> select(String userid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Board> select(String title, String content) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

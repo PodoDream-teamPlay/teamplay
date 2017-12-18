@@ -179,13 +179,6 @@ public class HomeController {
 			
 		}
 		
-		//Q&A 페이지로 이동
-		@RequestMapping(value="/boardFnA", method=RequestMethod.GET)
-		public String go_QnA() {
-		logger.info("FnA() GET 호출");
-		return "podo/boardFnA";
-					
-	}
 		
 		
 		

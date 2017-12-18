@@ -43,6 +43,24 @@
      	<property name="colPdate" value="pdate"/>
      	<property name="colPtitle" value="ptitle"/>
      
+    	<!--  podo_boardFnA의 property -->
+  	
+  		<property name="tblBoard" value="podo_board" />
+  		<property name="colBno" value="bno" />
+  		<property name="colTitle" value="title" />
+  		<property name="colContent" value="content" />
+  		<property name="colUserid" value="userid"/>
+  		<property name="colRegdate" value="regdate"/>
+  		
+  		
+  		<property name="tblMember" value="podo_member"/>
+  		<property name="colUserid" value="userid"/>
+  		<property name="colPassword" value="password"/>
+  		<property name="colEmail" value="email"/>
+  		
+  		
+  
+    
     
       </properties>  
       

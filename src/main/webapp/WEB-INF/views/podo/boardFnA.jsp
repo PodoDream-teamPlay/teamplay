@@ -73,7 +73,7 @@ float: left;
 <body>
 
 
-	<div class="container" style="width:1000px;">
+	<div class="container" style="width:970px;">
 		<!-- 타이틀 -->
 		<h1 class="text-center">
 			<a href="http://localhost:8181/ex00/" style="text-decoration:none;">PODO DREAM</a>
@@ -169,37 +169,41 @@ float: left;
 		
 		
 		
-<div class="container" style="width:1000px;">
-  <h2>F & A</h2>
-   <div class="panel-group" id="accordion">
+<div class="container" style="width:930px; ">
+  <h2>F & A(자주 묻는 질문)</h2><br/>
+   <div class="panel-group" id="accordion" >
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading"style=" background-color:#C5C4CB; color:white;">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">회원가입 후, 정보수정 1</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">1. 회원가입 </a>
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse in">
-        <div class="panel-body">회원가입 후, 정보 수정 </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body">1-1. 회원가입 방법<br/> 1) PODO 홈에서 회원가입버튼을 클릭<br/>2) 양식에 맞게 정보를 입력해주세요<br/>3) 회원가입 버튼 클릭 <br/><br/> 
+        1-2. 회원정보 수정 방법<br/> 1) 로그인 후, 마이페이지 버튼 클릭<br/> 2)왼쪽 프로필란에 '회원 정보 수정' 버튼 클릭<br/><br/>
+        1-3. 회원 탈퇴 방법<br/> 탈퇴는 불가합니다.   </div>
       </div>
     </div>
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading"style=" background-color:#C5C4CB; color:white;">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">포인트 사용법 2</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">2. 포인트 </a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">포인트 사용법 </div>
+        <div class="panel-body">2-1. 포인트 쌓는 법 <br/>1) 메뉴바 '이벤트' 클릭 <br/>2) 출석체크시, 10point 증정<br/> *(출석체크는 하루에 한 번만 가능합니다) 
+        <br/><br/> 2-2. 포인트 사용법 <br/> 1) 메뉴바 '이용권' 클릭 <br/> 2) 결제 하려는 이용권 선택 후, 결제하기 버튼 클릭 <br/> 3) 남은 포인트칸에서 남은포인트를 확인하고 쓰려는 포인트를 입력해주세요. <br/>
+         </div>
       </div>
     </div>
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading"style=" background-color:#C5C4CB; color:white;">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">문의사항 3</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">3. 문의사항 </a>
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">문의사항</div>
+        <div class="panel-body">기타 문의사항은 Q&A 칸에서 새 글 작성 버튼을 클릭해주세요.</div>
       </div>
     </div>
   </div> 
@@ -211,21 +215,21 @@ float: left;
 		
 		
 		
-		
-		
-	
-<h1 style= "font-size: 200%; font-family: 배달의민족 주아" class="text-left" >Q & A</h1><hr/>
+		<br/><br/>
+		<hr/>
 
+<div class="container" style="width:930px;">
+ <h2>Q & A</h2><br/>
 
 			
-<div>
+
 <ul>
 	
 	<c:if test="${empty loginUserid }">
-	<a  href="" class="btn btn-primary" onclick="boardregister()"> 새 글 작성</a>
+	<a  href="" class="btn btn-primary" onclick="boardregister()" style="background-color:#D9D5E1;border: none;color:white; color:#33303A;float:right;"> 새 글 작성</a>
 	</c:if>
 	<c:if test="${not empty loginUserid}">
-	<a href="boardregister"  class="btn btn-primary" onclick="boardregister()">새 글 작성 </a></c:if>
+	<a href="boardregister"  class="btn btn-primary" onclick="boardregister()"style="background-color:#D9D5E1;border: none;color:white; float:right;">새 글 작성 </a></c:if>
 	
 	</ul>
 </div>
@@ -255,7 +259,7 @@ float: left;
 </form>
  -->
 
-<div class="container" style="width: 1000px;">
+<div class="container" style="width: 970px;">
 <table class="table table-hover;">
 	
 	<thead style="background: white; opacity:0.9;">
@@ -273,12 +277,12 @@ float: left;
 		<tr>
 			<td>${board.bno}</td>
 			  <td>
-                    <a href="detail?bno=${board.bno}">${board.title}</a>
+                    <a href="boarddetail?bno=${board.bno}">${board.title}</a>
                            </td>
 			<td>${board.userid}</td>
 		
 			<td>
-				<fmt:formatDate var="regdate" value="${board.regdate}" pattern="yyyy/MM/dd HH:mm"/>${regdate }
+				<fmt:formatDate var="regdate" value="${board.regdate}" pattern="yyyy/MM/dd HH:mm"/>${regdate}
 			</td>
 		</tr>
 		</c:forEach>

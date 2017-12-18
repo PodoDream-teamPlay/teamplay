@@ -174,17 +174,17 @@
 			새 글 작성 페이지
 		</h1>
 		<hr />
+		<br/>
 
-		<form action="boardQnA" method="post">
+		<form action="boardFnA" method="post" style="float:center;">
 			<label for="title">제목</label> <input type="text" name="title"
 				id="title" required /> <br /> <label for="content">내용</label><br />
 			<textarea rows="10" cols="50" name="content" id="content"
 				placeholder="Q & A 게시판입니다. 글을 작성해주세요."></textarea>
 			<br />
-			<c:if test="${empty loginUserid}">
-			 <label for="userid">${loginUserid}</label> 
-			<input type="text"
-				name="userid" id="userid" readonly /> 
+			<c:if test="${not empty loginUserid}">
+				<label for="userid">아이디</label>
+	<input type="text" name="userid" id="userid" value="${loginUserid}" readonly="readonly"/>
 				</c:if>
 				<br />
 			<br /> <input type="submit" value="작성완료" class="btn btn-primary" />

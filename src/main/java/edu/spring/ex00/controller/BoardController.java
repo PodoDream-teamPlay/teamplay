@@ -37,6 +37,15 @@ public class BoardController {
 		
 	}
 	
+	@RequestMapping(value="/boardFnA",
+			method = RequestMethod.GET)
+	public String boardList(Model model) { // dispatcher Servlet이 메소드 부를텐데 부를때, Model에 넣어주는구야~
+		
+		List<Board> boardFnA = boardService.select(); //게시판 전체 가지고오는거 
+		model.addAttribute("boardList", boardFnA);
+		return "podo/boardFnA";
+	
+	}
 	
 	
 	
@@ -46,7 +55,9 @@ public class BoardController {
 		logger.info("registerBoard() POST CALL");
 		logger.info("---- title: " + b.getTitle());
 		logger.info("---- content: " + b.getContent());
-		//logger.info("---- userid: "+ b.getUserid());
+		logger.info("---- userid: "+ b.getUserid());
+		
+		
 		
 		boardService.insert(b);
 		
@@ -55,7 +66,7 @@ public class BoardController {
 	
 	//작성한 글 보기 
 	@RequestMapping(value="/boarddetail", method= RequestMethod.GET) 
-	public void detail(int bno, Model model) {
+	public String detail(int bno, Model model) {
 		
 		logger.info("boarddetail() GET 호출");
 		
@@ -64,15 +75,14 @@ public class BoardController {
 		
 		model.addAttribute("board", b); 
 		
+		return "podo/boarddetail";
+		
 		
 	}
 
 	
 	
-	
-	
-	// 밑에부분은 글쓰기 수정, 삭제, 검색기능 
-	/*
+/*
 	@RequestMapping(value="/update", method=RequestMethod.GET)
 	public void update(int bno, Model model) {
 		logger.info("update() GET CALL");
@@ -90,7 +100,7 @@ public class BoardController {
 		boardService.update(b);
 		
 		
-		return "redirect:/board/detail?bno=" + b.getBno();
+		return "redirect:/boarddetail?bno=" + b.getBno();
 		
 	}
 	
@@ -102,7 +112,7 @@ public class BoardController {
 		
 		boardService.delete(bno);
 	
-		return "redirect:/boardQnA" ;
+		return "redirect:/boardFnA" ;
 		
 	}
 	
@@ -118,8 +128,8 @@ public class BoardController {
 				boardService.search(searchType, searchKeyword);
 		model.addAttribute("boardList", list);
 	}
-		*/
-
+	
+*/
 	
 
 	

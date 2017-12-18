@@ -7,11 +7,11 @@
   <mapper namespace="edu.spring.ex00.BoardMapper">
     <!-- namespace와 id를 가지고서 sql문장을 찾아가기때문에 필수 설정 -->
   <select id="selectAll" resultType="Board">  
-  select * from ${tblBoard} order by ${colBno} desc</select>
+  select * from podo_board order by bno desc</select>
   
   
   <insert id="insert">
-  insert into ${tblBoard} (${colTitle}, ${colContent}, ${colUserid}, ${colRegdate}) values(#{title}, #{content}, #{userid}, sysdate)</insert>
+  insert into podo_board (title, content, userid, regdate) values(#{title}, #{content}, #{userid}, sysdate)</insert>
   
  <update id="update"> update ${tblBoard} set ${colTitle} = #{title}, ${colContent} = #{content}, ${colRegdate} = sysdate where ${colBno} = #{bno} </update>
 

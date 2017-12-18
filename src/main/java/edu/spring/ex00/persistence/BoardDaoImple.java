@@ -40,6 +40,7 @@ public class BoardDaoImple implements BoardDao {
 
 	@Override
 	public int create(Board b) {
+		System.out.println("dao create Board b");
 		return session.insert(NAMESPACE + ".insert", b);
 	}
 
