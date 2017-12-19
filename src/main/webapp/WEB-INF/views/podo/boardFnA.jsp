@@ -106,7 +106,7 @@ float: left;
 					${loginUserid}님, 환영합니다
 					<input type="submit" id="btn-logout" class="btn" style="background-color:#DFE0E7; color:white;"
 						name="btn-logout" value="로그아웃" style="margin-right: 10px" required autofocus><br>
-					<a href="member_detail" class="text-align:right">마이페이지(test)</a>
+					<a href="member_detail" class="text-align:right">마이 페이지</a>
 				</form>
 			</c:if>
 
@@ -170,12 +170,12 @@ float: left;
 		
 		
 <div class="container" style="width:930px; ">
-  <h2>F & A(자주 묻는 질문)</h2><br/>
+  <h2><img alt="F&A" src="././resources/images/fna.png"></h2><br/>
    <div class="panel-group" id="accordion" >
     <div class="panel panel-default">
       <div class="panel-heading"style=" background-color:#C5C4CB; color:white;">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">1. 회원가입 </a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">1. 회원가입                                                ▼ </a>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse">
@@ -187,7 +187,7 @@ float: left;
     <div class="panel panel-default">
       <div class="panel-heading"style=" background-color:#C5C4CB; color:white;">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">2. 포인트 </a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">2. 포인트                                                ▼ </a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
@@ -199,7 +199,7 @@ float: left;
     <div class="panel panel-default">
       <div class="panel-heading"style=" background-color:#C5C4CB; color:white;">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">3. 문의사항 </a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">3. 문의사항                                                ▼ </a>
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">
@@ -219,11 +219,8 @@ float: left;
 		<hr/>
 
 <div class="container" style="width:930px;">
- <h2>Q & A</h2><br/>
-
-			
-
-<ul>
+ <h2><img alt="F&A" src="././resources/images/qna.png"></h2>
+<ul style="display:inline;">
 	
 	<c:if test="${empty loginUserid }">
 	<a  href="" class="btn btn-primary" onclick="boardregister()" style="background-color:#D9D5E1;border: none;color:white; color:#33303A;float:right;"> 새 글 작성</a>

@@ -68,6 +68,20 @@ float: left;
 }
 
 
+#menu {
+    list-style:none;
+    float: center;
+    margin:0;
+    padding:0;
+}
+
+#menuLi {
+    margin: 0;
+    padding: 0;
+    border : 0;
+    float: left;
+}
+
 
 
 </style>
@@ -173,15 +187,8 @@ float: left;
 				</ul>
 			</div>
 		</nav>
-<h1 style="color:lightblue; font-size: 300%"><a href="boardFnA">♥상세보기 페이지♥</a></h1>
+<h2>게시글 상세보기</h2>
 <hr/>
-
-<ul>
-	<li><a href="boardupdate?bno=${board.bno}"class="btn btn-primary">수정하기</a></li>
-	<li><a href="boardFnA" class="btn btn-primary">삭제하기</a>
-	<li><a href="boardFnA"class="btn btn-primary">메인으로</a></li>
-</ul>
-
 
 <form>
 	<label for="bno">번호</label>
@@ -199,11 +206,20 @@ float: left;
 	<fmt:formatDate value="${board.regdate}" var="regdate" pattern="yyyy/MM/dd HH:mm:ss"/>
 	<input type="text" id="regdate" value="${regdate}"/><br/>
 	
-	
-	
-	
 	</form>
-
+	<br/>
+	<hr/>
+	
+	<ul id="menu">
+	<c:if test="${not empty loginUserid}">
+	
+	<li id="menuLi"><a href="boardupdate?bno=${board.bno}"class="btn btn-primary">수정하기</a></li>
+	<li id="menuLi"><a href="delete?bno=${board.bno }" class="btn btn-primary">삭제하기</a></li>
+	</c:if>
+	
+	<li id="menuLi"><a href="boardFnA"class="btn btn-primary">메인으로</a></li>
+</ul>
+<br/>
 <hr/>
 <%-- <h1 class="text-left">댓글</h1>
 

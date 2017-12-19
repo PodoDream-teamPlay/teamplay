@@ -191,35 +191,52 @@ float: left;
 
 
 <div align="center">
-<h1>이용권 구매</h1>
+<h1 style="float:left;"><img src="././resources/images/pay.png"></h1><br/><br/><br/><br/>
 
-<h2>1개월권 3900원</h2>
-<a onclick="month1()">결제하기</a>
 <br/>
-<h2>2개월권 7900원</h2>
-<a onclick="month2()">결제하기</a>
+
+<img src="././resources/images/month_pay1.png "style="display: inline; width:500px; height:180px; border:2px solid lightgrey; ">
+	<img src="././resources/images/won3900.png" style=" width:150px; height:180px;border:2px solid lightgrey; display: inline;">
+	<a onclick="month1()" style="width:80px; height: 40px; background-color: #FB1903; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
+
+
 <br/>
-<h2>3개월권 9900원</h2>
-<a onclick="month3()">결제하기</a>
 <br/>
-<h2>5000원 충전하기</h2>
-<a onclick="money1()">결제하기</a>
+<img src="././resources/images/month_pay2.png"style="display: inline; width:500px; height:180px; border:2px solid lightgrey;  ">
+	<img src="././resources/images/won6900.png" style=" width:150px; height:180px;border:2px solid lightgrey; display: inline;">
+<a onclick="month2()"style="width:80px; height: 40px; background-color: #FB1903; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
+
+
 <br/>
-<h2>10000원 충전하기</h2>
-<a onclick="money2()">결제하기</a>
+<img src="././resources/images/month_pay3.png"style="display: inline; width:500px; height:180px; border:2px solid lightgrey;  ">
+<img src="././resources/images/won9900.png" style=" width:150px; height:180px;border:2px solid lightgrey; display: inline;">
+<a onclick="month3()"style="width:80px; height: 40px; background-color: #FB1903; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
+
+
 <br/>
-<h1>매월 자동 결제 신청 시 월 3300원!</h1>
-<h2><a>월 자동 결제 신청하기</a></h2>
+<br/>
+
+<hr style="border:0.7px dotted lightgrey;"/>
+<img alt="포인트 충전" src="././resources/images/point.png" style="float:left;"><br/><br/>
+<img src="././resources/images/point5000.png"style="display: inline; width:600px; height:130px; border:2px solid lightgrey;  margin-right: 60px;">
+<a onclick="money1()"style="width:80px; height: 40px; background-color: #FB1903; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
+<br/>
+<img src="././resources/images/point10000.png"style="display: inline; width:600px; height:130px; border:2px solid lightgrey;  margin-right: 60px;">
+<a onclick="money2()"style="width:80px; height: 40px; background-color: #FB1903; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
+
+
+<br/>
 <br/>
 </div>
 
 
-<div align="right">
-	<input id="money" readonly required>원<br/>
+<div align="right" display="inline">
+	<input id="money" readonly required> 원
 	<input id="pay" type="submit" value="결제하기" disabled onclick="popupOpen()">
 </div>
 
-<h1 align="center">상품권 등록</h1>
+<hr/>
+<h2 align="center">상품권 등록</h2>
 <div align="center">
 <form action="register_giftcard">
 <input type="text"  maxlength="4" required>

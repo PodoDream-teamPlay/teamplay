@@ -82,20 +82,23 @@ public class BoardController {
 
 	
 	
-/*
-	@RequestMapping(value="/update", method=RequestMethod.GET)
-	public void update(int bno, Model model) {
+
+	@RequestMapping(value="/boardupdate", method=RequestMethod.GET)
+	public String update(int bno, Model model) {
 		logger.info("update() GET CALL");
 		
 		Board b = boardService.select(bno);
 		model.addAttribute("board", b);
+		
+		return "podo/boardupdate";
+		
 	}
 
 	
 	
 	
 	
-	@RequestMapping(value="/update", method=RequestMethod.POST)
+	@RequestMapping(value="/boardupdate", method=RequestMethod.POST)
 	public String update(Board b) {
 		boardService.update(b);
 		
@@ -116,7 +119,7 @@ public class BoardController {
 		
 	}
 	
-
+/*
 	
 	@RequestMapping(value = "/search",
 			method = RequestMethod.GET)

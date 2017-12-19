@@ -6,419 +6,643 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8"/>
 <title>Insert title here</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-<!-- jQuery : Bootstrap JS 파일은 jQuery 라이브러리를 반드시 넣어줘야 함! -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+ <!-- jQuery : Bootstrap JS 파일은 jQuery 라이브러리를 반드시 넣어줘야 함! -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<!-- Bootstrap JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-<link rel="stylesheet" type="text/css"
-	href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">
-<link href='http://fonts.googleapis.com/css?family=Lobster'
-	rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<script src="http://code.jQuery.com/jQuery-latest.js"
-	type="text/javascript"></script>
-<script type="text/javascript" src="js/js.js"></script>
-<script type="text/javascript" src="js/html5slider.js"></script>
-
+ <!-- Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style>
-/* Color Of The Year -- https://colorganize.com/?palette=75 */
-$
-rose_quartz__2016: #f7cac9 ; $serenity__2016: #8ea6d0 ; $marsala__2015: #965352 
-	; $radiant_orchid__2014: #b565a7 ; $emerald__2013: #169c78 ; $tangerine_tango__2012: #e1523d 
-	; $honeysuckle__2011: #da4f70 ; $turquoise__2010: #41b6ab ; $mimosa__2009: #f0bf59 
-	; $blue_iris__2008: #595ca1 ; $chili_pepper__2007: #9c1b31 ; $sand_dollar__2006: #decdbf 
-	; $blue_turquoise__2005: #4fb0ae ; $tigerlily__2004: #e4583e ; $aqua_sky__2003: #7ac5c5 
-	; $true_red__2002: #c02034 ; $fuchsia_rose__2001: #c94476 ; $cerulean__2000: #9bb7d6 
-	; .albumart {
-	width: 50px;
+html{
+  height: 100%;
 }
 
-$
-albumCover: url (http: //gagadaily.com
-	/uploads/stories/monthly_2016_09/joanne.jpg.a6d8d6fd6e671a82ae75e80925ff43d3.jpg
-	);
-
-body {
-	background-color: #000;
-	color: rgba(255, 255, 255, 0.7);
-	font-family: "Montserrat", sans-serif;
-	cursor: default;
+body{
+  background: rgb(79,142,165);
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(79,142,165,1) 0%, rgba(52,63,83,1) 50%, rgba(28,27,38,1) 100%);
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(79,142,165,1) 0%,rgba(52,63,83,1) 50%,rgba(28,27,38,1) 100%);
+	background: radial-gradient(ellipse at center,  rgba(79,142,165,1) 0%,rgba(52,63,83,1) 50%,rgba(28,27,38,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f8ea5', endColorstr='#1c1b26',GradientType=1 );
+  font-family: "proxima-nova";
 }
 
-#bg-before {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	box-shadow: inset 0 0 200px #000;
-	background: $albumCover 0/cover fixed;
-	filter: blur(20px);
-	animation: blurAni 24s infinite;
-}
-
-#bg {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-color: rgba(0, 0, 0, 0.6);
-	animation: bgAni 18s infinite;
-}
-
-@
-keyframes blurAni { 0% {
-	filter: blur(20px);
-}
-
-25%
-{
-filter
-:
- 
-blur
-(5px);
-
+.clear{
+  &:before,
+  &:after{
+    content: "";
+    display: table;
+  }
   
+  &:after{
+    clear: both;
+  }
 }
-50%
-{
-filter
-:
- 
-blur
-(15px);
 
+@keyframes opacityAni{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.phone{
+  animation: opacityAni 400ms linear 1s forwards;
+  background: rgb(30,30,40);
+  background: -moz-linear-gradient(top,  rgba(30,30,40,1) 0%, rgba(30,46,71,1) 34%, rgba(49,189,247,1) 88%, rgba(232,254,254,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(30,30,40,1) 0%,rgba(30,46,71,1) 34%,rgba(49,189,247,1) 88%,rgba(232,254,254,1) 100%);
+  background: linear-gradient(to bottom,  rgba(30,30,40,1) 0%,rgba(30,46,71,1) 34%,rgba(49,189,247,1) 88%,rgba(232,254,254,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e1e28', endColorstr='#e8fefe',GradientType=0 );
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.4);
+  height: 500px;
+  left: 50%;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  width: 320px;
+}
+
+.wavesurfer{
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 275px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  padding-top: 60px;
+  pointer-events: none;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.wavesurfer__elem{
+  height: 500px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 170ms linear;
+  top: 0;
+  width: 100%;
+  z-index: 0;
   
+  &.show{
+    opacity: 1;
+  }
 }
-75%
-{
-filter
-:
- 
-blur
-(0);
 
+.artist__image{
+  box-shadow: 0 0 0 5px rgba(255,255,255,.1), 0 0 0 10px rgba(255,255,255,.1), 0 0 5px 20px rgba(255,255,255,.05);
+  height: 140px;
+  margin: 0 auto 34px auto;
+  position: relative;
+  transition: all 170ms ease-in;
+  width: 140px;
+  z-index: 2;
   
+  &.play{
+    box-shadow: 0 0 0 5px rgba(255,255,255,0), 0 0 0 10px rgba(255,255,255,0), 0 0 5px 20px rgba(255,255,255,0);
+  }
 }
-100%
-{
-filter
-:
- 
-blur
-(20px);
 
+.artist__image-url{
+  background: url('././resources/images/m47.jpg') no-repeat left top;
+  background-size: cover;
+  height: 140px;
+  width: 140px;
+}
+
+.time{
+  color: rgba(255,255,255,.7);
+  display: none;
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0 auto;
+  pointer-events: none;
+  text-align: center;
+  width: 63px;
   
-}
-}
-@
-keyframes bgAni { 0% {
-	background-color: rgba(0, 0, 0, 0.6);
-}
-
-17%
-{
-background-color
-:
- 
-rgba
-(0
-,
-0,
-0,
-0
-.7
-);
-
+  @extend .clear;
   
-}
-33%
-{
-background-color
-:
- 
-rgba
-(0
-,
-0,
-0,
-0
-.9
-);
-
+  span{
+    display: inline-block;
+    float: left;
+    width: 3px;
+  }
   
-}
-50%
-{
-background-color
-:
- 
-rgba
-(0
-,
-0,
-0,
-0
-.5
-);
-
+  .time__minutes,
+  .time__seconds{
+    width: 30px;
+  }
   
-}
-67%
-{
-background-color
-:
- 
-rgba
-(0
-,
-0,
-0,
-0
-.8
-);
-
+  .time__minutes{
+    text-align: right;
+  }
   
+  .time__seconds{
+    text-align: left;
+  }
 }
-100%
-{
-background-color
-:
- 
-rgba
-(0
-,
-0,
-0,
-0
-.6
-);
 
+.progress{
+  background: rgba(255,255,255,.2);
+  bottom: 5px;
+  display: none;
+  height: 5px;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+}
+
+.progress__button{
+  background-color: #fff;
+  border-radius: 50%;
+  height: 15px;
+  left: 10px;
+  position: absolute;
+  top: -5px;
+  transform: translateX(-50%);
+  width: 15px;
+  z-index: 1;
+}
+
+.progress__indicator{
+  background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 100%);
+  background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.6) 100%);
+  background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.6) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#99ffffff',GradientType=1 );
+  height: 3px;
+  left: 0;
+  position: absolute;
+  top: 1px;
+  width: 10px;
+  z-index: 0;
+}
+
+@keyframes artistNameAni{
+  0%{
+    transform: translateY(40px) scale(.8);
+  }
+  100%{
+    transform: translateY(0) scale(1);
+  }
+}
+
+.artist__name{
+  animation: artistNameAni 400ms linear 1000ms forwards;
+  margin-bottom: 30px;
+  position: relative;
+  text-align: center;
+  transform: translateY(40px) scale(.8);
   
-}
-}
-main {
-	position: absolute;
-	top: 2rem;
-	right: 0;
-	left: 0;
-	bottom: 2rem;
-	padding: 0 calc(50% - 10rem);
-	text-align: center;
-}
-
-#albumCover {
-	width: 100%;
-	height: 20rem;
-	background-size: cover;
-	display: inline-block;
-	box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5);
+  h1{
+    color: rgba(255,255,255,.7);
+    font-size: 16px;
+    font-weight: 100;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  
+  p{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0 0 5px 0;
+  }
 }
 
-#progress {
-	width: 100%;
-	background-color: rgba(142, 166, 208, 0.2);
+.love{
+  color: rgba(255,255,255,.5);
+  font-size: 18px;
+  left: 30px;
+  position: absolute;
+  top: 10px;
 }
 
-#progress-bar {
-	width: 0%;
-	height: .4rem;
-	background-color: #F7CAC9;
+.share{
+  border: 1px solid rgba(255,255,255,.6);
+  border-radius: 0%;
+  height: 5px;
+  position: absolute;
+  right: 35px;
+  top: 20px;
+  width: 5px;
+  
+  &:before,
+  &:after{
+    border: 1px solid rgba(255,255,255,.6);
+    border-radius: 0%;
+    content: "";
+    height: 5px;
+    position: absolute;
+    top: -1px;
+    width: 5px;
+  }
+  
+  &:before{
+    left: -10px;
+  }
+  
+  &:after{
+    right: -10px;
+  }
 }
 
-#progress-bar.play {
-	animation: progress-bar 240s infinite;
+.controls{
+  text-align: center;
 }
 
-@
-keyframes progress-bar {from { width:0%;
-	
+@keyframes buttonAni{
+  0%{
+    transform: translateY(120px);
+  }
+  100%{
+    transform: translateY(0);
+  }
 }
 
-to {
-	width: 100%;
+.button__play{
+  animation: buttonAni 300ms cubic-bezier(.48,.18,.44,.97) 1300ms forwards;
+  background-color: rgba(255,255,255,.1);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 80px;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  transform: translateY(120px);
+  width: 80px;  
 }
 
-}
-#title {
-	margin: 1rem 0;
-	width: 100%;
-	overflow: hidden;
-	height: 1.1rem;
-}
-
-#title-text {
-	animation: scrolling-text 16s linear infinite;
-}
-
-@
-keyframes scrolling-text {from { transform:translateX(100%);
-	
+.button__play-iconplay{
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+  border-width: 13px 0 13px 20px;
+  height: 0;
+  left: 31px;
+  position: absolute;
+  top: 25px;
+  width: 0;
 }
 
-to {
-	transform: translateX(-100%);
+.button__play-iconpause{
+  display: none;
+  height: 24px;
+  left: 28px;
+  position: absolute;
+  top: 25px;
+  width: 19px;
+  
+  &:before,
+  &:after{
+    background: #fff;
+    content: "";
+    display: block;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    width: 6px;
+  }
+  
+  &:before{
+    left: 0;
+  }
+  
+  &:after{
+    left: 13px;
+  }
 }
 
-}
-#controls {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.control {
-	width: 2.7rem;
-	height: 2.7rem;
-	border-radius: 50%;
-	border: 1px solid;
-	cursor: pointer;
-	display: inline-block;
-	margin: 1px;
-	transition: transform .3s, box-shadow .5s, text-shadow .5s;
+.button__loader{
+  background: rgba(255,255,255,.5);
+  bottom: 0;
+  height: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
 }
 
-.control:hover, .control:focus {
-	color: #fff;
-	transform: scale(1.05);
-	box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-	text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+.button__prev,
+.button__next{
+  background: none;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  height: 50px;
+  margin: 0 8px;
+  position: relative;
+  top: 15px;
+  transform: translateY(120px);
+  vertical-align: top;
+  width: 50px;
+  
+  &:before{
+    border-style: solid;
+    content: "";
+    height: 0;
+    position: absolute;
+    top: 16px;
+    width: 0;
+  }
+  
+  &:after{
+    background: #fff;
+    border-radius: 1px;
+    content: "";
+    height: 14px;
+    position: absolute;
+    top: 17px;
+    width: 2px;
+  }
 }
 
-.control:active {
-	transform: scale(0.9);
-	box-shadow: none;
-	text-shadow: none;
+.button__prev{
+  animation: buttonAni 300ms cubic-bezier(.48,.18,.44,.97) 1200ms forwards;
+  
+  &:before{
+    border-color: transparent #fff transparent transparent;
+    border-width: 8px 12px 8px 0;
+    right: 17px;
+  }
+  
+  &:after{
+    left: 14px;
+  }
 }
 
-.control .icon { /* 
-	font-size: 2.7rem; */
-	
+.button__next{
+  animation: buttonAni 300ms cubic-bezier(.48,.18,.44,.97) 1400ms forwards;
+  
+  &:before{
+    border-color: transparent transparent transparent #fff;
+    border-width: 8px 0 8px 12px;
+    left: 17px;
+  }
+  
+  &:after{
+    right: 14px;
+  }
 }
 
-#controls-play {
-	width: 5rem;
-	height: 5rem; /* 
-	font-size: 2rem; */
+.hint{
+  bottom: 20px;
+  color: rgba(255,255,255,.5);
+  font-size: 16px;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }
 
-#controls-play .icon-pause {
-	display: none;
+.recordplayer{
+  height: 180px;
+  left: 70px;
+  position: absolute;
+  transform: scale(.7);
+  transition: all 170ms ease-in;
+  top: 40px;
+  width: 180px;
+  
+  &.play{
+    transform: scale(1);
+  }
 }
 
-#controls-play.play .icon-pause {
-	display: block;
+@keyframes discAni{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
 }
 
-#controls-play.play .icon-play {
-	display: none;
+.recordplayer__disc{
+  animation: discAni 6s infinite linear forwards;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: 180px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 180px;
 }
 
-#controls-play .icon {
-	font-size: 4rem;
+.recordplayer__disc-stripe1{
+  height: 30px;
+  left: 39px;
+  overflow: hidden;
+  position: absolute;
+  top: 5px;
+  width: 100px;
+  
+  &:before{
+    border: 3px solid rgba(255,255,255,.5);
+    border-radius: 50%;
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    height: 170px;
+    left: -35px;
+    position: absolute;
+    top: 0;
+    width: 170px;
+  }
 }
+
+.recordplayer__disc-stripe2{
+  bottom: 5px;
+  height: 30px;
+  left: 64px;
+  overflow: hidden;
+  position: absolute;
+  width: 50px;
+  
+  &:before{
+    border: 3px solid rgba(255,255,255,.5);
+    border-radius: 50%;
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    height: 170px;
+    left: -60px;
+    position: absolute;
+    top: -140px;
+    width: 170px;
+  }
 }
+
+/*
+ * EMBED STYLING
+*/
+@media (max-width: 800px){
+	html,
+	body{
+		height: 600px;
+		overflow: hidden;
+		width: 800px;
+	}
+}
+
+
+
 </style>
-</head>
-<body onload="window.resizeTo(500,700)"
-	style="background-color: #2E2E2E;">
 
+<body>
+<div class="phone">
+  <div class="player">
+    <div class="wavesurfer">
+      <div class="recordplayer">
+        <div class="recordplayer__disc">
+          <div class="recordplayer__disc-stripe1"></div>
+          <div class="recordplayer__disc-stripe2"></div>
+        </div>
+      </div>
+      <div class="artist__image">
+        <div class="artist__image-url"></div>
+      </div>
 
+      <div class="time">
+        <span class="time__minutes"></span>
+        <span>:</span>
+        <span class="time__seconds"></span>
+      </div>
+      <div class="progress">
+        <div class="progress__button"></div>
+        <div class="progress__indicator"></div>
+      </div>
+    </div>
+    
+    <div id="wavesurfer" class="wavesurfer__elem"></div>
+    
+    <div class="artist__name">
+      <p>트와이스</p>
+      <h1>LIKEY</h1>
+      <div class="love">&#9825;</div>
+      <div class="share"></div>
+    </div>
+    
+    <div class="controls">
+      <button class="button__prev"></button>
+      <button id="play" class="button__play load">
+        <span class="button__play-iconplay"></span>
+        <span class="button__play-iconpause"></span>
+        <span class="button__loader"></span>
+      </button>
+      <button class="button__next"></button>
+    </div>
+  </div>
+</div>
 
+<div class="hint">Press play</div>
 
-	<div id="bg-before"></div>
-	<div id="bg"></div>
-
-	<table class="table">
-		<main>
-				<div id="albumCover">
-					<img class="playlistAlbum" alt="playlist image"
-						src="././resources/images/${music.malbumart}"
-						style="width: 180px; text-align: center;">
-					<div>${music.mtitle }<br/>${music.martist}</div>
-
-				</div>
-				<div id="progress">
-					<div id="progress-bar"></div>
-				</div>
-				<div id="title">
-					<div id="title-text">
-						${music.mtitle }<br /> ${music.martist}
-					</div>
+<script>
+$(document).ready(function(){
 	
-
-
-		</div>
-		<div id="controls">
-			<div class="control">
-				<i class="material-icons icon"><img
-					src="././resources/images/prev_button.png"
-					style="width: 25px; height: 25px;"></i>
-			</div>
-			<div class="control" id="controls-play" onclick="play()">
-				<i class="material-icons icon icon-play"><img
-					src="././resources/images/play-button2.png"
-					style="width: 40px; height: 40px;"></i> <i
-					class="material-icons icon icon-pause"><img
-					src="././resources/images/pause_button.png"
-					style="width: 40px; height: 40px;"></i>
-			</div>
-			<div class="control">
-				<i class="material-icons icon"><img
-					src="././resources/images/next_button.png"
-					style="width: 25px; height: 25px;"></i>
-			</div>
-		</div>
-		</main>
 	
-		
-	</table>
+	var wavesurfer = WaveSurfer.create({
+	    barWidth: 1,
+	    container: '#wavesurfer',
+	    cursorWidth: 0,
+	    dragSelection: true,
+	    height: 500,
+	    hideScrollbar: true,
+	    interact: true,
+	    normalize: true,
+	    waveColor: 'rgba(255,255,255,.05)',
+	    progressColor: 'rgba(255,255,255,.15)'
+	});
 
+	$('.player').on('click', '#play', function(){
+	  if( $(this).hasClass('load') ){
+	    $(this).removeClass('load');
+	    wavesurfer.load('././resources/mp3/test01.mp3');
+	  } else {
+	    wavesurfer.playPause();
+	  }
+	});
 
+	var m,
+	    s;
 
+	function getMinutes( convTime ){
+	  convTime = Number(convTime);
+	  m = Math.floor(convTime% 3600 / 60);
+	  return ((m < 10 ? "0" : "") + m);
+	}
 
+	function getSeconds( convTime ){
+	  convTime = Number(convTime);
+	  s = Math.floor(convTime % 3600 % 60);
+	  return ((s < 10 ? "0" : "") + s);
+	}
 
+	var totalTime,
+	    timeJump,
+	    currentTime,
+	    currentTimeJump;
 
+	wavesurfer.on('ready', function(){
+	  totalTime = wavesurfer.getDuration();
+	  timeJump = 300 / totalTime;
+	  $('.wavesurfer__elem').addClass('show');
+	  $('.button__loader').fadeOut();
+	  $('.time__minutes').text( getMinutes( totalTime ) );
+	  $('.time__seconds').text( getSeconds( totalTime ) );
+	  $('.time, .progress').fadeIn();
+	  
+	  wavesurfer.play();
+	});
 
+	function progressJump(){
+	  currentTime = wavesurfer.getCurrentTime();
+	  currentTimeJump = currentTime * timeJump + 10;
+	  $('.progress__button').css({ left: currentTimeJump+'px' });
+	  $('.progress__indicator').css({ width: currentTimeJump+'px' });
+	  
+	  $('.time__minutes').text( getMinutes( currentTime ) );
+	  $('.time__seconds').text( getSeconds( currentTime ) );
+	}
 
+	wavesurfer.on('audioprocess', function(){
+	  progressJump();
+	});
 
-	<script>
-		$(document).ready(function() {
+	wavesurfer.on('pause', function(){
+	  $('.button__play-iconplay').fadeIn();
+	  $('.button__play-iconpause').fadeOut();
+	  $('.recordplayer').removeClass('play');
+	  $('.recordplayer__disc').removeClass('animate');
+	  $('.artist__image').removeClass('play');
+	});
 
-			function addClass(element, classname) {
-				if (element.classList)
-					element.classList.add(classname);
-				else
-					element.className += ' ' + classname;
-			}
+	wavesurfer.on('play', function(){
+	  $('.button__play-iconplay').fadeOut();
+	  $('.button__play-iconpause').fadeIn();
+	  $('.recordplayer').addClass('play');
+	  $('.recordplayer__disc').addClass('animate');
+	  $('.artist__image').addClass('play');
+	});
 
-			function removeClass(classname, element) {
-				var cn = element.className;
-				var rxp = new RegExp("\\s?\\b" + classname + "\\b", "g");
-				cn = cn.replace(rxp, '');
-				element.className = cn;
-			}
+	wavesurfer.on('loading', function(event){
+	  $('.button__loader').css({ height: event+'px' });
+	});
 
-			var progressBarEl = document.getElementById("progress-bar");
-			var controlsPlayEl = document.getElementById("controls-play");
+	wavesurfer.on('seek', function(event){
+	  progressJump();
+	});
 
-			function play() {
-				addClass(progressBarEl, "play");
-				addClass(controlsPlayEl, "play");
-			}
+});
 
-		});
-	</script>
+</script>
+
 </body>
 </html>
 

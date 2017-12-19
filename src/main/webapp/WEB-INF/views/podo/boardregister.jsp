@@ -170,7 +170,7 @@
 			</div>
 		</nav>
 
-		<h1 style="text-decoration: none; font-family:배달의민족 주아;" class="text-left">
+		<h1 class="text-center">
 			새 글 작성 페이지
 		</h1>
 		<hr />
