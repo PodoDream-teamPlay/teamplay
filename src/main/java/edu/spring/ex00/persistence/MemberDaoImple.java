@@ -78,6 +78,12 @@ public class MemberDaoImple implements MemberDao {
 		return session.selectOne(NAMESPACE + ".select_point" , userid);
 	}
 
+	@Override
+	public Member readByEmail(String email) {
+		System.out.println("memberdao readByEmail come!!!" + email);
+		return session.selectOne(NAMESPACE + ".selectByEmail", email);
+	}
+
 
 	
 }

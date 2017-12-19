@@ -8,6 +8,9 @@ public interface MemberService {
 		int insert(Member m);
 	// 회원 정보 조회
 		Member select(String userid);
+	// email로 정보 조회
+		Member selectByEmail(String email);
+		
 	// 회원 정보 수정
 		int update(Member m);
 	// 월별 결제 했을 때

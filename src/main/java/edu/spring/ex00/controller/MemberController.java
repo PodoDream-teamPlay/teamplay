@@ -41,19 +41,40 @@ public class MemberController {
 		//아이디 확인 체크. 
 		Member checkuser = null;
 			checkuser =	memberservice.select(member.getUserid());
-			System.out.println("memberjoin check 이후");
 		if (checkuser ==null) {
 			Member m = new Member(member.getUserid(), member.getPassword(), member.getEmail(),0,0,0,0,0, null, 0 );
-			System.out.println("insert 하기 전");
 			logger.info("member" + member.getUserid() + member.getPassword() + member.getEmail());
-			memberservice.insert(m);
-			System.out.println("insert 한 후.");
+			memberservice.insert(m);	
 			return "redirect:/";
 		} else {
 			model.addAttribute("check", 1);
-			
 		}
 			return "podo/register";
+	}
+	
+	//아이디 비밀번호 찾기
+	@RequestMapping(value="/iforgotMyId")
+	public String forgotMyId() {
+		return "podo/iforgotMyId";
+	}
+	
+	//아이디 찾기. 이메일로 확인.
+	@RequestMapping(value="/findingId", method=RequestMethod.POST)
+	public String findingId(String email, Model model) {
+		System.out.println("일단 들어오는지 보고");		
+		Member m= null;
+		m = memberservice.selectByEmail(email);
+		if (m !=null) {
+			System.out.println("여까지는");
+			String userid =m.getUserid();
+			model.addAttribute("userid", userid);
+			System.out.println("오는지도 보고" + userid);
+		} else {
+			model.addAttribute("nothing", 1);
+			System.out.println("or here");
+		}
+		
+		return "podo/iforgotMyId";
 	}
 	
 	@RequestMapping(value="/member-update")

@@ -61,6 +61,12 @@ public class MemberServiceImple implements MemberService {
 	public int select_point(String userid) {
 		return dao.select_point(userid);
 	}
+
+	@Override
+	public Member selectByEmail(String email) {
+		// TODO Auto-generated method stub
+		return dao.readByEmail(email);
+	}
 	
 
 	
