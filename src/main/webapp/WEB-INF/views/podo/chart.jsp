@@ -1,3 +1,4 @@
+<%@page import="edu.spring.ex00.R.RCode"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -151,6 +152,17 @@ p {
 
 <br>
 <br>
+
+<!-- R 로 그래프 넣기 -->
+<div class="container-center" style="background: ligthgrey;">
+	<div class="float:center" style="width: 970; height: auto;">
+		<%
+			RCode rc = new RCode();
+  			out.print(rc.returnRClass());
+		%>
+	</div>
+</div>
+<!-- 여기 까지 -->
 <br>
 
 

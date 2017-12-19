@@ -172,7 +172,12 @@
 			<version>1.3.3</version>
 		</dependency>
 
-
+		<!-- R 과 연동 하는 소스 -->
+		<dependency>
+    		<groupId>org.rosuda.REngine</groupId>
+    		<artifactId>Rserve</artifactId>
+    		<version>1.8.1</version>
+		</dependency>
 
 	</dependencies> <!-- 우리가 필요한 라이브러리에 대한 것들을 설정완료 -->
 	<build>  <!-- build할 때 어떤 툴을 사용할 것인지,jdk는 어떤 버전을 사용할 것인지 등을 설정하는 곳 -->
