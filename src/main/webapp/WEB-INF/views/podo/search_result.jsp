@@ -223,21 +223,13 @@ p {
 			<button id="change_listening" class="btn btn-default">선택 듣기</button>
 </div>
 
-<!-- <div class="container">
-   <form>
-  	  <input type="checkbox" name="choose_all" value="1">
-  	  <input type="button" id="cart" name="cart" value="마이리스트에 담기">
-	  <input type="button" id="mp3_down" name="mp3_down" value="MP3 다운">
-	  <input type="button" id="listening_all" name="listening_all" value="전체 듣기(재생목록에 추가)">
-	  <input type="button" id="change_listening" name="change_listening" value="전체 듣기(재생목록 교체)">
-   </form>
-</div>
- -->
-<div class="container" >
+<div class="container" style="width:1000px;" >
+<form id="tbl_form" method="post">
+	<input type="hidden" name="pid" id="tbl_form_pid" value=""/>
    <table class="table table-striped" >
     	<thead>
 	    	<tr>
-		    	<th></th>
+		    	<th><input type="checkbox" id="choose_all" name="choose_all"></th>
 		    	<th><span id="t_head">순위</span></th>
 		    	<th><span class="hidden">앨범이미지</span></th>
 			    <th><span id="t_head">곡명</span></th>
@@ -249,25 +241,43 @@ p {
 		   </tr>
 	  </thead>
       <tbody>
+      <%int rank = 0; %>
         <c:forEach var="music" items="${musicList}">
 	   	    <tr>           
-		   	   <td width="30" bordercolor="grey"><input type="checkbox" name="choose" value="2"></td>
-		 	   <td>${music.mid}</td>
-		 	   <td><img id="albumart" alt="자켓이미지" src="././resources/images/${music.malbumart}"></td>
-		 	   <td><a href="music_detail?${music.mid}">${music.mtitle}</a></td>
-		 	   <td>${music.martist}</td>
-		 	   <td>${music.malbum}</td>
-		 	   <td><a href="${music.mlyrics}"><img alt="가사" src="././resources/images/t_lyrics.png"></a></td>
-		 	   <td><a href=""><img alt="내앨범" src="././resources/images/t_myalbum.png"></a></td>
-		 	   <td><a href=""><img alt="MP3다운" src="././resources/images/t_mp3.png"></a></td>		 	   	   	    
+		   	  <td width="30" bordercolor="grey"><br><input type="checkbox" id="cb_choose" name="cb_choose" value="${music.mid}" data-mid="${music.mid}"></td>
+		 	   <td id="mid"><br>
+		 	   <%rank+=1; 
+		 	   out.print(rank+"");
+		 	   %></td>
+		 	   <td>
+		 	   		<a href="music_detail?mid=${music.mid }">
+		 	   		<img id="albumart" alt="자켓이미지" src="././resources/images/${music.malbumart}">
+		 	   		</a>
+		 	   	</td>
+		 	   <td>
+		 	   		<br><a href="music_detail?mid=${music.mid }" style="text-decoration: none;">
+		 	   		${music.mtitle}
+		 	   		</a>
+		 	   </td>
+		 	   <td><br>${music.martist}</td>
+		 	   <td><br>${music.malbum}</td>
+		 	   <td>
+		 	   <a  href="lyrics_detail_popup?mid=${music.mid}" 
+		 	   onclick="window.open(this.href, '_blank', 'width=400, height=600, left=300 ,top=100'); return false;" ><br>
+		 	   <img  alt="가사" src="././resources/images/t_lyrics.png"></a>
+		 	   </td>
+		 	   <td>
+		 	   <a href=""><br><img alt="내앨범" src="././resources/images/t_myalbum.png"></a>
+		 	   </td>
+		 	   <td><a href="mp3_down_icon?mid=${music.mid}" id="down_icon"><br><img alt="MP3다운" src="././resources/images/t_mp3.png" name="down_icon"></a></td>		 	   	   	    
 		    </tr>
+		    
 		 </c:forEach>
 	  </tbody>
    </table>
+</form>
 </div>
 
-
-</div>
 
 
 <script>
