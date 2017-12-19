@@ -208,13 +208,13 @@ img {
 </div>
 
 
-<div style="background-color: #1C1637; border-bottom: 2px solid; border-bottom-color: #1C1637; height: 52px;">
+<div style="background-color: #1C1637; height: 50px;">
 		<!-- 메뉴 bar -->
 
 		<div class="container">
 		<nav class="navbar navbar-inverse" 
 			style="width: 970px; display: inline-block; background-color: #1C1637; border: none;
-					border-bottom:2px solid; border-bottom-color:#1C1637; text-align: center;">
+					text-align: center;">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand navitem" href="http://localhost:8181/ex00/" style="color: #00FDFD;" id="nav-podo">PODO</a>
