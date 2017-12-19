@@ -295,7 +295,12 @@ img {
 					<td rowspan="2" style="padding-left: 100px;">
 						<h5>플레이리스트 목록</h5>
 						<div class="rigth_box">
-							<button class="button" style="float: right;" id="btn-insert">+</button>
+							<button class="button" 
+									style="float: right; margin-bottom: 5px; border: none; background-color: white;"
+							 		id="btn-insert">
+								<img alt="plus" src="././resources/images/plus.png" style="width: 15px;">
+							</button>
+							<br>
 							<table class="table">
 								<thead>
 									<tr style="background-color: #2E2E2E; color: white;">
@@ -428,7 +433,9 @@ $(document).ready(function(){
 							+ this.pdate
 							+ '</td>'
 							+ '<td>'
-							+ '<button class="btn-delete" data-pid="' + this.pid + '">X</button>'
+							+ '<button class="btn-delete" data-pid="' + this.pid + '" style=" border: none; background-color: white;">'
+							+ '<img alt="x" src="././resources/images/x.png" style="width: 13px;">'							
+							+'</button>'
 							+ '</td>'
 							+'</tr>';
 			});
