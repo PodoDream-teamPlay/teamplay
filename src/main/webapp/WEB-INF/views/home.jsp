@@ -406,11 +406,11 @@ $(document).ready(function(){
 	<div style="float: center;">
 		<table style="text-align: center; font-size: 13; width: 700px;">
 			<tr>
-				<td class="footer_item"><a>회사소개</a></td>
-				<td class="footer_item"><a>인재채용</a></td>
+				<td class="footer_item"><a href="introduction">회사소개</a></td>
+				<td class="footer_item"><a href="hiring">인재채용</a></td>
 				<td class="footer_item"><a>제휴제안</a></td>
-				<td class="footer_item"><a>이용약관</a></td>
-				<td class="footer_item"><a>개인정보처리방침</a></td>
+				<td class="footer_item"><a href="usingagreement">이용약관</a></td>
+				<td class="footer_item"><a href="personalInformation">개인정보처리방침</a></td>
 				<th class="footer_item"><a>ⓒ PODO Corp.</a></th>
 			</tr>
 		</table>
