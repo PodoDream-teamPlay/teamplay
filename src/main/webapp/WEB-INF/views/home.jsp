@@ -83,6 +83,10 @@ img {
 #nav-chart:hover, #nav-jenre:hover, #nav-charge:hover, #nav-event:hover, #nav-fanda:hover{
 	background-color: #8d8a9b;
 }
+#nav-jenre:active, #nav-jenre:visited{
+	background-color: #8d8a9b;
+	
+}
 </style>
 
 
