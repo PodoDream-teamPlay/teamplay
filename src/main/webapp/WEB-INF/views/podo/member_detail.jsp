@@ -24,9 +24,6 @@
 <script type="text/javascript" src="js/custom.js"></script>
 
 <style>
-td {
-	padding: 20px;
-}
 
 .rigth_box {
 	width: 700px;
@@ -39,47 +36,6 @@ td {
 	width: 200px;
 	height: 400px;
 }
-
-.topnav {
-	background-color: #2E2E2E;
-	overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-	float: left;
-	color: #9A2EFE;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-	background-color: #9A2EFE;
-	color: white;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-	background-color: #9A2EFE;
-	color: white;
-}
-
-#noline {
-	display: inline;
-}
-
-.albumart {
-	width: 67px;
-}
-
-#btn-member-update.hover {
-	border: 1px solid white;
-	color: white;
-}
-
 
 a {
 	outline: none;
@@ -127,6 +83,10 @@ img {
 #nav-jenre:active, #nav-jenre:visited{
 	background-color: #8d8a9b;
 	
+}
+
+.albumart{
+	width: 64px;
 }
 </style>
 
@@ -301,7 +261,8 @@ img {
 <br>
 <br>
 
-
+		<div class="container" style="text-align: center;">
+		
 		<hr>
 		<table class="text-center">
 			<thead></thead>
@@ -312,7 +273,8 @@ img {
 							user프로필 출력<br>
 							<br>
 							<div
-								style="background-color: white; color: #2E2E2E; width: 170px; height: 60px; margin-left: 15px; padding: 20px;">
+								style="background-color: white; color: #2E2E2E; width: 170px; height: 60px;
+								 margin-left: 15px; padding: 20px; font-size: 20;">
 								<b>${loginUserid}</b>
 							</div>
 							<br>
@@ -326,11 +288,11 @@ img {
 							</div>
 							<br>
 
-
+							<a>회원 탈퇴</a>
 
 						</div>
 					</td>
-					<td rowspan="2">
+					<td rowspan="2" style="padding-left: 100px;">
 						<h5>플레이리스트 목록</h5>
 						<div class="rigth_box">
 							<button class="button" style="float: right;" id="btn-insert">+</button>
@@ -374,7 +336,7 @@ img {
 				</tr>
 				<tr>
 					<td><br></td>
-					<td rowspan="2">
+					<td rowspan="2" style="padding-left: 100px;">
 						<h5>mp3 구매 목록</h5>
 						<div class="rigth_box">
 							<table class="table">
