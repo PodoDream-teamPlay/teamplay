@@ -177,7 +177,7 @@ float: left;
 		
 		<div align="center" >
 		<a href="dailycheck"  ><img align="middle" height="450px" width="1000px" alt="출석체크" 
-		src="././resources/images/check.png"/></a>
+		src="././resources/images/haha.png"/></a>
 		</div>
 		
 		<h2>다가오는 이벤트</h2>

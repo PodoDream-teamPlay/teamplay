@@ -41,11 +41,13 @@ public class MemberController {
 		//아이디 확인 체크. 
 		Member checkuser = null;
 			checkuser =	memberservice.select(member.getUserid());
+			System.out.println("memberjoin check 이후");
 		if (checkuser ==null) {
 			Member m = new Member(member.getUserid(), member.getPassword(), member.getEmail(),0,0,0,0,0, null, 0 );
-			
+			System.out.println("insert 하기 전");
 			logger.info("member" + member.getUserid() + member.getPassword() + member.getEmail());
 			memberservice.insert(m);
+			System.out.println("insert 한 후.");
 			return "redirect:/";
 		} else {
 			model.addAttribute("check", 1);

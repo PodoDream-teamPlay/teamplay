@@ -98,34 +98,7 @@ float: left;
 
 
 
-		<!-- 로그인  -->
-		<div id="noline" style="float: right">
-			<form action="login-post" method="post" id="noline">
-				<c:if test="${empty loginUserid}">
-					<input type="text" name="userid" id="userid" placeholder="아이디"
-						style="margin-right: 10px" required autofocus />
-					<br>
-					<input type="password" name="password" id="password"
-						style="margin-right: 10px" placeholder="비밀번호" required />
-					<br>
-					<input type="submit" id="btn-login" value="로그인" class="btn" style="background-color:#DFE0E7; color:white;">
-					<a href="register"><input type="button" value="회원가입" class="btn"style="background-color:#DFE0E7; color:white;"> </a>
-					<br>
-					</tbody>
-
-
-				</c:if>
-
-			</form>
-
-			<c:if test="${not empty loginUserid}">
-				<form action="logout" method="get">
-					${loginUserid}님, 환영합니다
-					<input type="submit" id="btn-logout" class="btn" style="background-color:#DFE0E7; color:white;"
-						name="btn-logout" value="로그아웃" style="margin-right: 10px" required autofocus><br>
-					<a href="member_detail" class="text-align:right">마이페이지(test)</a>
-				</form>
-			</c:if>
+		
 
 			<!-- 로그인 후에 이동할 페이지 -->
 			<input type="hidden" name="queryString" value="${loginTarget}" />
@@ -229,7 +202,6 @@ float: left;
 	}
 	
 	</script>
-	
 	
 	
 	</div>

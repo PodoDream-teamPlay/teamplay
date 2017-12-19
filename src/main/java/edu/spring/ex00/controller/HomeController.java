@@ -81,8 +81,7 @@ public class HomeController {
 		model.addAttribute("loginfail", 5);
 		return "home";
 	}
-	
-	
+		
 	
 	} //end login_post()
 	
@@ -96,6 +95,12 @@ public class HomeController {
 	@RequestMapping(value="/register", method=RequestMethod.GET)
 	public String go_register() {
 		//회원가입 페이지로 이동
+		return "podo/registerAgreement";
+	}
+	
+	@RequestMapping(value="/registerAgreement")
+	public String go_registerAgreement() {
+		// 회원 가입전에 동의하는 페이지. 
 		return "podo/register";
 	}
 
