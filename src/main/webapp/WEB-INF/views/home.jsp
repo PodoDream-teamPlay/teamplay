@@ -76,7 +76,13 @@ img {
 	text-align: center;
 }
 
+.navitem:hover {
+	background-color: #8d8a9b;
+}
 
+#nav-chart:hover, #nav-jenre:hover, #nav-charge:hover, #nav-event:hover, #nav-fanda:hover{
+	background-color: #8d8a9b;
+}
 </style>
 
 
@@ -175,13 +181,6 @@ img {
 		<br>
 		<!-- 검색창 -->
 		<form action="search" method="get" class="text-center" id="form-search">			
-			<!-- 
-			<select name="searchType" style="height: 27px">
-				<option value="1">노래 제목</option>
-				<option value="2">가수</option>
-				<option value="3">앨범명</option>
-			</select>
-			 -->
 			<input type="hidden" name="searchType" id="searchType" value="1">
 			<table class="text-center" 
 					style="margin-left: 280px; border: 1px solid #8d8a9b;">
@@ -214,27 +213,32 @@ img {
 					border-bottom:2px solid; border-bottom-color:#1C1637; text-align: center;">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="http://localhost:8181/ex00/" style="color: white;">PODO</a>
+					<a class="navbar-brand navitem" href="http://localhost:8181/ex00/" style="color: #00FDFD;" id="nav-podo">PODO</a>
 				</div>
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="http://localhost:8181/ex00/" style="color: white; background-color: #8d8a9b">홈</a></li>
-
-					<li><a href="chart" style="color: white;">차트</a></li>
-
+					<li class="active">
+						<a href="http://localhost:8181/ex00/" 
+							style="color: #1C1637; background-color: white; font-weight: 900;">
+							홈
+						</a>
+					</li>
+					<li><a href="chart" style="color: white;" id="nav-chart">차트</a></li>
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#" 
-							style="color: white;">
-						장르 <span class="caret"></span></a>
+							style="color: white;" id="nav-jenre">
+							장르 <span class="caret"></span>
+						</a>
 						<ul class="dropdown-menu">
 							<li><a href="search?searchType=4&searchKeyword=ballad">발라드</a></li>
 							<li><a href="search?searchType=4&searchKeyword=dance">댄스</a></li>
 							<li><a href="search?searchType=4&searchKeyword=indi">인디</a></li>
 							<li><a href="search?searchType=4&searchKeyword=hiphop">힙합</a></li>
 							<li><a href="search?searchType=4&searchKeyword=trot">트로트</a></li>
-						</ul></li>
-					<li><a href="monthpay" style="color: white;">이용권</a></li>
-					<li><a href="event" style="color: white;">이벤트</a></li>
-					<li><a href="boardFnA" style="color: white;">F&A</a></li>
+						</ul>
+					</li>
+					<li><a href="monthpay" style="color: white;" id="nav-charge">이용권</a></li>
+					<li><a href="event" style="color: white;" id="nav-event">이벤트</a></li>
+					<li><a href="boardFnA" style="color: white;" id="nav-fanda">F&A</a></li>
 
 				</ul>
 			</div>
@@ -246,7 +250,7 @@ img {
 
 
 <br>
-	
+<br>
 	
 <div class="container"  style="width: 1000px;">
 		<!-- 본문 -->
@@ -270,11 +274,9 @@ img {
 					style="width: 970; height: auto; object-fit: cover;"> <img
 					class="Slides" src="././resources/images/title6.jpg"
 					style="width: 970; height: auto; object-fit: cover;">
-
-				<button onclick="plusDivs(-1)" class="button display left">◀</button>
-				<button onclick="plusDivs(1)" class="button display right">▶</button>
 			</div>
 		</div>
+		<br>
 		<script>
 			// 배너 슬라이드 스크립트 부분 시작 
 			var slideIndex = 0;
@@ -303,11 +305,13 @@ img {
 
 		<!--  최신 앨범 리스트 ( 한줄로 넘어가게 하기)  -->
 		<div class="innerContainer" style="width: 1000px;">
-			<div
-				style="background-color: #A7A7A7; color: white; font-size: 30; width: 970px;">&nbsp;&nbsp;NEW
-				ALBUM</div>
+			<div style="background-color: white; color: #1C1637; font-size: 30; width: 970px; ">
+				&nbsp;<img alt="grape_r" src="././resources/images/grape_r.png" style="width: 30px;">
+				 NEW ALBUM
+			</div>
 			<ul class="albumList" id="newalbum_place"
-				style="list-style-type: none; overflow: hidden; background-color: #A7A7A7; width: 970px; display: inline-block;">
+				style="list-style-type: none; overflow: hidden; background-color: white; width: 970px; display: inline-block;
+						 text-align: center; padding-left: 55px; border: 3px solid #E6E6E6;">
 				<!--  최신앨범 불러오기 8개  -->
 				<c:forEach var="music" items="${musicList}">
 					<li class="albumListLi"
@@ -316,11 +320,10 @@ img {
 							<a href="music_detail?mid=${music.mid }" id="artTag"> <img
 								id="albumart" alt="최신앨범이미지"
 								src="././resources/images/${music.malbumart}"
-								style="width: 150px; height: 150px; border: 1px solid lightgray;">
-								<span
-								style="background-color: white; height: 50px; display: block;">
-									<label for="artTag" style="color: #2E2E2E;">${music.mtitle }</label><br>
-									<label for="artTag" style="color: #2E2E2E;">${music.martist}</label>
+								style="width: 150px; height: 150px;">
+							<span style="background-color: #8d8a9b; height: 55px; display: block;">
+									<label for="artTag" style="color: white; font-size: 15;">${music.mtitle }</label><br>
+									<label for="artTag" style="color: white; font-size: 5;">${music.martist}</label>
 							</span>
 							</a> <br>
 						</div>
@@ -332,12 +335,16 @@ img {
 		<br>
 		<hr>
 		<br>
-		<div class="innerContainer" style="width: 1000px;">
-			<h3 style="display: inline;">TOP 10</h3>
-			<a href="chart" style="float: right;">더보기</a> <br>
-			<table class="table">
+		<div class="innerContainer" style="width: 970px;">
+			<div style="background-color: white; color: #1C1637; font-size: 30; width: 970px; border-bottom: 1px solid white;
+						 vertical-align: middle;">
+				&nbsp;<img alt="grape_r" src="././resources/images/grape_r.png" style="width: 30px;">&nbsp;
+				TOP 10
+				<a href="chart" style="float: right; font-size: 15; color: #8d8a9b;">더보기</a>
+			</div>
+			<table class="table" style="border: 3px solid #E6E6E6; color: white;">
 				<thead>
-					<tr>
+					<tr style="font-size: 15; background-color: #8d8a9b;">
 						<th><input type="checkbox" id="choose_all" name="choose_all"></th>
 						<th><span>순위</span></th>
 						<th><span class="hidden">앨범이미지</span></th>
@@ -351,7 +358,7 @@ img {
 				</thead>
 				<tbody>
 					<c:forEach var="music" items="${music}">
-						<tr>
+						<tr style="font-size: 13;">
 							<td width="30" bordercolor="grey"><br> <input
 								type="checkbox" id="cb_choose" name="cb_choose"
 								value="${music.mid}" data-mid="${music.mid}"></td>
@@ -392,7 +399,7 @@ $(document).ready(function(){
 </script>
 </body>
 <footer>
-	<div style="text-align: center;" class="container">
+	<div style="float: center;">
 		<table style="text-align: center; font-size: 13; width: 700px;">
 			<tr>
 				<td class="footer_item"><a>회사소개</a></td>
