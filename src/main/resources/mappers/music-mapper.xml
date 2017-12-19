@@ -21,7 +21,7 @@
    select * from ${tblMusic} where
    <choose>
        <when test="searchType == 1">
-          ${colMtitle} like #{searchKeyword}
+          ${colMtitle} like #{searchKeyword} or ${colMartist} like #{searchKeyword}
        </when>
        <when test="searchType == 2">
           ${colMartist} like #{searchKeyword}

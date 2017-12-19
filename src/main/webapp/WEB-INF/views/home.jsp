@@ -67,13 +67,16 @@ img {
 }
 
 #albumart {
-  width: 65px;
-  height: 65px;
+	width: 65px;
+	height: 65px;
 }
-.footer_item{
+
+.footer_item {
 	width: 200px;
 	text-align: center;
 }
+
+
 </style>
 
 
@@ -84,46 +87,73 @@ img {
 
 <body>
 
-
-	<div class="container" style="width: 1000px;">
+<div style="background-color: #1C1637"> <!-- 상단 배경색 정하는 div -->
+<div class="container" style="width: 1200px;">
 		<!-- 타이틀 -->
 		<h1 class="text-center">
-			<a href="http://localhost:8181/ex00/" style="text-decoration: none;">PODO
-				DREAM</a>
+			<a href="http://localhost:8181/ex00/" style="text-decoration: none;">
+			<img alt="grape" src="././resources/images/grape3.png" style="width: 58px;">
+			<img alt="PODO" src="././resources/images/podo_white.png">
+			</a>
 		</h1>
 
 
 
 		<!-- 로그인  -->
-		<div id="noline" style="float: right">
-			<form action="login-post" method="post" id="noline">
-				<c:if test="${empty loginUserid}">
-					<input type="text" name="userid" id="userid" placeholder="아이디"
-						style="margin-right: 10px" required autofocus />
-					<br>
-					<input type="password" name="password" id="password"
-						style="margin-right: 10px" placeholder="비밀번호" required />
-					<br>
-					<input type="submit" id="btn-login" value="로그인" class="btn"
-						style="background-color: #DFE0E7; color: white;">
-					<a href="register"><input type="button" value="회원가입"
-						class="btn" style="background-color: #DFE0E7; color: white;">
-					</a>
+		<div id="noline" style="float: right; margin-top: 20px;">
+			<c:if test="${empty loginUserid}">
+				<form action="login-post" method="post" id="noline">
+					<table>
+					<tr>
+					<td>
+						<input type="text" name="userid" id="userid" placeholder="아이디"
+							style="width: 150px; margin-right: 5px;" required autofocus/>
+					</td>
+					<td rowspan="2">
+						<input type="submit" id="btn-login" value="로그인" class="btn"
+							style="background-color: #8d8a9b; color: white; height: 50px;
+								font-weight: bold;">
+					</td>
+					</tr>
+					<tr>
+					<td>
+						<input type="password" name="password" id="password"
+							style="width: 150px; margin-right: 5px;" placeholder="비밀번호" required />
+					</td>
+					</tr>
+					</table>
+					<a href="register" style="color: #8d8a9b;">회원가입</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="" style="color: #8d8a9b;">아이디·비밀번호 찾기</a>
 					<br>
 					</tbody>
 
 
-				</c:if>
 
-			</form>
+				</form>
+			</c:if>
 
 			<c:if test="${not empty loginUserid}">
 				<form action="logout" method="get">
-					${loginUserid}님, 환영합니다 <input type="submit" id="btn-logout"
-						class="btn" style="background-color: #DFE0E7; color: white;"
-						name="btn-logout" value="로그아웃" style="margin-right: 10px" required
-						autofocus><br> <a href="member_detail"
-						class="text-align:right">마이페이지(test)</a>
+				<table>
+					<tr>
+					<td>
+						<p style="margin-right: 5px; color: white;">${loginUserid}님, 환영합니다 </p>
+					</td>
+					<td rowspan="2">
+						<input type="submit" id="btn-logout"
+						class="btn" style="background-color: #8d8a9b; color: white; height: 50px;"
+						name="btn-logout" value="로그아웃">
+					</td>
+					</tr>
+					<tr>
+					<td>
+						<a href="member_detail" class="text-align:right" style="margin-right: 5px; color: #8d8a9b;">마이페이지</a>
+					</td>
+					</tr>
+					</table>
+					<br> 
+					
 				</form>
 			</c:if>
 
@@ -139,36 +169,62 @@ img {
 				
 			} 
 			});
-	</script>
+		</script>
 
 
 		<br>
-		<form action="search" method="get" class="text-center"
-			style="margin-left: 50px;">
+		<!-- 검색창 -->
+		<form action="search" method="get" class="text-center" id="form-search">			
+			<!-- 
 			<select name="searchType" style="height: 27px">
 				<option value="1">노래 제목</option>
 				<option value="2">가수</option>
 				<option value="3">앨범명</option>
-			</select> <input type="text" name="searchKeyword" placeholder="검색어"
-				style="width: 500" /> <input type="submit" value="검색" class="btn "
-				style="background-color: #1C1637; color: white;" />
+			</select>
+			 -->
+			<input type="hidden" name="searchType" id="searchType" value="1">
+			<table class="text-center" 
+					style="margin-left: 280px; border: 1px solid #8d8a9b;">
+			<tr>
+			<td>
+				<input type="text" name="searchKeyword" placeholder="검색"
+					style="width: 580px; height: 42px; border: 3px solid #1C1637; margin: 5px;"/>
+			</td>
+			<td>
+				<!-- 검색 버튼 -->
+				<a href="#" id="btn-search" style="text-decoration : none;">
+					<img alt="search" src="././resources/images/search_icon.png"
+						style="background-color: #1C1637; padding: 5px;">
+				</a>
+			</td>
+			</tr>
+			</table>
 		</form>
 		<br>
+			
+</div>
 
+
+<div style="background-color: #1C1637; border-bottom: 2px solid; border-bottom-color: #1C1637; height: 52px;">
 		<!-- 메뉴 bar -->
 
-		<nav class="navbar navbar-inverse">
+		<div class="container">
+		<nav class="navbar navbar-inverse" 
+			style="width: 970px; display: inline-block; background-color: #1C1637; border: none;
+					border-bottom:2px solid; border-bottom-color:#1C1637; text-align: center;">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="http://localhost:8181/ex00/">PODO</a>
+					<a class="navbar-brand" href="http://localhost:8181/ex00/" style="color: white;">PODO</a>
 				</div>
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="http://localhost:8181/ex00/">홈</a></li>
+					<li class="active"><a href="http://localhost:8181/ex00/" style="color: white; background-color: #8d8a9b">홈</a></li>
 
-					<li><a href="chart">차트</a></li>
+					<li><a href="chart" style="color: white;">차트</a></li>
 
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">장르 <span class="caret"></span></a>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" 
+							style="color: white;">
+						장르 <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="search?searchType=4&searchKeyword=ballad">발라드</a></li>
 							<li><a href="search?searchType=4&searchKeyword=dance">댄스</a></li>
@@ -176,43 +232,45 @@ img {
 							<li><a href="search?searchType=4&searchKeyword=hiphop">힙합</a></li>
 							<li><a href="search?searchType=4&searchKeyword=trot">트로트</a></li>
 						</ul></li>
-					<li><a href="monthpay">이용권</a></li>
-					<li><a href="event">이벤트</a></li>
-					<li><a href="boardFnA">F&A</a></li>
-					
+					<li><a href="monthpay" style="color: white;">이용권</a></li>
+					<li><a href="event" style="color: white;">이벤트</a></li>
+					<li><a href="boardFnA" style="color: white;">F&A</a></li>
+
 				</ul>
 			</div>
 		</nav>
+		</div>
+</div>
+</div> <!-- 상단 배경색 정하는 div -->
 
+
+
+<br>
+	
+	
+<div class="container"  style="width: 1000px;">
 		<!-- 본문 -->
 		<!-- 배너 Slideshow  -->
-		<div class="container-center" style="background: ligthgrey;">
+		<div style="background: ligthgrey;">
 			<div class="float:center" style="width: 970; height: auto;">
 				<!-- banner01 : 트와이스 신곡 홍보 -->
-				<a href="music_detail?mid=115">
-				<img class="Slides" src="././resources/images/banner01.png"
-					style="width: 970px; height: auto; object-fit: cover;"> 
+				<a href="music_detail?mid=115"> <img class="Slides"
+					src="././resources/images/banner01.png"
+					style="width: 970px; height: auto; object-fit: cover;">
 				</a>
 				<!-- banner02 : 2000년대 발라드 추천 -->
-				<a href="generation?startYear=2000&endYear=2009&genre=ballad">
-				<img
+				<a href="generation?startYear=2000&endYear=2009&genre=ballad"> <img
 					class="Slides" src="././resources/images/banner02.png"
-					style="width: 970; height: auto; object-fit: cover;"> 
-				</a>
-				
-				<img
-					class="Slides" src="././resources/images/title3.jpg"
-					style="width: 970; height: auto; object-fit: cover;"> 
-				<img
+					style="width: 970; height: auto; object-fit: cover;">
+				</a> <img class="Slides" src="././resources/images/title3.jpg"
+					style="width: 970; height: auto; object-fit: cover;"> <img
 					class="Slides" src="././resources/images/title4.jpg"
-					style="width: 970; height: auto; object-fit: cover;">
-				<img
+					style="width: 970; height: auto; object-fit: cover;"> <img
 					class="Slides" src="././resources/images/title5.jpg"
-					style="width: 970; height: auto; object-fit: cover;">
-				<img
+					style="width: 970; height: auto; object-fit: cover;"> <img
 					class="Slides" src="././resources/images/title6.jpg"
 					style="width: 970; height: auto; object-fit: cover;">
-				
+
 				<button onclick="plusDivs(-1)" class="button display left">◀</button>
 				<button onclick="plusDivs(1)" class="button display right">▶</button>
 			</div>
@@ -240,95 +298,112 @@ img {
 			
 			
 		</script>
-
+		<br>
 
 
 		<!--  최신 앨범 리스트 ( 한줄로 넘어가게 하기)  -->
-		<h3 style="color: #2E2E2E">최신 앨범</h3>
 		<div class="innerContainer" style="width: 1000px;">
-
+			<div
+				style="background-color: #A7A7A7; color: white; font-size: 30; width: 970px;">&nbsp;&nbsp;NEW
+				ALBUM</div>
 			<ul class="albumList" id="newalbum_place"
-				style="overflow: auto; list-style-type: none;">
-
+				style="list-style-type: none; overflow: hidden; background-color: #A7A7A7; width: 970px; display: inline-block;">
 				<!--  최신앨범 불러오기 8개  -->
 				<c:forEach var="music" items="${musicList}">
-					<li class="albumListLi" style="text-align: center;  display: inline;">
-						<div class="album_img" style="width: 150px; height: 150px;">
-							<a href="music_detail?mid=${music.mid }"> 
-							<img id="albumart"
-								alt="최신앨범이미지" src="././resources/images/${music.malbumart}"
-								style="width: 150px; height: 150px;">
-							</a>
+					<li class="albumListLi"
+						style="text-align: center; display: inline-block;">
+						<div class="album_img" style="width: 150px; height: 200px;">
+							<a href="music_detail?mid=${music.mid }" id="artTag"> <img
+								id="albumart" alt="최신앨범이미지"
+								src="././resources/images/${music.malbumart}"
+								style="width: 150px; height: 150px; border: 1px solid lightgray;">
+								<span
+								style="background-color: white; height: 50px; display: block;">
+									<label for="artTag" style="color: #2E2E2E;">${music.mtitle }</label><br>
+									<label for="artTag" style="color: #2E2E2E;">${music.martist}</label>
+							</span>
+							</a> <br>
 						</div>
 					</li>
 				</c:forEach>
 			</ul>
 		</div>
-		
+
 		<br>
 		<hr>
 		<br>
-		<h3 style="display: inline;">TOP 10</h3>
-		<a href="chart" style="float: right;">더보기</a>
-		<br>
-		<table class="table">
-			<thead>
-		    	<tr>
-			    	<th><input type="checkbox" id="choose_all" name="choose_all"></th>
-			    	<th><span>순위</span></th>
-			    	<th><span class="hidden">앨범이미지</span></th>
-				    <th><span>곡명</span></th>
-				    <th><span>아티스트</span></th>
-				    <th><span>앨범</span></th>
-			    	<th>가사</th>
-			    	<th>내앨범</th>
-			    	<th>MP3다운</th>
-			   </tr>
-		  	</thead>
-		  	<tbody>
-				<c:forEach var="music" items="${music}">
+		<div class="innerContainer" style="width: 1000px;">
+			<h3 style="display: inline;">TOP 10</h3>
+			<a href="chart" style="float: right;">더보기</a> <br>
+			<table class="table">
+				<thead>
 					<tr>
-						<td width="30" bordercolor="grey"><br>
-						<input type="checkbox" id="cb_choose" name="cb_choose"
-							value="${music.mid}" data-mid="${music.mid}"></td>
-						<td id="mid"><br>${music.mid}</td>
-						<td><a href="music_detail?mid=${music.mid }"> <img
-								id="albumart" alt="자켓이미지"
-								src="././resources/images/${music.malbumart}">
-						</a></td>
-						<td><br>
-						<a href="music_detail?mid=${music.mid }"
-							style="text-decoration: none;"> ${music.mtitle} </a></td>
-						<td><br>${music.martist}</td>
-						<td><br>${music.malbum}</td>
-						<td><a href="${music.mlyrics}"><br>
-							<img alt="가사" src="././resources/images/t_lyrics.png"></a></td>
-						<td><a href=""><br>
-							<img alt="내앨범" src="././resources/images/t_myalbum.png"></a></td>
-						<td><a href="mp3_down_icon?mid=${music.mid}" id="down_icon"><br>
-							<img alt="MP3다운" src="././resources/images/t_mp3.png"
-								name="down_icon"></a></td>
+						<th><input type="checkbox" id="choose_all" name="choose_all"></th>
+						<th><span>순위</span></th>
+						<th><span class="hidden">앨범이미지</span></th>
+						<th><span>곡명</span></th>
+						<th><span>아티스트</span></th>
+						<th><span>앨범</span></th>
+						<th>가사</th>
+						<th>내앨범</th>
+						<th>MP3다운</th>
 					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-		<br><br><br>
+				</thead>
+				<tbody>
+					<c:forEach var="music" items="${music}">
+						<tr>
+							<td width="30" bordercolor="grey"><br> <input
+								type="checkbox" id="cb_choose" name="cb_choose"
+								value="${music.mid}" data-mid="${music.mid}"></td>
+							<td id="mid"><br>${music.mid}</td>
+							<td><a href="music_detail?mid=${music.mid }"> <img
+									id="albumart" alt="자켓이미지"
+									src="././resources/images/${music.malbumart}">
+							</a></td>
+							<td><br> <a href="music_detail?mid=${music.mid }"
+								style="text-decoration: none;"> ${music.mtitle} </a></td>
+							<td><br>${music.martist}</td>
+							<td><br>${music.malbum}</td>
+							<td><a href="${music.mlyrics}"><br> <img alt="가사"
+									src="././resources/images/t_lyrics.png"></a></td>
+							<td><a href=""><br> <img alt="내앨범"
+									src="././resources/images/t_myalbum.png"></a></td>
+							<td><a href="mp3_down_icon?mid=${music.mid}" id="down_icon"><br>
+									<img alt="MP3다운" src="././resources/images/t_mp3.png"
+									name="down_icon"></a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+		<br> <br> <br>
 
 	</div>
+	
+	
+	
+<script>
+$(document).ready(function(){
+	$('#btn-search').click(function(){
+		event.preventDefault();
+		$('#form-search').submit();
+	});
+});
+</script>
 </body>
 <footer>
-<div style="text-align: center;" class="container">
-<table style="text-align: center; font-size: 13; width: 700px;">
-<tr>
-	<td class="footer_item"><a>회사소개</a></td>
-	<td class="footer_item"><a>인재채용</a></td>
-	<td class="footer_item"><a>제휴제안</a></td>
-	<td class="footer_item"><a>이용약관</a></td>
-	<td class="footer_item"><a>개인정보처리방침</a></td>
-	<th class="footer_item"><a>ⓒ PODO Corp.</a></th>
-</tr>
-</table>
-</div>
+	<div style="text-align: center;" class="container">
+		<table style="text-align: center; font-size: 13; width: 700px;">
+			<tr>
+				<td class="footer_item"><a>회사소개</a></td>
+				<td class="footer_item"><a>인재채용</a></td>
+				<td class="footer_item"><a>제휴제안</a></td>
+				<td class="footer_item"><a>이용약관</a></td>
+				<td class="footer_item"><a>개인정보처리방침</a></td>
+				<th class="footer_item"><a>ⓒ PODO Corp.</a></th>
+			</tr>
+		</table>
+	</div>
 </footer>
 </html>
 
