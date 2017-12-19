@@ -156,25 +156,24 @@ p {
 
 <!--  차트 상단 버튼 -->
 <div class="container">
-<form action="playlist" method="post"  style="display: inline;">
- <!--   <form id="chk_box">
-  	  	<input type="checkbox" id="choose_all" name="choose_all">
-   </form> -->
+<form action="playlist" method="post" style="display: inline;">
+
      <div class="dropdown"  style="display: inline;">
 			<button id="cart" class="btn btn-default dropdown-toggle"
-				data-toggle="dropdown">마이리스트에 담기</button>
+				data-toggle="dropdown">마이리스트에 담기</button>	
 			<ul class="dropdown-menu" id="cart-list">
 				<li>마이맬범에 담기</li>
 				<li class="divider"></li>
 				<li><input id="ptitle" type="text" name="ptitle" placeholder="새 앨범" />
 				<input id="btn-insert" type="button" value="확인"/></li>		
 				<li><input id="userid" name="userid" type="hidden" value="${loginUserid}" /></li>
+			
 			    <ul id="playlists">
 			       <!-- Ajax로 플레이리스트 가져오기 -->		 
 			    </ul>
 			       <!-- pagination -->		     
-						<div class="text-center">
-								<ul class="pagination" id="ppagination">
+						<div class="text-center" align="center">
+								<ul class="pagination" id="ppagination" >
 									<c:if test="${ppageMaker.prev }">
 									<li><a href="${ppageMaker.startPage - 1 }">◀</a></li>
 									</c:if>
@@ -189,13 +188,10 @@ p {
 							<form id="ppageForm">
 							<input id="ppage" type="hidden" name="ppage" value="${ppageMaker.criteria.page }"> <!-- 현재 페이지 -->
 							<input id="pperPage" type="hidden" name="pperPage" value="${ppageMaker.criteria.numsPerPage }"> <!-- 한페이지에 보여줄 갯수 -->
-							</form>
-							
-						</div>
-						
+							</form>							
+						</div>					
 			</ul>
-	</div>
-</form>
+</form>	
 			<button id="mp3_down" class="btn btn-default" >MP3 다운</button>
 			<button id="listening_all" class="btn btn-default">전체 듣기</button>
 			<button id="change_listening" class="btn btn-default">선택 듣기</button>
