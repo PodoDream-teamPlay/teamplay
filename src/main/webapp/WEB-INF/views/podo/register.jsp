@@ -145,78 +145,7 @@ img {
 
 
 
-		<!-- 로그인  -->
-		<div id="noline" style="float: right; margin-top: 20px;">
-			<c:if test="${empty loginUserid}">
-				<form action="login-post" method="post" id="noline">
-					<table>
-					<tr>
-					<td>
-						<input type="text" name="userid" id="userid" placeholder="아이디"
-							style="width: 150px; margin-right: 5px;" required autofocus/>
-					</td>
-					<td rowspan="2">
-						<input type="submit" id="btn-login" value="로그인" class="btn"
-							style="background-color: #8d8a9b; color: white; height: 50px;
-								font-weight: bold;">
-					</td>
-					</tr>
-					<tr>
-					<td>
-						<input type="password" name="password" id="password"
-							style="width: 150px; margin-right: 5px;" placeholder="비밀번호" required />
-					</td>
-					</tr>
-					</table>
-					<a href="register" style="color: #8d8a9b;">회원가입</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="" style="color: #8d8a9b;">아이디·비밀번호 찾기</a>
-					<br>
-					</tbody>
-
-
-
-				</form>
-			</c:if>
-
-			<c:if test="${not empty loginUserid}">
-				<form action="logout" method="get">
-				<table>
-					<tr>
-					<td>
-						<p style="margin-right: 5px; color: white;">${loginUserid}님, 환영합니다 </p>
-					</td>
-					<td rowspan="2">
-						<input type="submit" id="btn-logout"
-						class="btn" style="background-color: #8d8a9b; color: white; height: 50px;"
-						name="btn-logout" value="로그아웃">
-					</td>
-					</tr>
-					<tr>
-					<td>
-						<a href="member_detail" class="text-align:right" style="margin-right: 5px; color: #8d8a9b;">마이페이지</a>
-					</td>
-					</tr>
-					</table>
-					<br> 
-					
-				</form>
-			</c:if>
-
-			<!-- 로그인 후에 이동할 페이지 -->
-			<input type="hidden" name="queryString" value="${loginTarget}" />
-		</div>
-
-		<!--로그인 실패시 띄울 알람. -->
-		<script>
-		$(document).ready(function() {
-			if (${loginfail}==5) {
-				alert("아이디와 비밀번호 확인해 주세요.");
-				
-			} 
-			});
-		</script>
-
+		
 
 		<br>
 		<!-- 검색창 -->
