@@ -273,7 +273,7 @@ img {
 
 
 
-		<img src="././resources/images/event11.png" alt="진행중인 이벤트" style="margin-left:80px;">
+		<img src="././resources/images/event11.png" alt="진행중인 이벤트" style="margin-left:80px;"><br/><br/>
 		<img src="././resources/images/event14.png" alt="출석체크 시, 10point를 드려요" style="margin-left:100px;">
 		<div align="center" >
 		<a href="dailycheck"  ><img align="middle"alt="출석체크" 

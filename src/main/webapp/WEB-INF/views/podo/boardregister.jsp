@@ -272,7 +272,8 @@ img {
 
 	<img alt="새 글 작성" src="././resources/images/boardlogo1.png"
 		style="margin-left: 100px; margin-top: 50px;">
-	<hr style="width: 1000px;" />
+	
+	<hr  />
 	<br />
 
 	<form action="boardFnA" method="post"

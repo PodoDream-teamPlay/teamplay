@@ -282,16 +282,21 @@ img {
 	<!-- 상단 배경색 정하는 div -->
 
 	<div class="container">
-		<h2>게시글 상세보기</h2>
+	<img src="././resources/images/boardlogo5.png" alt="게시글 상세보기"style=" margin-top: 50px;">
 		<hr />
 
 		<form>
-			<label for="bno">번호</label> <input type="number" name="bno" id="bno"
-				value="${board.bno}" readonly /><br /> <label for="title">제목</label>
-			<input type="text" name="title" id="title" value="${board.title }"
-				readonly /> <br /> <label for="content">내용</label>
-			<textarea rows="10" cols="50" name="content" id="content" readonly>${board.content}</textarea>
-			<br /> <label for="userid">작성자</label> <input type="text"
+			<label for="bno"><img src="././resources/images/boardlogo6.png" alt="번호">&nbsp;&nbsp;&nbsp;</label> 
+			<input type="number" name="bno" id="bno" style="width:35px;"
+				value="${board.bno}" readonly /><br /> <label for="title"><img
+			src="././resources/images/boardlogo2_2.png" alt="제목"></label>
+			<input type="text" name="title" id="title"style="width: 800px" value="${board.title }"
+				readonly /> <br /> <label for="content"><img
+			src="././resources/images/boardlogo3_3.png" alt="내용"
+			style="display: inline;"></label>
+			<textarea rows="15" cols="130" name="content" id="content" readonly>${board.content}</textarea>
+			<br /> <label for="userid"><img
+				src="././resources/images/boardlogo4_4.png" alt="아이디"></label> <input type="text"
 				name="userid" id="userid" value="${board.userid}" readonly /> <label
 				for="regdate">작성시간</label>
 			<fmt:formatDate value="${board.regdate}" var="regdate"
@@ -302,18 +307,22 @@ img {
 		<br />
 		<hr />
 
-		<ul id="menu">
+		<ul id="menu" class="float:center;">
 			<c:if test="${not empty loginUserid}">
 
 				<li id="menuLi"><a href="boardupdate?bno=${board.bno}"
-					class="btn btn-primary">수정하기</a></li>
+					style="width: 80px; height: 40px; background-color: #1c1637; font-family: 배달의민족 주아; font-size: 16px; color: #fff; border: 2px solid lightgrey;"
+			class="btn btn-primary;">수정하기</a></li>
 				<li id="menuLi"><a href="delete?bno=${board.bno }"
-					class="btn btn-primary">삭제하기</a></li>
+					style="width: 80px; height: 40px; background-color: #1c1637; font-family: 배달의민족 주아; font-size: 16px; color: #fff; border: 2px solid lightgrey;"
+			class="btn btn-primary;">삭제하기</a></li>
 			</c:if>
 
-			<li id="menuLi"><a href="boardFnA" class="btn btn-primary">메인으로</a></li>
+			<li id="menuLi"><a href="boardFnA" style="width: 80px; height: 40px; background-color: #1c1637; font-family: 배달의민족 주아; font-size: 16px; color: #fff; border: 2px solid lightgrey;"
+			class="btn btn-primary;">메인으로</a></li>
 		</ul>
 		<br />
+		<br/>
 		<hr />
 		<%-- <h1 class="text-left">댓글</h1>
 
@@ -341,6 +350,23 @@ $(document).ready(function(){
 </script>
 
 
-
+<div>
+		<img src="././resources/images/logo11.png" alt=" "
+			style="margin-top: 100px;" />
+	</div>
 </body>
+<footer>
+	<div style="float: center;">
+		<table style="text-align: center; font-size: 13; width: 700px;">
+			<tr>
+				<td class="footer_item"><a href="introduction">회사소개</a></td>
+				<td class="footer_item"><a href="hiring">인재채용</a></td>
+				<td class="footer_item"><a>제휴제안</a></td>
+				<td class="footer_item"><a href="usingagreement">이용약관</a></td>
+				<td class="footer_item"><a href="personalInformation">개인정보처리방침</a></td>
+				<th class="footer_item"><a>ⓒ PODO Corp.</a></th>
+			</tr>
+		</table>
+	</div>
+</footer>
 </html>
