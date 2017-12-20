@@ -372,7 +372,7 @@ img {
 </form>
  -->
 
-<div class="container" style="width: 970px;">
+<div class="container" style="width: 970px; height: 600px;">
 <table class="table table-hover;">
 	
 	<thead style="background: white; opacity:0.9;">
