@@ -11,6 +11,11 @@
 <insert id="insert">
 insert into podo_member (userid, password, email) values (#{userid}, #{password}, #{email})
 </insert>
+
+<!-- 회원 탈퇴 -->
+<delete id="delete">
+delete from podo_member where userid = #{userid}
+</delete>
   
   <!--회원 정보 조회-->
 <select id="select" resultType="Member">

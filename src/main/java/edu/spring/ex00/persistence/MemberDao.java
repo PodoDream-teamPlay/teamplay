@@ -7,6 +7,9 @@ public interface MemberDao {
 	//회원 가입
 	int create (Member m);
 	
+	//회원 탈퇴
+	int delete (String userid);
+	
 	//회원 정보 조회
 	Member read(String userid);
 	

@@ -4,6 +4,8 @@ package edu.spring.ex00.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +52,29 @@ public class MemberController {
 			model.addAttribute("check", 1);
 		}
 			return "podo/register";
+	}
+	
+	//탈퇴 페이지로 이동
+	@RequestMapping(value="/member_withdraw", method=RequestMethod.GET)
+	public String showWithdrawPage() {
+		return "podo/member_withdraw";
+	}
+	
+	//탈퇴 확인 버튼 - 로그아웃, 탈퇴, 메인페이지로 이동
+	@RequestMapping(value="/member_withdraw", method=RequestMethod.POST)
+	public String member_withdraw(HttpSession session) {
+		
+		String userid = (String)session.getAttribute("loginUserid");		
+		
+		session.invalidate(); // 로그아웃
+		int result = memberservice.delete(userid); //탈퇴
+		System.out.println(result);
+		if(result == 1) {
+			return "redirect:/";			
+		}else {
+			return "redirect:/member_withdraw";
+		}
+		
 	}
 	
 	//아이디 비밀번호 찾기

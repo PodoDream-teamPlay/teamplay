@@ -190,7 +190,7 @@ img {
 					style="margin-left: 280px; border: 1px solid #8d8a9b;">
 			<tr>
 			<td>
-				<input type="text" name="searchKeyword" placeholder="검색"
+				<input type="text" name="searchKeyword" placeholder="${topnavTitle}"
 					style="width: 580px; height: 42px; border: 3px solid #1C1637; margin: 5px;"/>
 			</td>
 			<td>
@@ -265,8 +265,9 @@ img {
 		<img src="././resources/images/banner02.png"
 		style="width: 970; height: auto; object-fit: cover;"> 
 	</c:if>
-	<c:if test="${topnavTitle ne '2000sBallad'}">
-		[ ${topnavTitle } ] 검색 결과
+	<c:if test="${topnavTitle eq 'trot'}">
+		<img src="././resources/images/banner04.png"
+		style="width: 970; height: auto; object-fit: cover;"> 
 	</c:if>
 	<hr>
 </div>

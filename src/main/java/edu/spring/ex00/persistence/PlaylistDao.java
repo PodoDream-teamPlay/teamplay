@@ -19,6 +19,9 @@ public interface PlaylistDao {
 	//delete
 	int delete (int pid);
 	
+	//회원 탈퇴할때 쓰려고 정보 지우는 메소드
+	int delete (String userid);
+	
 	
 	//pagination
 	List<Playlist> read(PaginationCriteria c, String userid);

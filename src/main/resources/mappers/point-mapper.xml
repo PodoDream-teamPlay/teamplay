@@ -7,13 +7,18 @@
   
   <mapper namespace="edu.spring.ex00.Pointmapper">
   
- <insert id="insert">
- insert into podo_point (userid, ptime) values (#{userid}, sysdate) 
- </insert>
- 
- <select id="select" resultType="java.util.Date">
- select ptime from podo_point where rownum =1 and userid = #{userid} order by pnum desc
- </select>
+	 <insert id="insert">
+	 insert into podo_point (userid, ptime) values (#{userid}, sysdate) 
+	 </insert>
+	 
+	 <select id="select" resultType="java.util.Date">
+	 select ptime from podo_point where rownum =1 and userid = #{userid} order by pnum desc
+	 </select>
+	 
+ 	<!-- 회원 탈퇴했을 때 정보 삭제 -->
+	<delete id="delete">
+	delete from podo_point where userid = #{userid}
+	</delete>
  
  <!-- 수정 -->
   </mapper>
