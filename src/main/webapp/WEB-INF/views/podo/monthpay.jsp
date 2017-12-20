@@ -278,62 +278,70 @@ img {
 
 
 <div align="center">
-<h1 style="float:left;"><img src="././resources/images/pay.png"></h1><br/><br/><br/><br/>
+<h1 style="float:left; margin-left:100px;"><img src="././resources/images/pay.png"></h1><br/><br/><br/><br/>
+
+
 
 <br/>
 
 <img src="././resources/images/month_pay1.png "style="display: inline; width:500px; height:180px; border:2px solid lightgrey; ">
 	<img src="././resources/images/won3900.png" style=" width:150px; height:180px;border:2px solid lightgrey; display: inline;">
-	<a onclick="month1()" style="width:80px; height: 40px; background-color: #FB1903; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
+	<a onclick="month1()" style="width:80px; height: 40px; background-color: #1c1673; font-family:배달의민족 주아;font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
 
 
 <br/>
 <br/>
 <img src="././resources/images/month_pay2.png"style="display: inline; width:500px; height:180px; border:2px solid lightgrey;  ">
 	<img src="././resources/images/won6900.png" style=" width:150px; height:180px;border:2px solid lightgrey; display: inline;">
-<a onclick="month2()"style="width:80px; height: 40px; background-color: #FB1903; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
+<a onclick="month2()"style="width:80px; height: 40px;background-color: #1c1673; font-family:배달의민족 주아; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
 
 
 <br/>
 <img src="././resources/images/month_pay3.png"style="display: inline; width:500px; height:180px; border:2px solid lightgrey;  ">
 <img src="././resources/images/won9900.png" style=" width:150px; height:180px;border:2px solid lightgrey; display: inline;">
-<a onclick="month3()"style="width:80px; height: 40px; background-color: #FB1903; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
+<a onclick="month3()"style="width:80px; height: 40px;background-color: #1c1673; font-family:배달의민족 주아; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
 
 
 <br/>
 <br/>
 
 <hr style="border:0.7px dotted lightgrey;"/>
-<img alt="포인트 충전" src="././resources/images/point.png" style="float:left;"><br/><br/>
+<img alt="포인트 충전" src="././resources/images/point.png" style="float:left;margin-left:100px;"><br/><br/>
 <img src="././resources/images/point5000.png"style="display: inline; width:600px; height:130px; border:2px solid lightgrey;  margin-right: 60px;">
-<a onclick="money1()"style="width:80px; height: 40px; background-color: #FB1903; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
+<a onclick="money1()"style="width:80px; height: 40px; background-color: #1c1673; font-family:배달의민족 주아; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
 <br/>
 <img src="././resources/images/point10000.png"style="display: inline; width:600px; height:130px; border:2px solid lightgrey;  margin-right: 60px;">
-<a onclick="money2()"style="width:80px; height: 40px; background-color: #FB1903; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
+<a onclick="money2()"style="width:80px; height: 40px; background-color: #1c1673; font-family:배달의민족 주아; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
 
 
 <br/>
 <br/>
 </div>
 
-
-<div align="right" display="inline">
+<hr style="border:0.7px dotted lightgrey;"/>
+<div align="right" style="margin-right:100px;" display="inline">
 	<input id="money" readonly required> 원
-	<input id="pay" type="submit" value="결제하기" disabled onclick="popupOpen()">
+	<input id="pay" type="submit" value="결제" class="btn btn-primary;"
+	style="width:80px; height: 40px; background-color: #1c1673; font-family:배달의민족 주아;font-size:20px; color:#fff; border:2px solid lightgrey;" disabled onclick="popupOpen()">
 </div>
 
 <hr/>
-<h2 align="center">상품권 등록</h2>
+<img src="././resources/images/aa1.png" alt="상품권 등록" style="margin-left:100px;"><br/>
+<img src="././resources/images/aa2.png" alt="상품권 번호를 입력 후, 등록 버튼을 클릭해주세요."style="margin-left:150px;">
 <div align="center">
 <form action="register_giftcard">
 <input type="text"  maxlength="4" required>
 <input type="text"  maxlength="4" required>
 <input type="text"  maxlength="4" required>
 <input type="text"  maxlength="4" required>
-<input type="submit" value="등록" id="giftcard">
+<input type="submit" value="등록" id="giftcard"class="btn btn-primary;" 
+	style="width:80px; height: 40px; background-color: #1c1673; font-size:20px; font-family:배달의민족 주아; color:#fff; border:2px solid lightgrey;">
 </form>
 </div>
 
+<div>
+<img src="././resources/images/logo11.png" alt=" " style="margin-top: 100px;"/>
+</div>
 
 
 
@@ -406,9 +414,25 @@ function popupOpen(){
 
 
 
-</div>
 
 
 </body>
+<footer>
+	<div style="float: center;">
+		<table style="text-align: center; font-size: 13; width: 700px;">
+			<tr>
+				<td class="footer_item"><a href="introduction">회사소개</a></td>
+				<td class="footer_item"><a href="hiring">인재채용</a></td>
+				<td class="footer_item"><a>제휴제안</a></td>
+				<td class="footer_item"><a href="usingagreement">이용약관</a></td>
+				<td class="footer_item"><a href="personalInformation">개인정보처리방침</a></td>
+				<th class="footer_item"><a>ⓒ PODO Corp.</a></th>
+			</tr>
+		</table>
+	</div>
+</footer>
+
+
+
 </html>
 

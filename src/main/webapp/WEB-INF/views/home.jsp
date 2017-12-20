@@ -269,13 +269,23 @@ img {
 				<!-- banner02 : 2000년대 발라드 추천 -->
 				<a href="generation?startYear=2000&endYear=2009&genre=ballad"> <img
 					class="Slides" src="././resources/images/banner02.png"
+					style="width: 970; height: auto; object-fit: cover;"></a>
+					
+					<!--  banner 03:  -->
+					 <img class="Slides" src="././resources/images/title3.jpg"
 					style="width: 970; height: auto; object-fit: cover;">
-				</a> <img class="Slides" src="././resources/images/title3.jpg"
-					style="width: 970; height: auto; object-fit: cover;"> <img
-					class="Slides" src="././resources/images/title4.jpg"
-					style="width: 970; height: auto; object-fit: cover;"> <img
-					class="Slides" src="././resources/images/title5.jpg"
-					style="width: 970; height: auto; object-fit: cover;"> <img
+					
+					
+					
+				<!--  banner04 : 태기pick  뽕짝 추천 -->
+				<a href="search?searchType=4&searchKeyword=trot">
+					<img
+					class="Slides" src="././resources/images/banner04.png"
+					style="width: 970; height: auto; object-fit: cover;">
+					<!--  banner05 -->
+					 <img class="Slides" src="././resources/images/title5.jpg"
+					style="width: 970; height: auto; object-fit: cover;">
+					<!-- banner06 --> <img
 					class="Slides" src="././resources/images/title6.jpg"
 					style="width: 970; height: auto; object-fit: cover;">
 			</div>
