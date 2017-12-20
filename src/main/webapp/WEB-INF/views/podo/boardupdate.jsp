@@ -296,7 +296,7 @@ img {
 				pattern="yyyy/MM/dd HH:mm:ss" />
 			<input type="text" id="regdate" value="${regdate}" readonly /><br />
 
-			<input type="submit" value="작성완료" class="btn btn-primary" /> <br />
+			<input type="submit" value="작성완료" style="width:80px; height: 40px;background-color: #1c1637; font-family:배달의민족 주아; font-size:20px; color:#fff; border:2px solid lightgrey;"class="btn btn-primary;" /> <br />
 
 		</form>
 

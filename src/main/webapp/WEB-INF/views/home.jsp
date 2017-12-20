@@ -273,7 +273,7 @@ img {
 					
 				<!--  banner 03: 포인트 충전 배너  -->
 				<a href="event">
-					 <img class="Slides" src="././resources/images/banner03.png"
+					 <img class="Slides" src="././resources/images/banner3.png"
 					style="width: 970; height: auto; object-fit: cover;">
 					</a>
 					
@@ -283,8 +283,8 @@ img {
 					<img
 					class="Slides" src="././resources/images/banner04.png"
 					style="width: 970; height: auto; object-fit: cover;"></a>
-				<!--  banner05 -->
-					 <img class="Slides" src="././resources/images/title5.jpg"
+				<!--  banner05 : 인디 음악 배너 -->
+					 <img class="Slides" src="././resources/images/banner05.png"
 					style="width: 970; height: auto; object-fit: cover;">
 				<!-- banner06 --> <img
 					class="Slides" src="././resources/images/title6.jpg"
@@ -402,7 +402,9 @@ img {
 
 	</div>
 	
-	
+	<div>
+<img src="././resources/images/logo11.png" alt=" " style="margin-top: 100px;"/>
+</div>
 	
 <script>
 $(document).ready(function(){

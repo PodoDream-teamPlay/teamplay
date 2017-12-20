@@ -289,37 +289,37 @@ img {
   <h2><img alt="F&A" src="././resources/images/fna.png"></h2><br/>
    <div class="panel-group" id="accordion" >
     <div class="panel panel-default">
-      <div class="panel-heading"style=" background-color:#C5C4CB; color:white;">
+      <div class="panel-heading"style=" background-color:#1C1637; color:white;">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">1. 회원가입                                                ▼ </a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"style="font-family:배달의민족 주아;">1. 회원가입 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼ </a>
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse">
-        <div class="panel-body">1-1. 회원가입 방법<br/> 1) PODO 홈에서 회원가입버튼을 클릭<br/>2) 양식에 맞게 정보를 입력해주세요<br/>3) 회원가입 버튼 클릭 <br/><br/> 
+      <div id="collapse1" class="panel-collapse collapse"style="font-family:배달의민족 주아;">
+        <div class="panel-body"style="font-family:배달의민족 주아;">1-1. 회원가입 방법<br/> 1) PODO 홈에서 회원가입버튼을 클릭<br/>2) 양식에 맞게 정보를 입력해주세요<br/>3) 회원가입 버튼 클릭 <br/><br/> 
         1-2. 회원정보 수정 방법<br/> 1) 로그인 후, 마이페이지 버튼 클릭<br/> 2)왼쪽 프로필란에 '회원 정보 수정' 버튼 클릭<br/><br/>
         1-3. 회원 탈퇴 방법<br/> 탈퇴는 불가합니다.   </div>
       </div>
     </div>
     <div class="panel panel-default">
-      <div class="panel-heading"style=" background-color:#C5C4CB; color:white;">
+      <div class="panel-heading"style=" background-color:#1C1637; color:white;">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">2. 포인트                                                ▼ </a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"style="font-family:배달의민족 주아;">2. 포인트  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼</a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">2-1. 포인트 쌓는 법 <br/>1) 메뉴바 '이벤트' 클릭 <br/>2) 출석체크시, 10point 증정<br/> *(출석체크는 하루에 한 번만 가능합니다) 
+        <div class="panel-body" style="font-family:배달의민족 주아;">2-1. 포인트 쌓는 법 <br/>1) 메뉴바 '이벤트' 클릭 <br/>2) 출석체크시, 10point 증정<br/> *(출석체크는 하루에 한 번만 가능합니다) 
         <br/><br/> 2-2. 포인트 사용법 <br/> 1) 메뉴바 '이용권' 클릭 <br/> 2) 결제 하려는 이용권 선택 후, 결제하기 버튼 클릭 <br/> 3) 남은 포인트칸에서 남은포인트를 확인하고 쓰려는 포인트를 입력해주세요. <br/>
          </div>
       </div>
     </div>
     <div class="panel panel-default">
-      <div class="panel-heading"style=" background-color:#C5C4CB; color:white;">
+      <div class="panel-heading"style=" background-color:#1C1637; color:white;font-family:배달의민족 주아;">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">3. 문의사항                                                ▼ </a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"style="font-family:배달의민족 주아;">3. 문의사항&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼</a>
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">기타 문의사항은 Q&A 칸에서 새 글 작성 버튼을 클릭해주세요.</div>
+        <div class="panel-body"style="font-family:배달의민족 주아;">기타 문의사항은 Q&A 칸에서 새 글 작성 버튼을 클릭해주세요.</div>
       </div>
     </div>
   </div> 
@@ -339,10 +339,10 @@ img {
 <ul style="display:inline;">
 	
 	<c:if test="${empty loginUserid }">
-	<a  href="" class="btn btn-primary" onclick="boardregister()" style="background-color:#D9D5E1;border: none;color:white; color:#33303A;float:right;"> 새 글 작성</a>
+	<a  href="" class="btn btn-primary" onclick="boardregister()" style="background-color:#1c1637;border: none;font-family:배달의민족 주아; color:white;float:right;"> 새 글 작성</a>
 	</c:if>
 	<c:if test="${not empty loginUserid}">
-	<a href="boardregister"  class="btn btn-primary" onclick="boardregister()"style="background-color:#D9D5E1;border: none;color:white; float:right;">새 글 작성 </a></c:if>
+	<a href="boardregister"  class="btn btn-primary" onclick="boardregister()"style="background-color:#1c1637;border: none;font-family:배달의민족 주아;color:white; float:right;">새 글 작성 </a></c:if>
 	
 	</ul>
 </div>
@@ -372,7 +372,7 @@ img {
 </form>
  -->
 
-<div class="container" style="width: 970px; height: 600px;">
+<div class="container" style="width: 970px; height: auto;">
 <table class="table table-hover;">
 	
 	<thead style="background: white; opacity:0.9;">
@@ -407,12 +407,31 @@ img {
 
 
 
+		
+		
+		
+		
+	<div>
+<img src="././resources/images/logo11.png" alt=" "style="margin-top:100px;"/>
 </div>
-		
-		
-		
 		
 
 </body>
+
+
+<footer>
+	<div style="float: center;">
+		<table style="text-align: center; font-size: 13; width: 700px;">
+			<tr>
+				<td class="footer_item"><a href="introduction">회사소개</a></td>
+				<td class="footer_item"><a href="hiring">인재채용</a></td>
+				<td class="footer_item"><a>제휴제안</a></td>
+				<td class="footer_item"><a href="usingagreement">이용약관</a></td>
+				<td class="footer_item"><a href="personalInformation">개인정보처리방침</a></td>
+				<th class="footer_item"><a>ⓒ PODO Corp.</a></th>
+			</tr>
+		</table>
+	</div>
+</footer>
 </html> 
 

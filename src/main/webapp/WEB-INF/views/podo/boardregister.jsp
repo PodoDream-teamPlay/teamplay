@@ -26,6 +26,9 @@
 
 <style>
 
+
+
+
 #innercontainer li {
 float: left;
 	display: inline;
@@ -54,6 +57,23 @@ float: left;
 
 
 }
+
+
+#menu {
+    list-style:none;
+    float: center;
+    margin:0;
+    padding:0;
+}
+
+#menuLi {
+    margin: 0;
+    padding: 0;
+    border : 0;
+    float: left;
+}
+
+
 
 a {
 	outline: none;
@@ -270,127 +290,25 @@ img {
 </div>
 </div> <!-- 상단 배경색 정하는 div -->
 
-
-
-
-
-	<div class="container" style="width: 1000px;">
-		<!-- 타이틀 -->
-		<h1 class="text-center">
-			<a href="http://localhost:8181/ex00/" style="text-decoration: none;">PODO
-				DREAM</a>
-		</h1>
-
-
-
-		<!-- 로그인  -->
-		<div id="noline" style="float: right">
-			<form action="login-post" method="post" id="noline">
-				<c:if test="${empty loginUserid}">
-					<input type="text" name="userid" id="userid" placeholder="아이디"
-						style="margin-right: 10px" required autofocus />
-					<br>
-					<input type="password" name="password" id="password"
-						style="margin-right: 10px" placeholder="비밀번호" required />
-					<br>
-					<input type="submit" id="btn-login" value="로그인" class="btn"
-						style="background-color: #DFE0E7; color: white;">
-					<a href="register"><input type="button" value="회원가입"
-						class="btn" style="background-color: #DFE0E7; color: white;">
-					</a>
-					<br>
-					</tbody>
-
-
-				</c:if>
-
-			</form>
-
-			<c:if test="${not empty loginUserid}">
-				<form action="logout" method="get">
-					${loginUserid}님, 환영합니다 <input type="submit" id="btn-logout"
-						class="btn" style="background-color: #DFE0E7; color: white;"
-						name="btn-logout" value="로그아웃" style="margin-right: 10px"><br> <a href="member_detail"
-						class="text-align:right">마이페이지</a>
-				</form>
-			</c:if>
-
-			<!-- 로그인 후에 이동할 페이지 -->
-			<input type="hidden" name="queryString" value="${loginTarget}" />
-		</div>
-
-		<!--로그인 실패시 띄울 알람. -->
-		<script>
-		$(document).ready(function() {
-			if (${loginfail}==5) {
-				alert("아이디와 비밀번호 확인해 주세요.");
-				
-			} 
-			});
-	</script>
-
-
-		<br>
-		<form action="search" method="get" class="text-center"
-			style="margin-left: 50px;">
-			<select name="searchType" style="height: 27px">
-				<option value="1">노래 제목</option>
-				<option value="2">가수</option>
-				<option value="3">앨범명</option>
-				<option value="4">장르별</option>
-			</select> <input type="text" name="searchKeyword" placeholder="검색어"
-				style="width: 500" /> <input type="submit" value="검색" class="btn "
-				style="background-color: #1C1637; color: white;" />
-		</form>
-		<br>
-
-		<!-- 메뉴 bar -->
-
-		<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="http://localhost:8181/ex00/">PODO</a>
-				</div>
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="http://localhost:8181/ex00/">홈</a></li>
-
-					<li><a href="chart">차트</a></li>
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">장르 <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="">발라드</a></li>
-							<li><a href="">댄스</a></li>
-							<li><a href="">인디</a></li>
-							<li><a href="">힙합</a></li>
-							<li><a href="">트로트</a></li>
-						</ul></li>
-					<li><a href="monthpay">이용권</a></li>
-					<li><a href="event">이벤트</a></li>
-					<li><a href="boardFnA">F&A</a></li>
-					
-				</ul>
-			</div>
-		</nav>
-
-		<h1 class="text-center">
-			새 글 작성 페이지
-		</h1>
-		<hr />
+		<img alt="새 글 작성" src="././resources/images/boardlogo1.png" style="margin-left:100px; margin-top:50px;">
+		<hr style="width:1000px;"/>
 		<br/>
 
-		<form action="boardFnA" method="post" style="float:center;">
-			<label for="title">제목</label> <input type="text" name="title"
-				id="title" required /> <br /> <label for="content">내용</label><br />
-			<textarea rows="10" cols="50" name="content" id="content"
+		<form action="boardFnA" method="post" style="float:center;margin-left:100px;">
+			<label for="title"><img src="././resources/images/boardlogo2_2.png" alt="제목"></label> 
+			<input type="text" name="title"style="width:800px"
+				id="title" required /> <br /> <label for="content" style="display:inline;"><img src="././resources/images/boardlogo3_3.png" alt="내용"style="display:inline;"></label><br />
+			<textarea rows="15" cols="130" name="content" id="content"
 				placeholder="Q & A 게시판입니다. 글을 작성해주세요."></textarea>
 			<br />
 			<c:if test="${not empty loginUserid}">
-				<label for="userid">아이디</label>
+				<label for="userid"><img src="././resources/images/boardlogo4_4.png" alt="아이디"></label>
 	<input type="text" name="userid" id="userid" value="${loginUserid}" readonly="readonly"/>
 				</c:if>
 				<br />
-			<br /> <input type="submit" value="작성완료" class="btn btn-primary" />
+			<br /> 
+			<input type="submit" value="작성완료" style="width:80px; height: 40px;background-color: #1c1637; font-family:배달의민족 주아; font-size:16px; color:#fff; border:2px solid lightgrey;"class="btn btn-primary;" /> <br />
+
 		</form>
 </body>
 </html>
