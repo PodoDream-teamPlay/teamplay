@@ -362,41 +362,41 @@ img {
 		 	   </td>
 	<td>
 		 	  <br> 
-      <form action="playlist" method="post" style="display: inline;"> 
-             <div class="dropdown"  style="display: inline;">
-			<button class="btn btn-default dropdown-toggle" name="cart-icon"
-				data-toggle="dropdown" style="border: none; background-color: white;">
-				<img alt="내앨범" src="././resources/images/t_myalbum.png" /></button>	
-			  <ul class="dropdown-menu" id="cart-list-icon">
-				<li>마이맬범에 담기</li>
-				<li class="divider"></li>
-				<li><input class="ptitle-icon" type="text" name="ptitle" placeholder="새 앨범" />
-				<input class="btn-insert-icon" type="button" value="확인"/></li>		
-				<li><input id="userid-icon" name="userid" type="hidden" value="${loginUserid}" /></li>
-			    <ul class="playlists-icon">
-			       <!-- Ajax로 플레이리스트 가져오기 -->		 
-			    </ul>
-			       <!-- pagination -->	 	     
-						<div class="text-center" align="center">
-								<ul class="pagination" id="ppagination" >
-									<c:if test="${ppageMaker.prev }">
-									<li><a href="${ppageMaker.startPage - 1 }">◀</a></li>
-									</c:if>
-									<c:forEach var = "pnum" begin="${ppageMaker.startPage }" end="${ppageMaker.endPage }">
-									<li><a href="${pnum }">${pnum }</a></li>
-									</c:forEach>
-									<c:if test="${ppageMaker.next }">
-									<li><a href="${ppageMaker.endPage + 1}">▶</a></li>
-									</c:if>
-								</ul>
-							</div>
-							<form id="ppageForm">
-							<input id="ppage" type="hidden" name="ppage" value="${ppageMaker.criteria.page }"> <!-- 현재 페이지 -->
-							<input id="pperPage" type="hidden" name="pperPage" value="${ppageMaker.criteria.numsPerPage }"> <!-- 한페이지에 보여줄 갯수 -->
-							</form>							
-						</div>					
-			</ul>
-         </form>	
+      		<form action="playlist" method="post" style="display: inline;" id="${music.mid }"> 
+	             <div class="dropdown"  style="display: inline;">
+				<button class="btn btn-default dropdown-toggle" name="cart-icon"
+					data-toggle="dropdown" style="border: none; background-color: white;">
+					<img alt="내앨범" src="././resources/images/t_myalbum.png" /></button>	
+				  <ul class="dropdown-menu" id="cart-list-icon">
+					<li>마이맬범에 담기</li>
+					<li class="divider"></li>
+					<li><input class="ptitle-icon" type="text" name="ptitle" placeholder="새 앨범" data-mid="${music.mid }" />
+					<input class="btn-insert-icon" type="button" value="확인"/></li>		
+					<li><input class="userid-icon" name="userid" type="hidden" value="${loginUserid}" /></li>
+				    <ul class="playlists-icon">
+				       <!-- Ajax로 플레이리스트 가져오기 -->		 
+				    </ul>
+				       <!-- pagination -->	 	     
+							<div class="text-center" align="center">
+									<ul class="pagination" id="ppagination" >
+										<c:if test="${ppageMaker.prev }">
+										<li><a href="${ppageMaker.startPage - 1 }">◀</a></li>
+										</c:if>
+										<c:forEach var = "pnum" begin="${ppageMaker.startPage }" end="${ppageMaker.endPage }">
+										<li><a href="${pnum }">${pnum }</a></li>
+										</c:forEach>
+										<c:if test="${ppageMaker.next }">
+										<li><a href="${ppageMaker.endPage + 1}">▶</a></li>
+										</c:if>
+									</ul>
+								</div>
+								<form id="ppageForm">
+								<input id="ppage" type="hidden" name="ppage" value="${ppageMaker.criteria.page }"> <!-- 현재 페이지 -->
+								<input id="pperPage" type="hidden" name="pperPage" value="${ppageMaker.criteria.numsPerPage }"> <!-- 한페이지에 보여줄 갯수 -->
+								</form>							
+							</div>					
+					</ul>
+         	</form>	
 	 </td>
 		 	   <td>
 		 	   <a href="mp3_down_icon?mid=${music.mid}" id="down_icon"><br>
@@ -509,9 +509,8 @@ $(function(){
     });
     
     //insert 하는 함수
-	function insertPlaylist(){
-		var ptitle = $('#ptitle').val();
-		var ptitle = $('.ptitle-icon').val();
+	function insertPlaylist(title){
+		var ptitle = title;
 		
 		var userid = '${loginUserid}';
 	
@@ -540,11 +539,10 @@ $(function(){
 	}
   
 	//중복 체크하는 함수
-	function checkTitle(){
-		var ptitle = $('#ptitle').val();
-		var ptitle = $('.ptitle-icon').val();
+	function checkTitle(title){
+		var ptitle = title;
 		
-		$.getJSON('/ex00/playlist/check/' + ptitle, function(data){
+		$.getJSON('/ex00/playlist/check/' + ptitle , function(data){
 			var replyList = null;
 			
 			$(data).each(function(){
@@ -553,7 +551,7 @@ $(function(){
 			
 			if(replyList == null){
 				//중복되는거 없으면 insert
-				insertPlaylist();
+				insertPlaylist(ptitle);
 			} else {
 				alert('중복된 이름입니다.앨범명을 다시 입력해주세요!');
 					
@@ -562,11 +560,18 @@ $(function(){
 	}
 	
 	$('#btn-insert').click(function(){
-		checkTitle();
+		var title = $('#ptitle').val();
+		checkTitle(title);
 	});
 	
 	$('.btn-insert-icon').click(function(){
-		checkTitle();
+		
+		var ptitle = $(this).prev().val();
+	
+		var mid = $(this).prev().attr('data-mid');
+		
+		// alert(mid);
+		checkTitle(ptitle);
 	});
 	
 }); // end $(function())
