@@ -362,7 +362,7 @@ img {
 		 	   </td>
 	<td>
 		 	  <br> 
-      		<form action="playlist" method="post" style="display: inline;" id="${music.mid }"> 
+      		<form action="playlist" method="post" style="display: inline;" > 
 	             <div class="dropdown"  style="display: inline;">
 				<button class="btn btn-default dropdown-toggle" name="cart-icon"
 					data-toggle="dropdown" style="border: none; background-color: white;">
@@ -560,8 +560,8 @@ $(function(){
 	}
 	
 	$('#btn-insert').click(function(){
-		var title = $('#ptitle').val();
-		checkTitle(title);
+		var title = $('#ptitle').val();  
+		checkTitle(title);   
 	});
 	
 	$('.btn-insert-icon').click(function(){
