@@ -69,8 +69,9 @@ public class MusicController {
 		logger.info("type: {}, keyword: {}", searchType, searchKeyword);
 		
 		List<Music> list = musicService.search(searchType, searchKeyword);	
+
+		model.addAttribute("topnavTitle", searchKeyword);		
 		model.addAttribute("musicList", list);
-		model.addAttribute("topnavTitle", searchKeyword);
 		return "podo/search_result";
 		
 	}
