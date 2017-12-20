@@ -288,7 +288,7 @@ img {
 							</div>
 							<br>
 
-							<a>회원 탈퇴</a>
+							<a href="member_withdraw">회원 탈퇴</a>
 
 						</div>
 					</td>

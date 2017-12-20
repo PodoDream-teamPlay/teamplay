@@ -42,4 +42,9 @@ public class GetDaoImple implements GetDao {
 		return session.selectList(NAMESPACE + ".selectByUserid", userid);
 	}
 
+	@Override
+	public int delete(String userid) {
+		return session.delete(NAMESPACE + ".delete", userid);
+	}
+
 }

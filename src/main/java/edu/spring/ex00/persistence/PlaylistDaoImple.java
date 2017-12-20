@@ -61,4 +61,9 @@ public class PlaylistDaoImple implements PlaylistDao {
 		return session.selectOne(NAMESPACE + ".totalCount", userid);
 	}
 
+	@Override
+	public int delete(String userid) {
+		return session.delete(NAMESPACE + ".deleteByUserid", userid);
+	}
+
 }

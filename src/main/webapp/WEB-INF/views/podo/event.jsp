@@ -273,29 +273,36 @@ img {
 
 
 
-		<h2>이벤트 페이지</h2>
-		
+		<img src="././resources/images/event11.png" alt="진행중인 이벤트" style="margin-left:80px;">
+		<img src="././resources/images/event14.png" alt="출석체크 시, 10point를 드려요" style="margin-left:100px;">
 		<div align="center" >
-		<a href="dailycheck"  ><img align="middle" height="450px" width="1000px" alt="출석체크" 
+		<a href="dailycheck"  ><img align="middle"alt="출석체크" 
 		src="././resources/images/haha.png"/></a>
 		</div>
+		<br/>	<br/>
 		
-		<h2>다가오는 이벤트</h2>
+<hr style="border:0.7px dotted lightgrey;"/>
+		
+		<img src="././resources/images/event12.png" alt="다가오는 이벤트" style="margin-left:80px;">
 		<div align="center" >
-		<img align="middle" height="450px" width="1000px" alt="다가오는 이벤트" 
-		src="././resources/images/future.png"/>
+		<img align="middle" alt="다가오는 이벤트" 
+		src="././resources/images/future1.png"/>
 		</div>
+		<br/>	<br/>
 		
-		<h2>종료된 이벤트</h2>
+<hr style="border:0.7px dotted lightgrey;"/>
+		<img src="././resources/images/event13.png" alt="종료된 이벤트" style="margin-left:80px;">
 		<div align="center" >
-		<img align="middle" height="200px" width="300px" alt="다가오는 이벤트" 
-		src="././resources/images/event1.png"/>
-		<img align="middle" height="200px" width="300px" alt="다가오는 이벤트" 
-		src="././resources/images/event2.jpg"/>
-		<img align="middle" height="200px" width="300px" alt="다가오는 이벤트" 
-		src="././resources/images/event3.png"/>
+		<img align="middle" height="200px" width="300px" alt="종료된 이벤트" 
+		src="././resources/images/event1_1.png"/>
+		<img align="middle" height="200px" width="300px" alt="종료된 이벤트" 
+		src="././resources/images/event2_2.png"/>
+		<img align="middle" height="200px" width="300px" alt="종료된 이벤트" 
+		src="././resources/images/event3_3.png"/>
 		
 		</div>
+		<br/>
+		<br/>
 		
 			
 	<script>
@@ -325,7 +332,28 @@ img {
 	
 		
 		
+	<div>
+<img src="././resources/images/logo11.png" alt=" " style="margin-top: 100px;"/>
+</div>
 		
 
 </body>
+
+
+<footer>
+	<div style="float: center;">
+		<table style="text-align: center; font-size: 13; width: 700px;">
+			<tr>
+				<td class="footer_item"><a href="introduction">회사소개</a></td>
+				<td class="footer_item"><a href="hiring">인재채용</a></td>
+				<td class="footer_item"><a>제휴제안</a></td>
+				<td class="footer_item"><a href="usingagreement">이용약관</a></td>
+				<td class="footer_item"><a href="personalInformation">개인정보처리방침</a></td>
+				<th class="footer_item"><a>ⓒ PODO Corp.</a></th>
+			</tr>
+		</table>
+	</div>
+</footer>
+
+
 </html>

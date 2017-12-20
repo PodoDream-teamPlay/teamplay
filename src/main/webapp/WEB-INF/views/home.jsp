@@ -271,21 +271,22 @@ img {
 					class="Slides" src="././resources/images/banner02.png"
 					style="width: 970; height: auto; object-fit: cover;"></a>
 					
-					<!--  banner 03:  -->
-					 <img class="Slides" src="././resources/images/title3.jpg"
+				<!--  banner 03: 포인트 충전 배너  -->
+				<a href="event">
+					 <img class="Slides" src="././resources/images/banner03.png"
 					style="width: 970; height: auto; object-fit: cover;">
-					
+					</a>
 					
 					
 				<!--  banner04 : 태기pick  뽕짝 추천 -->
 				<a href="search?searchType=4&searchKeyword=trot">
 					<img
 					class="Slides" src="././resources/images/banner04.png"
-					style="width: 970; height: auto; object-fit: cover;">
-					<!--  banner05 -->
+					style="width: 970; height: auto; object-fit: cover;"></a>
+				<!--  banner05 -->
 					 <img class="Slides" src="././resources/images/title5.jpg"
 					style="width: 970; height: auto; object-fit: cover;">
-					<!-- banner06 --> <img
+				<!-- banner06 --> <img
 					class="Slides" src="././resources/images/title6.jpg"
 					style="width: 970; height: auto; object-fit: cover;">
 			</div>

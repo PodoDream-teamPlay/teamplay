@@ -31,4 +31,9 @@ public class PointDaoImple implements PointDao {
 		//
 	}
 
+	@Override
+	public int delete(String userid) {
+		return session.delete(NAMESPACE + ".delete", userid);
+	}
+
 }
