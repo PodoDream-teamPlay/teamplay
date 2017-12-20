@@ -15,7 +15,7 @@
 	
 	<!-- 회원 탈퇴했을 때 정보 삭제 -->
 	<delete id="delete">
-	delete from ${tblGet} where ${colUserid} = #{userid}
+	delete from ${tblGet} where userid = #{userid}
 	</delete>
 	
 	

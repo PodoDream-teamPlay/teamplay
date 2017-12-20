@@ -81,7 +81,7 @@ public class MemberServiceImple implements MemberService {
 		result += pointDao.delete(userid);
 		result += memberDao.delete(userid);
 		
-		if(result == 4) {
+		if(result > 0) {
 			return 1;
 		}else {
 			return 0;

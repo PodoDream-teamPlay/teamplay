@@ -67,10 +67,14 @@ public class MemberController {
 		String userid = (String)session.getAttribute("loginUserid");		
 		
 		session.invalidate(); // 로그아웃
+		int result = memberservice.delete(userid); //탈퇴
+		System.out.println(result);
+		if(result == 1) {
+			return "redirect:/";			
+		}else {
+			return "redirect:/member_withdraw";
+		}
 		
-		
-		
-		return "redirect:/";
 	}
 	
 	//아이디 비밀번호 찾기

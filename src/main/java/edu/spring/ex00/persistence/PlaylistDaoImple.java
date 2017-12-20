@@ -63,7 +63,7 @@ public class PlaylistDaoImple implements PlaylistDao {
 
 	@Override
 	public int delete(String userid) {
-		return session.delete(NAMESPACE + ".delete", userid);
+		return session.delete(NAMESPACE + ".deleteByUserid", userid);
 	}
 
 }
