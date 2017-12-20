@@ -368,7 +368,8 @@ img {
 											<td><br>${mp3.martist}</td>
 											<td><br>
 
-												<button class="button" style="float: right; background-color:white;border:none;" id="btn-playlist">
+												<button class="btn-player" data-mid="${mp3.mid }" 
+														style="float: right; background-color: white; border: none;" >
 													<img src="././resources/images/play_button.png" >
 												</button></td>
 										</tr>
@@ -482,10 +483,10 @@ $(document).ready(function(){
 	});
 	
 	
-	//플레이 리스트 위의 + 버튼 눌리면 - 빈 playlist 추가
-	$('#btn-playlist').click(function(){
-		//새 창 띄우기 - ptitle 입력 목적
-		window.open("playlist_popup?userid="+userid, "플레이리스트 제목 입력", "width=400, height=1200");
+	//mp3 play 버튼
+	$('.btn-player').click(function(){
+		var mid = $(this).attr('data-mid');
+		window.open("playlist_popup?mid="+mid, "플레이리스트 제목 입력", "width=400, height=1200");
 		
 	});
 	

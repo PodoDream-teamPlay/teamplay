@@ -149,9 +149,11 @@ public class MemberController {
 	}
 	
 	
-	//Member-detail 페이지에서 playlist 팝업 띄우기 
+	//Member-detail 페이지에서 player 팝업 띄우기 
 	@RequestMapping(value="/playlist_popup")
-	public String playlist(Model model) {
+	public String playlist(int mid, Model model) {
+		Music music = musicService.select(mid);
+		model.addAttribute("music", music);
 		return "podo/playlist_popup";
 	}
 	
