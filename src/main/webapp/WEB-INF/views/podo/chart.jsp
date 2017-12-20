@@ -360,23 +360,23 @@ img {
 		 	   onclick="window.open(this.href, '_blank', 'width=400, height=600, left=300 ,top=100'); return false;" ><br>
 		 	   <img  alt="가사" src="././resources/images/t_lyrics.png"></a>
 		 	   </td>
-		 	   <td>
-		 	  <br><form action="playlist" method="post" style="display: inline;">
+	<td>
+		 	  <br> 
+      <form action="playlist" method="post" style="display: inline;"> 
              <div class="dropdown"  style="display: inline;">
-			<button id="cart-icon" class="btn btn-default dropdown-toggle"
+			<button class="btn btn-default dropdown-toggle" name="cart-icon"
 				data-toggle="dropdown" style="border: none; background-color: white;">
 				<img alt="내앨범" src="././resources/images/t_myalbum.png" /></button>	
 			  <ul class="dropdown-menu" id="cart-list-icon">
 				<li>마이맬범에 담기</li>
 				<li class="divider"></li>
-				<li><input id="ptitle" type="text" name="ptitle" placeholder="새 앨범" />
-				<input id="btn-insert" type="button" value="확인"/></li>		
-				<li><input id="userid" name="userid" type="hidden" value="${loginUserid}" /></li>
-			
-			    <ul id="playlists">
+				<li><input class="ptitle-icon" type="text" name="ptitle" placeholder="새 앨범" />
+				<input class="btn-insert-icon" type="button" value="확인"/></li>		
+				<li><input id="userid-icon" name="userid" type="hidden" value="${loginUserid}" /></li>
+			    <ul class="playlists-icon">
 			       <!-- Ajax로 플레이리스트 가져오기 -->		 
 			    </ul>
-			       <!-- pagination -->		     
+			       <!-- pagination -->	 	     
 						<div class="text-center" align="center">
 								<ul class="pagination" id="ppagination" >
 									<c:if test="${ppageMaker.prev }">
@@ -396,9 +396,11 @@ img {
 							</form>							
 						</div>					
 			</ul>
-            </form>	
-		 	   </td>
-		 	   <td><a href="mp3_down_icon?mid=${music.mid}" id="down_icon"><br><img alt="MP3다운" src="././resources/images/t_mp3.png" name="down_icon"></a></td>		 	   	   	    
+         </form>	
+	 </td>
+		 	   <td>
+		 	   <a href="mp3_down_icon?mid=${music.mid}" id="down_icon"><br>
+		 	   <img alt="MP3다운" src="././resources/images/t_mp3.png" name="down_icon"></a></td>		 	   	   	    
 		    </tr>
 		    
 		 </c:forEach>
@@ -448,9 +450,7 @@ $(function(){
       $('#cart-list').slideToggle(500);
     });
     
-    $('#cart-icon').click(function() {
-        $('#cart-list-icon').slideToggle(500);
-      });
+
     
    
     
@@ -463,13 +463,14 @@ $(function(){
 	
 	   		$(data).each(function(){
 	   			playlist += '<li style="list-style-type: none;">'						
-	   						+'<a href="" class="mylist" data-pid="'+ this.pid +'">'
+	   						+'<a href="" class="mylist" style="color: #1C1637;" data-pid="'+ this.pid +'">'
 	    						+ this.ptitle 
 	   						+'</a>'
 	   			           + '</li>';  											
 	   		});
 	   		
 	   		$('#playlists').html(playlist);
+	   		$('.playlists-icon').html(playlist);
 	   		
 	   	    //체크된 값  mid 컨트롤러 넘기기 
 	   	    $('.mylist').click(function (e) {
@@ -483,19 +484,6 @@ $(function(){
 	   	    	alert('앨범에 담기 완료');
 	   	    });
 	   	    
-	   	    // 앨범 아이콘을 클릭했을 때 
-	   	    $('#mylist2').click(function (e) {
-				e.preventfault();
-				
-				$(this).next("ul").toggleClass("dropdown-menu");
-				
-				var piddd = $(this).attr('data-pid');
-	   	    	$('#tbl_form_pid').val(piddd);
-	   	    	$('#tbl_form').attr('action', 'my_playlist');
-	   	    	$('#tbl_form').submit();
-	   	    	
-	   	    	alert('앨범에 담기 완료');
-			});
 	   	
 	   	});
    	
@@ -523,7 +511,11 @@ $(function(){
     //insert 하는 함수
 	function insertPlaylist(){
 		var ptitle = $('#ptitle').val();
+		var ptitle = $('.ptitle-icon').val();
+		
 		var userid = '${loginUserid}';
+	
+		
 		
 		$.ajax({
 			type: 'post',
@@ -550,6 +542,7 @@ $(function(){
 	//중복 체크하는 함수
 	function checkTitle(){
 		var ptitle = $('#ptitle').val();
+		var ptitle = $('.ptitle-icon').val();
 		
 		$.getJSON('/ex00/playlist/check/' + ptitle, function(data){
 			var replyList = null;
@@ -572,20 +565,24 @@ $(function(){
 		checkTitle();
 	});
 	
+	$('.btn-insert-icon').click(function(){
+		checkTitle();
+	});
+	
 }); // end $(function())
 
 
 </script>
 
-
 <div>
-		<img src="././resources/images/logo11.png" alt=" "
-			style="margin-top: 100px;" />
-	</div>
+<img src="././resources/images/logo11.png" alt="" style="margin-top: 100px;" />
+</div>
+
+
 </body>
 <footer>
 	<div style="float: center;">
-		<table style="text-align: center; font-size: 13; width: 700px;">
+		<table style="text-align:center; font-size: 13; width: 700px;">
 			<tr>
 				<td class="footer_item"><a href="introduction">회사소개</a></td>
 				<td class="footer_item"><a href="hiring">인재채용</a></td>
