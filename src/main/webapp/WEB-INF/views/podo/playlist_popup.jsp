@@ -16,15 +16,17 @@
 
 <style>
 html{
-  height: 100%;
+  height: 60%;
 }
 
 body{
-  background: rgb(79,142,165);
+  /* background: rgb(79,142,165);
 	background: -moz-radial-gradient(center, ellipse cover,  rgba(79,142,165,1) 0%, rgba(52,63,83,1) 50%, rgba(28,27,38,1) 100%);
 	background: -webkit-radial-gradient(center, ellipse cover,  rgba(79,142,165,1) 0%,rgba(52,63,83,1) 50%,rgba(28,27,38,1) 100%);
 	background: radial-gradient(ellipse at center,  rgba(79,142,165,1) 0%,rgba(52,63,83,1) 50%,rgba(28,27,38,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f8ea5', endColorstr='#1c1b26',GradientType=1 );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f8ea5', endColorstr='#1c1b26',GradientType=1 ); */
+  background-image: url("././resources/images/${music.malbumart}");
+  background-size: 400px;
   font-family: "proxima-nova";
 }
 
@@ -51,14 +53,16 @@ body{
 
 .phone{
   animation: opacityAni 400ms linear 1s forwards;
-  background: rgb(30,30,40);
+  /* background: rgb(30,30,40);
   background: -moz-linear-gradient(top,  rgba(30,30,40,1) 0%, rgba(30,46,71,1) 34%, rgba(49,189,247,1) 88%, rgba(232,254,254,1) 100%);
   background: -webkit-linear-gradient(top,  rgba(30,30,40,1) 0%,rgba(30,46,71,1) 34%,rgba(49,189,247,1) 88%,rgba(232,254,254,1) 100%);
   background: linear-gradient(to bottom,  rgba(30,30,40,1) 0%,rgba(30,46,71,1) 34%,rgba(49,189,247,1) 88%,rgba(232,254,254,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e1e28', endColorstr='#e8fefe',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e1e28', endColorstr='#e8fefe',GradientType=0 ); */
+  background-color: #1C1637;
+  color: white;
   border-radius: 3px;
   box-shadow: 0 2px 6px rgba(0,0,0,.4);
-  height: 500px;
+  height: 550px;
   left: 50%;
   opacity: 0;
   overflow: hidden;
@@ -111,7 +115,7 @@ body{
 }
 
 .artist__image-url{
-  background: url('././resources/images/m47.jpg') no-repeat left top;
+  background: url('././resources/images/${music.malbumart}') no-repeat left top;
   background-size: cover;
   height: 140px;
   width: 140px;
@@ -495,7 +499,9 @@ body{
 
 </style>
 
-<body>
+<body onload="window.resizeTo(400,700)">
+<div style="width: 100%; height: 100%; background-color: black; opacity: 0.5;
+			position: absolute; top: 0; left: 0; z-index: -1;"></div>
 <div class="phone">
   <div class="player">
     <div class="wavesurfer">
@@ -523,8 +529,8 @@ body{
     <div id="wavesurfer" class="wavesurfer__elem"></div>
     
     <div class="artist__name">
-      <p>트와이스</p>
-      <h1>LIKEY</h1>
+      <p>${music.martist }</p>
+      <h1>${music.mtitle }</h1>
       <div class="love">&#9825;</div>
       <div class="share"></div>
     </div>
