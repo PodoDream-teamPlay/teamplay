@@ -401,12 +401,13 @@ img {
 		<br> <br> <br>
 
 	</div>
-	
+
 	<div>
-<img src="././resources/images/logo11.png" alt=" " style="margin-top: 100px;"/>
-</div>
-	
-<script>
+		<img src="././resources/images/logo11.png" alt=" "
+			style="margin-top: 100px;" />
+	</div>
+
+	<script>
 $(document).ready(function(){
 	$('#btn-search').click(function(){
 		event.preventDefault();
