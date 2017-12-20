@@ -22,15 +22,29 @@
 <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="js.prefixfree.jquery.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
-<!DOCTYPE html>
-<html>
+<style>
+body{
+	background-image: url("././resources/images/${music.malbumart}"); 
+	background-size: 383px;
+	color: white;
+	width: 383px;
+}
+</style>
 <head>
 <meta charset="UTF-8" />
-<title>Insert title here</title>
+<title>가사</title>
 </head>
 <body>
-
-<h1>가사 상세보기 팝업</h1>
+<div>
+	<h3 style="background-color: rgba( 0, 0, 0, 0.7 ); padding: 15px;">${music.mtitle }</h3>
+	<h5 style="background-color: rgba( 0, 0, 0, 0.7 ); 
+				padding: 15px; text-align: right; width: 383px;">${music.martist }</h5>
+	<div>
+		<textarea rows="150" cols="48"
+				style="border: none; padding: 15px; background-color: rgba( 0, 0, 0, 0.7 );">${music.mlyrics}
+	</textarea>
+	</div>
+</div>
 
 </body>
 </html>
