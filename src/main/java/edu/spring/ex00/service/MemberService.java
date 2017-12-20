@@ -25,4 +25,7 @@ public interface MemberService {
 	// 포인트 확인
 		int select_point(String userid);
 		
+		
+	//회원 탈퇴
+	int delete (String userid);
 }

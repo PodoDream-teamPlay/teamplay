@@ -13,6 +13,11 @@
 	insert into ${tblGet} (${colUserid}, ${colMid}, ${colGprice}, ${colGdate}) values (#{userid}, #{mid}, #{gprice}, sysdate)
 	</insert>
 	
+	<!-- 회원 탈퇴했을 때 정보 삭제 -->
+	<delete id="delete">
+	delete from ${tblGet} where ${colUserid} = #{userid}
+	</delete>
+	
 	
 	<!-- pagination  -->
 	<select id="totalCount" resultType="Integer">

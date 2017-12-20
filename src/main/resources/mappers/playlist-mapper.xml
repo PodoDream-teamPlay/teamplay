@@ -26,6 +26,10 @@
 		values (#{userid}, sysdate, #{ptitle})
 	</insert>
 
+	<!-- 회원 탈퇴했을 때 정보 삭제 -->
+	<delete id="delete">
+	delete from ${tblPlaylist} where ${colUserid} = #{userid}
+	</delete>
 
 	<!-- pagination  -->
 	<select id="totalCount" resultType="Integer">
