@@ -402,10 +402,7 @@ img {
 
 	</div>
 
-	<div>
-		<img src="././resources/images/logo11.png" alt=" "
-			style="margin-top: 100px;" />
-	</div>
+	
 
 	<script>
 $(document).ready(function(){
@@ -415,6 +412,12 @@ $(document).ready(function(){
 	});
 });
 </script>
+
+
+<div>
+		<img src="././resources/images/logo11.png" alt=" "
+			style="margin-top: 100px;" />
+	</div>
 </body>
 <footer>
 	<div style="float: center;">

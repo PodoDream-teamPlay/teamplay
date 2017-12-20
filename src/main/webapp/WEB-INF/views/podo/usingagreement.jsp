@@ -136,5 +136,24 @@
 ③해외에 주소나 거소가 있는 '회원' 의 경우 '회사'와 '회원'간 발생한 분쟁에 관한 소송은 전항에도 불구하고 대한민국 서울중앙지방법원을 관할 법원으로 합니다.
         
 
+
+<div>
+		<img src="././resources/images/logo11.png" alt=" "
+			style="margin-top: 100px;" />
+	</div>
 </body>
+<footer>
+	<div style="float: center;">
+		<table style="text-align: center; font-size: 13; width: 700px;">
+			<tr>
+				<td class="footer_item"><a href="introduction">회사소개</a></td>
+				<td class="footer_item"><a href="hiring">인재채용</a></td>
+				<td class="footer_item"><a>제휴제안</a></td>
+				<td class="footer_item"><a href="usingagreement">이용약관</a></td>
+				<td class="footer_item"><a href="personalInformation">개인정보처리방침</a></td>
+				<th class="footer_item"><a>ⓒ PODO Corp.</a></th>
+			</tr>
+		</table>
+	</div>
+</footer>
 </html>

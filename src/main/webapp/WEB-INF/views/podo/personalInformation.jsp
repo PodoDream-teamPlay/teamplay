@@ -56,5 +56,23 @@ PODO 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 과정�
         	
         	
 
+<div>
+		<img src="././resources/images/logo11.png" alt=" "
+			style="margin-top: 100px;" />
+	</div>
 </body>
+<footer>
+	<div style="float: center;">
+		<table style="text-align: center; font-size: 13; width: 700px;">
+			<tr>
+				<td class="footer_item"><a href="introduction">회사소개</a></td>
+				<td class="footer_item"><a href="hiring">인재채용</a></td>
+				<td class="footer_item"><a>제휴제안</a></td>
+				<td class="footer_item"><a href="usingagreement">이용약관</a></td>
+				<td class="footer_item"><a href="personalInformation">개인정보처리방침</a></td>
+				<th class="footer_item"><a>ⓒ PODO Corp.</a></th>
+			</tr>
+		</table>
+	</div>
+</footer>
 </html>
