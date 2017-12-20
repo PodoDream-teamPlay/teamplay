@@ -249,6 +249,7 @@ public class MusicController {
 		logger.info("lyricsDetailPopup()::: 호출");
 		Music music = musicService.select(mid);
 		model.addAttribute("music", music);
+		
 		return "podo/lyrics_detail_popup";
 	}
 	
