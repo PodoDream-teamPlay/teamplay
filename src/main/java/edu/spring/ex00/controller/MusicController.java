@@ -59,6 +59,28 @@ public class MusicController {
 			pmaker.setPageMakerData();			
 			model.addAttribute("ppageMaker", pmaker);
 		}
+		
+		// 그래프 x축 값 -> count(xList)
+		List<Music> graCount = musicService.selectAll(3);
+		List<Integer> gracon = new ArrayList<>();
+		for (int i = 0; i < graCount.size(); i++) {
+			gracon.add(graCount.get(i).getMcount());
+		}
+		model.addAttribute("getcon", gracon.get(0));
+		model.addAttribute("getcon1", gracon.get(1));
+		model.addAttribute("getcon2", gracon.get(2));
+		model.addAttribute("getconSize", gracon.get(0) + 5);
+
+		// 그래프 y축 값 -> 노래 제목 (gra)
+		List<Music> graTitle = musicService.selectAll(3);
+		List<String> gra = new ArrayList<>();
+		for (int i = 0; i < graTitle.size(); i++) {
+			gra.add(graTitle.get(i).getMtitle());
+		}
+		model.addAttribute("gra", gra.get(0));
+		model.addAttribute("gra1", gra.get(1));
+		model.addAttribute("gra2", gra.get(2));
+		
 		return "podo/chart";
 	}
 	

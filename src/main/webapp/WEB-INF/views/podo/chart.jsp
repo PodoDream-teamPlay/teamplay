@@ -22,6 +22,7 @@
 <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="js.prefixfree.jquery.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
 
 
 <style>
@@ -86,6 +87,15 @@ img {
 #nav-jenre:active, #nav-jenre:visited{
 	background-color: #8d8a9b;
 	
+}
+canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 </style>
 
@@ -178,7 +188,7 @@ img {
 				alert("아이디와 비밀번호 확인해 주세요.");
 				
 			} 
-			});
+		});
 		</script>
 
 
@@ -260,15 +270,50 @@ img {
 <br>
 <br>
 
-<!-- R 로 그래프 넣기 -->
+<!-- 그래프 넣기 -->
 <div class="container-center" style="background: ligthgrey;">
-	<div class="float:center" style="width: 970; height: auto;">
-		<%
-			//RCode rc = new RCode();
-  			//out.print(rc.returnRClass());
-		%>
+	<div class="chartbox" style="width: 970; height: 500;">
+		<form action="chart" method="get">
+			<input type="submit" value="차트 순위 새로고침" class="btn btn-default dropdown-toggle">		
+		</form>
+		<canvas id="lineCanvas" width="900" height="210" ></canvas>
 	</div>
 </div>
+<script>
+// ${gra} -> 곡 제목
+// ${getcon} -> 카운트 수
+var data = {
+        labels: ['1위 : ${gra}', '2위 : ${gra1}', '3위 : ${gra2}'],
+        datasets: [
+            {
+                label: "선호도",
+                backgroundColor: "#00b0f0",
+                data: ['${getcon}', '${getcon1}', '${getcon2}']
+            }]
+};
+
+window.onload = function(){
+	var size = ${getconSize};
+    var ctx = document.getElementById("lineCanvas").getContext("2d");
+    var lineChart = new Chart(ctx, {
+    	type: 'horizontalBar',
+    	data: data,
+    	options: {
+    		scales: {
+    			xAxes: [{
+    				ticks: {
+    					min: 0,
+    					max: size
+    				}
+    			}],
+    			yAxes: [{
+    				stacked: true
+    			}]
+    		}
+    	}
+    });
+}
+</script>
 <!-- 여기 까지 -->
 <br>
 
