@@ -404,14 +404,14 @@ window.onload = function(){
 		 	   <td>
 		 	   <a  href="lyrics_detail_popup?mid=${music.mid}" 
 		 	   onclick="window.open(this.href, '_blank', 'width=400, height=600, left=300 ,top=100'); return false;" ><br>
-		 	   <img  alt="가사" src="././resources/images/t_lyrics.png"></a>
+		 	   <button style="border: none; background-color: white;">
+		 	   <img  alt="가사" src="././resources/images/t_lyrics.png"></button></a>
 		 	   </td>
 	<td>
 		 	  <br> 
       		<form action="playlist" method="post" style="display: inline;" > 
 	             <div class="dropdown"  style="display: inline;">
-				<button class="btn btn-default dropdown-toggle" name="cart-icon"
-					data-toggle="dropdown" style="border: none; background-color: white;">
+				<button name="cart-icon" data-toggle="dropdown" style="border: none; background-color: white;">
 					<img alt="내앨범" src="././resources/images/t_myalbum.png" /></button>	
 				  <ul class="dropdown-menu" id="cart-list-icon">
 					<li>마이맬범에 담기</li>
@@ -446,7 +446,9 @@ window.onload = function(){
 	 </td>
 		 	   <td>
 		 	   <a href="mp3_down_icon?mid=${music.mid}" id="down_icon"><br>
-		 	   <img alt="MP3다운" src="././resources/images/t_mp3.png" name="down_icon"></a></td>		 	   	   	    
+		 	   <button style="border: none; background-color: white;">
+		 	   <img alt="MP3다운" src="././resources/images/t_mp3.png" name="down_icon"></button></a>
+		 	   </td>		 	   	   	    
 		    </tr>
 		    
 		 </c:forEach>
