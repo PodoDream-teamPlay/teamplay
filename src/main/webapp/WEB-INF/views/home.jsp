@@ -98,7 +98,7 @@ img {
 <body>
 
 <div style="background-color: #1C1637"> <!-- 상단 배경색 정하는 div -->
-<div class="container" style="width: 1200px;">
+<div class="container" style="width: 1200px; background-color: #1C1637;">
 		<!-- 타이틀 -->
 		<h1 class="text-center">
 			<a href="http://localhost:8181/ex00/" style="text-decoration: none;">
@@ -216,7 +216,7 @@ img {
 			style="width: 970px; display: inline-block; background-color: #1C1637; border: none;
 					text-align: center;">
 			<div class="container-fluid">
-				<div class="navbar-header">
+				<div class="navbar-header" style="background-color: #1C1637">
 					<a class="navbar-brand navitem" href="http://localhost:8181/ex00/" style="color: #00FDFD;" id="nav-podo">PODO</a>
 				</div>
 				<ul class="nav navbar-nav">
