@@ -404,8 +404,7 @@ window.onload = function(){
 		 	   <td>
 		 	   <a  href="lyrics_detail_popup?mid=${music.mid}" 
 		 	   onclick="window.open(this.href, '_blank', 'width=400, height=600, left=300 ,top=100'); return false;" ><br>
-		 	   <button style="border: none; background-color: white;">
-		 	   <img  alt="가사" src="././resources/images/t_lyrics.png"></button></a>
+		 	   <img  alt="가사" src="././resources/images/t_lyrics.png"></a>
 		 	   </td>
 	<td>
 		 	  <br> 
@@ -446,8 +445,7 @@ window.onload = function(){
 	 </td>
 		 	   <td>
 		 	   <a href="mp3_down_icon?mid=${music.mid}" id="down_icon"><br>
-		 	   <button style="border: none; background-color: white;">
-		 	   <img alt="MP3다운" src="././resources/images/t_mp3.png" name="down_icon"></button></a>
+		 	   <img alt="MP3다운" src="././resources/images/t_mp3.png" name="down_icon"></a>
 		 	   </td>		 	   	   	    
 		    </tr>
 		    
