@@ -207,9 +207,10 @@ img {
   <h2>회원 가입 동의</h2><br/>
    <div class="panel-group" id="accordion" >
     <div class="panel panel-default">
-      <div class="panel-heading"style=" background-color:#C5C4CB; color:white;">
+      <div class="panel-heading"style="background-color: #1C1637; color:white;">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"> 포도 플레이어 이용약관 동의 (필수) </a>
+          <a data-toggle="collapse" data-parent="#accordion"
+							href="#collapse1" style="font-family: 배달의민족 주아;"> 포도 플레이어 이용약관 동의 (필수) </a>
          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -218,8 +219,9 @@ img {
           
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse">
-        <div class="panel-body">
+    <div id="collapse1" class="panel-collapse collapse"
+					style="font-family: 배달의민족 주아;">
+					<div class="panel-body" style="font-family: 배달의민족 주아;">
         <textarea style="height: 200px" rows="10" cols="100">
         제 1 조 (목적)
 이 약관은  주식회사 ("회사" 또는 "포도")가 제공하는 포도 및 포도 관련 제반 서비스의 이용과 관련하여 회사와 회원과의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
@@ -350,10 +352,12 @@ img {
 
       </div>
     </div>
-    <div class="panel panel-default">
-      <div class="panel-heading"style=" background-color:#C5C4CB; color:white;">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"> 개인정보 수집 및 이용에 대한 안내 (필수) </a>
+   <div class="panel panel-default">
+				<div class="panel-heading"
+					style="background-color: #1C1637; color: white;">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion"
+							href="#collapse2" style="font-family: 배달의민족 주아;"> 개인정보 수집 및 이용에 대한 안내 (필수) </a>
          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -363,8 +367,8 @@ img {
           
         </h4>
       </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">
+     <div id="collapse2" class="panel-collapse collapse">
+					<div class="panel-body" style="font-family: 배달의민족 주아;">
         	<textarea style="height: 200px" rows="" cols="100">
         	정보통신망법 규정에 따라 포도에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
 
@@ -416,19 +420,20 @@ NAVER 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 과정�
          </div>
       </div>
     </div>
-    <div class="panel panel-default">
-      <div class="panel-heading"style=" background-color:#C5C4CB; color:white;">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"> 이벤트 등 프로모션 알림 메일 수신(선택) </a>
-           &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<div class="panel-heading"
+					style="background-color: #1C1637; color: white; font-family: 배달의민족 주아;">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion"
+							href="#collapse3" style="font-family: 배달의민족 주아;"> 이벤트 등 프로모션 알림 메일 수신(선택) </a>
+               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
           <input  id="check3" type="checkbox" />
         </h4>
       </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">
+    <div id="collapse3" class="panel-collapse collapse">
+					<div class="panel-body" style="font-family: 배달의민족 주아;">
         
         
         <script>
