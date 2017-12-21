@@ -35,9 +35,9 @@ public class PayController {
 		
 	}
 		
-	//결제 창으로 넘기기.
+	//월별 결제 창으로 넘기기.
 	@RequestMapping(value="/paid", method=RequestMethod.GET)
-	public String month_paid(int money, Model model, String userid) {
+	public String month_paid(int money, Model model, String userid/*, List<Get> glist*/) {
 		System.out.println("money = " + money);
 		model.addAttribute("money", money);
 		System.out.println("userid = " + userid);
@@ -45,7 +45,15 @@ public class PayController {
 		System.out.println("remainpoint" + remainpoint);
 		model.addAttribute("remainpoint", remainpoint);
 		return "podo/paid";
-		
+	}
+	
+	// 곡 결제
+	@RequestMapping(value="/musicpaid")
+	public String musicpaid(int money, String userid, Model model) {
+		model.addAttribute("money", money);
+		model.addAttribute("remainpoint", memberservice.select_point(userid));
+		System.out.println("돈좀 들어와라");
+		return "podo/musicpaid";
 	}
 	
 	

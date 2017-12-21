@@ -409,6 +409,22 @@ img {
 </form>
 </div>
 
+<script>
+$(document).ready(function() {
+	if (${not empty money}) {
+	var money = '${money}';
+	var userid = '${loginUserid}'; 
+	
+	
+	var popUrl = "http://localhost:8181/ex00/musicpaid?money=" +money+ "&userid="+userid;	
+	var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";    
+			window.open(popUrl,"",popOption);
+	}
+	});
+
+</script>
+
+
 
 <script>
 $(function(){

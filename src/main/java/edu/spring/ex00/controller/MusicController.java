@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.spring.ex00.domain.Get;
 import edu.spring.ex00.domain.Music;
@@ -75,10 +76,12 @@ public class MusicController {
 		return "podo/search_result";
 		
 	}
-	
+
+	// mp3다운 버튼을 클릭했을 떄 결제창 팝업 띄우기 
 	@RequestMapping(value="/mp3_down", method = RequestMethod.POST)
-	public String checkbox(HttpServletRequest reqest, int[] cb_choose, HttpSession session) {
-		
+	public String checkbox(HttpServletRequest reqest, int[] cb_choose, HttpSession session, 
+			RedirectAttributes attribute) {
+		int money = 0;
 		String userid = (String) session.getAttribute("loginUserid");
 		if(userid != null && cb_choose != null) {
 			List<Get> glist = new ArrayList<>();
@@ -108,8 +111,9 @@ public class MusicController {
 			}
 			
 			logger.info("glist.size() : " + glist.size());
+			logger.info("glist" + glist.toString()  );			
 			
-			//새 리스트를 db에 저장
+			/*//새 리스트를 db에 저장
 			int result = 0;
 			for(Get gg : glist) {
 				result = getService.insert(gg);
@@ -118,11 +122,19 @@ public class MusicController {
 					musicService.update_mcount(gg.getMid());
 					System.out.println("mcount 증가");
 					//member 장르별 count 증가
+					logger.info("gg가 도대체 뭐임 ??" + gg);
+					logger.info("gg가 도대체 뭐임 !!" + gg.toString());
 					String mgenre = musicService.selectMgenre(gg.getMid());
 					memberService.update_genre_count(mgenre, userid);
 				}
-			}
-		
+			}*/
+			attribute.addFlashAttribute("money", glist.size()*700);
+			attribute.addFlashAttribute("userid", userid);
+			attribute.addFlashAttribute("glist", glist);
+
+			logger.info("money = " + glist.size()*700);
+			
+			
 		}else {
 			//로그인 안했으니까 해야됨을 알림
 			logger.info("로그인이 안됨");
