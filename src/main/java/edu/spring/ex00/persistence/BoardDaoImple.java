@@ -69,6 +69,21 @@ public class BoardDaoImple implements BoardDao {
 	}
 
 
-	
+	@Override
+	public int updateReplyCnt(int bno, int amount) { //매개변수 : (댓글번호, 증감에대한 변수) 
+		Map<String, Integer> args = new HashMap<>();
+		args.put("bno", bno); //글번호가 있겠지 
+		args.put("replycnt", amount); //("keyword",에 저장된값)
+		
+		return session.update(NAMESPACE + ".updateCount", args); //board-mapper.xml에 있는 sql문장 확인해야함.
+		//DAO가 return하면 
+
+
+	}
+
+	@Override
+	public int selectReplycnt(int bno) {
+		return session.selectOne(NAMESPACE + ".selectReplycnt", bno);
+	}
 	
 }

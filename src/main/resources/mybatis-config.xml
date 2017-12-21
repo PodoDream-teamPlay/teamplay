@@ -51,13 +51,21 @@
   		<property name="colContent" value="content" />
   		<property name="colUserid" value="userid"/>
   		<property name="colRegdate" value="regdate"/>
-  		
+  		<property name="colReplycnt" value="replycnt"/>
   		
   		<property name="tblMember" value="podo_member"/>
   		<property name="colUserid" value="userid"/>
   		<property name="colPassword" value="password"/>
   		<property name="colEmail" value="email"/>
   		
+  		
+  		
+  		<property name="tblReply" value="podo_reply" ></property>
+  		<property name="colRno" value="rno"/>
+  		<property name="colBno" value="bno"/>
+  		<property name="colRtext" value="rtext"/>
+  		<property name="colReplier" value="replier"/>
+  		<property name="colRegdate" value="regdate"/>
   		
   
     

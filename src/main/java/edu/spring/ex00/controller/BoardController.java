@@ -71,7 +71,8 @@ public class BoardController {
 		logger.info("boarddetail() GET 호출");
 		
 		Board b = boardService.select(bno);
-		logger.info("----title : {}, uesrid: {}" , b.getTitle(), b.getUserid());
+		b.setBno(bno);
+		System.out.println("bno :::::::::::::::::::: " + bno + " , " + b.getBno());
 		
 		model.addAttribute("board", b); 
 		

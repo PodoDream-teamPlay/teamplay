@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ 
+<mapper namespace="edu.spring.ex00.ReplyMapper">
+
+
+	<select id="selectAll" resultType="Reply">
+		SELECT * FROM podo_reply where bno = #{bno} ORDER
+		BY rno DESC
+	</select>
+	
+	
+	<insert id="insert">
+	insert into podo_reply (${colBno}, ${colRtext},
+		${colReplier}, ${colRegdate}) values(#{bno}, #{rtext}, #{replier}, sysdate)
+	</insert>
+	
+	<update id="update">
+		update podo_reply set ${colBno} = #{bno}, ${colRtext} = #{rtext}, ${colRegdate} = sysdate where ${colRno} = #{rno}
+	</update>
+	
+	
+	<select id="getBno" resultType="Integer">
+	SELECT bno FROM podo_reply WHERE rno = #{rno}
+	</select>
+
+	<delete id="delete">
+		DELETE FROM podo_reply WHERE rno = #{rno}
+	</delete>
+
+
+
+
+
+
+</mapper>
+  
+  
+  
+  
+  

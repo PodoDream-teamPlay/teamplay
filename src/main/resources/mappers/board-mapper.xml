@@ -15,6 +15,10 @@
   
  <update id="update"> update ${tblBoard} set ${colTitle} = #{title}, ${colContent} = #{content}, ${colRegdate} = sysdate where ${colBno} = #{bno} </update>
 
+ <update id="updateCount"> update ${tblBoard} set ${colReplycnt} = #{replycnt} where ${colBno} = #{bno} </update>
+
+<select id="selectReplycnt" resultType="Integer"> select ${colReplycnt} from ${tblBoard} where ${colBno} = #{bno}</select> 
+
 
 <delete id="delete">delete from ${tblBoard} where ${colBno} = #{bno} </delete>
 
@@ -22,6 +26,7 @@
 
 <select resultType="Board" id="selectByTitleOrContent"> SELECT * FROM ${tblBoard} WHERE ${colTitle} LIKE #{title} OR ${colContent} LIKE #{content} ORDER BY ${colBno} DESC </select>
   
+
   
   <select id="selectByBno" resultType="Board">SELECT * FROM ${tblBoard} WHERE ${colBno} = #{bno}</select>
   

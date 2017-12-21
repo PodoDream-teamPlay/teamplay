@@ -34,8 +34,10 @@ public interface BoardDao {
 	
 
 	
+	int updateReplyCnt(int bno ,int amount);
 	
 	
+	int selectReplycnt(int bno);
 	
 	
 }//end interface BoardDao
