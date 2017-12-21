@@ -540,7 +540,7 @@ body{
         <span class="time__seconds"></span>
       </div>
       <div class="progress">
-        <div class="progress__button"></div>
+        <div class="progress__button" style="background-color: #FF00FF;"></div>
         <div class="progress__indicator"></div>
       </div>
     </div>
@@ -698,9 +698,9 @@ $(document).ready(function(){
 		
 		$('body').css('background-image', 'url("././resources/images/' + malbumart + '")');
 		$('body').css('background-size', '800px');
-
-
+		
 	});
+	
 });
 
 </script>

@@ -292,7 +292,7 @@ var data = {
         datasets: [
             {
                 label: "선호도",
-                backgroundColor: "#00b0f0",
+                backgroundColor: ["#F6354E", "#6A46A5", "#6A46A5"],
                 data: ['${getcon}', '${getcon1}', '${getcon2}']
             }]
 };
