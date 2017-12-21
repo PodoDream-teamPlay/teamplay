@@ -80,12 +80,13 @@ img {
 	background-color: #8d8a9b;
 }
 
-#nav-chart:hover, #nav-jenre:hover, #nav-charge:hover, #nav-event:hover, #nav-fanda:hover, #nav-home:hover{
+#nav-chart:hover, #nav-jenre:hover, #nav-charge:hover, #nav-event:hover,
+	#nav-fanda:hover, #nav-home:hover {
 	background-color: #8d8a9b;
 }
-#nav-jenre:active, #nav-jenre:visited{
+
+#nav-jenre:active, #nav-jenre:visited {
 	background-color: #8d8a9b;
-	
 }
 </style>
 
@@ -97,82 +98,79 @@ img {
 
 <body>
 
-<div style="background-color: #1C1637"> <!-- 상단 배경색 정하는 div -->
-<div class="container" style="width: 1200px;">
-		<!-- 타이틀 -->
-		<h1 class="text-center">
-			<a href="http://localhost:8181/ex00/" style="text-decoration: none;">
-			<img alt="grape" src="././resources/images/grape3.png" style="width: 58px;">
-			<img alt="PODO" src="././resources/images/podo_white.png">
-			</a>
-		</h1>
+	<div style="background-color: #1C1637">
+		<!-- 상단 배경색 정하는 div -->
+		<div class="container" style="width: 1200px;">
+			<!-- 타이틀 -->
+			<h1 class="text-center">
+				<a href="http://localhost:8181/ex00/" style="text-decoration: none;">
+					<img alt="grape" src="././resources/images/grape3.png"
+					style="width: 58px;"> <img alt="PODO"
+					src="././resources/images/podo_white.png">
+				</a>
+			</h1>
 
 
 
-		<!-- 로그인  -->
-		<div id="noline" style="float: right; margin-top: 20px;">
-			<c:if test="${empty loginUserid}">
-				<form action="login-post" method="post" id="noline">
-					<table>
-					<tr>
-					<td>
-						<input type="text" name="userid" id="userid" placeholder="아이디"
-							style="width: 150px; margin-right: 5px;" required autofocus/>
-					</td>
-					<td rowspan="2">
-						<input type="submit" id="btn-login" value="로그인" class="btn"
-							style="background-color: #8d8a9b; color: white; height: 50px;
-								font-weight: bold;">
-					</td>
-					</tr>
-					<tr>
-					<td>
-						<input type="password" name="password" id="password"
-							style="width: 150px; margin-right: 5px;" placeholder="비밀번호" required />
-					</td>
-					</tr>
-					</table>
-					<a href="register" style="color: #8d8a9b;">회원가입</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="" style="color: #8d8a9b;">아이디·비밀번호 찾기</a>
-					<br>
-					</tbody>
+			<!-- 로그인  -->
+			<div id="noline" style="float: right; margin-top: 20px;">
+				<c:if test="${empty loginUserid}">
+					<form action="login-post" method="post" id="noline">
+						<table>
+							<tr>
+								<td><input type="text" name="userid" id="userid"
+									placeholder="아이디" style="width: 150px; margin-right: 5px;"
+									required autofocus /></td>
+								<td rowspan="2"><input type="submit" id="btn-login"
+									value="로그인" class="btn"
+									style="background-color: #8d8a9b; color: white; height: 50px; font-weight: bold;">
+								</td>
+							</tr>
+							<tr>
+								<td><input type="password" name="password" id="password"
+									style="width: 150px; margin-right: 5px;" placeholder="비밀번호"
+									required /></td>
+							</tr>
+						</table>
+						<a href="register" style="color: #8d8a9b;">회원가입</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href=""
+							style="color: #8d8a9b;">아이디·비밀번호 찾기</a> <br>
+						</tbody>
 
 
 
-				</form>
-			</c:if>
+					</form>
+				</c:if>
 
-			<c:if test="${not empty loginUserid}">
-				<form action="logout" method="get">
-				<table>
-					<tr>
-					<td>
-						<p style="margin-right: 5px; color: white;">${loginUserid}님, 환영합니다 </p>
-					</td>
-					<td rowspan="2">
-						<input type="submit" id="btn-logout"
-						class="btn" style="background-color: #8d8a9b; color: white; height: 50px;"
-						name="btn-logout" value="로그아웃">
-					</td>
-					</tr>
-					<tr>
-					<td>
-						<a href="member_detail" class="text-align:right" style="margin-right: 5px; color: #8d8a9b;">마이페이지</a>
-					</td>
-					</tr>
-					</table>
-					<br> 
-					
-				</form>
-			</c:if>
+				<c:if test="${not empty loginUserid}">
+					<form action="logout" method="get">
+						<table>
+							<tr>
+								<td>
+									<p style="margin-right: 5px; color: white;">${loginUserid}님,
+										환영합니다</p>
+								</td>
+								<td rowspan="2"><input type="submit" id="btn-logout"
+									class="btn"
+									style="background-color: #8d8a9b; color: white; height: 50px;"
+									name="btn-logout" value="로그아웃"></td>
+							</tr>
+							<tr>
+								<td><a href="member_detail" class="text-align:right"
+									style="margin-right: 5px; color: #8d8a9b;">마이페이지</a></td>
+							</tr>
+						</table>
+						<br>
 
-			<!-- 로그인 후에 이동할 페이지 -->
-			<input type="hidden" name="queryString" value="${loginTarget}" />
-		</div>
+					</form>
+				</c:if>
 
-		<!--로그인 실패시 띄울 알람. -->
-		<script>
+				<!-- 로그인 후에 이동할 페이지 -->
+				<input type="hidden" name="queryString" value="${loginTarget}" />
+			</div>
+
+			<!--로그인 실패시 띄울 알람. -->
+			<script>
 		$(document).ready(function() {
 			if (${loginfail}==5) {
 				alert("아이디와 비밀번호 확인해 주세요.");
@@ -182,201 +180,248 @@ img {
 		</script>
 
 
-		<br>
-		<!-- 검색창 -->
-		<form action="search" method="get" class="text-center" id="form-search">			
-			<input type="hidden" name="searchType" id="searchType" value="1">
-			<table class="text-center" 
+			<br>
+			<!-- 검색창 -->
+			<form action="search" method="get" class="text-center"
+				id="form-search">
+				<input type="hidden" name="searchType" id="searchType" value="1">
+				<table class="text-center"
 					style="margin-left: 280px; border: 1px solid #8d8a9b;">
-			<tr>
-			<td>
-				<input type="text" name="searchKeyword" placeholder="${topnavTitle}"
-					style="width: 580px; height: 42px; border: 3px solid #1C1637; margin: 5px;"/>
-			</td>
-			<td>
-				<!-- 검색 버튼 -->
-				<a href="#" id="btn-search" style="text-decoration : none;">
-					<img alt="search" src="././resources/images/search_icon.png"
-						style="background-color: #1C1637; padding: 5px;">
-				</a>
-			</td>
-			</tr>
+					<tr>
+						<td><input type="text" name="searchKeyword"
+							placeholder="${topnavTitle}"
+							style="width: 580px; height: 42px; border: 3px solid #1C1637; margin: 5px;" />
+						</td>
+						<td>
+							<!-- 검색 버튼 --> <a href="#" id="btn-search"
+							style="text-decoration: none;"> <img alt="search"
+								src="././resources/images/search_icon.png"
+								style="background-color: #1C1637; padding: 5px;">
+						</a>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<br>
+
+		</div>
+
+
+		<div style="background-color: #1C1637; height: 50px;">
+			<!-- 메뉴 bar -->
+
+			<div class="container">
+				<nav class="navbar navbar-inverse"
+					style="width: 970px; display: inline-block; background-color: #1C1637; border: none; text-align: center;">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<a class="navbar-brand navitem"
+								href="http://localhost:8181/ex00/" style="color: #00FDFD;"
+								id="nav-podo">PODO</a>
+						</div>
+						<ul class="nav navbar-nav">
+							<li><a href="http://localhost:8181/ex00/"
+								style="color: white;" id="nav-home"> 홈 </a></li>
+							<li><a href="chart" style="color: white;" id="nav-chart">
+									차트 </a></li>
+							<li class="dropdown"><a class="dropdown-toggle"
+								data-toggle="dropdown" href="#"
+								style="color: #1C1637; background-color: white; font-weight: 900;"
+								id="nav-jenre"> 장르 <span class="caret"></span>
+							</a>
+								<ul class="dropdown-menu">
+									<li><a href="search?searchType=4&searchKeyword=ballad">발라드</a></li>
+									<li><a href="search?searchType=4&searchKeyword=dance">댄스</a></li>
+									<li><a href="search?searchType=4&searchKeyword=indi">인디</a></li>
+									<li><a href="search?searchType=4&searchKeyword=hiphop">힙합</a></li>
+									<li><a href="search?searchType=4&searchKeyword=trot">트로트</a></li>
+								</ul></li>
+							<li><a href="monthpay" style="color: white;" id="nav-charge">이용권</a></li>
+							<li><a href="event" style="color: white;" id="nav-event">이벤트</a></li>
+							<li><a href="boardFnA" style="color: white;" id="nav-fanda">F&A</a></li>
+
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<!-- 상단 배경색 정하는 div -->
+
+
+
+	<br>
+	<br>
+
+	<div class="topnav" id="myTopnav" style="text-align: center;">
+		<c:if test="${topnavTitle eq '2000sBallad'}">
+			<img src="././resources/images/banner02.png"
+				style="width: 970; height: auto; object-fit: cover;">
+		</c:if>
+		<c:if test="${topnavTitle eq 'trot'}">
+			<img src="././resources/images/banner04.png"
+				style="width: 970; height: auto; object-fit: cover;">
+		</c:if>
+		<hr>
+	</div>
+
+	<br>
+	<br>
+	<br>
+
+	<!--  차트 상단 버튼 -->
+	<div class="container">
+		<form action="playlist" method="post" style="display: inline;">
+
+			<div class="dropdown" style="display: inline;">
+				<button id="cart" class="btn btn-default dropdown-toggle"
+					data-toggle="dropdown">마이리스트에 담기</button>
+				<ul class="dropdown-menu" id="cart-list">
+					<li>마이맬범에 담기</li>
+					<li class="divider"></li>
+					<li><input id="ptitle" type="text" name="ptitle"
+						placeholder="새 앨범" /> <input id="btn-insert" type="button"
+						value="확인" /></li>
+					<li><input id="userid" name="userid" type="hidden"
+						value="${loginUserid}" /></li>
+
+					<ul id="playlists">
+						<!-- Ajax로 플레이리스트 가져오기 -->
+					</ul>
+					<!-- pagination -->
+					<div class="text-center" align="center">
+						<ul class="pagination" id="ppagination">
+							<c:if test="${ppageMaker.prev }">
+								<li><a href="${ppageMaker.startPage - 1 }">◀</a></li>
+							</c:if>
+							<c:forEach var="pnum" begin="${ppageMaker.startPage }"
+								end="${ppageMaker.endPage }">
+								<li><a href="${pnum }">${pnum }</a></li>
+							</c:forEach>
+							<c:if test="${ppageMaker.next }">
+								<li><a href="${ppageMaker.endPage + 1}">▶</a></li>
+							</c:if>
+						</ul>
+					</div>
+					<form id="ppageForm">
+						<input id="ppage" type="hidden" name="ppage"
+							value="${ppageMaker.criteria.page }">
+						<!-- 현재 페이지 -->
+						<input id="pperPage" type="hidden" name="pperPage"
+							value="${ppageMaker.criteria.numsPerPage }">
+						<!-- 한페이지에 보여줄 갯수 -->
+					</form>
+			</div>
+			</ul>
+		</form>
+		<button id="mp3_down" class="btn btn-default">MP3 다운</button>
+		<button id="listening_all" class="btn btn-default">전체 듣기</button>
+		<button id="change_listening" class="btn btn-default">선택 듣기</button>
+	</div>
+
+	<div class="container" style="width: 1000px;">
+		<form id="tbl_form" method="post">
+			<input type="hidden" name="pid" id="tbl_form_pid" value="" />
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th><input type="checkbox" id="choose_all" name="choose_all"></th>
+						<th><span id="t_head">순위</span></th>
+						<th><span class="hidden">앨범이미지</span></th>
+						<th><span id="t_head">곡명</span></th>
+						<th><span id="t_head">아티스트</span></th>
+						<th><span id="t_head">앨범</span></th>
+						<th>가사</th>
+						<th>내앨범</th>
+						<th>MP3다운</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%int rank = 0; %>
+					<c:forEach var="music" items="${musicList}">
+						<tr>
+							<td width="30" bordercolor="grey"><br>
+							<input type="checkbox" id="cb_choose" name="cb_choose"
+								value="${music.mid}" data-mid="${music.mid}"></td>
+							<td id="mid"><br> 
+							<%rank += 1;
+ 							out.print(rank + "");
+ 							%></td>
+							<td>
+							<a href="music_detail?mid=${music.mid }"> 
+							<img id="albumart" alt="자켓이미지" src="././resources/images/${music.malbumart}">
+							</a>
+							</td>
+							<td>
+							<br>
+							<a href="music_detail?mid=${music.mid }"
+								style="text-decoration: none;"> ${music.mtitle} </a></td>
+							<td><br>${music.martist}</td>
+							<td><br>${music.malbum}</td>
+							<td><a href="lyrics_detail_popup?mid=${music.mid}"
+								onclick="window.open(this.href, '_blank', 'width=400, height=600, left=300 ,top=100'); return false;"><br>
+									<img alt="가사" src="././resources/images/t_lyrics.png"></a></td>
+                           <td>
+							<br>
+							<form action="playlist" method="post" style="display: inline;">
+								<div class="dropdown" style="display: inline;">
+									<button name="cart-icon" data-toggle="dropdown"
+										style="border: none; background-color: white;">
+										<img alt="내앨범" src="././resources/images/t_myalbum.png" />
+									</button>
+									<ul class="dropdown-menu" id="cart-list-icon">
+										<li>마이맬범에 담기</li>
+										<li class="divider"></li>
+										<li><input class="ptitle-icon" type="text" name="ptitle"
+											placeholder="새 앨범" data-mid="${music.mid }" /> <input
+											class="btn-insert-icon" type="button" value="확인" /></li>
+										<li><input class="userid-icon" name="userid"
+											type="hidden" value="${loginUserid}" /></li>
+										<ul class="playlists-icon">
+											<!-- Ajax로 플레이리스트 가져오기 -->
+										</ul>
+										<!-- pagination -->
+										<div class="text-center" align="center">
+											<ul class="pagination" id="ppagination">
+												<c:if test="${ppageMaker.prev }">
+													<li><a href="${ppageMaker.startPage - 1 }">◀</a></li>
+												</c:if>
+												<c:forEach var="pnum" begin="${ppageMaker.startPage }"
+													end="${ppageMaker.endPage }">
+													<li><a href="${pnum }">${pnum }</a></li>
+												</c:forEach>
+												<c:if test="${ppageMaker.next }">
+													<li><a href="${ppageMaker.endPage + 1}">▶</a></li>
+												</c:if>
+											</ul>
+										</div>
+										<form id="ppageForm">
+											<input id="ppage" type="hidden" name="ppage"
+												value="${ppageMaker.criteria.page }">
+											<!-- 현재 페이지 -->
+											<input id="pperPage" type="hidden" name="pperPage"
+												value="${ppageMaker.criteria.numsPerPage }">
+											<!-- 한페이지에 보여줄 갯수 -->
+										</form>
+								</div>
+								</ul>
+							</form>
+				</td>
+		 	   <td>
+		 	   <a href="mp3_down_icon?mid=${music.mid}" id="down_icon"><br>
+		 	   <img alt="MP3다운" src="././resources/images/t_mp3.png" name="down_icon"></a>
+		 	   </td>		 	   	   	    
+		    </tr>
+
+					</c:forEach>
+				</tbody>
 			</table>
 		</form>
-		<br>
-			
-</div>
-
-
-<div style="background-color: #1C1637; height: 50px;">
-		<!-- 메뉴 bar -->
-
-		<div class="container">
-		<nav class="navbar navbar-inverse" 
-			style="width: 970px; display: inline-block; background-color: #1C1637; border: none;
-				text-align: center;">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand navitem" href="http://localhost:8181/ex00/" style="color: #00FDFD;" id="nav-podo">PODO</a>
-				</div>
-				<ul class="nav navbar-nav">
-					<li>
-						<a href="http://localhost:8181/ex00/" 
-							style="color: white;" id="nav-home">
-							홈
-						</a>
-					</li>
-					<li>
-						<a href="chart" style="color: white;" id="nav-chart">
-						차트
-						</a>
-					</li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#" 
-							style="color: #1C1637; background-color: white; font-weight: 900;" id="nav-jenre">
-							장르 <span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="search?searchType=4&searchKeyword=ballad">발라드</a></li>
-							<li><a href="search?searchType=4&searchKeyword=dance">댄스</a></li>
-							<li><a href="search?searchType=4&searchKeyword=indi">인디</a></li>
-							<li><a href="search?searchType=4&searchKeyword=hiphop">힙합</a></li>
-							<li><a href="search?searchType=4&searchKeyword=trot">트로트</a></li>
-						</ul>
-					</li>
-					<li><a href="monthpay" style="color: white;" id="nav-charge">이용권</a></li>
-					<li><a href="event" style="color: white;" id="nav-event">이벤트</a></li>
-					<li><a href="boardFnA" style="color: white;" id="nav-fanda">F&A</a></li>
-
-				</ul>
-			</div>
-		</nav>
-		</div>
-</div>
-</div> <!-- 상단 배경색 정하는 div -->
+	</div>
 
 
 
-<br>
-<br>
-
-<div class="topnav" id="myTopnav" style="text-align: center;">
-	<c:if test="${topnavTitle eq '2000sBallad'}">
-		<img src="././resources/images/banner02.png"
-		style="width: 970; height: auto; object-fit: cover;"> 
-	</c:if>
-	<c:if test="${topnavTitle eq 'trot'}">
-		<img src="././resources/images/banner04.png"
-		style="width: 970; height: auto; object-fit: cover;"> 
-	</c:if>
-	<hr>
-</div>
-
-<br>
-<br>
-<br>
-
-<!--  차트 상단 버튼 -->
-<div class="container">
-<form action="playlist" method="post" style="display: inline;">
-
-     <div class="dropdown"  style="display: inline;">
-			<button id="cart" class="btn btn-default dropdown-toggle"
-				data-toggle="dropdown">마이리스트에 담기</button>	
-			<ul class="dropdown-menu" id="cart-list">
-				<li>마이맬범에 담기</li>
-				<li class="divider"></li>
-				<li><input id="ptitle" type="text" name="ptitle" placeholder="새 앨범" />
-				<input id="btn-insert" type="button" value="확인"/></li>		
-				<li><input id="userid" name="userid" type="hidden" value="${loginUserid}" /></li>
-			
-			    <ul id="playlists">
-			       <!-- Ajax로 플레이리스트 가져오기 -->		 
-			    </ul>
-			       <!-- pagination -->		     
-						<div class="text-center" align="center">
-								<ul class="pagination" id="ppagination" >
-									<c:if test="${ppageMaker.prev }">
-									<li><a href="${ppageMaker.startPage - 1 }">◀</a></li>
-									</c:if>
-									<c:forEach var = "pnum" begin="${ppageMaker.startPage }" end="${ppageMaker.endPage }">
-									<li><a href="${pnum }">${pnum }</a></li>
-									</c:forEach>
-									<c:if test="${ppageMaker.next }">
-									<li><a href="${ppageMaker.endPage + 1}">▶</a></li>
-									</c:if>
-								</ul>
-							</div>
-							<form id="ppageForm">
-							<input id="ppage" type="hidden" name="ppage" value="${ppageMaker.criteria.page }"> <!-- 현재 페이지 -->
-							<input id="pperPage" type="hidden" name="pperPage" value="${ppageMaker.criteria.numsPerPage }"> <!-- 한페이지에 보여줄 갯수 -->
-							</form>							
-						</div>					
-			</ul>
-</form>	
-			<button id="mp3_down" class="btn btn-default" >MP3 다운</button>
-			<button id="listening_all" class="btn btn-default">전체 듣기</button>
-			<button id="change_listening" class="btn btn-default">선택 듣기</button>
-</div>
-
-<div class="container" style="width:1000px;" >
-<form id="tbl_form" method="post">
-	<input type="hidden" name="pid" id="tbl_form_pid" value=""/>
-   <table class="table table-striped" >
-    	<thead>
-	    	<tr>
-		    	<th><input type="checkbox" id="choose_all" name="choose_all"></th>
-		    	<th><span id="t_head">순위</span></th>
-		    	<th><span class="hidden">앨범이미지</span></th>
-			    <th><span id="t_head">곡명</span></th>
-			    <th><span id="t_head">아티스트</span></th>
-			    <th><span id="t_head">앨범</span></th>
-		    	<th>가사</th>
-		    	<th>내앨범</th>
-		    	<th>MP3다운</th>
-		   </tr>
-	  </thead>
-      <tbody>
-      <%int rank = 0; %>
-        <c:forEach var="music" items="${musicList}">
-	   	    <tr>           
-		   	  <td width="30" bordercolor="grey"><br><input type="checkbox" id="cb_choose" name="cb_choose" value="${music.mid}" data-mid="${music.mid}"></td>
-		 	   <td id="mid"><br>
-		 	   <%rank+=1; 
-		 	   out.print(rank+"");
-		 	   %></td>
-		 	   <td>
-		 	   		<a href="music_detail?mid=${music.mid }">
-		 	   		<img id="albumart" alt="자켓이미지" src="././resources/images/${music.malbumart}">
-		 	   		</a>
-		 	   	</td>
-		 	   <td>
-		 	   		<br><a href="music_detail?mid=${music.mid }" style="text-decoration: none;">
-		 	   		${music.mtitle}
-		 	   		</a>
-		 	   </td>
-		 	   <td><br>${music.martist}</td>
-		 	   <td><br>${music.malbum}</td>
-		 	   <td>
-		 	   <a  href="lyrics_detail_popup?mid=${music.mid}" 
-		 	   onclick="window.open(this.href, '_blank', 'width=400, height=600, left=300 ,top=100'); return false;" ><br>
-		 	   <img  alt="가사" src="././resources/images/t_lyrics.png"></a>
-		 	   </td>
-		 	   <td>
-		 	   <a href=""><br><img alt="내앨범" src="././resources/images/t_myalbum.png"></a>
-		 	   </td>
-		 	   <td><a href="mp3_down_icon?mid=${music.mid}" id="down_icon"><br><img alt="MP3다운" src="././resources/images/t_mp3.png" name="down_icon"></a></td>		 	   	   	    
-		    </tr>
-		    
-		 </c:forEach>
-	  </tbody>
-   </table>
-</form>
-</div>
-
-
-
-<script>
+	<script>
 $(function(){
 	// 체크 된 값의 mid 컨트롤러에 넘기기
 	$('#mp3_down').click(function() {
@@ -410,11 +455,15 @@ $(function(){
 
 
 	// 플레이리스트 담기 리스트 목록 보여주기 런타임
-	$("#cart-list").hide();
+	$('#cart-list').hide();
     
-    $("#cart").click(function() {
-      $("#cart-list").slideToggle(500);
+    $('#cart').click(function() {
+      $('#cart-list').slideToggle(500);
     });
+    
+
+    
+   
     
     var userid = '${loginUserid}';
 
@@ -425,22 +474,27 @@ $(function(){
 	
 	   		$(data).each(function(){
 	   			playlist += '<li style="list-style-type: none;">'						
-	   						+'<a href="" class="mylist" data-pid="'+ this.pid +'">'
+	   						+'<a href="" class="mylist" style="color: #1C1637;" data-pid="'+ this.pid +'">'
 	    						+ this.ptitle 
 	   						+'</a>'
 	   			           + '</li>';  											
 	   		});
 	   		
 	   		$('#playlists').html(playlist);
+	   		$('.playlists-icon').html(playlist);
 	   		
 	   	    //체크된 값  mid 컨트롤러 넘기기 
 	   	    $('.mylist').click(function (e) {
 	  			e.preventDefault();
+	  			
 	   	    	var piddd = $(this).attr('data-pid');
 	   	    	$('#tbl_form_pid').val(piddd);
 	   	    	$('#tbl_form').attr('action', 'my_playlist');
 	   	    	$('#tbl_form').submit();
+	   	    	
+	   	    	alert('앨범에 담기 완료');
 	   	    });
+	   	    
 	   	
 	   	});
    	
@@ -466,9 +520,12 @@ $(function(){
     });
     
     //insert 하는 함수
-	function insertPlaylist(){
-		var ptitle = $('#ptitle').val();
+	function insertPlaylist(title){
+		var ptitle = title;
+		
 		var userid = '${loginUserid}';
+	
+		
 		
 		$.ajax({
 			type: 'post',
@@ -493,10 +550,10 @@ $(function(){
 	}
   
 	//중복 체크하는 함수
-	function checkTitle(){
-		var ptitle = $('#ptitle').val();
+	function checkTitle(title){
+		var ptitle = title;
 		
-		$.getJSON('/ex00/playlist/check/' + ptitle, function(data){
+		$.getJSON('/ex00/playlist/check/' + ptitle , function(data){
 			var replyList = null;
 			
 			$(data).each(function(){
@@ -505,7 +562,7 @@ $(function(){
 			
 			if(replyList == null){
 				//중복되는거 없으면 insert
-				insertPlaylist();
+				insertPlaylist(ptitle);
 			} else {
 				alert('중복된 이름입니다.앨범명을 다시 입력해주세요!');
 					
@@ -514,15 +571,28 @@ $(function(){
 	}
 	
 	$('#btn-insert').click(function(){
-		checkTitle();
+		var title = $('#ptitle').val();  
+		checkTitle(title);   
+	});
+	
+	$('.btn-insert-icon').click(function(){
+		
+		var ptitle = $(this).prev().val();
+	
+		var mid = $(this).prev().attr('data-mid');
+		
+		// alert(mid);
+		checkTitle(ptitle);
 	});
 	
 }); // end $(function())
 
+
 </script>
 
 
-<div>
+
+	<div>
 		<img src="././resources/images/logo11.png" alt=" "
 			style="margin-top: 100px;" />
 	</div>
