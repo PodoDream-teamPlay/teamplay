@@ -157,6 +157,25 @@ public class MemberController {
 		return "podo/playlist_popup";
 	}
 	
+	//Member-detail 페이지에서 playlist-player 팝업 띄우기
+	@RequestMapping(value="/playlist_player_popup", method=RequestMethod.GET)
+	public String playlistPlayer(String mids, Model model) {
+		//Music : pid 의 mids 분리해서 노래 찾기
+		List<Music> musicList = new ArrayList<>();
+				
+		if(mids != null) {
+			String[] arrayMids = mids.split(",");
+			for(int i = 0; i < arrayMids.length; i++) {
+				int mid = Integer.parseInt(arrayMids[i]);
+				musicList.add(musicService.select(mid));
+			}
+		}
+				
+		model.addAttribute("musicList", musicList);
+		
+		return "podo/playlist_player_popup";
+	}
+	
 
 	
 	

@@ -175,7 +175,7 @@ img {
 		<!--로그인 실패시 띄울 알람. -->
 		<script>
 		$(document).ready(function() {
-			if (${loginfail}==5) {
+			if (${loginfail} == 5) {
 				alert("아이디와 비밀번호 확인해 주세요.");
 				
 			} 
@@ -306,7 +306,8 @@ img {
 									<tr style="background-color: #2E2E2E; color: white;">
 										<th class="text-center">리스트 제목</th>
 										<th class="text-center">저장 날짜</th>
-										<th></th>
+										<th style="width: 30px;"></th>
+										<th style="width: 30px;"></th>
 									</tr>
 								</thead>
 								<tbody id="playlists">
@@ -438,7 +439,13 @@ $(document).ready(function(){
 							+ '<img alt="x" src="././resources/images/x.png" style="width: 13px;">'							
 							+'</button>'
 							+ '</td>'
+							+'<td>'
+							+'<button class="btn-playlist-player" data-mids="' + this.mids + '"' 
+							+'		style="float: right; background-color: white; border: none;" >'
+							+'▶'
+							+'</button></td>'
 							+'</tr>';
+							//+'	<img src="././resources/images/play_button.png">'
 			});
 			
 			$('#playlists').html(playlist);
@@ -482,12 +489,16 @@ $(document).ready(function(){
 		
 	});
 	
+	//플레이리스트 play 버튼
+	$('#playlists').on('click', '.playlist-item .btn-playlist-player', function(){
+		var mids = $(this).attr('data-mids');
+		window.open("playlist_player_popup?mids="+mids, "player", "width=400, height=900");
+	});
 	
 	//mp3 play 버튼
 	$('.btn-player').click(function(){
 		var mid = $(this).attr('data-mid');
 		window.open("playlist_popup?mid="+mid, "플레이리스트 제목 입력", "width=400, height=700");
-		
 	});
 	
 	

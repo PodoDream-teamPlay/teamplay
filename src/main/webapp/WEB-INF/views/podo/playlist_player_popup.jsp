@@ -21,7 +21,7 @@ html{
 }
 
 body{
-  background-image: url("././resources/images/${music.malbumart}");
+  background-image: url("././resources/images/${musicList[0].malbumart}");
   background-size: 400px;
   font-family: "proxima-nova";
 }
@@ -59,13 +59,33 @@ body{
   border-radius: 3px;
   box-shadow: 0 2px 6px rgba(0,0,0,.4);
   height: 550px;
-  left: 50%;
+  left: 25%;
   opacity: 0;
   overflow: hidden;
   position: absolute;
   transform: translate(-50%,-50%);
   top: 50%;
   width: 320px;
+}
+
+.music-list{
+  animation: opacityAni 400ms linear 50ms forwards;
+  background-color: rgba(0,0,0,.4);
+  color: white;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.4);
+  height: 550px;
+  right: -10%;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  width: 320px;
+}
+
+.music-table-tr:hover{
+	background-color: rgba(255,255,255, .1);
 }
 
 .wavesurfer{
@@ -111,7 +131,7 @@ body{
 }
 
 .artist__image-url{
-  background: url('././resources/images/${music.malbumart}') no-repeat left top;
+  background: url('././resources/images/${musicList[0].malbumart}') no-repeat left top;
   background-size: cover;
   height: 140px;
   width: 140px;
@@ -498,7 +518,7 @@ body{
 
 </style>
 
-<body onload="window.resizeTo(400,700)">
+<body onload="window.resizeTo(900,700)">
 <div style="width: 100%; height: 100%; background-color: black; opacity: 0.5;
 			position: absolute; top: 0; left: 0; z-index: -1;"></div>
 <div class="phone">
@@ -528,8 +548,8 @@ body{
     <div id="wavesurfer" class="wavesurfer__elem"></div>
     
     <div class="artist__name">
-      <p style="color: white;">${music.martist }</p>
-      <h1 style="color: white;">${music.mtitle }</h1>
+      <p style="color: white;">${musicList[0].martist }</p>
+      <h1 style="color: white;">${musicList[0].mtitle }</h1>
     </div>
     
     <div class="controls">
@@ -551,6 +571,18 @@ body{
   </div>
 </div>
 
+<div class="music-list" style="overflow: auto;">
+	<table class="music-table table">
+		<c:forEach var="music" items="${musicList }">
+			<tr class="music-table-tr" data-mid="${music.mid }">
+				<td class="music-table-td-mtitle">${music.mtitle }</td>
+				<td class="music-table-td-martist">${music.martist }</td>
+				<td class="music-table-td-malbumart" style="visibility: hidden;">${music.malbumart }</td>
+			</tr>
+		</c:forEach>
+	</table>
+</div>
+
 <div class="hint">Press play</div>
 
 <script>
@@ -569,7 +601,7 @@ $(document).ready(function(){
 	    progressColor: 'rgba(255,255,255,.15)'
 	});
 
-	$('.player').on('click', '#play', function(){
+	$('.player').on('click', '#play', function playfunc(){
 	  if( $(this).hasClass('load') ){
 	    $(this).removeClass('load');
 	    wavesurfer.load('././resources/mp3/test01.mp3');
@@ -648,6 +680,27 @@ $(document).ready(function(){
 	  progressJump();
 	});
 
+	$('tr.music-table-tr').click(function(){
+		var num = $(this).closest("tr").prevAll().length;
+
+		//var mid = $(this).attr('data-mid');
+		var td = $(this).children();
+		var mtitle = td.eq(0).text();
+		var martist = td.eq(1).text();
+		var malbumart = td.eq(2).text();
+		
+		$('.artist__name p').html(martist);
+		$('.artist__name h1').html(mtitle);
+		$('.artist__image-url').css('background', 'url("././resources/images/' + malbumart + '") no-repeat left top');
+		$('.artist__image-url').css('background-size', 'cover');
+		$('.artist__image-url').css('height', '140px');
+		$('.artist__image-url').css('width', '140px');
+		
+		$('body').css('background-image', 'url("././resources/images/' + malbumart + '")');
+		$('body').css('background-size', '800px');
+
+
+	});
 });
 
 </script>
