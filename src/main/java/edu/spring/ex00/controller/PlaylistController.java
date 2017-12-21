@@ -62,8 +62,6 @@ public class PlaylistController {
 	public ResponseEntity<String> createPlaylist(@RequestBody Playlist p){
 		logger.info("insert 하려는 ptitle ::: " + p.getPtitle());
 		ResponseEntity<String> entity = null;
-		//TODO : insert 문장 service에 만든다음에 여기서 실행
-		//Playlist p = new Playlist(0, userid, null, null, ptitle);
 		int result = playlistService.insert(p);
 		if(result == 1) {
 			entity = new ResponseEntity<String>("success", HttpStatus.OK);
