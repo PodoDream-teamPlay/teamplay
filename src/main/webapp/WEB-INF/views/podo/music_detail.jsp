@@ -255,7 +255,7 @@ img {
 <br>
 <br>
 
-
+<div class="container">
 		<!-- 본문 -->
 		<div style="float: center;">
 			<div style="font-size: 40px; font-weight: bold; margin: 20px;">

@@ -486,7 +486,7 @@ $(document).ready(function(){
 	//mp3 play 버튼
 	$('.btn-player').click(function(){
 		var mid = $(this).attr('data-mid');
-		window.open("playlist_popup?mid="+mid, "플레이리스트 제목 입력", "width=400, height=1200");
+		window.open("playlist_popup?mid="+mid, "플레이리스트 제목 입력", "width=400, height=700");
 		
 	});
 	

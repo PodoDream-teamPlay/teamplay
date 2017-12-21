@@ -13,6 +13,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  <!-- Bootstrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/wavesurfer.min.js"></script>
 
 <style>
 html{
@@ -20,11 +21,6 @@ html{
 }
 
 body{
-  /* background: rgb(79,142,165);
-	background: -moz-radial-gradient(center, ellipse cover,  rgba(79,142,165,1) 0%, rgba(52,63,83,1) 50%, rgba(28,27,38,1) 100%);
-	background: -webkit-radial-gradient(center, ellipse cover,  rgba(79,142,165,1) 0%,rgba(52,63,83,1) 50%,rgba(28,27,38,1) 100%);
-	background: radial-gradient(ellipse at center,  rgba(79,142,165,1) 0%,rgba(52,63,83,1) 50%,rgba(28,27,38,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f8ea5', endColorstr='#1c1b26',GradientType=1 ); */
   background-image: url("././resources/images/${music.malbumart}");
   background-size: 400px;
   font-family: "proxima-nova";
@@ -52,13 +48,13 @@ body{
 }
 
 .phone{
-  animation: opacityAni 400ms linear 1s forwards;
-  /* background: rgb(30,30,40);
-  background: -moz-linear-gradient(top,  rgba(30,30,40,1) 0%, rgba(30,46,71,1) 34%, rgba(49,189,247,1) 88%, rgba(232,254,254,1) 100%);
-  background: -webkit-linear-gradient(top,  rgba(30,30,40,1) 0%,rgba(30,46,71,1) 34%,rgba(49,189,247,1) 88%,rgba(232,254,254,1) 100%);
-  background: linear-gradient(to bottom,  rgba(30,30,40,1) 0%,rgba(30,46,71,1) 34%,rgba(49,189,247,1) 88%,rgba(232,254,254,1) 100%);
+  animation: opacityAni 400ms linear 50ms forwards;
+  background: rgb(28,22,55);
+  background: -moz-linear-gradient(top,  rgba(28,22,55,1) 0%, rgba(24,14,108,1) 34%, rgba(73,153,231,1) 88%, rgba(138,200,240,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(28,22,55,1) 0%,rgba(24,14,108,1) 34%,rgba(73,153,231,1) 88%,rgba(138,200,240,1) 100%);
+  background: linear-gradient(t	o bottom,  rgba(28,22,55,1) 0%,rgba(24,14,108,1) 34%,rgba(73,153,231,1) 88%,rgba(138,200,240,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e1e28', endColorstr='#e8fefe',GradientType=0 ); */
-  background-color: #1C1637;
+  /* background-color: #1C1637; */
   color: white;
   border-radius: 3px;
   box-shadow: 0 2px 6px rgba(0,0,0,.4);
@@ -90,7 +86,7 @@ body{
   left: 0;
   opacity: 0;
   position: absolute;
-  transition: opacity 170ms linear;
+  transition: opacity 50ms linear;
   top: 0;
   width: 100%;
   z-index: 0;
@@ -105,7 +101,7 @@ body{
   height: 140px;
   margin: 0 auto 34px auto;
   position: relative;
-  transition: all 170ms ease-in;
+  transition: all 50ms ease-in;
   width: 140px;
   z-index: 2;
   
@@ -199,7 +195,7 @@ body{
 }
 
 .artist__name{
-  animation: artistNameAni 400ms linear 1000ms forwards;
+  animation: artistNameAni 400ms linear 50ms forwards;
   margin-bottom: 30px;
   position: relative;
   text-align: center;
@@ -272,7 +268,7 @@ body{
 }
 
 .button__play{
-  animation: buttonAni 300ms cubic-bezier(.48,.18,.44,.97) 1300ms forwards;
+  animation: buttonAni 400ms cubic-bezier(.48,.18,.44,.97) 50ms forwards;
   background-color: rgba(255,255,255,.1);
   border: 2px solid #fff;
   border-radius: 50%;
@@ -294,6 +290,9 @@ body{
   position: absolute;
   top: 25px;
   width: 0;
+}
+.button__play:hover, .button__next:hover, .button__prev:hover{
+  background-color: rgba(0, 0, 0, .3);
 }
 
 .button__play-iconpause{
@@ -367,7 +366,7 @@ body{
 }
 
 .button__prev{
-  animation: buttonAni 300ms cubic-bezier(.48,.18,.44,.97) 1200ms forwards;
+  animation: buttonAni 400ms cubic-bezier(.48,.18,.44,.97) 50ms forwards;
   
   &:before{
     border-color: transparent #fff transparent transparent;
@@ -381,7 +380,7 @@ body{
 }
 
 .button__next{
-  animation: buttonAni 300ms cubic-bezier(.48,.18,.44,.97) 1400ms forwards;
+  animation: buttonAni 400ms cubic-bezier(.48,.18,.44,.97) 50ms forwards;
   
   &:before{
     border-color: transparent transparent transparent #fff;
@@ -529,20 +528,25 @@ body{
     <div id="wavesurfer" class="wavesurfer__elem"></div>
     
     <div class="artist__name">
-      <p>${music.martist }</p>
-      <h1>${music.mtitle }</h1>
-      <div class="love">&#9825;</div>
-      <div class="share"></div>
+      <p style="color: white;">${music.martist }</p>
+      <h1 style="color: white;">${music.mtitle }</h1>
     </div>
     
     <div class="controls">
-      <button class="button__prev"></button>
+      <button class="button__prev">
+      	<img alt="button__prev" src="././resources/images/prev_button.png" style="width: 20px; height: 20px;">
+      </button>
       <button id="play" class="button__play load">
-        <span class="button__play-iconplay"></span>
-        <span class="button__play-iconpause"></span>
+        <span class="button__play-iconplay">
+        </span>
+        <span class="button__play-iconpause">
+       		<img alt="button__play-iconpause" src="././resources/images/pause_button2.png" style="width: 20px; height: 20px;">
+        </span>
         <span class="button__loader"></span>
       </button>
-      <button class="button__next"></button>
+      <button class="button__next">
+      	<img alt="button__prev" src="././resources/images/next_button.png" style="width: 20px; height: 20px;">
+      </button>
     </div>
   </div>
 </div>
@@ -551,7 +555,6 @@ body{
 
 <script>
 $(document).ready(function(){
-	
 	
 	var wavesurfer = WaveSurfer.create({
 	    barWidth: 1,
@@ -574,7 +577,7 @@ $(document).ready(function(){
 	    wavesurfer.playPause();
 	  }
 	});
-
+	
 	var m,
 	    s;
 
