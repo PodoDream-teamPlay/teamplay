@@ -99,6 +99,7 @@ public class MusicController {
 		
 	}
 
+
 	// mp3다운 버튼을 클릭했을 떄 결제창 팝업 띄우기 
 	@RequestMapping(value="/mp3_down", method = RequestMethod.POST)
 	public String checkbox(HttpServletRequest reqest, int[] cb_choose, HttpSession session, 
@@ -133,26 +134,10 @@ public class MusicController {
 			}
 			
 			logger.info("glist.size() : " + glist.size());
-			logger.info("glist" + glist.toString()  );			
-			
-			/*//새 리스트를 db에 저장
-			int result = 0;
-			for(Get gg : glist) {
-				result = getService.insert(gg);
-				if(result == 1) { //insert 성공했으면
-					//mcount update 로 증가
-					musicService.update_mcount(gg.getMid());
-					System.out.println("mcount 증가");
-					//member 장르별 count 증가
-					logger.info("gg가 도대체 뭐임 ??" + gg);
-					logger.info("gg가 도대체 뭐임 !!" + gg.toString());
-					String mgenre = musicService.selectMgenre(gg.getMid());
-					memberService.update_genre_count(mgenre, userid);
-				}
-			}*/
+			logger.info("glist" + glist.toString()  );						
 			attribute.addFlashAttribute("money", glist.size()*700);
 			attribute.addFlashAttribute("userid", userid);
-			attribute.addFlashAttribute("glist", glist);
+			session.setAttribute("glist", glist);
 
 			logger.info("money = " + glist.size()*700);
 			

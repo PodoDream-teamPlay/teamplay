@@ -46,14 +46,14 @@
 
 </div> --%>
 
-<form id="paid-music" method="post">
+<form id="musicpaid" method="post">
 	<h2>결제</h2>
-	<c:forEach var="glist" items="${glist}">
+	<%-- <c:forEach var="glist" items="${glist}">
 	<input />	
-	</c:forEach>
+	</c:forEach> --%>
 		
 	<input id="money" value="${money}" style="width: 150px" name="money" readonly required> 원<br/>
-	<input value="${remainpoint}" style="width: 150px" readonly> 남은 포인트<br>
+	<input value="${remainpoint}"  style="width: 150px" readonly> 남은 포인트<br>
 	<input id="usingpoint" type="number" style="width: 150px" min="0" value="0" name="usingpoint" oninput="cal()"> 사용할 포인트<br>
 	<input readonly id="finalmoney" style="width: 150px" value="${money}"> 결제할 금액<br>
 	<input maxlength="4" style="width: 30px" required>

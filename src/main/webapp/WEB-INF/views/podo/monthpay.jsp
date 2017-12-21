@@ -124,7 +124,6 @@ img {
 		</h1>
 
 
-
 		<!-- 로그인  -->
 		<div id="noline" style="float: right; margin-top: 20px;">
 			<c:if test="${empty loginUserid}">
