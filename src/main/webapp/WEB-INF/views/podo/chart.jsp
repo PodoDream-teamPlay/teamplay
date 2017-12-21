@@ -271,15 +271,17 @@ canvas {
 <br>
 
 <!-- 그래프 넣기 -->
-<div class="container-center" style="background: ligthgrey;">
-	<div class="chartbox" style="width: 970; height: 500;">
-		<form action="chart" method="get">
-			<input type="submit" value="차트 순위 새로고침" class="btn btn-default dropdown-toggle">		
-		</form>
-		<canvas id="lineCanvas" width="900" height="210" ></canvas>
+	<div class="container">
+		<div class="container-center" style="background: ligthgrey;">
+			<div class="chartbox" style="width: 970; height: 350;">
+				<form class="pull-right" action="chart" method="get">
+					<input type="submit" value="차트 순위 새로고침" class="btn btn-default dropdown-toggle">
+				</form>
+				<canvas id="lineCanvas" width="900" height="250"></canvas>
+			</div>
+		</div>
 	</div>
-</div>
-<script>
+<script>   
 // ${gra} -> 곡 제목
 // ${getcon} -> 카운트 수
 var data = {
@@ -307,16 +309,15 @@ window.onload = function(){
     				}
     			}],
     			yAxes: [{
+    				barPercentage: 0.5,
     				stacked: true
     			}]
     		}
     	}
     });
 }
-</script>
+</script>    
 <!-- 여기 까지 -->
-<br>
-
 
 <!--  차트 상단 버튼 -->
 <div class="container">
