@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>PODO</title>
 </head>
 <body>
 <h1>이용약관</h1>
