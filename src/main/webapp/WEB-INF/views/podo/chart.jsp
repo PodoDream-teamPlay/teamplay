@@ -144,7 +144,7 @@ canvas {
 					</table>
 					<a href="register" style="color: #8d8a9b;">회원가입</a>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="" style="color: #8d8a9b;">아이디·비밀번호 찾기</a>
+					<a href="iforgotMyId" style="color: #8d8a9b;">아이디·비밀번호 찾기</a>
 					<br>
 					</tbody>
 
