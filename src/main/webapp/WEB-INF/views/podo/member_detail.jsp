@@ -32,7 +32,7 @@
 }
 
 .left_box {
-	background-color: #2E2E2E;
+	background-color: #1C1637;
 	color: white;
 	width: 200px;
 	height: 400px;
@@ -271,21 +271,26 @@ img {
 				<tr>
 					<td>
 						<div class="left_box">
-							user프로필 출력<br>
+							<br>
 							<br>
 							<div
-								style="background-color: white; color: #2E2E2E; width: 170px; height: 60px;
+								style="background-color: white; color: #1C1637; width: 170px; height: 60px;
 								 margin-left: 15px; padding: 20px; font-size: 20;">
 								<b>${loginUserid}</b>
 							</div>
 							<br>
 							<form action="member-update">
 								<input type="submit" value="회원 정보 수정" id="btn-member-update"
-									style="color: #D8D8D8; text-decoration: none; border: 1px solid #D8D8D8; padding: 10px; background-color: #2E2E2E;">
+									style="color: #D8D8D8; text-decoration: none; border: 1px solid #D8D8D8;
+											padding: 10px; background-color: #1C1637;">
 							</form>
 							<br>
-							<div>
-								보유 포인트 <br>${point }
+							<div align="center">
+								보유 포인트 
+								<div style="color: #D8D8D8; text-decoration: none; border: 1px solid #D8D8D8;
+											padding: 3px; background-color: #1C1637; width: 113px;">
+									${point }
+								</div>
 							</div>
 							<br>
 
@@ -304,7 +309,7 @@ img {
 							<br>
 							<table class="table">
 								<thead>
-									<tr style="background-color: #2E2E2E; color: white;">
+									<tr style="background-color: #1C1637; color: white;">
 										<th class="text-center">리스트 제목</th>
 										<th class="text-center">저장 날짜</th>
 										<th style="width: 30px;"></th>
@@ -348,7 +353,7 @@ img {
 						<div class="rigth_box">
 							<table class="table">
 								<thead>
-									<tr style="background-color: #2E2E2E; color: white;">
+									<tr style="background-color: #1C1637; color: white;">
 										<th></th>
 										<th class="text-center">제목</th>
 										<th class="text-center">앨범</th>
