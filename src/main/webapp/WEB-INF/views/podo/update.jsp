@@ -271,21 +271,26 @@ img {
 </div> <!-- 상단 배경색 정하는 div -->
 
 
+<div  class="container" style="width: 1200px;"><br/>
 
-<h1> 회원 정보 수정 </h1>
+<img src="././resources/images/updatelogo.png" alt="회원 정보 수정"><hr/>
+
 
 <form action="member-update" method="post">
-			<label for="userid">아이디</label>
+<br/>
+			<label for="userid" style="font-family:배달의민족 주아; font-size:16; margin-right:53 ">아이디</label>
 			 <input type="text" name="userid" id="userid" value ="${loginUserid}" readonly required="required"> <br>
-			<label for="password">비밀번호</label>
+			<label for="password"style="font-family:배달의민족 주아; font-size:16; margin-right:40 ">비밀번호</label>
 			 <input	type="password" name="updatePassword" id="updatePassword" required="required"> <br>
-			 <label for="password2">비밀번호 확인</label>
+			 <label for="password2"style="font-family:배달의민족 주아; font-size:16;margin-right:8">비밀번호 확인</label>
 			 <input	type="password" onblur="double_check()" name="updatePassword2" id="updatePassword2"  required="required"> <br>
-			<label	for="email">이메일</label> 
-			<input type="email" name="updateEmail" id="updateEmail" required="required">	<br> 
-			<input type="submit"  id ="btn3" value="정보수정" class="btn" disabled="disabled">
+			<label	for="email"style="font-family:배달의민족 주아; font-size:16;margin-right:53">이메일</label> 
+			<input type="email" name="updateEmail" id="updateEmail" required="required">	<br/><br/><br/>
+			<input type="submit"  id ="btn3" value="정보수정" 	style="margin-left:200;width: 80px; height: 40px; background-color: #1c1637; font-family: 배달의민족 주아; font-size: 16px; color: #fff; border: 2px solid lightgrey;"
+					class="btn btn-primary;" disabled="disabled">
+
 		</form>
-	
+	</div>
 	<!--비밀번호 중복 체크   -->
 	<script>
 	function double_check() {

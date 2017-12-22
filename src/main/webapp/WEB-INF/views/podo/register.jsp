@@ -221,21 +221,35 @@ img {
 </div> <!-- 상단 배경색 정하는 div -->
 
 
-<div class="container">
-	<h1 class="text-center">회원가입</h1>
+<div class="container"><br/>
+	<img src="././resources/images/joinlogo.png" alt="회원가입">
 	<hr>
-	<div class="container text-center">
+	<div class="container" >
+	
 
 		<form action="member-join" method="post">
-			<label for="userid">아이디</label>
-			 <input type="text" name="userid" id="userid" required="required"> <br>
-			<label for="password">비밀번호</label>
-			 <input	type="password" name="password" id="password" required="required"> <br>
-			 <label for="password2">비밀번호 확인</label>
-			 <input	type="password" onblur="double_check()" name="password2" id="password2"  required="required"> <br>
-			<label	for="email">이메일</label> 
-			<input type="email" name="email" id="email" required="required">	<br> 
-			<input type="submit"  id ="btn3" value="회원가입" class="btn" disabled="disabled">
+		<table style="text-align:left">
+		<tr>
+			<td><label for="userid"style="font-family:배달의민족 주아; font-size:16;  ">아이디</label></td>
+			<td> <input type="text" name="userid" id="userid" required="required"> <br></td>
+			</tr>
+			<tr>
+			<td><label for="password"style="font-family:배달의민족 주아; font-size:16; ">비밀번호</label></td>
+			<td> <input	type="password" name="password" id="password" required="required"> <br></td>
+			</tr>
+			<tr>
+			 <td><label for="password2"style="font-family:배달의민족 주아; font-size:16;  ">비밀번호 확인</label></td>
+			 <td><input	type="password" onblur="double_check()" name="password2" id="password2"  required="required"> <br></td>
+			 </tr>
+			 <tr>
+			<td><label	for="email"style="font-family:배달의민족 주아; font-size:16;  ">이메일</label></td>
+			<td> 
+			<input type="email" name="email" id="email" required="required">	<br></td>
+			</tr>
+			 </table><br/>
+			<input type="submit"  id ="btn3" value="회원가입" 	style="margin-left:200;width: 80px; height: 40px; background-color: #1c1637; font-family: 배달의민족 주아; font-size: 16px; color: #fff; border: 2px solid lightgrey;"
+					class="btn btn-primary;" disabled="disabled">
+					
 		</form>
 	
 	</div>
