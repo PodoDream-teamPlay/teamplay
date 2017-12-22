@@ -118,6 +118,12 @@ public class MemberController {
 		//비밀번호 찾기. 아이디와 이메일로 확인.
 		@RequestMapping(value="/findingPw", method=RequestMethod.POST)
 		public String findingPw(String userid, String email, Model model) {
+			Member m = memberservice.select(userid, email);
+			String password = "이메일과 아이디를 확인해 주세요.";
+			if(m != null) {
+				password = m.getPassword();
+			}
+			model.addAttribute("password", password);
 			return "podo/iforgotMyPw";
 		}
 		

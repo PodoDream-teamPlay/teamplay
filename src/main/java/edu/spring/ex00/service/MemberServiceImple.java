@@ -87,6 +87,11 @@ public class MemberServiceImple implements MemberService {
 			return 0;
 		}
 	}
+
+	@Override
+	public Member select(String userid, String email) {
+		return memberDao.read(email, userid);
+	}
 	
 
 	

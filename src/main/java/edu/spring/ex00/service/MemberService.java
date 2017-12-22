@@ -10,9 +10,13 @@ public interface MemberService {
 		Member select(String userid);
 	// email로 정보 조회
 		Member selectByEmail(String email);
+	// email과 userid로 정보 조회
+		Member select(String userid, String email);
+		
 		
 	// 회원 정보 수정
 		int update(Member m);
+		
 	// 월별 결제 했을 때
 		int update_pay(Member m);
 		

@@ -16,6 +16,9 @@ public interface MemberDao {
 	//회원 정보 조회 (email)로
 	Member readByEmail(String email);
 	
+	//회원 정보 조회 (email, userid)
+	Member read(String email, String userid);
+	
 	//회원 정보 수정
 	int update(Member m);
 	

@@ -89,6 +89,14 @@ public class MemberDaoImple implements MemberDao {
 		return session.delete(NAMESPACE + ".delete", userid);
 	}
 
+	@Override
+	public Member read(String email, String userid) {
+		Map<String, String> args = new HashMap<>();
+		args.put("email", email);
+		args.put("userid", userid);
+		return session.selectOne(NAMESPACE + ".selectByEmailAndId", args);
+	}
+
 
 	
 }

@@ -72,7 +72,7 @@
 
 <!-- 본문 -->
 <div class="container">
-<h3>아이디  찾기</h3>
+<h3>비밀번호  찾기</h3>
 <hr>
 <br>	
 
@@ -100,7 +100,7 @@
 		<br>
 	</form>
 	<br><br>
-	<div id="result" style="color: #F6354E; font-size: 50px;"></div>
+	<div id="result" style="color: #F6354E; font-size: 50px;">${password }</div>
 	</div>
 
 </div>
