@@ -42,14 +42,27 @@ public class MemberController {
 	
 		//아이디 확인 체크. 
 		Member checkuser = null;
+		Member checkEmail = null;
 			checkuser =	memberservice.select(member.getUserid());
-		if (checkuser ==null) {
+			checkEmail = memberservice.selectByEmail(member.getEmail());
+			
+		if (checkuser ==null && checkEmail == null) {
 			Member m = new Member(member.getUserid(), member.getPassword(), member.getEmail(),0,0,0,0,0, null, 0 );
 			logger.info("member" + member.getUserid() + member.getPassword() + member.getEmail());
 			memberservice.insert(m);	
 			return "redirect:/";
-		} else {
+		} else if (checkuser==null && checkEmail !=null) {
+			// 이메일이 중복
+			model.addAttribute("checkEmail", 2);
+			System.out.println("이메일 중복");
+		} else if (checkuser != null && checkEmail == null) {
+			//가입하려는 아이디가 중복
+			model.addAttribute("checkId", 3);
+			System.out.println("아이디 중복");
+		}		
+		else {
 			model.addAttribute("check", 1);
+			System.out.println("이메일 아이디 모두 중복");
 		}
 			return "podo/register";
 	}
@@ -74,11 +87,10 @@ public class MemberController {
 		}else {
 			return "redirect:/member_withdraw";
 		}
-		
 	}
 	
 	//아이디 비밀번호 찾기
-	@RequestMapping(value="/iforgotMyId")
+	@RequestMapping(value="/iforgotMyId", method=RequestMethod.GET)
 	public String forgotMyId() {
 		return "podo/iforgotMyId";
 	}

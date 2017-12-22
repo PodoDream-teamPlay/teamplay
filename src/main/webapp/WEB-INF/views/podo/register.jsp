@@ -241,11 +241,25 @@ img {
 	</div>
 
 	<!--아이디 체크 후 경고창 -->
+<!--아이디 체크 후 경고창 -->
 	<script>
 		$(document).ready(function() {
 			if (${check}==1) {
-				alert("이미 가입된 아이디가 있습니다.");
-				
+				alert("아이디와 이메일이 중복됨.");				
+			} 
+			});
+	</script>
+	<script>
+		$(document).ready(function() {
+			if (${checkEmail}==2) {
+				alert("이메일이 중복됨.");				
+			} 
+			});
+	</script>
+	<script>
+		$(document).ready(function() {
+			if (${checkId}==3) {
+				alert("아이디가 중복됨.");				
 			} 
 			});
 	</script>
