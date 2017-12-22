@@ -319,7 +319,7 @@ img {
 	<script>
 	$(document).ready(function() {  /* 출첵될 때  */
 		if (${su}!=null) {
-			alert("10포인트 적립 완료!");
+			alert("10포인트 적립 완료");
 		}
 	});
 	</script>

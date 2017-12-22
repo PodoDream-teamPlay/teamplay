@@ -101,18 +101,13 @@ img {
 }
 </style>
 
-
-
 </head>
-
-
 
 <body>
 
 	<div style="background-color: #1C1637">
-		<!-- 상단 배경색 정하는 div -->
-		<div class="container" style="width: 1200px;background-color: #1C1637">
-			<!-- 타이틀 -->
+		<div class="container"
+			style="width: 1200px; background-color: #1C1637">
 			<h1 class="text-center">
 				<a href="http://localhost:8181/ex00/" style="text-decoration: none;">
 					<img alt="grape" src="././resources/images/grape3.png"
@@ -120,8 +115,6 @@ img {
 					src="././resources/images/podo_white.png">
 				</a>
 			</h1>
-
-
 
 			<!-- 로그인  -->
 			<div id="noline" style="float: right; margin-top: 20px;">
@@ -147,8 +140,6 @@ img {
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href=""
 							style="color: #8d8a9b;">아이디·비밀번호 찾기</a> <br>
 						</tbody>
-
-
 
 					</form>
 				</c:if>
@@ -190,7 +181,6 @@ img {
 			});
 		</script>
 
-
 			<br>
 			<!-- 검색창 -->
 			<form action="search" method="get" class="text-center"
@@ -203,9 +193,9 @@ img {
 							style="width: 580px; height: 42px; border: 3px solid #1C1637; margin: 5px;" />
 						</td>
 						<td>
-							<!-- 검색 버튼 --> <a href="#" id="btn-search"
-							style="text-decoration: none;"> <img alt="search"
-								src="././resources/images/search_icon.png"
+							<!-- 검색 버튼 --> 
+							<a href="#" id="btn-search" style="text-decoration: none;"> 
+							<img alt="search" src="././resources/images/search_icon.png"
 								style="background-color: #1C1637; padding: 5px;">
 						</a>
 						</td>
@@ -216,10 +206,8 @@ img {
 
 		</div>
 
-
 		<div style="background-color: #1C1637; height: 50px;">
 			<!-- 메뉴 bar -->
-
 			<div class="container">
 				<nav class="navbar navbar-inverse"
 					style="width: 970px; display: inline-block; background-color: #1C1637; border: none; text-align: center;">
@@ -257,17 +245,9 @@ img {
 			</div>
 		</div>
 	</div>
-	<!-- 상단 배경색 정하는 div -->
-
-
-
+	
 	<br>
 	<br>
-
-
-
-
-
 
 	<div class="container" style="width: 930px;">
 		<h2>
@@ -288,11 +268,10 @@ img {
 					style="font-family: 배달의민족 주아;">
 					<div class="panel-body" style="font-family: 배달의민족 주아;">
 						1-1. 회원가입 방법<br /> 1) PODO 홈에서 회원가입버튼을 클릭<br />2) 양식에 맞게 정보를
-						입력해주세요<br />3) 회원가입 버튼 클릭 <br />
-						<br /> 1-2. 회원정보 수정 방법<br /> 1) 로그인 후, 마이페이지 버튼 클릭<br /> 2)왼쪽
-						프로필란에 '회원 정보 수정' 버튼 클릭<br />
-						<br /> 1-3. 회원 탈퇴 방법<br /> 1) 로그인 후, 마이페이지 버튼 클릭<br/> 2) 왼쪽 
-						프로필란에 '회원 탈퇴' 버튼 클릭 <br/> 3) 약관 동의 후, 체크박스 클릭 시 확인 버튼을 누르면 탈퇴가 완료됩니다.<br/>
+						입력해주세요<br />3) 회원가입 버튼 클릭 <br /> <br /> 1-2. 회원정보 수정 방법<br />
+						1) 로그인 후, 마이페이지 버튼 클릭<br /> 2)왼쪽 프로필란에 '회원 정보 수정' 버튼 클릭<br /> <br />
+						1-3. 회원 탈퇴 방법<br /> 1) 로그인 후, 마이페이지 버튼 클릭<br /> 2) 왼쪽 프로필란에 '회원
+						탈퇴' 버튼 클릭 <br /> 3) 약관 동의 후, 체크박스 클릭 시 확인 버튼을 누르면 탈퇴가 완료됩니다.<br />
 					</div>
 				</div>
 			</div>
@@ -308,9 +287,9 @@ img {
 				<div id="collapse2" class="panel-collapse collapse">
 					<div class="panel-body" style="font-family: 배달의민족 주아;">
 						2-1. 포인트 쌓는 법 <br />1) 메뉴바 '이벤트' 클릭 <br />2) 출석체크시, 10point 증정<br />
-						*(출석체크는 하루에 한 번만 가능합니다) <br />
-						<br /> 2-2. 포인트 사용법 <br /> 1) 메뉴바 '이용권' 클릭 <br /> 2) 결제 하려는 이용권 선택
-						후, 결제하기 버튼 클릭 <br /> 3) 남은 포인트칸에서 남은포인트를 확인하고 쓰려는 포인트를 입력해주세요. <br />
+						*(출석체크는 하루에 한 번만 가능합니다) <br /> <br /> 2-2. 포인트 사용법 <br /> 1)
+						메뉴바 '이용권' 클릭 <br /> 2) 결제 하려는 이용권 선택 후, 결제하기 버튼 클릭 <br /> 3) 남은
+						포인트칸에서 남은포인트를 확인하고 쓰려는 포인트를 입력해주세요. <br />
 					</div>
 				</div>
 			</div>
@@ -324,17 +303,12 @@ img {
 					</h4>
 				</div>
 				<div id="collapse3" class="panel-collapse collapse">
-					<div class="panel-body" style="font-family: 배달의민족 주아;">기타
-						문의사항은 Q&A 칸에서 새 글 작성 버튼을 클릭해주세요.</div>
+					<div class="panel-body" style="font-family: 배달의민족 주아;">
+					기타 문의사항은 Q&A 칸에서 새 글 작성 버튼을 클릭해주세요.</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-
-
-
-
 
 
 	<br />
@@ -371,21 +345,7 @@ img {
 
 </script>
 
-
 	<hr />
-
-
-	<!--  게시물 검색  -->
-	<!-- <form action="search" method="get"class="text-center">
-    <select name="searchType">
-        <option value="1">작성자</option>
-        <option value="2">제목</option>
-        <option value="3">제목 + 내용</option>
-    </select>
-    <input type="text" name="searchKeyword" placeholder="검색어"/>
-    <input type="submit" value="검색"class= "btn btn-primary" />
-</form>
- -->
 
 	<div class="container" style="width: 970px; height: auto;">
 		<table class="table table-hover;">
@@ -417,11 +377,6 @@ img {
 
 		</table>
 	</div>
-
-
-
-
-
 
 
 	<div>

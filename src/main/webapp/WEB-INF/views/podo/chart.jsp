@@ -480,7 +480,7 @@ $(function(){
 	// 체크 된 값의 mid 컨트롤러에 넘기기
 	$('#mp3_down').click(function() {
 		if(${empty loginUserid}){
-			alert('로그인을 했는지 확인하세요!!');
+			alert('로그인이 되었는지 확인해주세요.');
 		} else {
 			alert('선택한 MP3 목록 다운 완료');
 			$('#tbl_form').attr('action', 'mp3_down');
@@ -501,7 +501,7 @@ $(function(){
 	
 	$('img[name=down_icon]').click(function(){
 		if(${empty loginUserid}){
-			alert('로그인을 했는지 확인하세요!!');
+			alert('로그인이 되었는지 확인해주세요.');
 		} else {
 			alert('선택한 MP3 목록 다운 완료');
 		}
@@ -618,7 +618,7 @@ $(function(){
 				//중복되는거 없으면 insert
 				insertPlaylist(ptitle);
 			} else {
-				alert('중복된 이름입니다.앨범명을 다시 입력해주세요!');
+				alert('중복된 이름입니다.앨범명을 다시 입력해주세요');
 					
 			}
 		});

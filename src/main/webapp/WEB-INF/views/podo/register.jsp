@@ -245,21 +245,21 @@ img {
 	<script>
 		$(document).ready(function() {
 			if (${check}==1) {
-				alert("아이디와 이메일이 중복됨.");				
+				alert("아이디와 이메일이 중복되었습니다.");				
 			} 
 			});
 	</script>
 	<script>
 		$(document).ready(function() {
 			if (${checkEmail}==2) {
-				alert("이메일이 중복됨.");				
+				alert("이메일이 중복되었습니다.");				
 			} 
 			});
 	</script>
 	<script>
 		$(document).ready(function() {
 			if (${checkId}==3) {
-				alert("아이디가 중복됨.");				
+				alert("아이디가 중복되었습니다.");				
 			} 
 			});
 	</script>

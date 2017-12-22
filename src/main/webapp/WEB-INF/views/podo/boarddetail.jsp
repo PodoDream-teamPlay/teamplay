@@ -135,7 +135,8 @@ img {
 
 	<div style="background-color: #1C1637">
 		<!-- 상단 배경색 정하는 div -->
-		<div class="container" style="width: 1200px;background-color: #1C1637">
+		<div class="container"
+			style="width: 1200px; background-color: #1C1637">
 			<!-- 타이틀 -->
 			<h1 class="text-center">
 				<a href="http://localhost:8181/ex00/" style="text-decoration: none;">
@@ -287,13 +288,10 @@ img {
 		<hr />
 
 		<form>
-				<label for="title">
-					<img src="././resources/images/boardlogo2_2.png" alt="제목">
-				</label>
-					<input type="text" name="title" id="title" style="width: 800px"
-							value="${board.title }" readonly />
-					<br/>
-				<label for="content"><img
+			<label for="title"> <img
+				src="././resources/images/boardlogo2_2.png" alt="제목">
+			</label> <input type="text" name="title" id="title" style="width: 800px"
+				value="${board.title }" readonly /> <br /> <label for="content"><img
 				src="././resources/images/boardlogo3_3.png" alt="내용"
 				style="display: inline;"></label>
 			<textarea rows="15" cols="130" name="content" id="content" readonly>${board.content}</textarea>
@@ -335,8 +333,9 @@ img {
 			<input type="hidden" name="bno" id="bno" value="${board.bno}"
 				style="width: 35px;" readonly />
 			<input type="text" name="rtext" id="rtext" placeholder="댓글을 입력하세요"
-				style="width: 400px;" />
-			<input type="text" name="replier" id="replier" value="${loginUserid}" readonly style="width: 50px;"/>
+				style="width: 800px;" />
+			<input type="text" name="replier" id="replier" value="${loginUserid}"
+				readonly style="width: 50px;" />
 			<button type="button" id="btn-insert"
 				style="width: 80px; height: 40px; background-color: #1c1637; font-family: 배달의민족 주아; font-size: 16px; color: #fff; border: 2px solid lightgrey;">댓글
 				입력</button>
@@ -346,7 +345,7 @@ img {
 
 		<hr />
 		<h2 class="text-left">
-			<img src="././resources/images/boardlogo9.png" alt="댓글목록">
+			<img src="././resources/images/boardlogo12.png" style="width:130px; height:30px;" alt="댓글목록 ">
 		</h2>
 		<div id="replies" style="height: 300px;"></div>
 
@@ -356,37 +355,24 @@ img {
 $(document).ready(function(){
 	
 	$(document).ready(function(){
-		//검색할 댓글의 게시글 번호 
+	
 		var bno = $('#bno').val();
 		
-		
-		
-		// jQuery 에서 ajax에게 요청을 보내는 함수들중에서  
-		//put, delete는 $.ajax({settings}) 이거랑 배우지않은 메소드 하나 알려주심!!!
-		//$.getJSON(url, data, callback)
-		// 해당 url로 HTTP GET 방식의 ajax 요청을 보내고, (서버에서 JSON을 보낸다는게 확실할때에만 사용해야한다)
-		//JSON 객체를 로드하는 함수
-		// url (필수_서버로 요청을 보내는 주소)
-		// data(선택_요청과 함께 서버로 보내는 데이터)
-		// callback(선택 _ 응답(response)를 받았을 때 처리할 일을 정의하는 callback 함수)
 		function getAllReplies() {
-			$.getJSON('/ex00/replies/all/' + bno, // 여기서 bno는 input에서 읽어온값 
-					 function(data){ // 서버에서 넘어온 Json 배열 
+			$.getJSON('/ex00/replies/all/' + bno, 
+					 function(data){
+				console.log("댓글 갯수: " + data.length);
 				
-				//매개변수 data: Ajax 요청에 대한 응답으로 온 데이터 
-				console.log("댓글 갯수: " + data.length); // 이 console가 출력되는 곳은 클라이언트. 
-				
-				var replyList = '';// 문자열들을 붙여가면서 할라고 비어있는 문자열 만든것.
-				$(data).each(function() { // 위에서 서버에서 넘어온 JSON배열 (data)를 $ 붙여서 찾고  each라는 함수 안에다가 callback함수 등록 : 배열에서 원소 꺼내서 걔를 function 한테 준다...
-					//each(): 배열(위에 function(data)에서 데이터 하나씩 꺼내서 이 function 안에다가 넣어주겠다. 즉, 일종의 향상된 for문이 된다.
-						 replyList += // 첫번째 들어오면 비어있는 상태로 들어오니까 div를 붙이는것!   그리고 문자열을 계속 덧붙이는 거라서 += 를 사용한다. each문 
-								'<div class = "reply-item" data-rno="'// 이름을 붙일때 규칙은 data를 붙이고나서 이름을 쓸 수 있다. 
-								+ this.rno // JQuery에서의 this는  function호출한애가 누구냐니까 배열의 첫번째 원소, 두번째 function호출됐으면 두번째 원소!
-								+ '">' // <div> 
+				var replyList = '';
+				$(data).each(function() { 
+						 replyList += 
+								'<div class = "reply-item" data-rno="'
+								+ this.rno 
+								+ '">'
 								+ '<input type= "hidden" id="rno" value="'
 								+ this.rno
 								+ '" readonly />'
-								+ '<input type= "text" id="rtext" style="width: 400px;" value="'
+								+ '<input type= "text" id="rtext" style="width: 750px;" value="'
 								+ this.rtext
 								+ '" />&nbsp;'
 								+ '<input type="text" id=replier" style="width: 50px;" value="'
@@ -396,52 +382,36 @@ $(document).ready(function(){
 								+ '<button class="btn-delete" style="width: 60px; height: 30px; background-color: #1c1637; font-family: 배달의민족 주아; font-size: 16px; color: #fff; border: 2px solid lightgrey;">삭제</button>'
 								+ '</div>';
 								
-				}); // 그래서 div가 테이블에 있는 갯수만큼 생긴다 
-				$('#replies').html(replyList); // replies찾아서 replyList를 출력함.
+				});
+				$('#replies').html(replyList); 
 				
 			});
-		}// 함수정의 , end function getAllReplies()
-
-		getAllReplies(); // 함수 호출 
-		
-		
-			// btn-insert 버튼 클릭 시, 댓글 입력 기능 
+		}
+		getAllReplies(); 
 		
 			$('#btn-insert').click(function() {
-			// bno, rtext, replier 세 개 필요 -> 지금 보고있는 글 번호 bno찾음. var bno = $('#bno').val();
-			//rtext 댓글내용은 input에서 찾고, replier도 마찬가지 
-			//우선 변수 선언해서 찾자 
-				var rtext = $('#rtext').val(); // 위에 id에서 rtext가 있잖아 그래서 위에도 찾아서 왕 안좋은 코드야..ㅎㅎ
+				var rtext = $('#rtext').val(); 
 				var replier = $('#replier').val();
-				//입력된 값 읽어오고 
 				
-				
-				//이제 ajax 요청 보내면 돼. 이 함수는 object 넘기지 
-				$.ajax({ // 브라우저는 서버로 request보내고,다른거 하고있다가 서버에서 응답이오면 처리할수있는 callback function 만 등록해놓으면되는것이 ajax.
-					//ajax의 {}object 넘기겠다!!!!! 단순명료!!!!
-					type: 'post', // post방식과 // update는 put
-					url: '/ex00/replies', // 이 주소로 요청을 보냄. 그리고 controller가 그 요청을 받는다. (ResponseEntity<Integer> createReply 여기부분 )
-					headers: {// 댓글의 내용을 json타입으로 보낼거라서 headers 필수로 필요 
+				$.ajax({ 
+					type: 'post', 
+					url: '/ex00/replies', 
+					headers: {
 						'Content-Type': 'application/json',
-						'X-HTTP-Method-Override': 'POST' //update put
+						'X-HTTP-Method-Override': 'POST' 
 					}, 
-					data: JSON.stringify({ // 보낼 데이터 =>  JSON 문자열 만들어달라는 method. object가 갈수는 없으니까!문자열이 가야하자나~
+					data: JSON.stringify({ 
 						'bno': bno, 
 						'rtext': rtext,
-						'replier': replier // delete는 rno만 넘기면되니까 data가 필요없고 update는 필요하다.
-					}), //서버로 보내질 JSON Object가 만들어지고 ReplyRestController의 @RequestBody에 들어간다. 
-					
-					//성공 시, 실행할 함수 등록
-					success: function(result) { //()안의 변수이름은 상관없지만, ReplyRestController에서 insert할 때, 성공 실패를 Integer로 return하고나서 성공시, result =1 오니까 
-						//비교해야할것! 그래서 callback함수에서 result 검사해준것이당. 
+						'replier': replier 
+					}), 
+					success: function(result) { 
 						if(result === 1) {
-							alert("댓글 입력 성공^_^");
+							alert("댓글 입력 성공");
 							getAllReplies();
 						}else{
-							alert("댓글 입력 실패T_T");
+							alert("댓글 입력 실패");
 						}
-						
-						
 					}
 					
 				});
@@ -450,14 +420,8 @@ $(document).ready(function(){
 			
 		
 			$('#replies').on('click',' .reply-item .btn-update',function() {
-						//alert();
-						// $('#replies') : 댓글목록의 전체 div를 찾는것
 						
-						//on() : 원하는 event들을 등록할 수 있다.  
-						//,'.reply-item', //매개변수를 하나를 더 줄 수 있다. 이렇게하면 아래쪽의 각각의 div들을 다 찾은것. 
-						// btn-update까지쓰면 수정버튼을 눌렀을때만 alert창이 뜬다. 
-						
-						var rno = $(this).prevAll('#rno').val(); //버튼의 부모가 가진 element중에서 id가 rno인 애들 모두 찾아주세요 
+						var rno = $(this).prevAll('#rno').val(); 
 						var rtext = $(this).prevAll('#rtext').val();
 						var bno = ${board.bno};
 						
@@ -467,7 +431,6 @@ $(document).ready(function(){
 							headers: {
 								'Content-Type' : 'application/json',
 								'X-HTTP-Method-Override': 'PUT'							
-								
 							},
 							
 							data: JSON.stringify({
@@ -477,10 +440,10 @@ $(document).ready(function(){
 							}),
 							success: function(result) {
 								if(result === 'success') {
-									alert("댓글 수정 성공^_^");
+									alert("댓글 수정 성공");
 									getAllReplies();
 								}else{
-									alert("댓글 수정 실패T_T");
+									alert("댓글 수정 실패");
 								}
 							}
 						});
@@ -503,19 +466,15 @@ $(document).ready(function(){
 					},
 					success: function(result) {
 						if(result === 'success') {
-							alert("댓글 삭제 성공^_^");
-							//입력 성공시, 목록 생신 
-		
+							alert("댓글 삭제 성공");
 							getAllReplies();
 						}else{
-							alert("댓글 삭제 실패T_T");
+							alert("댓글 삭제 실패");
 						}
 					}
 					
 				});
 			});
-		
-		
 		
 	});
 	

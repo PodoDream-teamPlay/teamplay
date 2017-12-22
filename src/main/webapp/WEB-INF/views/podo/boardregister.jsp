@@ -114,16 +114,11 @@ img {
 }
 </style>
 
-
-
 </head>
-
-
 
 <body>
 
 	<div style="background-color: #1C1637">
-		<!-- 상단 배경색 정하는 div -->
 		<div class="container" style="width: 1200px;background-color: #1C1637">
 			<!-- 타이틀 -->
 			<h1 class="text-center">
@@ -133,8 +128,6 @@ img {
 					src="././resources/images/podo_white.png">
 				</a>
 			</h1>
-
-
 
 			<!-- 로그인  -->
 			<div id="noline" style="float: right; margin-top: 20px;">
@@ -161,8 +154,6 @@ img {
 							style="color: #8d8a9b;">아이디·비밀번호 찾기</a> <br>
 						</tbody>
 
-
-
 					</form>
 				</c:if>
 
@@ -171,8 +162,8 @@ img {
 						<table>
 							<tr>
 								<td>
-									<p style="margin-right: 5px; color: white;">${loginUserid}님,
-										환영합니다</p>
+									<p style="margin-right: 5px; color: white;">
+									${loginUserid}님,환영합니다</p>
 								</td>
 								<td rowspan="2"><input type="submit" id="btn-logout"
 									class="btn"
@@ -268,7 +259,6 @@ img {
 			</div>
 		</div>
 	</div>
-	<!-- 상단 배경색 정하는 div -->
 
 	<img alt="새 글 작성" src="././resources/images/boardlogo1.png"
 		style="margin-left: 100px; margin-top: 50px;">
@@ -298,5 +288,27 @@ img {
 			class="btn btn-primary;" /> <br />
 
 	</form>
+	<div>
+		<img src="././resources/images/logo11.png" alt=" "
+			style="margin-top: 100px;" />
+	</div>
+
+
 </body>
+
+
+<footer>
+	<div style="float: center;">
+		<table style="text-align: center; font-size: 13; width: 700px;">
+			<tr>
+				<td class="footer_item"><a href="introduction">회사소개</a></td>
+				<td class="footer_item"><a href="hiring">인재채용</a></td>
+				<td class="footer_item"><a>제휴제안</a></td>
+				<td class="footer_item"><a href="usingagreement">이용약관</a></td>
+				<td class="footer_item"><a href="personalInformation">개인정보처리방침</a></td>
+				<th class="footer_item"><a>ⓒ PODO Corp.</a></th>
+			</tr>
+		</table>
+	</div>
+</footer>
 </html>

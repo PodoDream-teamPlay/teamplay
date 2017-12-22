@@ -100,7 +100,7 @@ img {
 <body>
 
 <div style="background-color: #1C1637"> <!-- 상단 배경색 정하는 div -->
-<div class="container" style="width: 1200px;">
+<div class="container" style="width: 1200px;background-color: #1C1637">
 		<!-- 타이틀 -->
 		<h1 class="text-center">
 			<a href="http://localhost:8181/ex00/" style="text-decoration: none;">

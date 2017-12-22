@@ -8,7 +8,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-<h1>결제 성공!!</h1>
+<h1>결제 성공</h1>
 
 <button id="payok">확인</button>
 
