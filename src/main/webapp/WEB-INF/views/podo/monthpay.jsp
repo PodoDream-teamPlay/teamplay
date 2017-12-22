@@ -329,10 +329,10 @@ img {
 <img src="././resources/images/aa2.png" alt="상품권 번호를 입력 후, 등록 버튼을 클릭해주세요."style="margin-left:150px;">
 <div align="center">
 <form action="register_giftcard">
-<input type="text"  maxlength="4" required>
-<input type="text"  maxlength="4" required>
-<input type="text"  maxlength="4" required>
-<input type="text"  maxlength="4" required>
+<input type="text" name="gift1" maxlength="4" placeholder="힌트는 4자리" required>
+<input type="text" name="gift2" maxlength="4" placeholder="힌트는 4자리" required>
+<input type="text" name="gift3" maxlength="4" placeholder="힌트는 4자리" required>
+<input type="text" name="gift4" maxlength="4" placeholder="힌트는 4자리" required>
 <input type="submit" value="등록" id="giftcard"class="btn btn-primary;" 
 	style="width:80px; height: 40px; background-color: #1c1673; font-size:20px; font-family:배달의민족 주아; color:#fff; border:2px solid lightgrey;">
 </form>
@@ -343,9 +343,31 @@ img {
 </div>
 
 
+<script>
+		$(document).ready(function() {
+			if (${su1}==2 | ${not empty loginUserid}) {
+				alert("상품권 등록 완료.");				
+			} 
+			});
+	</script>
+
+<script>
+		$(document).ready(function() {
+			if (${wrong}==1 | ${not empty loginUserid}) {
+				alert("번호가 틀렸습니당.");				
+			} 
+			});
+</script>
+
+<script>
+	$(document).ready(function() {
+		if (${fail}==1 ) {
+			alert("로그인 먼저 해주세요.");				
+		} 
+	});
+</script>
 
 <script type="text/javascript">
-
 function money1() {
 	if (${not empty loginUserid}) {
 		var money = document.getElementById('money');

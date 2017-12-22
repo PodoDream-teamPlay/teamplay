@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -57,6 +58,7 @@ public class PayController {
 		return "podo/paid";
 	}
 	
+	// 왼쪽 위에 버튼 눌렀을 때 결제 후 노래 다운.
 	@RequestMapping(value="/musicpaid", method=RequestMethod.POST)
 	public String musicpaidPost(int money, String userid, Model model, HttpSession session, int usingpoint) {
 		System.out.println("제발 뽑혀라.");
@@ -90,7 +92,7 @@ public class PayController {
 		return "podo/paid-result";
 	}
 	
-	List<Get> ki = new ArrayList<>();
+	
 	// 곡 결제
 	@RequestMapping(value="/musicpaid")
 	public String musicpaid(int money, String userid, Model model) {
@@ -152,16 +154,26 @@ public class PayController {
 	
 	//팝업창으로 월별 결제 결제
 	@RequestMapping(value="/register_giftcard", method=RequestMethod.GET)
-	public String paid(HttpSession session, Model model) {
+	public String paid(HttpSession session, Model model, int gift1, int gift2, int gift3, int gift4) {		
+		
+		System.out.println("gift1 =" + gift1 + "gift2 = " + gift2 + " gift3 = " + gift3 + " gift4 = " + gift4);
 		String userid = (String) session.getAttribute("loginUserid");
 		if (userid!=null) {
-		Member m = memberservice.select(userid);
-		int point = m.getPoint() + 10000;	//상품권 했을 때 10000원 추가 해줌.			
-		Member member = null;
-		member= new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, m.getMemdate(), point);
-		memberservice.update_point(member);
-		model.addAttribute("su1", 2);
-		return "/home";
+			if ( gift1 == 1234 && gift2 == 1123 && gift3 == 1112 && gift4 == 1111) {
+				Member m = memberservice.select(userid);
+				int point = m.getPoint() + 10000;	//상품권 했을 때 10000원 추가 해줌.			
+				Member member = null;
+				member= new Member(userid, m.getPassword(), m.getEmail(), 0,0,0,0,0, m.getMemdate(), point);
+				memberservice.update_point(member);
+				model.addAttribute("su1", 2);
+				System.out.println("잘 들어갔는지 확인.");
+			}
+			else {
+				System.out.println("번호를 틀렸네.");
+				model.addAttribute("wrong", 1);
+			}
+		
+		return "/podo/monthpay";
 		} else {
 			model.addAttribute("fail", 1);
 			System.out.println("로그인 안됨.");
