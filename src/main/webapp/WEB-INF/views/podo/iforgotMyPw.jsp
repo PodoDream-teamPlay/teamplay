@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8"/>
 <title>PODO</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -56,12 +56,14 @@
 		
 		<ul class="nav navbar-nav">
 			<li>
-				<a href="iforgotMyId" id="nav-findId" class="selected" 
-					style="color: white; color: #1C1637; background-color: white; font-weight: 900;">
+				<a href="iforgotMyId" id="nav-findId" >
 					아이디 찾기
 				</a>
 			</li>
-			<li><a href="iforgotMyPw" id="nav-findPw">비밀번호 찾기</a></li>
+			<li><a href="iforgotMyPw" id="nav-findPw"class="selected" 
+					style="color: white; color: #1C1637; background-color: white; font-weight: 900;">
+			비밀번호 찾기
+			</a></li>
 		</ul>
 		</nav>
 </div>
@@ -75,32 +77,40 @@
 <br>	
 
 	<div style="margin-left: 50px;">
+	<form action="findingPw" method="post">
 		<div>
-				<img alt="check" src="././resources/images/check_p.png"
-					style="width: 20px; font-weight: bold;">
-				<b>회원가입 시 사용한 이메일을 입력 해 주세요.</b>
-				<br>
-				<span style="color: gray; font-size: 7;">입력 양식 : xxxx@xxxx.xxx</span>
+			<img alt="check" src="././resources/images/check_p.png"
+				style="width: 20px; font-weight: bold;">
+			<b>아이디를 입력 해 주세요.</b>
 			<br><br>
-			<form action="findingId" method="post">
-				<input type="email" name="email" id="email" required="required" style="width: 310px;">
-				<br><br>
-				<input type="submit"  id ="btn3" value="찾기" class="btn" >
-			</form>
-			<br><br>
+			<input type="text" name="userid" id="userid" required style="width: 310px;">
 		</div>
-	<div id="result" style="color: #F6354E; font-size: 40px;">${userid }</div>
+		<br><br>
+		<div>
+			<img alt="check" src="././resources/images/check_p.png"
+				style="width: 20px; font-weight: bold;">
+			<b>회원가입 시 사용한 이메일을 입력 해 주세요.</b>
+			<br>
+			<span style="color: gray; font-size: 7;">입력 양식 : xxxx@xxxx.xxx</span>
+			<br><br>
+			<input type="email" name="email" id="email" required="required" style="width: 310px;">
+			<br><br>
+			<input type="submit"  id ="btn3" value="찾기" class="btn" >
+		</div>
+		<br>
+	</form>
+	<br><br>
+	<div id="result" style="color: #F6354E; font-size: 50px;"></div>
 	</div>
 
 </div>
-<script type="text/javascript">
+<script>
 $(document).ready(function() {
+		
 	
 });
 
 </script>
-
-
 
 </body>
 </html>

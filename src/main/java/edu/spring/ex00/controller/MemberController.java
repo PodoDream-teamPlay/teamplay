@@ -89,30 +89,38 @@ public class MemberController {
 		}
 	}
 	
-	//아이디 비밀번호 찾기
-	@RequestMapping(value="/iforgotMyId", method=RequestMethod.GET)
-	public String forgotMyId() {
-		return "podo/iforgotMyId";
-	}
-	
-	//아이디 찾기. 이메일로 확인.
-	@RequestMapping(value="/findingId", method=RequestMethod.POST)
-	public String findingId(String email, Model model) {
-		System.out.println("일단 들어오는지 보고");		
-		Member m= null;
-		m = memberservice.selectByEmail(email);
-		if (m !=null) {
-			System.out.println("여까지는");
-			String userid =m.getUserid();
-			model.addAttribute("userid", userid);
-			System.out.println("오는지도 보고" + userid);
-		} else {
-			model.addAttribute("nothing", 1);
-			System.out.println("or here");
+		//아이디 비밀번호 찾기
+		@RequestMapping(value="/iforgotMyId", method=RequestMethod.GET)
+		public String forgotMyId(Model model) {
+			model.addAttribute("userid", "");
+			return "podo/iforgotMyId";
+		}
+		@RequestMapping(value="/iforgotMyPw", method=RequestMethod.GET)
+		public String forgotMyPw() {
+			return "podo/iforgotMyPw";
 		}
 		
-		return "podo/iforgotMyId";
-	}
+		//아이디 찾기. 이메일로 확인.
+		@RequestMapping(value="/findingId", method=RequestMethod.POST)
+		public String findingId(String email, Model model) {	
+			Member m = memberservice.selectByEmail(email);
+			if (m !=null) {
+				String userid = m.getUserid();
+				System.out.println(userid);
+				model.addAttribute("userid", userid);
+			} else {
+				model.addAttribute("userid", "등록되지 않은 이메일입니다.");
+			}
+			
+			return "podo/iforgotMyId";
+		}
+		
+		//비밀번호 찾기. 아이디와 이메일로 확인.
+		@RequestMapping(value="/findingPw", method=RequestMethod.POST)
+		public String findingPw(String userid, String email, Model model) {
+			return "podo/iforgotMyPw";
+		}
+		
 	
 	@RequestMapping(value="/member-update")
 	public String memberUpdate() {
