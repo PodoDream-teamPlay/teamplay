@@ -97,6 +97,14 @@ public class HomeController {
 		//회원가입 페이지로 이동
 		return "podo/registerAgreement";
 	}
+	
+	
+	@RequestMapping(value="introduction", method=RequestMethod.GET)
+	public String introduction() {
+		//회사소개
+		return "podo/introduction";
+	}
+	
 	@RequestMapping(value="/usingagreement", method=RequestMethod.GET)
 	public String usingagreement() {
 		// 이용약관
