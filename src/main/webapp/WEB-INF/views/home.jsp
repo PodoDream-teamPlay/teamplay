@@ -374,7 +374,7 @@ img {
 						<th>MP3다운</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody style="color: black;">
 					<c:forEach var="music" items="${music}">
 						<tr style="font-size: 13;">
 							<td width="30" bordercolor="grey"><br> <input
