@@ -278,7 +278,7 @@ public class MusicController {
 	@RequestMapping(value="/playlist_member_delete")
 	public String playlistItemDelete(int mid, int pid) {
 		
-		//Playlist : select By pid
+		/*//Playlist : select By pid
 		Playlist playlist = playlistService.selectByPid(pid);
 				
 		//Music : pid 의 mids 분리해서 노래 찾기
@@ -299,9 +299,9 @@ public class MusicController {
 			if(m.getMid() != mid) {
 				mids += m.getMid() + ",";
 			}
-		}
+		}*/
 		
-		playlistService.update(mids, pid);
+		playlistService.update(mid, pid);
 		
 		return "redirect:/playlist_detail_popup?pid="+ pid;
 	}
