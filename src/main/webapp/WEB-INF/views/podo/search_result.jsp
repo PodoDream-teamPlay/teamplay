@@ -341,8 +341,7 @@ img {
 					<c:forEach var="music" items="${musicList}">
 						<tr>
 							<td width="30" bordercolor="grey"><br>
-							<input type="checkbox" id="cb_choose" name="cb_choose"
-								value="${music.mid}" data-mid="${music.mid}"></td>
+							<input type="checkbox" id="cb_choose${music.mid}" name="cb_choose" value="${music.mid}" data-mid="${music.mid}"></td>
 							<td id="mid"><br> 
 							<%rank += 1;
  							out.print(rank + "");
@@ -365,7 +364,7 @@ img {
 							<br>
 							<form action="playlist" method="post" style="display: inline;">
 								<div class="dropdown" style="display: inline;">
-									<button name="cart-icon" data-toggle="dropdown"
+									<button data-mid="${music.mid}" class="myalbum-auto" name="cart-icon" data-toggle="dropdown"
 										style="border: none; background-color: white;">
 										<img alt="내앨범" src="././resources/images/t_myalbum.png" />
 									</button>
@@ -584,6 +583,15 @@ $(function(){
 		// alert(mid);
 		checkTitle(ptitle);
 	});
+	
+	
+	$('.myalbum-auto').click(function() {
+     		alert('체크됨?' + $(this).attr('data-mid'));
+     		var mid = $(this).attr('data-mid');
+     			
+			$('#cb_choose' + mid).prop('checked',true);
+		
+		});
 	
 }); // end $(function())
 
