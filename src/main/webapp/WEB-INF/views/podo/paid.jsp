@@ -15,8 +15,6 @@
 <body>
 
 
-<h2>결제창</h2>
-  
 
 <form id="paid-form" method="post">
 	<h2>결제</h2>

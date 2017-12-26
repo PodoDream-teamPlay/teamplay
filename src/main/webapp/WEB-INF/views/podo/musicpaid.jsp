@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<h2>결제창</h2>
+
 <%-- <div class="container">
 	<p style="background-color: #2E2E2E; color: white; text-align: center; font-size: 25px; padding: 20px;">
 		${ptitle}
