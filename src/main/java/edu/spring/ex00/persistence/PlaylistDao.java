@@ -19,6 +19,10 @@ public interface PlaylistDao {
 	//delete
 	int delete (int pid);
 	
+	
+	//palylist에서 노래 한개 지우고 업데이트하는 메소드
+	int update(String mids, int pid);
+	
 	//회원 탈퇴할때 쓰려고 정보 지우는 메소드
 	int delete (String userid);
 	

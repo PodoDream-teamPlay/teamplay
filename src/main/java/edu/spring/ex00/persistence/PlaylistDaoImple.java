@@ -66,4 +66,12 @@ public class PlaylistDaoImple implements PlaylistDao {
 		return session.delete(NAMESPACE + ".deleteByUserid", userid);
 	}
 
+	@Override
+	public int update(String mids, int pid) {
+		Map<String , Object> args = new HashMap<>();
+		args.put("mids", mids);
+		args.put("pid", pid);
+		return session.update(NAMESPACE + ".update", args);
+	}
+
 }

@@ -50,4 +50,9 @@ public class PlaylistServiceImple implements PlaylistService {
 		return dao.getTotal(userid);
 	}
 
+	@Override
+	public int update(String mids, int pid) {
+		return dao.update(mids, pid);
+	}
+
 }

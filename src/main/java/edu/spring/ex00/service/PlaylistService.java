@@ -17,6 +17,8 @@ public interface PlaylistService {
 	
 	int delete(int pid);
 	
+	int update(String mids, int pid);
+	
 	//pagination
 	List<Playlist> selectByUserid(PaginationCriteria c, String userid);
 	

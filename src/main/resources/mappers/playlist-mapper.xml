@@ -25,6 +25,11 @@
 	insert into ${tblPlaylist} (${colUserid}, ${colPdate}, ${colPtitle}) 
 		values (#{userid}, sysdate, #{ptitle})
 	</insert>
+	
+	<!-- playlist중에 노래 한개 삭제했을 때 : String mids 업데이트 -->
+	<update id="update">
+	update ${tblPlaylist} set ${colMids} = #{mids} where ${colPid} = #{pid}
+	</update>
 
 	<!-- 회원 탈퇴했을 때 정보 삭제 -->
 	<delete id="deleteByUserid">

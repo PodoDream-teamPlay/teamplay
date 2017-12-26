@@ -171,6 +171,7 @@ public class MemberController {
 		
 		model.addAttribute("musicList", musicList);
 		model.addAttribute("ptitle", playlist.getPtitle());
+		model.addAttribute("pid", pid);
 		return "podo/playlist_detail_popup";
 	}
 	

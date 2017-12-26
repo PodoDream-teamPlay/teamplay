@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.spring.ex00.domain.Get;
 import edu.spring.ex00.domain.Music;
+import edu.spring.ex00.domain.Playlist;
 import edu.spring.ex00.pagination.PageNumberMaker;
 import edu.spring.ex00.pagination.PaginationCriteria;
 import edu.spring.ex00.service.GetService;
@@ -272,6 +273,38 @@ public class MusicController {
 		return "podo/lyrics_detail_popup";
 	}
 	
+	
+	// 플레이리스트 디테일창에서 X 눌렀을 때 : 플레이리스트 안의 해당 음악 한개 삭제
+	@RequestMapping(value="/playlist_member_delete")
+	public String playlistItemDelete(int mid, int pid) {
+		
+		//Playlist : select By pid
+		Playlist playlist = playlistService.selectByPid(pid);
+				
+		//Music : pid 의 mids 분리해서 노래 찾기
+		List<Music> musicList = new ArrayList<>();
+		
+		String mids = playlist.getMids();
+		if(mids != null) {
+			String[] arrayMids = mids.split(",");
+			for(int i = 0; i < arrayMids.length; i++) {
+				int m = Integer.parseInt(arrayMids[i]);
+				musicList.add(musicService.select(m));
+			}
+		}
+		
+		//mids랑 비교해서 같은 mid 있나 찾은 후에 - 같은거 빼고 만든 String mids 로 업데이트
+		mids = "";
+		for(Music m : musicList) {
+			if(m.getMid() != mid) {
+				mids += m.getMid() + ",";
+			}
+		}
+		
+		playlistService.update(mids, pid);
+		
+		return "redirect:/playlist_detail_popup?pid="+ pid;
+	}
 	
 	
 } // end class MusicController

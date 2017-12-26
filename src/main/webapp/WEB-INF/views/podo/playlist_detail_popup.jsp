@@ -29,6 +29,7 @@
 			<th style="color: white; background-color: #2E2E2E; text-align: center;"> </th>
 			<th style="color: white; background-color: #2E2E2E; text-align: center;">제목</th>
 			<th style="color: white; background-color: #2E2E2E; text-align: center;">가수</th>
+			<th></th>
 		</tr>
 		</thead>
 		<tbody>
@@ -38,6 +39,11 @@
 					<td><img class="albumart" alt="자켓이미지" src="././resources/images/${music.malbumart}"></td>
 					<td>${music.mtitle }</td>
 					<td>${music.martist}</td>
+					<td>
+						<button class="btn_delete" style="border: none; background-color: white;" data-mid = "${music.mid }">
+						<img alt="X" src="././resources/images/x.png" style="width: 13px;">
+						</button>
+					</td>
 			</tr>
 			</c:forEach>
 			</c:if>
@@ -49,28 +55,16 @@
 </div>
 <script>
 $(document).ready(function(){
-
+	$('.btn_delete').click(function(){
+		var mid = $(this).attr('data-mid');
+		var pid = ${pid};
+		document.location.href='playlist_member_delete?mid='+mid+'&pid='+pid;
+	});
 });
 </script>
 
-<div>
-		<img src="././resources/images/logo11.png" alt=" "
-			style="margin-top: 100px;" />
-	</div>
+
 </body>
-<footer>
-	<div style="float: center;">
-		<table style="text-align: center; font-size: 13; width: 700px;">
-			<tr>
-				<td class="footer_item"><a href="introduction">회사소개</a></td>
-				<td class="footer_item"><a href="hiring">인재채용</a></td>
-				<td class="footer_item"><a>제휴제안</a></td>
-				<td class="footer_item"><a href="usingagreement">이용약관</a></td>
-				<td class="footer_item"><a href="personalInformation">개인정보처리방침</a></td>
-				<th class="footer_item"><a>ⓒ PODO Corp.</a></th>
-			</tr>
-		</table>
-	</div>
-</footer>
+
 </html>
 
