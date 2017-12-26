@@ -311,13 +311,13 @@ img {
 		<ul id="menu" class="float:center;">
 			<c:if test="${not empty loginUserid}">
 				<c:if test="${loginUserid eq board.userid}">
-				<li id="menuLi"><a href="boardupdate?bno=${board.bno}"
-					style="width: 80px; height: 40px; background-color: #1c1637; font-family: 배달의민족 주아; font-size: 16px; color: #fff; border: 2px solid lightgrey;"
-					class="btn btn-primary;">수정하기</a></li>
-				<li id="menuLi"><a href="delete?bno=${board.bno }"
-					style="width: 80px; height: 40px; background-color: #1c1637; font-family: 배달의민족 주아; font-size: 16px; color: #fff; border: 2px solid lightgrey;"
-					class="btn btn-primary;">삭제하기</a></li>
-			</c:if>
+					<li id="menuLi"><a href="boardupdate?bno=${board.bno}"
+						style="width: 80px; height: 40px; background-color: #1c1637; font-family: 배달의민족 주아; font-size: 16px; color: #fff; border: 2px solid lightgrey;"
+						class="btn btn-primary;">수정하기</a></li>
+					<li id="menuLi"><a href="delete?bno=${board.bno }"
+						style="width: 80px; height: 40px; background-color: #1c1637; font-family: 배달의민족 주아; font-size: 16px; color: #fff; border: 2px solid lightgrey;"
+						class="btn btn-primary;">삭제하기</a></li>
+				</c:if>
 			</c:if>
 
 			<li id="menuLi"><a href="boardFnA"
@@ -346,7 +346,8 @@ img {
 
 		<hr />
 		<h2 class="text-left">
-			<img src="././resources/images/boardlogo12.png" style="width:130px; height:30px;" alt="댓글목록 ">
+			<img src="././resources/images/boardlogo12.png"
+				style="width: 130px; height: 30px;" alt="댓글목록 ">
 		</h2>
 		<div id="replies" style="height: 300px;"></div>
 
@@ -376,7 +377,7 @@ $(document).ready(function(){
 								+ '<input type= "text" id="rtext" style="width: 750px;" value="'
 								+ this.rtext
 								+ '" />&nbsp;'
-								+ '<input type="text" id=replier" style="width: 50px;" value="'
+								+ '<input type="text" class="replier1" data-replier="'+this.replier+'" style="width: 50px;" value="'
 								+ this.replier
 								+ '" readonly />&nbsp;'
 								+ '<button class="btn-update" style="width: 60px; height: 30px; background-color: #1c1637; font-family: 배달의민족 주아; font-size: 16px; color: #fff; border: 2px solid lightgrey;">수정</button>'
@@ -424,7 +425,10 @@ $(document).ready(function(){
 						
 						var rno = $(this).prevAll('#rno').val(); 
 						var rtext = $(this).prevAll('#rtext').val();
+						var replier = $(this).prevAll('.replier1').attr("data-replier");
 						var bno = ${board.bno};
+
+						if("${loginUserid}" ==replier){
 						$.ajax({
 							type: 'put',
 							url: '/ex00/replies/' + rno,
@@ -439,17 +443,18 @@ $(document).ready(function(){
 								'rno': rno
 							}),
 							success: function(result) {
-								if(result === 'success') {
-									alert("댓글 수정 성공");
-									getAllReplies();
-								}else{
-									alert("댓글 수정 실패");
-								}
+									if(result === 'success') {
+										alert("댓글 수정 성공");
+										getAllReplies();
+									}else{
+										alert("댓글 수정 실패")
+									}
 							}
 						});
 							
-						
-						
+						}else{
+							alert("글쓴이와 일치하지 않습니다.");
+						}
 					}); 
 			
 			$('#replies').on('click', ' .reply-item .btn-delete' ,
