@@ -13,7 +13,7 @@
 <button id="payok">확인</button>
 
 
-
+  
 <script>
 $(document).ready(function() {
 	$('#payok').click(function() {

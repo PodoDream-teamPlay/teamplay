@@ -63,7 +63,7 @@
 	<input style="width: 150px" type="password" placeholder="카드 비밀번호" required><br/>
 	<button id="payok">결제</button>
 </form>
-
+  
 
 <script>
 
