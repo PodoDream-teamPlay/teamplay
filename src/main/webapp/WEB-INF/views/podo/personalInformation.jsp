@@ -175,7 +175,7 @@ PODO 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 과정�
 		<table style="text-align: center; font-size: 13; width: 700px;">
 			<tr>
 				<td class="footer_item"><a href="introduction">회사소개</a></td>
-				<td class="footer_item"><a href="hiring">인재채용</a></td>
+				<td class="footer_item"><a>인재채용</a></td>
 				<td class="footer_item"><a>제휴제안</a></td>
 				<td class="footer_item"><a href="usingagreement">이용약관</a></td>
 				<td class="footer_item"><a href="personalInformation">개인정보처리방침</a></td>
