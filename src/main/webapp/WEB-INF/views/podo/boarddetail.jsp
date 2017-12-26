@@ -310,13 +310,14 @@ img {
 
 		<ul id="menu" class="float:center;">
 			<c:if test="${not empty loginUserid}">
-
+				<c:if test="${loginUserid eq board.userid}">
 				<li id="menuLi"><a href="boardupdate?bno=${board.bno}"
 					style="width: 80px; height: 40px; background-color: #1c1637; font-family: 배달의민족 주아; font-size: 16px; color: #fff; border: 2px solid lightgrey;"
 					class="btn btn-primary;">수정하기</a></li>
 				<li id="menuLi"><a href="delete?bno=${board.bno }"
 					style="width: 80px; height: 40px; background-color: #1c1637; font-family: 배달의민족 주아; font-size: 16px; color: #fff; border: 2px solid lightgrey;"
 					class="btn btn-primary;">삭제하기</a></li>
+			</c:if>
 			</c:if>
 
 			<li id="menuLi"><a href="boardFnA"
@@ -424,7 +425,6 @@ $(document).ready(function(){
 						var rno = $(this).prevAll('#rno').val(); 
 						var rtext = $(this).prevAll('#rtext').val();
 						var bno = ${board.bno};
-						
 						$.ajax({
 							type: 'put',
 							url: '/ex00/replies/' + rno,
@@ -492,7 +492,7 @@ $(document).ready(function(){
 		<table style="text-align: center; font-size: 13; width: 700px;">
 			<tr>
 				<td class="footer_item"><a href="introduction">회사소개</a></td>
-				<td class="footer_item"><a href="hiring">인재채용</a></td>
+				<td class="footer_item"><a>인재채용</a></td>
 				<td class="footer_item"><a>제휴제안</a></td>
 				<td class="footer_item"><a href="usingagreement">이용약관</a></td>
 				<td class="footer_item"><a href="personalInformation">개인정보처리방침</a></td>

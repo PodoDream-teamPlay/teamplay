@@ -286,12 +286,11 @@ img {
 					<img
 					class="Slides" src="././resources/images/banner04.png"
 					style="width: 970; height: auto; object-fit: cover;"></a>
-				<!--  banner05 : 인디 음악 배너 -->
+				<!--  banner05 : 인디 음악 배너 -->	
+				<a href="search?searchType=4&searchKeyword=indi">
 					 <img class="Slides" src="././resources/images/banner05.png"
-					style="width: 970; height: auto; object-fit: cover;">
-				<!-- banner06 --> <img
-					class="Slides" src="././resources/images/title6.jpg"
-					style="width: 970; height: auto; object-fit: cover;">
+					style="width: 970; height: auto; object-fit: cover;"></a>
+			
 			</div>
 		</div>
 		<br>
