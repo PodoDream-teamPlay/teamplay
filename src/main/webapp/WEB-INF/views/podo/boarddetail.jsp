@@ -460,8 +460,11 @@ $(document).ready(function(){
 			$('#replies').on('click', ' .reply-item .btn-delete' ,
 					function() {
 				var rno = $(this).prevAll('#rno').val();
+
+				var replier = $(this).prevAll('.replier1').attr("data-replier");
 				console.log('rno=' +rno);
-				
+
+				if("${loginUserid}" ==replier){
 				$.ajax({
 					type: 'delete',
 					url: '/ex00/replies/' + rno,
@@ -479,6 +482,9 @@ $(document).ready(function(){
 					}
 					
 				});
+				}else{
+					alert("글쓴이와 일치하지 않습니다.");
+				}
 			});
 		
 	});
