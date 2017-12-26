@@ -387,7 +387,8 @@ window.onload = function(){
       <%int rank = 0; %>
         <c:forEach var="music" items="${music}">
 	   	    <tr>           
-		   	  <td width="30" bordercolor="grey"><br><input type="checkbox" id="cb_choose" name="cb_choose" value="${music.mid}" data-mid="${music.mid}"></td>
+		   	  <td width="30" bordercolor="grey"><br>
+		   	  <input type="checkbox" id="cb_choose${music.mid}" name="cb_choose" value="${music.mid}" data-mid="${music.mid}"></td>
 		 	   <td id="mid"><br>
 		 	   <%rank+=1; 
 		 	   out.print(rank+"");
@@ -413,7 +414,7 @@ window.onload = function(){
 		 	  <br> 
       		<form action="playlist" method="post" style="display: inline;" > 
 	             <div class="dropdown"  style="display: inline;">
-				<button name="cart-icon" data-toggle="dropdown" style="border: none; background-color: white;">
+				<button data-mid="${music.mid}" class="myalbum-auto" name="cart-icon" data-toggle="dropdown" style="border: none; background-color: white;" onclick="autoCheck()">
 					<img alt="내앨범" src="././resources/images/t_myalbum.png" /></button>	
 				  <ul class="dropdown-menu" id="cart-list-icon">
 					<li>마이맬범에 담기</li>
@@ -639,7 +640,18 @@ $(function(){
 		checkTitle(ptitle);
 	});
 	
+	
+		// 내앨범 아이콘 클릭하면 해당 곡의 체크박스 자동 선택되는 기능 
+		$('.myalbum-auto').click(function() {
+     	//	alert('체크됨?' + $(this).attr('data-mid'));
+     		var mid = $(this).attr('data-mid');
+     			
+			$('#cb_choose' + mid).prop('checked',true);
+		
+		});
+			
 }); // end $(function())
+
 
 
 </script>
