@@ -280,22 +280,25 @@ img {
 
 	<div class="text-left" style="margin-left:120px">
 		<form action="boardupdate" method="post">
-			<label for="title"> <img
-				src="././resources/images/boardlogo2_2.png" alt="제목"></label>
+			<input type="hidden" name="bno" id="bno" value="${board.bno }">
+		
+			<label for="title"><img	src="././resources/images/boardlogo2_2.png" alt="제목"></label>
 			<input type="text" name="title" id="title"  style="width: 800px"value="${board.title }" />
-			<br /> <label for="content"><img
-				src="././resources/images/boardlogo3_3.png" alt="내용"
+			<br /> 
+			
+			<label for="content"><img src="././resources/images/boardlogo3_3.png" alt="내용"
 				style="display: inline;"></label><br />
 			<textarea  rows="15" cols="130" name="content" id="content">${board.content}</textarea>
-			<br /> <label for="userid"><img
-				src="././resources/images/boardlogo4_4.png" alt="아이디"></label> <input type="text"
-				name="userid" id="userid" value="${board.userid}" readonly /> <br />
-			<label for="regdate"><img
-				src="././resources/images/boardlogo7.png" alt="작성시간"></label>
-			<fmt:formatDate value="${board.regdate}" var="regdate"
-				pattern="yyyy/MM/dd HH:mm:ss" />
+			<br /> 
+			
+			<label for="userid"><img src="././resources/images/boardlogo4_4.png" alt="아이디"></label>
+			<input type="text" name="userid" id="userid" value="${board.userid}" readonly /> <br />
+			
+			<label for="regdate"><img src="././resources/images/boardlogo7.png" alt="작성시간"></label>
+			<fmt:formatDate value="${board.regdate}" var="regdate"	pattern="yyyy/MM/dd HH:mm:ss" />
 			<input type="text" id="regdate" value="${regdate}" readonly /><br />
 			<br/>
+			
 			<input type="submit" value="작성완료"
 				style="width: 100px; margin-left:400px;  height: 40px; background-color: #1c1637; font-family: 배달의민족 주아; font-size: 20px; color: #fff; border: 2px solid lightgrey;"
 				class="btn btn-primary; " /> <br />

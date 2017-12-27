@@ -68,11 +68,8 @@ public class BoardController {
 	@RequestMapping(value="/boarddetail", method= RequestMethod.GET) 
 	public String detail(int bno, Model model) {
 		
-		logger.info("boarddetail() GET 호출");
-		
 		Board b = boardService.select(bno);
-		b.setBno(bno);
-		System.out.println("bno :::::::::::::::::::: " + bno + " , " + b.getBno());
+		System.out.println("뭐가 문젤까");
 		
 		model.addAttribute("board", b); 
 		
@@ -101,10 +98,16 @@ public class BoardController {
 	
 	@RequestMapping(value="/boardupdate", method=RequestMethod.POST)
 	public String update(Board b) {
-		boardService.update(b);
 		
+		int result = boardService.update(b);
+		if(result == 1) {
+			System.out.println("업데이트 성공");
+			return "redirect:/boarddetail?bno=" + b.getBno();			
+		}else {
+			System.out.println("업데이트 실패");
+			return "redirect:/boardupdate?bno=" + b.getBno();
+		}
 		
-		return "redirect:/boarddetail?bno=" + b.getBno();
 		
 	}
 	
