@@ -200,14 +200,12 @@ img {
 
 
 
-
-	
 		
-<div class="container" style="width:930px; ">
+<div class="container" style="width:930px;">
   <h2>회원 가입 동의</h2><br/>
    <div class="panel-group" id="accordion" >
     <div class="panel panel-default">
-      <div class="panel-heading"style=" background-color:#C5C4CB; color:white;">
+    <div class="panel-heading" style="background-color: #1C1637; color: white;">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"> 포도 플레이어 이용약관 동의 (필수) </a>
          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -351,7 +349,7 @@ img {
       </div>
     </div>
     <div class="panel panel-default">
-      <div class="panel-heading"style=" background-color:#C5C4CB; color:white;">
+   <div class="panel-heading" style="background-color: #1C1637; color: white;">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"> 개인정보 수집 및 이용에 대한 안내 (필수) </a>
          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -415,9 +413,8 @@ NAVER 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 과정�
         
          </div>
       </div>
-    </div>
     <div class="panel panel-default">
-      <div class="panel-heading"style=" background-color:#C5C4CB; color:white;">
+     <div class="panel-heading" style="background-color: #1C1637; color: white;">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"> 이벤트 등 프로모션 알림 메일 수신(선택) </a>
            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -427,8 +424,9 @@ NAVER 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 과정�
           <input  id="check3" type="checkbox" />
         </h4>
       </div>
+      </div>
       <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">
+      
         
         
         <script>
@@ -436,7 +434,7 @@ NAVER 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 과정�
     	function agreecheck(){
     		if(document.getElementById("check1").checked==true & document.getElementById("check2").checked==true){
     			document.getElementById("button1").disabled = false; 	
-    			document.getElementById("button1").style.color = 'blue';
+    			document.getElementById("button1").style.color = 'pink';
     		}    		
     	}
       </script> 
@@ -448,7 +446,8 @@ NAVER 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 과정�
   </div> 
 </div>
 
-<div align="center"><a href="registerAgreement" ><input style="height: 60px; width: 90px"  type="button" id="button1" disabled="disabled" value="확인"></a></div>
+<div align="center"><a href="registerAgreement" ><input style="width: 80px; height: 40px; background-color: #1c1637; font-family: 배달의민족 주아; font-size: 16px; color: #fff; border: 2px solid lightgrey;"
+						class="btn btn-primary;"  type="button" id="button1" disabled="disabled" value="확인"></a></div>
 
 <script>
 function agreed() {
