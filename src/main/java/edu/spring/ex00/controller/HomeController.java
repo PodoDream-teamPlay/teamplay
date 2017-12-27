@@ -155,7 +155,9 @@ public class HomeController {
 		
 		//사용자의 포인트 정보
 		int point = memberservice.select_point(userid);
+		Member member = memberservice.select(userid);
 		
+		model.addAttribute("memberInfo", member);
 		model.addAttribute("point", point);
 		model.addAttribute("userid", userid);
 		model.addAttribute("mp3List", mp3List);

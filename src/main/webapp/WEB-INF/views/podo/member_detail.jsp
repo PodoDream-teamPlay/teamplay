@@ -293,6 +293,14 @@ img {
 								</div>
 							</div>
 							<br>
+							<div align="center">
+								스트리밍 사용 기한
+								<div style="color: #D8D8D8; text-decoration: none; border: 1px solid #D8D8D8;
+											padding: 3px; background-color: #1C1637; width: 113px;">
+								<fmt:formatDate value="${memberInfo.memdate}" pattern="yyyy.MM.dd"/> 
+								</div>
+							</div>
+							<br>
 
 							<a href="member_withdraw">회원 탈퇴</a>
 
