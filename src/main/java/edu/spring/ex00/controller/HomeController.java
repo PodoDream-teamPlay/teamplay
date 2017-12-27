@@ -52,7 +52,8 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String home(Locale locale, Model model, HttpSession session, 
+			Integer page, Integer perPage) {
 		//메인페이지로 이동
 		
 		//최신곡 8개
@@ -60,10 +61,24 @@ public class HomeController {
 		
 		model.addAttribute("musicList", musicList);
 		
+		
+		// 내앨범 아이콘 페이지 
+		PaginationCriteria c = new PaginationCriteria();
+		if(page != null) {c.setPage(page);}
+		if(perPage != null) {c.setNumsPerPage(perPage);}
 		// TOP 10 차트 보여주기
 		List<Music> list = musicService.selectAll(10);
 		model.addAttribute("music", list);
 		
+		String userid =(String) session.getAttribute("loginUserid");
+		if(userid != null) {
+			//pagination
+			PageNumberMaker pmaker = new PageNumberMaker();
+			pmaker.setCriteria(c);
+			pmaker.setTotalCount(playlistService.getTotal(userid));
+			pmaker.setPageMakerData();			
+			model.addAttribute("ppageMaker", pmaker);
+		}	
 		return "home";
 	}
 	

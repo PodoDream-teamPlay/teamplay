@@ -393,16 +393,18 @@ img {
 								style="text-decoration: none;"> ${music.mtitle} </a></td>
 							<td><br>${music.martist}</td>
 							<td><br>${music.malbum}</td>
-							<td><a href="${music.mlyrics}"><br> <img alt="가사"
-									src="././resources/images/t_lyrics.png"></a></td>
-							<td><br> 
+							<td>  <a  href="lyrics_detail_popup?mid=${music.mid}" 
+		 	   onclick="window.open(this.href, '_blank', 'width=400, height=600, left=300 ,top=100'); return false;" ><br> 
+		 	    <img alt="가사" src="././resources/images/t_lyrics.png"></a></td>
 							<%-- <img alt="내앨범"
 									src="././resources/images/t_myalbum.png"></td>
 							<td><a href="mp3_down_icon?mid=${music.mid}" id="down_icon"><br>
 									<img alt="MP3다운" src="././resources/images/t_mp3.png"
 									name="down_icon"></a></td>
 						</tr> --%>
-						<form action="playlist" method="post" style="display: inline;" > 
+		<td>
+		 <br> 
+			<form action="playlist" method="post" style="display: inline;" > 
 	             <div class="dropdown"  style="display: inline;">
 				<button data-mid="${music.mid}" class="myalbum-auto" name="cart-icon" data-toggle="dropdown" style="border: none; background-color: white;" onclick="autoCheck()">
 					<img alt="내앨범" src="././resources/images/t_myalbum.png" /></button>	
@@ -458,158 +460,150 @@ $(document).ready(function(){
 		event.preventDefault();
 		$('#form-search').submit();
 	});
-});
-
-//체크박스 전체 선택
-$('#choose_all').click(function(){
-	if($('#choose_all').prop('checked')){
-		$('input[type=checkbox]').prop('checked',true);
-	}else{
-		$('input[type=checkbox]').prop('checked',false);
-	}
-});
-
-$('img[name=down_icon]').click(function(){
-	if(${empty loginUserid}){
-		alert('로그인이 되었는지 확인해주세요.');
-	} else {
-		alert('선택한 MP3 목록 다운 완료');
-	}
-});
-
-
-// 플레이리스트 담기 리스트 목록 보여주기 런타임
-$('#cart-list').hide();
-
-$('#cart').click(function() {
-  $('#cart-list').slideToggle(500);
-});
-
-
-
-
-
-var userid = '${loginUserid}';
-
-function getAllPlaylists(page = 1) {
-	 
-   	$.getJSON('/ex00/playlist/all/'+ userid + '?page=' + page, function(data){
-		var playlist = '';
-
-   		$(data).each(function(){
-   			playlist += '<li style="list-style-type: none;">'						
-   						+'<a href="" class="mylist" style="color: #1C1637;" data-pid="'+ this.pid +'">'
-    						+ this.ptitle 
-   						+'</a>'
-   			           + '</li>';  											
-   		});
-   		
-   		$('#playlists').html(playlist);
-   		$('.playlists-icon').html(playlist);
-   		
-   	    //체크된 값  mid 컨트롤러 넘기기 
-   	    $('.mylist').click(function (e) {
-  			e.preventDefault();
-  			
-   	    	var piddd = $(this).attr('data-pid');
-   	    	$('#tbl_form_pid').val(piddd);
-   	    	$('#tbl_form').attr('action', 'my_playlist');
-   	    	$('#tbl_form').submit();
-   	    	
-   	    	alert('앨범에 담기 완료');
-   	    });
-   	    
-   	
-   	});
 	
-} // end function getAllPlaylists()
-
-getAllPlaylists();
-
-
-
-//playlist-pagination
-$('#ppagination li a').click(function(){
-	event.preventDefault(); //기본 이벤트 동작을 막겠다 - 클릭 안됨
+	//체크박스 전체 선택
+	$('#choose_all').click(function(){
+		if($('#choose_all').prop('checked')){
+			$('input[type=checkbox]').prop('checked',true);
+		}else{
+			$('input[type=checkbox]').prop('checked',false);
+		}
+	});
 	
-	//href 속성에 이동해야할 페이지 번호를 넣어놨음
-	var target = $(this).attr('href');
+	$('img[name=down_icon]').click(function(){
+		if(${empty loginUserid}){
+			alert('로그인이 되었는지 확인해주세요.');
+		} else {
+			alert('선택한 MP3 목록 다운 완료');
+		}
+	});
 	
-	//pageForm 만든거에 이동할 페이지 번호 넣겠음
-	$('#ppage').val(target);
-	//pageForm submit 여기서 함
-	//$('#ppageForm').submit();
-	getAllPlaylists($(this).text());
 
-});
+	// 플레이리스트 담기 리스트 목록 보여주기 런타임
+	$('#cart-list').hide();
 
-//insert 하는 함수
-function insertPlaylist(title){
-	var ptitle = title;
+	$('#cart').click(function() {
+	  $('#cart-list').slideToggle(500);
+	});
 	
 	var userid = '${loginUserid}';
 
-	      
+	function getAllPlaylists(page = 1) {
+		 
+	   	$.getJSON('/ex00/playlist/all/'+ userid + '?page=' + page, function(data){
+			var playlist = '';
+
+	   		$(data).each(function(){
+	   			playlist += '<li style="list-style-type: none;">'						
+	   						+'<a href="" class="mylist" style="color: #1C1637;" data-pid="'+ this.pid +'">'
+	    						+ this.ptitle 
+	   						+'</a>'
+	   			           + '</li>';  											
+	   		});
+	   		
+	  // 		$('#playlists').html(playlist);
+	   		$('.playlists-icon').html(playlist);
+	   		
+	   	    //체크된 값  mid 컨트롤러 넘기기 
+	   	    $('.mylist').click(function (e) {
+	  			e.preventDefault();
+	  			
+	   	    	var piddd = $(this).attr('data-pid');
+	   	    	$('#tbl_form_pid').val(piddd);
+	   	    	$('#tbl_form').attr('action', 'my_playlist');
+	   	    	$('#tbl_form').submit();
+	   	    	
+	   	    	alert('앨범에 담기 완료');
+	   	    });
+	   	    
+	   	
+	   	});
+		
+	} // end function getAllPlaylists()
+
+	getAllPlaylists();
 	
-	$.ajax({
-		type: 'post',
-		url: '/ex00/playlist/',
-		headers: {
-			'Content-Type': 'application/json',
-			'X-HTTP-Method-Override': 'POST'
-		},
-		data: JSON.stringify({
-			'ptitle': ptitle,
-			'userid': userid
-		}),
-		success: function(result){ 
-			if(result === 'success'){ //성공
-				getAllPlaylists();
-			}else{
-				alert('실패');
-			}
-		}
+	//playlist-pagination
+	$('#ppagination li a').click(function(){
+		event.preventDefault(); //기본 이벤트 동작을 막겠다 - 클릭 안됨
+		
+		//href 속성에 이동해야할 페이지 번호를 넣어놨음
+		var target = $(this).attr('href');
+		
+		//pageForm 만든거에 이동할 페이지 번호 넣겠음
+		$('#ppage').val(target);
+		//pageForm submit 여기서 함
+		//$('#ppageForm').submit();
+		getAllPlaylists($(this).text());
+
 	});
 	
-}
-
-//중복 체크하는 함수
-function checkTitle(title){
-	var ptitle = title;
-	
-	$.getJSON('/ex00/playlist/check/' + ptitle , function(data){
-		var replyList = null;
+	//insert 하는 함수
+	function insertPlaylist(title){
+		var ptitle = title;
 		
-		$(data).each(function(){
-			replyList = this.ptitle;
+		var userid = '${loginUserid}';
+
+		      
+		
+		$.ajax({
+			type: 'post',
+			url: '/ex00/playlist/',
+			headers: {
+				'Content-Type': 'application/json',
+				'X-HTTP-Method-Override': 'POST'
+			},
+			data: JSON.stringify({
+				'ptitle': ptitle,
+				'userid': userid
+			}),
+			success: function(result){ 
+				if(result === 'success'){ //성공
+					getAllPlaylists();
+				}else{
+					alert('실패');
+				}
+			}
 		});
 		
-		if(replyList == null){
-			//중복되는거 없으면 insert
-			insertPlaylist(ptitle);
-		} else {
-			alert('중복된 이름입니다.앨범명을 다시 입력해주세요');
-				
-		}
+	}
+	
+	//중복 체크하는 함수
+	function checkTitle(title){
+		var ptitle = title;
+		
+		$.getJSON('/ex00/playlist/check/' + ptitle , function(data){
+			var replyList = null;
+			
+			$(data).each(function(){
+				replyList = this.ptitle;
+			});
+			
+			if(replyList == null){
+				//중복되는거 없으면 insert
+				insertPlaylist(ptitle);
+			} else {
+				alert('중복된 이름입니다.앨범명을 다시 입력해주세요');
+					
+			}
+		});
+	}
+	
+	$('#btn-insert').click(function(){
+		var title = $('#ptitle').val();  
+		checkTitle(title);   
 	});
-}
 
-$('#btn-insert').click(function(){
-	var title = $('#ptitle').val();  
-	checkTitle(title);   
-});
+	$('.btn-insert-icon').click(function(){
+		
+		var ptitle = $(this).prev().val();
 
-$('.btn-insert-icon').click(function(){
+		var mid = $(this).prev().attr('data-mid');
+		
+		// alert(mid);
+		checkTitle(ptitle);
+	});
 	
-	var ptitle = $(this).prev().val();
-
-	var mid = $(this).prev().attr('data-mid');
-	
-	// alert(mid);
-	checkTitle(ptitle);
-});
-
-
 	// 내앨범 아이콘 클릭하면 해당 곡의 체크박스 자동 선택되는 기능 
 	$('.myalbum-auto').click(function() {  
  	//	alert('체크됨?' + $(this).attr('data-mid'));
@@ -618,10 +612,8 @@ $('.btn-insert-icon').click(function(){
 		$('#cb_choose' + mid).prop('checked',true);
 	
 	});
-		
-}); // end $(function())
-
-
+	
+});
 
 
 </script>
