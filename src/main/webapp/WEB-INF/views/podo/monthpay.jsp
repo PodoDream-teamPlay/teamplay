@@ -296,6 +296,7 @@ img {
 
 
 <br/>
+<br/>
 <img src="././resources/images/month_pay3.png"style="display: inline; width:500px; height:180px; border:2px solid lightgrey;  ">
 <img src="././resources/images/won9900.png" style=" width:150px; height:180px;border:2px solid lightgrey; display: inline;">
 <a onclick="month3()"style="width:80px; height: 40px;background-color: #1c1673; font-family:배달의민족 주아; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
@@ -308,6 +309,7 @@ img {
 <img alt="포인트 충전" src="././resources/images/point.png" style="float:left;margin-left:100px;"><br/><br/>
 <img src="././resources/images/point5000.png"style="display: inline; width:600px; height:130px; border:2px solid lightgrey;  margin-right: 60px;">
 <a onclick="money1()"style="width:80px; height: 40px; background-color: #1c1673; font-family:배달의민족 주아; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
+<br/>
 <br/>
 <img src="././resources/images/point10000.png"style="display: inline; width:600px; height:130px; border:2px solid lightgrey;  margin-right: 60px;">
 <a onclick="money2()"style="width:80px; height: 40px; background-color: #1c1673; font-family:배달의민족 주아; font-size:20px; color:#fff; border:2px solid lightgrey; margin-left: 10px;"class="btn btn-primary text-center;" >선택</a>
