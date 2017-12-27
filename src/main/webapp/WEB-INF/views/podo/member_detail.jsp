@@ -506,7 +506,11 @@ $(document).ready(function(){
 	//플레이리스트 play 버튼
 	$('#playlists').on('click', '.playlist-item .btn-playlist-player', function(){
 		var mids = $(this).attr('data-mids');
-		window.open("playlist_player_popup?mids="+mids, "player", "width=400, height=900");
+		if(mids != 'null'){			
+			window.open("playlist_player_popup?mids="+mids, "player", "width=400, height=900");
+		}else{
+			alert('플레이리스트에 곡이 없습니다.');
+		}
 	});
 	
 	//mp3 play 버튼
