@@ -452,6 +452,20 @@ img {
 
 	</div>
 
+<script>
+$(document).ready(function() {
+	if (${not empty money}) {
+	var money = '${money}';
+	var userid = '${loginUserid}'; 
+	
+	var popUrl = "http://localhost:8181/ex00/musicpaid?money=" +money+ "&userid="+userid;	
+	var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";    
+			window.open(popUrl,"",popOption);
+	}
+	});
+
+</script>
+
 	
 
 	<script>
@@ -474,7 +488,7 @@ $(document).ready(function(){
 		if(${empty loginUserid}){
 			alert('로그인이 되었는지 확인해주세요.');
 		} else {
-			alert('선택한 MP3 목록 다운 완료');
+			
 		}
 	});
 	

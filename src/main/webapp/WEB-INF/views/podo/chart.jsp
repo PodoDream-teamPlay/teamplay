@@ -483,14 +483,13 @@ $(function(){
 		if(${empty loginUserid}){
 			alert('로그인이 되었는지 확인해주세요.');
 		} else {
-			alert('선택한 MP3 목록 다운 완료');
+			
 			$('#tbl_form').attr('action', 'mp3_down');
 			$('#tbl_form').submit();
 		}
 	});
 	
- 	
-	
+ 
 	// 체크박스 전체 선택
 	$('#choose_all').click(function(){
 		if($('#choose_all').prop('checked')){
@@ -500,12 +499,12 @@ $(function(){
 		}
 	});
 	
+	//하나 다운로드
 	$('img[name=down_icon]').click(function(){
 		if(${empty loginUserid}){
 			alert('로그인이 되었는지 확인해주세요.');
 		} else {
-			alert('선택한 MP3 목록 다운 완료');
-		}
+			
 	});
 
 

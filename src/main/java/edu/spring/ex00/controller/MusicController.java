@@ -155,7 +155,7 @@ public class MusicController {
 	
 	// @@@@@@@@ mp3 다운 아이콘 클릭 시 실행 @@@@@@@@@@@
 	@RequestMapping(value="/mp3_down_icon", method = RequestMethod.GET)
-	public String mp3_down_icon(int mid, HttpSession session) {
+	public String mp3_down_icon(int mid, HttpSession session, RedirectAttributes attribute) {
 		logger.info("mp3_down_icon");
 		String userid = (String) session.getAttribute("loginUserid");
 		if (userid != null) {
@@ -183,7 +183,7 @@ public class MusicController {
 			logger.info("glist.size() : " + glist.size());
 			
 			//새 리스트를 db에 저장
-			int result = 0;
+		/*	int result = 0;
 			for(Get gg : glist) {
 				result = getService.insert(gg);
 				if(result == 1) { //insert 성공했으면
@@ -194,7 +194,15 @@ public class MusicController {
 					String mgenre = musicService.selectMgenre(gg.getMid());
 					memberService.update_genre_count(mgenre, userid);
 				}
-			}
+			}*/
+			logger.info("glist.size() : " + glist.size());
+			logger.info("glist" + glist.toString()  );						
+			attribute.addFlashAttribute("money", glist.size()*700);
+			attribute.addFlashAttribute("userid", userid);
+			session.setAttribute("glist", glist);
+
+			logger.info("money = " + glist.size()*700);
+			
 			
 		} else {
 			// 로그인을 하지 않은 상태
