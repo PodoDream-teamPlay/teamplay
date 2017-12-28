@@ -413,10 +413,11 @@ window.onload = function(){
 	<td>
 		 	  <br> 
       		<form action="playlist" method="post" style="display: inline;" > 
-	             <div class="dropdown"  style="display: inline;">
-				<button data-mid="${music.mid}" class="myalbum-auto" name="cart-icon" data-toggle="dropdown" style="border: none; background-color: white;" onclick="autoCheck()">
-					<img alt="내앨범" src="././resources/images/t_myalbum.png" /></button>	
-				  <ul class="dropdown-menu" id="cart-list-icon">
+	        <div class="dropdown"  style="display: block;">
+				<button data-mid="${music.mid}" class="myalbum-auto" name="cart-icon" data-toggle="dropdown" 
+				style="border: none; background-color: white;" onclick="autoCheck()" >
+					<img alt="내앨범" src="././resources/images/t_myalbum.png" /></button>				
+				  <ul class="dropdown-menu" id="cart-list-icon" >
 					<li>마이맬범에 담기</li>
 					<li class="divider"></li>
 					<li><input class="ptitle-icon" type="text" name="ptitle" placeholder="새 앨범" data-mid="${music.mid }" />
@@ -624,8 +625,14 @@ $(function() {
 	}
 	
 	$('#btn-insert').click(function(){
-		var title = $('#ptitle').val();  
-		checkTitle(title);   
+		
+		// 로그인이 아닐 경우, 로그인 확인 경고창 띄우기 
+		if(${empty loginUserid}){
+			alert('로그인이 되었는지 확인해주세요.');
+		} else {			
+	    	var title = $('#ptitle').val();  
+	     	checkTitle(title);   
+		}
 	});
 	
 	$('.btn-insert-icon').click(function(){
