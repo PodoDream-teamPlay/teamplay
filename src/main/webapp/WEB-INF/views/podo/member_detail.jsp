@@ -178,7 +178,6 @@ img {
 		$(document).ready(function() {
 			if (${loginfail} == 5) {
 				alert("아이디와 비밀번호 확인해 주세요.");
-				
 			} 
 			});
 		</script>
@@ -281,14 +280,14 @@ img {
 							<br>
 							<form action="member-update">
 								<input type="submit" value="회원 정보 수정" id="btn-member-update"
-									style="color: #D8D8D8; text-decoration: none; border: 1px solid #D8D8D8;
-											padding: 10px; background-color: #1C1637;">
+									style="color: #D8D8D8; text-decoration: none; border: 2px solid #D8D8D8;
+											padding: 10px; background-color: #273161;">
 							</form>
 							<br>
 							<div align="center">
 								보유 포인트 
 								<div style="color: #D8D8D8; text-decoration: none; border: 1px solid #D8D8D8;
-											padding: 3px; background-color: #1C1637; width: 113px;">
+											padding: 3px; background-color: #1C1637; width: 113px; height: 30px;">
 									${point }
 								</div>
 							</div>
@@ -296,11 +295,12 @@ img {
 							<div align="center">
 								스트리밍 사용 기한
 								<div style="color: #D8D8D8; text-decoration: none; border: 1px solid #D8D8D8;
-											padding: 3px; background-color: #1C1637; width: 113px;">
-								<fmt:formatDate value="${memberInfo.memdate}" pattern="yyyy.MM.dd"/> 
+											padding: 3px; background-color: #1C1637; width: 113px; height: 30px;">
+									<fmt:formatDate value="${memberInfo.memdate}" pattern="yyyy.MM.dd"/> 
 								</div>
 							</div>
 							<br>
+							<div id="member_date" style="visibility: hidden;"><fmt:formatDate value="${memberInfo.memdate}" pattern="yyyyMMdd"/></div>
 
 							<a href="member_withdraw">회원 탈퇴</a>
 
@@ -506,10 +506,28 @@ $(document).ready(function(){
 	//플레이리스트 play 버튼
 	$('#playlists').on('click', '.playlist-item .btn-playlist-player', function(){
 		var mids = $(this).attr('data-mids');
-		if(mids != 'null'){			
-			window.open("playlist_player_popup?mids="+mids, "player", "width=400, height=900");
+		
+		//new Date() format 함수
+		Date.prototype.yyyymmdd = function() {
+			  var mm = this.getMonth() + 1; // getMonth() is zero-based
+			  var dd = this.getDate();
+
+			  return [this.getFullYear(),
+			          (mm>9 ? '' : '0') + mm,
+			          (dd>9 ? '' : '0') + dd
+			         ].join('');
+			};		
+		var today = (new Date()).yyyymmdd(); //오늘날짜
+		var memdate = $('#member_date').html();//결제 끝나는 날짜
+		
+		if(today <= memdate){	
+			if(mids != 'null'){			
+				window.open("playlist_player_popup?mids="+mids, "player", "width=400, height=900");
+			}else{
+				alert('플레이리스트에 곡이 없습니다.');
+			}
 		}else{
-			alert('플레이리스트에 곡이 없습니다.');
+			alert('이용권을 결제 해 주세요');
 		}
 	});
 	
