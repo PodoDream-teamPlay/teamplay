@@ -83,4 +83,10 @@ public class PlaylistServiceImple implements PlaylistService {
 		return dao.update(mids, pid);
 	}
 
+	@Override
+	public List<Playlist> selectByPtitleandUserid(String ptitle, String userid) {
+		// TODO Auto-generated method stub
+		return dao.readByPtitleandUserid(ptitle, userid);
+	}
+
 }

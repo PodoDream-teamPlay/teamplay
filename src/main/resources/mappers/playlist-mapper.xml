@@ -10,7 +10,11 @@
 	</select>
 	
 	<select id="selectByPtitle" resultType="Playlist">
-	select * from ${tblPlaylist} where ${colPtitle} = #{ptitle}
+	select * from ${tblPlaylist} where ${colPtitle} = #{ptitle} 
+	</select>
+	
+	<select id="selectByPtitleandUserid" resultType="Playlist">
+	select * from ${tblPlaylist} where ${colPtitle} = #{ptitle} and userid = #{userid}
 	</select>
 	
 	<select id="selectByPid" resultType="Playlist">

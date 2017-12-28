@@ -2,6 +2,8 @@ package edu.spring.ex00.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,9 +46,12 @@ public class PlaylistController {
 	}
 	
 	@RequestMapping(value="/check/{ptitle}", method=RequestMethod.GET)
-	public ResponseEntity<List<Playlist>> readByPtitle(@PathVariable(name="ptitle")String ptitle){
+	public ResponseEntity<List<Playlist>> readByPtitle(@PathVariable(name="ptitle")String ptitle, HttpSession session){
 		logger.info("select 하려는 ptitle ::: " + ptitle);
-		List<Playlist> list = playlistService.selectByPtitle(ptitle);
+		String userid = null;
+		userid = (String) session.getAttribute("loginUserid");
+		
+		List<Playlist> list = playlistService.selectByPtitleandUserid(ptitle, userid); // 여기 고쳐야함. 
 		
 		ResponseEntity<List<Playlist>> entity = null;
 		if(list != null) {
