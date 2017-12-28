@@ -459,7 +459,7 @@ $(document).ready(function() {
 	var userid = '${loginUserid}'; 
 	
 	var popUrl = "http://localhost:8181/ex00/musicpaid?money=" +money+ "&userid="+userid;	
-	var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";    
+	var popOption = "width=315, height=400, resizable=no, scrollbars=no, status=no;";    
 			window.open(popUrl,"",popOption);
 	}
 	});
