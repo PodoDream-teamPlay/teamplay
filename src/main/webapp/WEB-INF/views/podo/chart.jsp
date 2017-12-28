@@ -475,9 +475,8 @@ $(document).ready(function() {
 </script>
 
 
-
 <script>
-$(function(){
+$(function() {
 	// 체크 된 값의 mid 컨트롤러에 넘기기
 	$('#mp3_down').click(function() {
 		if(${empty loginUserid}){
@@ -504,7 +503,7 @@ $(function(){
 		if(${empty loginUserid}){
 			alert('로그인이 되었는지 확인해주세요.');
 		} else {
-			
+		}
 	});
 
 
