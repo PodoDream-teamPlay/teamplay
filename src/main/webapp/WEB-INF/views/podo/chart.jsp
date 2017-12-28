@@ -628,7 +628,7 @@ $(function() {
 		
 		// 로그인이 아닐 경우, 로그인 확인 경고창 띄우기 
 		if(${empty loginUserid}){
-			alert('로그인이 되었는지 확인해주세요.');
+			alert('로그인 후 이용해주세요!');
 		} else {			
 	    	var title = $('#ptitle').val();  
 	     	checkTitle(title);   
@@ -637,12 +637,14 @@ $(function() {
 	
 	$('.btn-insert-icon').click(function(){
 		
-		var ptitle = $(this).prev().val();
-	
-		var mid = $(this).prev().attr('data-mid');
-		
-		// alert(mid);
-		checkTitle(ptitle);
+		if(${empty loginUserid}){
+			alert('로그인 후 이용해주세요!');
+		}else {
+    		var ptitle = $(this).prev().val();
+	    	var mid = $(this).prev().attr('data-mid');		
+     		// alert(mid);
+	    	checkTitle(ptitle);
+		}		
 	});
 	
 	
