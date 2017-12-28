@@ -378,7 +378,7 @@ img {
 					<c:forEach var="music" items="${music}">
 						<tr style="font-size: 13;">
 							<td width="30" bordercolor="grey"><br> 
-							<input type="checkbox" id="cb_choose" name="cb_choose"
+							<input type="checkbox" id="cb_choose${music.mid}" name="cb_choose"
 								value="${music.mid}" data-mid="${music.mid}"></td>
 							<td id="mid"><br>
 								<%rank+=1; 
@@ -468,7 +468,7 @@ $(document).ready(function() {
 
 	
 
-	<script>
+<script>
 $(document).ready(function(){
 	$('#btn-search').click(function(){
 		event.preventDefault();
@@ -494,9 +494,9 @@ $(document).ready(function(){
 	
 
 	// 플레이리스트 담기 리스트 목록 보여주기 런타임
-	$('#cart-list').hide();
 
 	$('#cart').click(function() {
+	  $('#cart-list').hide();
 	  $('#cart-list').slideToggle(500);
 	});
 	
@@ -633,7 +633,7 @@ $(document).ready(function(){
 	
 	});
 	
-});
+}); // end function
 
 
 </script>
