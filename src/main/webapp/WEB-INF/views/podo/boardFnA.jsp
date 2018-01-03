@@ -109,7 +109,7 @@ img {
 		<div class="container"
 			style="width: 1200px; background-color: #1C1637">
 			<h1 class="text-center">
-				<a href="http://localhost:8181/ex00/" style="text-decoration: none;">
+				<a href="http://192.168.11.11:8181/ex00/" style="text-decoration: none;">
 					<img alt="grape" src="././resources/images/grape3.png"
 					style="width: 58px;"> <img alt="PODO"
 					src="././resources/images/podo_white.png">
@@ -214,11 +214,11 @@ img {
 					<div class="container-fluid">
 						<div class="navbar-header">
 							<a class="navbar-brand navitem"
-								href="http://localhost:8181/ex00/" style="color: #00FDFD;"
+								href="http://192.168.11.11:8181/ex00/" style="color: #00FDFD;"
 								id="nav-podo">PODO</a>
 						</div>
 						<ul class="nav navbar-nav">
-							<li><a href="http://localhost:8181/ex00/"
+							<li><a href="http://192.168.11.11:8181/ex00/"
 								style="color: white;" id="nav-home"> 홈 </a></li>
 							<li><a href="chart" style="color: white;" id="nav-chart">
 									차트 </a></li>
