@@ -11,6 +11,8 @@ public interface PlaylistService {
 	
 	List<Playlist> selectByPtitle(String ptitle);
 	
+	List<Playlist> selectByPtitleandUserid(String ptitle, String userid);
+	
 	Playlist selectByPid(int pid);
 	
 	int insert(Playlist list);

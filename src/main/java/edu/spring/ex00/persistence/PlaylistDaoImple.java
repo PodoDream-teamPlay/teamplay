@@ -74,4 +74,13 @@ public class PlaylistDaoImple implements PlaylistDao {
 		return session.update(NAMESPACE + ".update", args);
 	}
 
+	@Override
+	public List<Playlist> readByPtitleandUserid(String ptitle, String userid) {
+		Map<String, Object> args = new HashMap<>();
+		args.put("ptitle", ptitle);
+		args.put("userid", userid);
+		// TODO Auto-generated method stub
+		return session.selectList(NAMESPACE + ".selectByPtitleandUserid", args);
+	}
+
 }

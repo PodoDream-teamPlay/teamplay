@@ -11,6 +11,8 @@ public interface PlaylistDao {
 	List<Playlist> read(String userid);
 	//ptitle로 select
 	List<Playlist> readByPtitle(String ptitle);
+	//ptitle과 userid로 select
+	List<Playlist> readByPtitleandUserid(String ptitle, String userid);
 	//pid로 select
 	Playlist read(int pid);
 	
