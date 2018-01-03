@@ -11,7 +11,7 @@
  <!-- Bootstrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-</head>
+</head>    
 
 <body onload="window.resizeTo(380,300)">
 <p style="background-color: #2E2E2E; color: white; text-align: center; font-size: 25px; padding: 20px;">
