@@ -20,6 +20,8 @@ html{
   height: 60%;
 }
 
+
+
 body{
   background-image: url("././resources/images/${music.malbumart}");
   background-size: 400px;
